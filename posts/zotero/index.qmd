@@ -1,0 +1,39 @@
+---
+title: "Zotero - kva, kvifor, korleis?"
+from: markdown+emoji
+author: "Torodd F. Ottestad"
+date: "2023-01-26"
+categories: [verktøy, kjelder, tips]
+image: "forside_zot.jpg"
+---
+
+## Kva er Zotero?
+
+[Zotero](https://www.zotero.org/) er eit verktøy for å handtera kjelder og siteringar. Det er relativt enkelt å bruka, og kan nyttast på tvers av ulike platformar og programvare. Terskelen for å implementera Zotero i undervisinga kan kanskje opplevast som litt høg, men her kjem eit par argument for kvifor det kan vera ein fordel å ta dette steget, samt eit par konkrete tips og triks :rocket:
+
+## Kvifor bruka Zotero? 
+
+
+Litt om kva dette er. 
+Studieførebuande. 
+[kjelder](https://khrono.no/studenten-tok-sjansen-da-han-glemte-kilden-saksokte-da-han-ble-utestengt/747321)
+
+
+
+Kjeldebruk og kritikk er ein viktig del av mange fag i skulen. I læreplanen finn ein gode argument for å arbeida med kjelder fleire ulike stader. Mellom anna står det under kjerneelementet *Utforsking og geografiske metoder* i læreplanen for geografi at: 
+
+> De skal også kunne bruke informasjon fra ulike typer kilder og kritisk vurdere hvor pålitelige og relevante disse kildene er. (Kunnskapsdepartementet, 2019)
+
+og vidare i læreplanen til samme fag under den grunnleggjande ferdigheten *Å kunne skrive* vert det trekt fram at 
+
+> Å skrive i geografi innebærer også å utforske, beskrive, drøfte og vurdere geografiske forhold og å bruke og vise til kilder. (Kunnskapsdepartementet, 2019)
+
+
+
+
+## Korleis bruka Zotero? Tips og triks :bulb:
+
+bla bla
+
+## Kjelder
+Kunnskapsdepartementet. (2019). Læreplan i geografi (GEO01-02 utg.). Fastsatt som forskrift. Læreplanverket for Kunnskapsløftet 2020. https://www.udir.no/lk20/geo01-02 

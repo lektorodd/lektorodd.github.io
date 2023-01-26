@@ -1,0 +1,19 @@
+---
+title: "Om meg"
+image: profile.jpg
+about:
+  template: jolla
+  links:
+    - icon: twitter
+      text: Twitter
+      href: https://twitter.com/lektorodd
+    - icon: linkedin
+      text: LinkedIn
+      href: https://linkedin.com/in/torodd-ottestad-b2583a59 
+    - icon: github
+      text: Github
+      href: https://github.com/lektorodd
+
+---
+
+Om meg/bloggen... 
