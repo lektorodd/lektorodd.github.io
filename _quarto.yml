@@ -14,7 +14,7 @@ website:
         href: https://linkedin.com/in/torodd-ottestad-b2583a59
 format:
   html:
-    theme: cosmo
+    theme: journal
     css: styles.css
 
 
