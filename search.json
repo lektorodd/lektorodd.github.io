@@ -1,0 +1,51 @@
+[
+  {
+    "objectID": "posts/zotero/index.html",
+    "href": "posts/zotero/index.html",
+    "title": "Zotero - kva, kvifor, korleis?",
+    "section": "",
+    "text": "Zotero er eit verktøy for å handtera kjelder og siteringar. Det er relativt enkelt å bruka, og kan nyttast på tvers av ulike platformar og programvare. Terskelen for å implementera Zotero i undervisinga kan kanskje opplevast som litt høg. Så her kjem eit par argument for kvifor det kan vera ein fordel å ta dette steget, samt eit par konkrete tips og triks 🚀"
+  },
+  {
+    "objectID": "posts/zotero/index.html#organisere-biblioteket",
+    "href": "posts/zotero/index.html#organisere-biblioteket",
+    "title": "Zotero - kva, kvifor, korleis?",
+    "section": "Organisere biblioteket",
+    "text": "Organisere biblioteket\nNår du har lasta ned Zotero startar du med eit tomt bibliotek. Dette kan du organisera i samlingar (mapper). Du lager nye samlingar med å trykka på knappen til venstre over Mitt bibliotek\n\n\n\nOrganisere biblioteket\n\n\nHer kan ein t.d. dela inn etter fag, etter årstrinn eller andre inndelingar slik ein ønsker. Det er mogleg å ha under-samlingar viss ein ønsker det."
+  },
+  {
+    "objectID": "posts/zotero/index.html#legge-til-kjelder",
+    "href": "posts/zotero/index.html#legge-til-kjelder",
+    "title": "Zotero - kva, kvifor, korleis?",
+    "section": "Legge til kjelder",
+    "text": "Legge til kjelder\nNår ein skal fylla biblioteket sitt gjer ein dette på fleire ulike måtar. Her vil eg demonstrera korleis ein gjer det\n\nmanuelt\nmed Zotero Connector\nmagisk 🧙\n\nLegge til manuelt\n\n\n\n\n\nFor å legga til kjelder trykker ein på det grøne pluss-teiknet og vel ein passande type (t.d. bok). Når ein har gjort dette får ein opp ei kolonne til høgre med ulike felt som må fyllast ut:\n\n\n\n\n\n\n\n\n\n\n\nTips\n\n\n\nPå sidene til kjeldekompasset finn ein informasjon om kva felt som må fyllast ut.  Her er eit døme på kapittel i bok med redaktør (i APA7-stil)\n\n\nMed Zotero Connector\nZotero Connector er ein plugin til nettlesar som gjer at ein automatisk kan legga kjelder på nett inn i biblioteket sitt. Her kan ein ta med snapshot av nettsida ein besøker, eller lasta ned pdf-dokumentet ein er inne på. Ein kan òg velga kva for samling i biblioteket den aktuelle ressursen skal lagrast til\n\n\n\n\n\n\n\n\n\n\n\nPass på\n\n\n\nDet er ikkje alltid at alle felt vert rett fylt ut i Zotero, så dette må dobbelsjekkast (gjerne opp mot kildekompasset)\n\n\nMagisk\nNokre kjelder som bøker og forskingsartiklarkan leggast inn ved hjelp av identifikatorar som ISBN, DOI, PMID osb. Då trykker ein på tryllestav-knappen til høgre for den vanlege “legg til”-knappen. For ein del norske bøker fungerer dette ofte ikkje, men for forskingsartiklar med DOI passar det godt."
+  },
+  {
+    "objectID": "posts/zotero/index.html#sitere-i-tekstbehandlar",
+    "href": "posts/zotero/index.html#sitere-i-tekstbehandlar",
+    "title": "Zotero - kva, kvifor, korleis?",
+    "section": "Sitere i tekstbehandlar",
+    "text": "Sitere i tekstbehandlar\nI Microsoft Word og Google Docs er det eigne Zotero-verktøy. Når du har lasta ned og innstallert Zotero vil du sjå dette neste gong du opnar Word.\n\n\n\n\n\nHer ligg det verktøy for å legga inn referansar i tekst og kjeldeliste/bibliografi til slutt. For å legge inn referanse i teksten trykker ein på Add/Edit Citation og søker etter kjelda i søkefeltet. Første gang blir du bedt om å velga siteringsstil. Eg nyttar vanlegvis APA7 (American Psychological Association).\n\n\n\n\n\nOm du vil inkludera sidetal, kan du klikka på den valgte kjelda og legga inn dette manuelt. Då vil Zotero automatisk formatera referansen i teksten på rett måte (og på rett språk).\n\n\n\n\n\nTil slutt kan du laga kjeldeliste av dei kjeldene som er nytta i teksten med å trykka på Add/Edit Bibliography. Denne vert automatisk sortert og formatert etter valgt referansestil."
+  },
+  {
+    "objectID": "posts/zotero/index.html#sitere-utanfor-tekstbehandlar",
+    "href": "posts/zotero/index.html#sitere-utanfor-tekstbehandlar",
+    "title": "Zotero - kva, kvifor, korleis?",
+    "section": "Sitere utanfor tekstbehandlar",
+    "text": "Sitere utanfor tekstbehandlar\nI presentasjonsverktøy som PowerPoint har ein ikkje innebygde Zotero-verktøy. Likevel er Zotero til god hjelp. Ein måte ein kan halda oversikt over kva kjelder ein har nytta i eit aktuelt prosjekt er gjennom å legga til emneord til dei ulike kjeldene. Til dømes blogg-zotero. Då kan ein søka og filtrera biblioteket sitt etter det spesifikke emneordet. Vidare kan ein då kopiera henvising (shift+cmd/windows+A) av den valgte kjelda. Ein kan til slutt markera alle kjeldene og kopiera bibliografi (shift+cmd/windows+C)."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Heim",
+    "section": "",
+    "text": "Innlegg\n\n\n\n\n\n\n\n\n\n\n  \n\n\n\n\nZotero - kva, kvifor, korleis?\n\n\n\n\n\n\n\nverktøy\n\n\nkjelder\n\n\ntips\n\n\n\n\n\n\n\n\n\n\n\nJan 27, 2023\n\n\n4 min\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Om meg",
+    "section": "",
+    "text": "Torodd her 👋 Eg jobbar som lektor på vidaregåande. Underviser i matematikk, geofag og geografi. Interessert i teknologibruk i skulen, og spesielt programmering (så interessert at eg har skrive masteroppgåve i emnet 😅)\nJobbar stadig med å utvikla den profesjonsfaglege digitale kompetansen (PfDK), så denne bloggen er ein del av dette…\nKjem til å dela nokre digitale tips og triks samt litt tankar og erfaringar knytt til programmering i matematikk og geofag 🌋"
+  }
+]
