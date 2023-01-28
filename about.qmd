@@ -14,7 +14,7 @@ about:
     - icon: linkedin
       text: LinkedIn
       href: https://linkedin.com/in/torodd-ottestad-b2583a59 
-
+comments: false
 ---
 
 Torodd her 👋 Eg jobbar som lektor på vidaregåande. Underviser i matematikk, geofag og geografi. Interessert i teknologibruk i skulen, og spesielt programmering (så interessert at eg har skrive [masteroppgåve](https://hvlopen.brage.unit.no/hvlopen-xmlui/handle/11250/2766052) i emnet :sweat_smile:)

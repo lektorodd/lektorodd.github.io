@@ -17,5 +17,9 @@ format:
     theme: journal
     css: styles.css
 
+comments:
+  giscus:
+    repo: lektorodd/lektorodd.github.io
+
 
 
