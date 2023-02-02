@@ -19,6 +19,8 @@ format:
     theme: journal
     css: styles.css
 
+execute:
+  freeze: auto  
 comments:
   giscus:
     repo: lektorodd/lektorodd.github.io
