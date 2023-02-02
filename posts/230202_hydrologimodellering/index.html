@@ -1,0 +1,1387 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.269">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Torodd F. Ottestad">
+<meta name="dcterms.date" content="2023-02-02">
+
+<title>Torodd F. Ottestad - Hydrologiprogrammering</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Torodd F. Ottestad</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html">
+ <span class="menu-text">Om meg</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/lektorodd/lektorodd.github.io"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://snabelen.no/@torodd"><i class="bi bi-mastodon" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/lektorodd"><i class="bi bi-twitter" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://linkedin.com/in/torodd-ottestad-b2583a59"><i class="bi bi-linkedin" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Hydrologiprogrammering</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">modellering</div>
+                <div class="quarto-category">programmering</div>
+                <div class="quarto-category">tips</div>
+                <div class="quarto-category">geofag</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Torodd F. Ottestad </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">February 2, 2023</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="island.jpg" class="img-fluid figure-img" style="width:90.0%"></p>
+<p></p><figcaption class="figure-caption">📷 Dettifoss, Island</figcaption><p></p>
+</figure>
+</div>
+<section id="hydrologiprosjekt-i-geofag-1" class="level1">
+<h1>Hydrologiprosjekt i Geofag 1</h1>
+<p>Her kjem eit døme på korleis ein kan bruka og behandla nokre av dei store hydrologi-datamengdene me har tilgjengeleg i Noreg. Datamaterialet er samla inn av <a href="https://www.nve.no/">NVE</a> og henta frå <a href="https://sildre.nve.no/">Sildre</a>.</p>
+<p>📌 I det følgjande dømet nyttar eg vassføringsdata frå <a href="https://www.norgeskart.no/#!?project=norgeskart&amp;layers=1002&amp;zoom=11&amp;lat=6674836.62&amp;lon=34802.80&amp;sok=Reinsnosvatn&amp;markerLat=6675824.352100712&amp;markerLon=36873.4684766499&amp;p=searchOptionsPanel">Reinsnosvatn</a></p>
+<blockquote class="blockquote">
+<p>Målestasjonen ligger i Ullensvang i Vestland og er aktiv. Den har vært i drift siden juni 1917 og leverer i dag 3 forskjellige målinger. (sildre.nve.no)</p>
+</blockquote>
+<p>Prosjektet tek altså utgangspunkt i daglege målingar frå 1917!</p>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tips til nedlasting
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>1️⃣ Finn deg ei elv på <a href="https://sildre.nve.no">sildre.nve.no</a> <br> 2️⃣ Trykk på <code>last ned som csv</code> <br> 3️⃣ Kryss av på aktuelle instillingar <br> 4️⃣ Last ned</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="laste_ned.jpg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">⬇️ Laste ned data</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<section id="importere-bibliotek" class="level2">
+<h2 class="anchored" data-anchor-id="importere-bibliotek">Importere bibliotek</h2>
+<p>Vassføringsdataa er lasta ned i csv-format. Me bruker <code>pandas</code> for å jobba med dette effektivt. I tillegg vert det litt plotting og matematikk, så me treng <code>pyplot</code> og <code>numpy</code> i tillegg.</p>
+<div class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="opprette-dataramme" class="level2">
+<h2 class="anchored" data-anchor-id="opprette-dataramme">Opprette dataramme</h2>
+<p>CSV-fila med vassføringsdata les me inn i ei <code>dataramme</code> (<em>dataframe</em>). Viss ein tar ein kikk på fila ser ein at det er brukt semikolon for å skilja verdiane, det er to rader før verdiane kjem. Me lagar litt forenkla namn på kolonnene, og les inn data. I tillegg er det nytta komma (og ikkje punktum) som desimalteikn.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="df.jpg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">🔍 Dei første linjene</figcaption><p></p>
+</figure>
+</div>
+<div class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"vassforing_reinsnos_dogn.csv"</span>, </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    sep <span class="op">=</span> <span class="st">";"</span>, </span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    skiprows <span class="op">=</span> <span class="dv">2</span>, </span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    names <span class="op">=</span> [<span class="st">"dato"</span>, <span class="st">"Vassføring"</span>, <span class="st">"Korrigert"</span>, <span class="st">"Kontrollert"</span>], </span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    parse_dates <span class="op">=</span> <span class="va">True</span>, </span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    decimal<span class="op">=</span><span class="st">","</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>df.index <span class="op">=</span> pd.to_datetime(df[<span class="st">'dato'</span>]) </span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>df.index <span class="op">=</span> pd.to_datetime(df.index.date)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.drop(columns <span class="op">=</span> [<span class="st">"dato"</span>, <span class="st">"Korrigert"</span>, <span class="st">"Kontrollert"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Sjekkar dei nyaste fem målingane i tabellen for å sjå at alt ser ok ut.</p>
+<div class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df.tail()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="23">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Vassføring</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2023-01-24</th>
+      <td>1.299365</td>
+    </tr>
+    <tr>
+      <th>2023-01-25</th>
+      <td>1.593457</td>
+    </tr>
+    <tr>
+      <th>2023-01-26</th>
+      <td>2.128418</td>
+    </tr>
+    <tr>
+      <th>2023-01-27</th>
+      <td>2.322153</td>
+    </tr>
+    <tr>
+      <th>2023-01-28</th>
+      <td>2.324195</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<p>I tillegg kan me prøva å plotta verdiane i dataramma. <br> <em>Har med <code>;</code> for å unngå å visa meldinga <code>&lt;AxesSubplot: &gt;</code></em></p>
+<div class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df.plot()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-5-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Me ser her at dette ikkje er spesielt nyttig eller informativt, men grafen viser oss at det på 1920-talet er eit par år utan målingar. Korleis dette kan fiksast kjem me attende til litt seinare.</p>
+</section>
+<section id="middelflom" class="level2">
+<h2 class="anchored" data-anchor-id="middelflom">Middelflom</h2>
+<p>Middelflommen til ei elv er rekna ut frå den største døgnvassføringa per år over eit lengre tidsrom. Frå <a href="https://varsom.no/flom-og-jordskred/ordliste/ordliste-for-flom/">NVE/varsom.no</a> finn me denne definisjonen:</p>
+<blockquote class="blockquote">
+<p>En middelflom (normal flom) defineres som gjennomsnittet av høyeste vannføring hvert år i en lang årrekke.</p>
+</blockquote>
+<p>For å rekna ut dette må me altså først finna den maksimale vassføringa per år. Bruker <code>groupby</code> i Pandas for å finne dette.</p>
+<div class="cell" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>årleg_vf_maks <span class="op">=</span> df.groupby(by<span class="op">=</span>[df.index.year]).<span class="bu">max</span>()</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>årleg_vf_maks.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="25">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Vassføring</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1917</th>
+      <td>26.98031</td>
+    </tr>
+    <tr>
+      <th>1918</th>
+      <td>50.93218</td>
+    </tr>
+    <tr>
+      <th>1919</th>
+      <td>37.72713</td>
+    </tr>
+    <tr>
+      <th>1920</th>
+      <td>63.26006</td>
+    </tr>
+    <tr>
+      <th>1921</th>
+      <td>58.04514</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<p>Plottar den nye dataramma <code>årleg_maks</code> som kun har ei måling per år:</p>
+<div class="cell" data-execution_count="26">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>årleg_vf_maks.plot()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-7-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>På grunn av “holet” i målingane tar me berre med data frå 1930 eller seinare med oss vidare. I tillegg er det vinter (og snø/is) for dataa me har for 2023, så me avgrensar til 2022.</p>
+<div class="cell" data-execution_count="27">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>årleg_vf_maks <span class="op">=</span> årleg_vf_maks.loc[<span class="dv">1930</span>:<span class="dv">2022</span>]</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>årleg_vf_maks.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="27">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Vassføring</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1930</th>
+      <td>43.82251</td>
+    </tr>
+    <tr>
+      <th>1931</th>
+      <td>46.29647</td>
+    </tr>
+    <tr>
+      <th>1932</th>
+      <td>52.52979</td>
+    </tr>
+    <tr>
+      <th>1933</th>
+      <td>68.09634</td>
+    </tr>
+    <tr>
+      <th>1934</th>
+      <td>48.32775</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<p>Me vil finna gjennomsnittleg største årlege vassføring over fleire år. Vel her å sjå på eit gjennomsnitt på 30 år om gongen. Bruker funksjonen <code>rolling</code> og <code>mean</code> i kombinasjon. <code>rolling</code> gjer at me kan gå gjennom dataramma og sjå på dei 30 tidlegare verdiane til kvar rad i tabellen og finna gjennomsnittet (<code>mean</code>) i dette rullande vinduet.</p>
+<div class="cell" data-execution_count="28">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>maksvf_og_middelflom <span class="op">=</span> årleg_vf_maks.copy()</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>maksvf_og_middelflom[<span class="st">"Middelflom"</span>] <span class="op">=</span> årleg_vf_maks.rolling(window <span class="op">=</span> <span class="dv">30</span>).mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Ser på dei første 5 radene</p>
+<div class="cell" data-execution_count="29">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>maksvf_og_middelflom.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="29">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Vassføring</th>
+      <th>Middelflom</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1930</th>
+      <td>43.82251</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1931</th>
+      <td>46.29647</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1932</th>
+      <td>52.52979</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1933</th>
+      <td>68.09634</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1934</th>
+      <td>48.32775</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<p>Ser at dei fem første radene i den nye dataramma er <code>NaN</code> (not a number). Dette skjer fordi ein ikkje kan ta gjennomsnitt av dei siste 30 åra før det har gått 30 år… Sjekkar dei nyaste radene i staden:</p>
+<div class="cell" data-execution_count="30">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>maksvf_og_middelflom.tail()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="30">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Vassføring</th>
+      <th>Middelflom</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2018</th>
+      <td>73.75180</td>
+      <td>60.571163</td>
+    </tr>
+    <tr>
+      <th>2019</th>
+      <td>47.75206</td>
+      <td>59.893282</td>
+    </tr>
+    <tr>
+      <th>2020</th>
+      <td>78.19958</td>
+      <td>60.860965</td>
+    </tr>
+    <tr>
+      <th>2021</th>
+      <td>46.81937</td>
+      <td>60.837067</td>
+    </tr>
+    <tr>
+      <th>2022</th>
+      <td>73.51824</td>
+      <td>60.972971</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<p>Plottar dataramma og ser korleis dei nye verdiane ser ut:</p>
+<div class="cell" data-execution_count="31">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>maksvf_og_middelflom.plot()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-12-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="modellering-av-middelflom" class="level2">
+<h2 class="anchored" data-anchor-id="modellering-av-middelflom">Modellering av middelflom</h2>
+<p>Ser at trenden er oppadgåande og relativt lineær. Ønsker å laga ein lineær modell. Bruker <code>polyfit</code> frå <code>NumPy</code>.</p>
+<div class="cell" data-execution_count="32">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># åra me har data på middelflom</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co"># frå og med 1959 til men ikkje med 2023</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.arange(<span class="dv">1959</span>, <span class="dv">2023</span>) </span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co"># finn koeffesientane til førstegradspolynomet</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>a, b <span class="op">=</span> np.polyfit(x, maksvf_og_middelflom[<span class="st">"Middelflom"</span>].loc[<span class="dv">1959</span>:<span class="dv">2022</span>], <span class="dv">1</span>)</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="co"># definerer lineær funksjon</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(x):</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a<span class="op">*</span>x <span class="op">+</span> b</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="co"># plottar dataramma</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>maksvf_og_middelflom.plot(</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>    figsize <span class="op">=</span> (<span class="dv">20</span>,<span class="dv">9</span>), </span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>    grid <span class="op">=</span> <span class="va">True</span>, </span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>    fontsize <span class="op">=</span> <span class="dv">16</span>, </span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>    linewidth <span class="op">=</span> <span class="dv">3</span>, </span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>    color <span class="op">=</span> [<span class="st">"lightsteelblue"</span>, <span class="st">"royalblue"</span>]</span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a><span class="co"># plottar modellen</span></span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>plt.plot(</span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>    x, f(x), </span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>    linewidth <span class="op">=</span> <span class="dv">2</span>, </span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a>    label <span class="op">=</span> <span class="st">"Modell for middelflom"</span>, </span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>    color <span class="op">=</span> <span class="st">"red"</span></span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a><span class="co"># pynting av plot</span></span>
+<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Vassføring og middelflom</span><span class="ch">\n</span><span class="st">"</span>, fontsize <span class="op">=</span> <span class="dv">24</span>)</span>
+<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a>plt.legend(fontsize <span class="op">=</span> <span class="dv">16</span>)</span>
+<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Vassføring, kubikkmeter/s"</span>, fontsize <span class="op">=</span> <span class="dv">16</span>)</span>
+<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"År"</span>, fontsize <span class="op">=</span> <span class="dv">16</span>)</span>
+<span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a><span class="co">#plt.savefig("Reinsnos - årleg maksvassføring og middelflom.png", dpi = 300)</span></span>
+<span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-13-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Ekstrapolasjon - modell for framtidig middelflom</strong></p>
+<p>Me kan bruka trendlinja for middelflommen som modell for å seie noko om korleis utviklinga vil vera i åra framover (om utviklinga held fram som no):</p>
+<div class="cell" data-execution_count="33">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>maksvf_og_middelflom.plot(figsize <span class="op">=</span> (<span class="dv">20</span>,<span class="dv">9</span>), </span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>                grid <span class="op">=</span> <span class="va">True</span>, </span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>                fontsize <span class="op">=</span> <span class="dv">16</span>, </span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>                linewidth <span class="op">=</span> <span class="dv">3</span>, </span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>                color <span class="op">=</span> [<span class="st">"lightsteelblue"</span>, <span class="st">"royalblue"</span>]</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>               )</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>plt.plot(x, f(x), </span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>         linewidth <span class="op">=</span> <span class="fl">1.5</span>, </span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>         label <span class="op">=</span> <span class="st">"Modell - middelflom"</span>, </span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>         color <span class="op">=</span> <span class="st">"crimson"</span></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Plottar forlenginga av den lineære modellen</span></span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>x2 <span class="op">=</span> np.arange(<span class="dv">2022</span>, <span class="dv">2101</span>)</span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>plt.plot(x2, f(x2), <span class="st">":"</span>, linewidth <span class="op">=</span> <span class="dv">3</span>, color <span class="op">=</span> <span class="st">"crimson"</span>)</span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a><span class="co"># pynting av plot</span></span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Vassføring og middelflom - modell fram mot 2100 </span><span class="ch">\n</span><span class="st">"</span>, fontsize <span class="op">=</span> <span class="dv">24</span>)</span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>plt.legend(fontsize <span class="op">=</span> <span class="dv">16</span>)</span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Vassføring, kubikkmeter/s"</span>, fontsize <span class="op">=</span> <span class="dv">16</span>)</span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"År"</span>, fontsize <span class="op">=</span> <span class="dv">16</span>)</span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a><span class="co">#plt.savefig("Reinsnos - modellering av middelflom 2100.png", dpi = 300)</span></span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-14-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="sjekkar-opp-mot-nve-sine-flom-data" class="level2">
+<h2 class="anchored" data-anchor-id="sjekkar-opp-mot-nve-sine-flom-data">Sjekkar opp mot NVE sine flom-data</h2>
+<p>Frå stasjonsssida til Reinsnosvatn kan me finna data om ulike typar flom.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="flomdata_nve.jpg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Flomdata frå <a href="https://sildre.nve.no/station/48.5.0?48.5.0_tab=2">NVE</a></figcaption><p></p>
+</figure>
+</div>
+<p>Ser at verdien for 20-årsflom er 78,28 <span class="math inline">\(m^3/s\)</span>. Plottar inn linja <span class="math inline">\(y=78,28\)</span> i samme figur som tidlegare. Bruker <code>plt.axhline()</code> for å teikna horisontal linje.</p>
+<div class="cell" data-execution_count="34">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># åra me har data på middelflom</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co"># frå og med 1959 til men ikkje med 2023</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.arange(<span class="dv">1959</span>, <span class="dv">2023</span>) </span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="co"># finn koeffesientane til førstegradspolynomet</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>a, b <span class="op">=</span> np.polyfit(x, maksvf_og_middelflom[<span class="st">"Middelflom"</span>].loc[<span class="dv">1959</span>:<span class="dv">2022</span>], <span class="dv">1</span>)</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="co"># definerer lineær funksjon</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(x):</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a<span class="op">*</span>x <span class="op">+</span> b</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="co"># plottar dataramma</span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>maksvf_og_middelflom.plot(</span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>    figsize <span class="op">=</span> (<span class="dv">20</span>,<span class="dv">9</span>), </span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>    grid <span class="op">=</span> <span class="va">True</span>, </span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>    fontsize <span class="op">=</span> <span class="dv">16</span>, </span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>    linewidth <span class="op">=</span> <span class="dv">3</span>, </span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>    color <span class="op">=</span> [<span class="st">"lightsteelblue"</span>, <span class="st">"royalblue"</span>]</span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a><span class="co"># plottar modellen</span></span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a>plt.plot(</span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a>    x, f(x), </span>
+<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a>    linewidth <span class="op">=</span> <span class="dv">2</span>, </span>
+<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a>    label <span class="op">=</span> <span class="st">"Modell for middelflom"</span>, </span>
+<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a>    color <span class="op">=</span> <span class="st">"red"</span></span>
+<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a><span class="co"># plottar 20-årsflom</span></span>
+<span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a>plt.axhline(</span>
+<span id="cb14-31"><a href="#cb14-31" aria-hidden="true" tabindex="-1"></a>        y <span class="op">=</span> <span class="fl">78.28</span>,</span>
+<span id="cb14-32"><a href="#cb14-32" aria-hidden="true" tabindex="-1"></a>        color <span class="op">=</span> <span class="st">"crimson"</span>, </span>
+<span id="cb14-33"><a href="#cb14-33" aria-hidden="true" tabindex="-1"></a>        linewidth <span class="op">=</span> <span class="dv">3</span>, </span>
+<span id="cb14-34"><a href="#cb14-34" aria-hidden="true" tabindex="-1"></a>        linestyle <span class="op">=</span> <span class="st">":"</span>, </span>
+<span id="cb14-35"><a href="#cb14-35" aria-hidden="true" tabindex="-1"></a>        label <span class="op">=</span> <span class="st">"20-årsflom"</span></span>
+<span id="cb14-36"><a href="#cb14-36" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb14-37"><a href="#cb14-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-38"><a href="#cb14-38" aria-hidden="true" tabindex="-1"></a><span class="co"># pynting av plot</span></span>
+<span id="cb14-39"><a href="#cb14-39" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Vassføring og middelflom</span><span class="ch">\n</span><span class="st">"</span>, fontsize <span class="op">=</span> <span class="dv">24</span>)</span>
+<span id="cb14-40"><a href="#cb14-40" aria-hidden="true" tabindex="-1"></a>plt.legend(fontsize <span class="op">=</span> <span class="dv">16</span>)</span>
+<span id="cb14-41"><a href="#cb14-41" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Vassføring, kubikkmeter/s"</span>, fontsize <span class="op">=</span> <span class="dv">16</span>)</span>
+<span id="cb14-42"><a href="#cb14-42" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"År"</span>, fontsize <span class="op">=</span> <span class="dv">16</span>)</span>
+<span id="cb14-43"><a href="#cb14-43" aria-hidden="true" tabindex="-1"></a><span class="co">#plt.savefig("Reinsnos - årleg maksvassføring og middelflom.png", dpi = 300)</span></span>
+<span id="cb14-44"><a href="#cb14-44" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-15-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tips til oppgåver
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Plott linjer for dei ulike flom-typane. Kor godt stemmer observasjonane med desse tala? <br> Kva ligg i omgrepet 20-årsflom?</p>
+</div>
+</div>
+</section>
+</section>
+<section id="hydrogram---vassføring-per-dag" class="level1">
+<h1>Hydrogram - vassføring per dag</h1>
+<p>Denne store tabellen vår med daglege data frå over 100 år kan me gjera mykje gøy med. Me kan t.d. sortera alle observasjonane til dag i året, og sjå korleis vassføringa <em>vanlegvis</em> er gjennom eit år. I koden under gjer me dette, og i tillegg fargelegg me området mellom 25 og 75-persenilen. På denne måten får me fargelagt dei 50% midterste målingane per dag. Det er òg greitt å visa medianen (som blir hydrogrammet) på figuren.</p>
+<p>Startar med å sortera den opprinnelege <code>df</code> til <em>dag i året</em> (day of year - <code>doy</code>). Etterpå grupperer me materialet i ein ny tabell.</p>
+<div class="cell" data-execution_count="35">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'doy'</span>] <span class="op">=</span> df.index.dayofyear</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'år'</span>] <span class="op">=</span> df.index.year</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="35">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Vassføring</th>
+      <th>doy</th>
+      <th>år</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1917-06-15</th>
+      <td>19.06312</td>
+      <td>166</td>
+      <td>1917</td>
+    </tr>
+    <tr>
+      <th>1917-06-16</th>
+      <td>16.46433</td>
+      <td>167</td>
+      <td>1917</td>
+    </tr>
+    <tr>
+      <th>1917-06-17</th>
+      <td>16.46433</td>
+      <td>168</td>
+      <td>1917</td>
+    </tr>
+    <tr>
+      <th>1917-06-18</th>
+      <td>18.67722</td>
+      <td>169</td>
+      <td>1917</td>
+    </tr>
+    <tr>
+      <th>1917-06-19</th>
+      <td>21.97948</td>
+      <td>170</td>
+      <td>1917</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<p>Lagar ein pivottabell med dag i året som rader og årstal som kolonner</p>
+<div class="cell" data-execution_count="36">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>piv <span class="op">=</span> pd.pivot_table(df, index<span class="op">=</span>[<span class="st">'doy'</span>],columns<span class="op">=</span>[<span class="st">'år'</span>], values<span class="op">=</span>[<span class="st">'Vassføring'</span>])</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>piv.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="36">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan="21" halign="left">Vassføring</th>
+    </tr>
+    <tr>
+      <th>år</th>
+      <th>1917</th>
+      <th>1918</th>
+      <th>1919</th>
+      <th>1920</th>
+      <th>1921</th>
+      <th>1922</th>
+      <th>1923</th>
+      <th>1924</th>
+      <th>1925</th>
+      <th>1929</th>
+      <th>...</th>
+      <th>2014</th>
+      <th>2015</th>
+      <th>2016</th>
+      <th>2017</th>
+      <th>2018</th>
+      <th>2019</th>
+      <th>2020</th>
+      <th>2021</th>
+      <th>2022</th>
+      <th>2023</th>
+    </tr>
+    <tr>
+      <th>doy</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>NaN</td>
+      <td>0.751369</td>
+      <td>0.520992</td>
+      <td>0.110245</td>
+      <td>0.520992</td>
+      <td>2.268141</td>
+      <td>0.858653</td>
+      <td>NaN</td>
+      <td>4.303123</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>4.858096</td>
+      <td>1.869427</td>
+      <td>4.191920</td>
+      <td>28.483190</td>
+      <td>4.161459</td>
+      <td>2.347107</td>
+      <td>12.096400</td>
+      <td>2.466642</td>
+      <td>4.124214</td>
+      <td>2.000038</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NaN</td>
+      <td>0.751369</td>
+      <td>0.481094</td>
+      <td>0.095431</td>
+      <td>0.562897</td>
+      <td>2.268141</td>
+      <td>0.751369</td>
+      <td>NaN</td>
+      <td>4.003652</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>4.406689</td>
+      <td>3.295648</td>
+      <td>3.810454</td>
+      <td>19.011320</td>
+      <td>3.759124</td>
+      <td>2.669421</td>
+      <td>8.641389</td>
+      <td>2.288357</td>
+      <td>5.344579</td>
+      <td>1.913351</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>NaN</td>
+      <td>0.701046</td>
+      <td>0.443164</td>
+      <td>0.095431</td>
+      <td>0.606849</td>
+      <td>2.166990</td>
+      <td>0.803893</td>
+      <td>NaN</td>
+      <td>3.858951</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>3.952404</td>
+      <td>4.470398</td>
+      <td>3.068896</td>
+      <td>11.995200</td>
+      <td>3.438255</td>
+      <td>2.515568</td>
+      <td>8.580434</td>
+      <td>2.122319</td>
+      <td>6.083396</td>
+      <td>1.827513</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>NaN</td>
+      <td>0.701046</td>
+      <td>0.407161</td>
+      <td>0.095431</td>
+      <td>0.652886</td>
+      <td>1.973261</td>
+      <td>0.915689</td>
+      <td>NaN</td>
+      <td>3.717565</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>3.694488</td>
+      <td>4.407481</td>
+      <td>2.748646</td>
+      <td>8.526679</td>
+      <td>3.053644</td>
+      <td>2.336836</td>
+      <td>7.108252</td>
+      <td>1.954245</td>
+      <td>5.640584</td>
+      <td>1.779285</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>NaN</td>
+      <td>0.652886</td>
+      <td>0.373045</td>
+      <td>0.110245</td>
+      <td>0.803893</td>
+      <td>1.703600</td>
+      <td>0.915689</td>
+      <td>NaN</td>
+      <td>3.444615</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>3.422920</td>
+      <td>4.161712</td>
+      <td>2.613774</td>
+      <td>6.329734</td>
+      <td>2.739008</td>
+      <td>2.265773</td>
+      <td>5.907576</td>
+      <td>1.806864</td>
+      <td>4.668677</td>
+      <td>1.701279</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 104 columns</p>
+</div>
+</div>
+</div>
+<section id="utrekningar" class="level2">
+<h2 class="anchored" data-anchor-id="utrekningar">Utrekningar</h2>
+<p>Finn ulike verdiar per dag i året over dei 104 åra.</p>
+<div class="cell" data-execution_count="37">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>piv[<span class="st">"min"</span>] <span class="op">=</span> piv.<span class="bu">min</span>(axis <span class="op">=</span> <span class="dv">1</span>)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>piv[<span class="st">"maks"</span>] <span class="op">=</span> piv.<span class="bu">max</span>(axis <span class="op">=</span> <span class="dv">1</span>)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>piv[<span class="st">"75%"</span>] <span class="op">=</span> piv.quantile(q <span class="op">=</span> <span class="fl">0.75</span>,axis <span class="op">=</span> <span class="dv">1</span>)</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>piv[<span class="st">"median"</span>] <span class="op">=</span> piv.median(axis <span class="op">=</span> <span class="dv">1</span>)</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>piv[<span class="st">"25%"</span>] <span class="op">=</span> piv.quantile(q <span class="op">=</span> <span class="fl">0.25</span>,axis <span class="op">=</span> <span class="dv">1</span>)</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>piv.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="37">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan="16" halign="left">Vassføring</th>
+      <th>min</th>
+      <th>maks</th>
+      <th>75%</th>
+      <th>median</th>
+      <th>25%</th>
+    </tr>
+    <tr>
+      <th>år</th>
+      <th>1917</th>
+      <th>1918</th>
+      <th>1919</th>
+      <th>1920</th>
+      <th>1921</th>
+      <th>1922</th>
+      <th>1923</th>
+      <th>1924</th>
+      <th>1925</th>
+      <th>1929</th>
+      <th>...</th>
+      <th>2019</th>
+      <th>2020</th>
+      <th>2021</th>
+      <th>2022</th>
+      <th>2023</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr>
+      <th>doy</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>NaN</td>
+      <td>0.751369</td>
+      <td>0.520992</td>
+      <td>0.110245</td>
+      <td>0.520992</td>
+      <td>2.268141</td>
+      <td>0.858653</td>
+      <td>NaN</td>
+      <td>4.303123</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>2.347107</td>
+      <td>12.096400</td>
+      <td>2.466642</td>
+      <td>4.124214</td>
+      <td>2.000038</td>
+      <td>0.110245</td>
+      <td>28.48319</td>
+      <td>2.589138</td>
+      <td>1.381706</td>
+      <td>0.701046</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NaN</td>
+      <td>0.751369</td>
+      <td>0.481094</td>
+      <td>0.095431</td>
+      <td>0.562897</td>
+      <td>2.268141</td>
+      <td>0.751369</td>
+      <td>NaN</td>
+      <td>4.003652</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>2.669421</td>
+      <td>8.641389</td>
+      <td>2.288357</td>
+      <td>5.344579</td>
+      <td>1.913351</td>
+      <td>0.095431</td>
+      <td>19.01132</td>
+      <td>2.548025</td>
+      <td>1.417153</td>
+      <td>0.652886</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>NaN</td>
+      <td>0.701046</td>
+      <td>0.443164</td>
+      <td>0.095431</td>
+      <td>0.606849</td>
+      <td>2.166990</td>
+      <td>0.803893</td>
+      <td>NaN</td>
+      <td>3.858951</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>2.515568</td>
+      <td>8.580434</td>
+      <td>2.122319</td>
+      <td>6.083396</td>
+      <td>1.827513</td>
+      <td>0.095431</td>
+      <td>11.99520</td>
+      <td>2.491543</td>
+      <td>1.381060</td>
+      <td>0.606849</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>NaN</td>
+      <td>0.701046</td>
+      <td>0.407161</td>
+      <td>0.095431</td>
+      <td>0.652886</td>
+      <td>1.973261</td>
+      <td>0.915689</td>
+      <td>NaN</td>
+      <td>3.717565</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>2.336836</td>
+      <td>7.108252</td>
+      <td>1.954245</td>
+      <td>5.640584</td>
+      <td>1.779285</td>
+      <td>0.095431</td>
+      <td>14.41007</td>
+      <td>2.421806</td>
+      <td>1.275205</td>
+      <td>0.652886</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>NaN</td>
+      <td>0.652886</td>
+      <td>0.373045</td>
+      <td>0.110245</td>
+      <td>0.803893</td>
+      <td>1.703600</td>
+      <td>0.915689</td>
+      <td>NaN</td>
+      <td>3.444615</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>2.265773</td>
+      <td>5.907576</td>
+      <td>1.806864</td>
+      <td>4.668677</td>
+      <td>1.701279</td>
+      <td>0.110245</td>
+      <td>18.95604</td>
+      <td>2.372195</td>
+      <td>1.207931</td>
+      <td>0.728653</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 109 columns</p>
+</div>
+</div>
+</div>
+</section>
+<section id="plottar" class="level2">
+<h2 class="anchored" data-anchor-id="plottar">Plottar</h2>
+<div class="cell" data-execution_count="38">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plottar minimumsverdiar</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>piv[<span class="st">"min"</span>].plot(</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    figsize <span class="op">=</span> (<span class="dv">20</span>, <span class="dv">8</span>),</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    color <span class="op">=</span> <span class="st">"seagreen"</span>, </span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    linewidth <span class="op">=</span> <span class="fl">0.8</span>, </span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>    grid <span class="op">=</span> <span class="va">False</span>, </span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>    fontsize <span class="op">=</span> <span class="dv">18</span>, </span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>    legend <span class="op">=</span> <span class="va">False</span>,</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>    label <span class="op">=</span> <span class="st">"Minste verdi"</span></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a><span class="co"># PLottar maksimumsverdiar</span></span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>piv[<span class="st">"maks"</span>].plot(</span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>    color <span class="op">=</span> <span class="st">"seagreen"</span>, </span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>    linewidth <span class="op">=</span> <span class="fl">0.8</span>, </span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>    grid <span class="op">=</span> <span class="va">False</span>, </span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>    fontsize <span class="op">=</span> <span class="dv">18</span>, </span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a>    legend <span class="op">=</span> <span class="va">False</span>,</span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a>    label <span class="op">=</span> <span class="st">"Største verdi"</span></span>
+<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Fargelegg området mellom 25- og 75-persentilane</span></span>
+<span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a>plt.fill_between(</span>
+<span id="cb18-24"><a href="#cb18-24" aria-hidden="true" tabindex="-1"></a>    piv.index, </span>
+<span id="cb18-25"><a href="#cb18-25" aria-hidden="true" tabindex="-1"></a>    piv[<span class="st">"25%"</span>], piv[<span class="st">"75%"</span>], </span>
+<span id="cb18-26"><a href="#cb18-26" aria-hidden="true" tabindex="-1"></a>    facecolor<span class="op">=</span><span class="st">'green'</span>, </span>
+<span id="cb18-27"><a href="#cb18-27" aria-hidden="true" tabindex="-1"></a>    alpha<span class="op">=</span><span class="fl">0.2</span>, </span>
+<span id="cb18-28"><a href="#cb18-28" aria-hidden="true" tabindex="-1"></a>    interpolate<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb18-29"><a href="#cb18-29" aria-hidden="true" tabindex="-1"></a>    label <span class="op">=</span> <span class="st">"25% - 75%"</span></span>
+<span id="cb18-30"><a href="#cb18-30" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb18-31"><a href="#cb18-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-32"><a href="#cb18-32" aria-hidden="true" tabindex="-1"></a><span class="co"># Plottar medianen</span></span>
+<span id="cb18-33"><a href="#cb18-33" aria-hidden="true" tabindex="-1"></a>piv[<span class="st">"median"</span>].plot(</span>
+<span id="cb18-34"><a href="#cb18-34" aria-hidden="true" tabindex="-1"></a>    linewidth <span class="op">=</span> <span class="dv">2</span>, </span>
+<span id="cb18-35"><a href="#cb18-35" aria-hidden="true" tabindex="-1"></a>    color <span class="op">=</span> <span class="st">"darkgreen"</span>,</span>
+<span id="cb18-36"><a href="#cb18-36" aria-hidden="true" tabindex="-1"></a>    label <span class="op">=</span> <span class="st">"Median"</span></span>
+<span id="cb18-37"><a href="#cb18-37" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb18-38"><a href="#cb18-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-39"><a href="#cb18-39" aria-hidden="true" tabindex="-1"></a><span class="co"># Pyntar på plottet</span></span>
+<span id="cb18-40"><a href="#cb18-40" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Dag i året </span><span class="ch">\n</span><span class="st"> (01. jan - 31. des)"</span>, fontsize <span class="op">=</span> <span class="dv">18</span>)</span>
+<span id="cb18-41"><a href="#cb18-41" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Vassføring i $m^3/s$"</span>, fontsize <span class="op">=</span> <span class="dv">18</span>)</span>
+<span id="cb18-42"><a href="#cb18-42" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Vassføring - per dag i året </span><span class="ch">\n</span><span class="st">"</span>, fontsize <span class="op">=</span> <span class="dv">24</span>)</span>
+<span id="cb18-43"><a href="#cb18-43" aria-hidden="true" tabindex="-1"></a>plt.legend(fontsize <span class="op">=</span> <span class="dv">16</span>)</span>
+<span id="cb18-44"><a href="#cb18-44" aria-hidden="true" tabindex="-1"></a>plt.savefig(<span class="st">"Reinsnos - vassføring per dag gjennom året.png"</span>, dpi <span class="op">=</span> <span class="dv">300</span>)</span>
+<span id="cb18-45"><a href="#cb18-45" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="index_files/figure-html/cell-19-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+</section>
+<section id="oppsummert" class="level2">
+<h2 class="anchored" data-anchor-id="oppsummert">Oppsummert</h2>
+<p>Det er mykje kjekt ein kan gjera med vassføringsdata frå NVE. Både det å laga plott som me har gjort over, og arbeida med store datamengder som dette kan erfaringsmessig gje elevane god innsikt i samanhengar og forståing for omgrep i hydrologien.</p>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tips til undervisinga
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Dei elevlaga hydrogramma er eit godt utganspunkt for diskusjonar og utforsking.</p>
+<p><span class="emoji" data-emoji="one">1️⃣</span> Jobb med koden saman med elevane. Lag plotta. <br> <span class="emoji" data-emoji="two">2️⃣</span> Be elevane om å finna andre elver (ulik storleik, ulik geografisk plassering) og lage eigne plott. <br> <span class="emoji" data-emoji="three">3️⃣</span> Sjå på ulike hydrogram laga av elevane (<strong>utan</strong> namn på vassdraget) og ha diskusjon i klassen om kva informasjon som ligg i plotta (Nord/sør/aust/vest? Høgde? Isbre? Snøsmelting/regnflom? Regulering?) <br> <span class="emoji" data-emoji="four">4️⃣</span> Avslør namn og plassering - korleis stemte det?</p>
+</div>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<script src="https://giscus.app/client.js" data-repo="lektorodd/lektorodd.github.io" data-repo-id="R_kgDOI1N_fg" data-category="General" data-category-id="DIC_kwDOI1N_fs4CT23b" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
