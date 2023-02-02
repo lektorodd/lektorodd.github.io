@@ -7,6 +7,7 @@ listing:
   fields: [image, date, title, reading-time, categories, description]
   sort-ui: false
   filter-ui: false
+  categories: true
 page-layout: full
 title-block-banner: true
 comments: false

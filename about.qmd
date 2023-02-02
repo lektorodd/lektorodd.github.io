@@ -8,6 +8,9 @@ about:
     - icon: github
       text: Github
       href: https://github.com/lektorodd
+    - icon: mastodon
+      text: Mastodon
+      href: https://snabelen.no/@torodd
     - icon: twitter
       text: Twitter
       href: https://twitter.com/lektorodd
