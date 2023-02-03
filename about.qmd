@@ -1,7 +1,7 @@
 ---
 title: "Om meg"
 from: markdown+emoji
-image: profile.jpg
+image: pb.jpg
 about:
   template: jolla
   links:
@@ -24,4 +24,4 @@ Torodd her 👋 Eg jobbar som lektor på vidaregåande. Underviser i matematikk,
 
 Jobbar stadig med å utvikla den profesjonsfaglege digitale kompetansen ([PfDK](https://www.udir.no/kvalitet-og-kompetanse/profesjonsfaglig-digital-kompetanse/rammeverk-larerens-profesjonsfaglige-digitale-komp/innledning/#go-to-top-target)), så denne bloggen er ein del av dette...
 
-Kjem til å dela nokre digitale tips og triks samt litt tankar og erfaringar knytt til programmering i matematikk og geofag :volcano: 
+På denne bloggen kjem eg til å dela nokre digitale tips og triks samt litt tankar og erfaringar knytt til programmering i matematikk og geofag :volcano: 
