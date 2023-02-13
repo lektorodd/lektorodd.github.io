@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://lektorodd.github.io/about.html</loc>
-    <lastmod>2023-02-10T12:16:35.940Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lektorodd.github.io/index.html</loc>
-    <lastmod>2023-02-10T12:16:36.390Z</lastmod>
+    <loc>https://lektorodd.github.io/posts/230202_hydrologimodellering/index.html</loc>
+    <lastmod>2023-02-13T08:43:21.838Z</lastmod>
   </url>
   <url>
     <loc>https://lektorodd.github.io/posts/230127_zotero/index.html</loc>
-    <lastmod>2023-02-10T12:16:37.591Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lektorodd.github.io/posts/230202_hydrologimodellering/index.html</loc>
-    <lastmod>2023-02-10T12:16:38.740Z</lastmod>
+    <lastmod>2023-02-13T08:43:24.619Z</lastmod>
   </url>
   <url>
     <loc>https://lektorodd.github.io/posts/230209_simulering1/index.html</loc>
-    <lastmod>2023-02-10T12:16:39.729Z</lastmod>
+    <lastmod>2023-02-13T08:43:25.821Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lektorodd.github.io/index.html</loc>
+    <lastmod>2023-02-13T08:43:26.318Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lektorodd.github.io/about.html</loc>
+    <lastmod>2023-02-13T08:43:26.736Z</lastmod>
   </url>
 </urlset>
