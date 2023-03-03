@@ -119,11 +119,39 @@
     "text": "Døme på bruk\nDet ligg 4 daim og 7 banantwist i ei skål. Du trekk 3 bitar. Kva er sannsynet for at akkurat to av desse er daim?\n\nimport numpy as np\nrng = np.random.default_rng()\n\n# antall simuleringar\nN = 1000000\n\nngood = 4      # daim i populasjonen\nnbad = 7       # banan i populasjonen\nnsample = 3    # antall bitar me trekk\n\n# simulerer\ntwist = rng.hypergeometric(ngood, nbad, nsample, size=N)\n\n# tel opp kor mange gonagar me fekk 2 daim\ngunstige = sum(twist == 2)\n\nrel_frek = gunstige / N\nprint(f\"P(X=2) = {rel_frek:.4f}\")\n\nP(X=2) = 0.2539\n\n\nDet er \\(25,5\\%\\) sannsynleg at det er akkurat to daimtwist."
   },
   {
+    "objectID": "posts/230303_simulering2/index.html",
+    "href": "posts/230303_simulering2/index.html",
+    "title": "Samansett simulering i S2",
+    "section": "",
+    "text": "Ein del problemstillingar kan vera ganske vanskelege å løysa ved rekning. Simulering kan hjelpa til å gjera denne type oppgåver mykje lettare å løysa. I dag ser me på ei oppgåve henta frå eksempelsettet til skriftleg eksamen etter ny læreplan i S2.\nTa gjerne ein kikk på dette innlegget om du treng oppfrisking i grunnleggande simulering med NumPy. Ellers er dokumentasjonen til NumPy ein fin stad å vera…\n\n\n\nPå ein skule er det 323 jenter og 301 gutar. La \\(X\\) vera høgda til ei tilfeldig vald jente og \\(Y\\) vera høgda til ein tilfeldig vald gut. Me går ut frå at \\(X\\) og \\(Y\\) er normalfordelt med \\(\\mu_x=168 cm\\), \\(\\mu_y=180 cm\\), \\(\\sigma_x = 6 cm\\) og \\(\\sigma_y = 8 cm\\).   Lag eit program som du kan bruka til å simulera sannsynet for at ein tilfeldig vald elev er høgare enn 175 cm. Bestem dette sannsynet.   (UDIR - Eksempelsett eksamen S2-V23 oppgåve 6, del 2)\n\n🧐 Me må altså både bestemma om det er gut eller jente me har trekt i tillegg til å finna høgda på eleven. Krevande for hand/analytisk men ikkje så aller verst å finna ut av ved simulering!"
+  },
+  {
+    "objectID": "posts/230303_simulering2/index.html#løkker",
+    "href": "posts/230303_simulering2/index.html#løkker",
+    "title": "Samansett simulering i S2",
+    "section": "1️⃣ Løkker",
+    "text": "1️⃣ Løkker\nTanken her er å trekka ein elev N gongar. Trekk eit tal mellom 0 og 323+301, og seier at dei 323 første (fom. 0 tom. 322) er jenter, og dei siste (resten) er gutar. Simulerer høgda til kvar elev etter det. Tel til slutt opp kor mange som er over 175 cm.\n\nimport numpy as np\nrng = np.random.default_rng()\n\n# tal simuleringar\nN = 10000000\n\n# N elevar (tal mellom 0 og 323+301)\nelevar = rng.integers(0, (323+301), size=N)\n\n# tom liste til høgdene\nhøgdar = []\n\n# Finn høgda til kvar elev\nfor elev in elevar:\n    if elev<323: # 0 til 322 er jenter\n        høgdar.append(rng.normal(168, 6))\n    else: # 323 til 323+301 er gutar\n        høgdar.append(rng.normal(180, 8))\n\n# tel opp elevar høgare enn 175 cm\ngunstige = sum(np.array(høgdar)>175)\nsannsyn = gunstige / N\n\nprint(f\"Sannsynet for at ein tilfeldig elev er høgare enn 175 cm er {sannsyn:.4f}\")\n\nSannsynet for at ein tilfeldig elev er høgare enn 175 cm er 0.4172\n\n\n⏳ Her brukte maskina mi ca. 17 sek. på 10 000 000 simuleringar."
+  },
+  {
+    "objectID": "posts/230303_simulering2/index.html#funksjonar",
+    "href": "posts/230303_simulering2/index.html#funksjonar",
+    "title": "Samansett simulering i S2",
+    "section": "2️⃣ funksjonar…",
+    "text": "2️⃣ funksjonar…\nHer gjer me 1️⃣ litt meir fancy. Mykje lik tankegang.\n\nimport numpy as np\nrng = np.random.default_rng()\n\n# tal simuleringar\nN = 10000000\n\n# finn sannsyn jente og sannsyn gutt\np = np.array([323, 301]) / (323+301)\n\n# lagar funksjon som trekk ein elev\ndef trekk_elev(p):\n    høgde = 0\n    # trekk kjønn:\n    kjønn = rng.choice(['j', 'g'], p=p)\n    \n    # trekk høgde (ut frå trekt kjønn)\n    if kjønn == 'j':\n        høgde = rng.normal(168, 6, 1)\n    else: \n        høgde = rng.normal(180, 8, 1)\n    \n    return høgde[0]\n\n# tel opp talet elevar som er over 175 cm\ngunstig = 0\n\nfor i in range(N):\n    h = trekk_elev(p)\n    if h>175:\n        gunstig += 1\n\n# finn og skriv ut relativ frekvens\nsannsyn = gunstig/N\nprint(f\"Sannsynet for at ein tilfeldig elev er høgare enn 175 cm er {sannsyn:.4f}\")\n\nSannsynet for at ein tilfeldig elev er høgare enn 175 cm er 0.4169\n\n\n⏳ Her brukte maskina mi ca. 5 min. (!!!) på 10 000 000 simuleringar."
+  },
+  {
+    "objectID": "posts/230303_simulering2/index.html#alt-i-arrays",
+    "href": "posts/230303_simulering2/index.html#alt-i-arrays",
+    "title": "Samansett simulering i S2",
+    "section": "3️⃣ Alt i arrays 🚀",
+    "text": "3️⃣ Alt i arrays 🚀\nFor å gjera programmet effektivt, raskt og lett leseleg droppar eg løkker og funksjonar.\n\nimport numpy as np\nrng = np.random.default_rng()\n\n# antall jenter, gutar og elevar på skulen\nj = 323\ng = 301\nn = j + g\n\n# tal simuleringar\nN = 10000000\n\n# finn antall gutar (0) og jenter (1)\nkjønn = rng.choice([0,1], size=N, p=[g/n, j/n])\njenter = sum(kjønn)\ngutar = N - jenter\n\n# finn høgder på jenter og gutar for seg\nh_jenter = rng.normal(168, 6, size=jenter)\nh_gutar = rng.normal(180, 8, size=gutar)\n\n# høgder på alle dei trekte elevane\nh_trekte = np.append(h_jenter, h_gutar)\n\n# reknar ut sannsynet\ngunstige = sum(h_trekte > 175)\nsannsyn = gunstige / N\n\nprint(f\"Sannsynet for at ein tilfeldig elev er høgare enn 175 cm er {sannsyn:.4f}\")\n\nSannsynet for at ein tilfeldig elev er høgare enn 175 cm er 0.4168\n\n\n⚡ 3,4 sek. på 10 000 000 simuleringar! 😎"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Heim",
     "section": "",
-    "text": "Innlegg\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGrunnleggjande simulering i NumPy\n\n\n3 min\n\n\n\nprogrammering\n\n\ns-matte\n\n\nsimulering\n\n\ntips\n\n\n\n\n\n\n\nFeb 9, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHydrologiprogrammering\n\n\n4 min\n\n\n\nmodellering\n\n\nprogrammering\n\n\ntips\n\n\ngeofag\n\n\n\n\n\n\n\nFeb 2, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nZotero - kva, kvifor, korleis?\n\n\n4 min\n\n\n\nverktøy\n\n\nkjelder\n\n\ntips\n\n\n\n\n\n\n\nJan 27, 2023\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Innlegg\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSamansett simulering i S2\n\n\n2 min\n\n\n\nprogrammering\n\n\ns-matte\n\n\nsimulering\n\n\neksamensoppgåve\n\n\ntips\n\n\n\n\n\n\n\nMar 3, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGrunnleggjande simulering i NumPy\n\n\n3 min\n\n\n\nprogrammering\n\n\ns-matte\n\n\nsimulering\n\n\ntips\n\n\n\n\n\n\n\nFeb 9, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHydrologiprogrammering\n\n\n4 min\n\n\n\nmodellering\n\n\nprogrammering\n\n\ntips\n\n\ngeofag\n\n\n\n\n\n\n\nFeb 2, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nZotero - kva, kvifor, korleis?\n\n\n4 min\n\n\n\nverktøy\n\n\nkjelder\n\n\ntips\n\n\n\n\n\n\n\nJan 27, 2023\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
