@@ -3,6 +3,8 @@ project:
 
 website:
   title: "Torodd F. Ottestad"
+  site-url: https://lektorodd.github.io
+  description: "Blogg om digitale tips og triks i skulen"
   navbar:
     right:
       - about.qmd
@@ -14,6 +16,8 @@ website:
         href: https://twitter.com/lektorodd
       - icon: linkedin
         href: https://linkedin.com/in/torodd-ottestad-b2583a59
+      - icon: rss-fill
+        href: index.xml
 format:
   html:
     theme: journal
