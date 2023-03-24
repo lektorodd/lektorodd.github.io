@@ -15,6 +15,7 @@ comments: false
 ---
 
 # Innlegg
+[![](https://hits.sh/lektorodd.github.io.svg)](https://hits.sh/lektorodd.github.io/)
 
 ---
 
