@@ -38,8 +38,8 @@
 <h3 class="anchored" data-anchor-id="oppgåve-2">Oppgåve 2</h3>
 <p>Funksjonen <img src="https://latex.codecogs.com/png.latex?O"> gitt ved <img src="https://latex.codecogs.com/png.latex?O(x)=%E2%88%920,05x%5E2%20+100x%E2%88%9210%20000"> er ein god modell for overskotet i kroner som ei bedrift har kvar veke, dersom ho produserer og sel <img src="https://latex.codecogs.com/png.latex?x"> einingar av ei vare.</p>
 <p><strong>a) Bestem <img src="https://latex.codecogs.com/png.latex?O'(500)">. Gi ei tolking av svaret i denne situasjonen</strong></p>
-<p>Deriverer <img src="https://latex.codecogs.com/png.latex?O"> og finn <img src="https://latex.codecogs.com/png.latex?%20O'(x)=-0,1x+100%20"> Dermed er <img src="https://latex.codecogs.com/png.latex?O'(500)=-0,1%20%5Ccdot%20500%20+%20100%20=%20150"></p>
-<p>Dette betyr at om ein aukar produksjonen (<img src="https://latex.codecogs.com/png.latex?x">) med <strong>ei</strong> vare, så vil overskotet auka med ca. 150 kr.</p>
+<p>Deriverer <img src="https://latex.codecogs.com/png.latex?O"> og finn <img src="https://latex.codecogs.com/png.latex?%20O'(x)=-0,1x+100%20"> Dermed er <img src="https://latex.codecogs.com/png.latex?O'(500)=-0,1%20%5Ccdot%20500%20+%20100%20=%2050"></p>
+<p>Dette betyr at om ein aukar produksjonen (<img src="https://latex.codecogs.com/png.latex?x">) med <strong>ei</strong> vare, så vil overskotet auka med ca. 50 kr.</p>
 <p><strong>b) Kva er det maksimale overskotet denne bedrifta kan ha kvar veke?</strong></p>
 <p>Løyser likninga <img src="https://latex.codecogs.com/png.latex?O'(x)=0"> <img src="https://latex.codecogs.com/png.latex?%5Cbegin%7Balign*%7D%20-0,1x+100&amp;=0%20%5C%5C%200,1x%20&amp;=%20100%20%5C%5C%20x%20&amp;=%201000%20%5Cend%7Balign*%7D%20"></p>
 <p>Dette betyr at overskotet er størst (<img src="https://latex.codecogs.com/png.latex?O(x)"> er ein konkav andregradsfunksjon <img src="https://latex.codecogs.com/png.latex?%5CRightarrow"> toppunkt) når det vert produsert 1000 einingar. Finn overskotet:</p>
@@ -49,6 +49,7 @@
 <section id="oppgåve-3" class="level3">
 <h3 class="anchored" data-anchor-id="oppgåve-3">Oppgåve 3</h3>
 <p>Løys likninga <img src="https://latex.codecogs.com/png.latex?%20%5Cbegin%7Balign*%7D%0A%5Clg(x-3)+%5Clg(x)%20&amp;=%201%20%5C%5C%0A%5Clg((x-3)x%20&amp;=%201%20%5Cqquad%20%5Cleftarrow%20%20%5Clg(a)%20+%20%5Clg(b)%20=%20%5Clg(ab)%20%5C%5C%0A(x-3)x%20&amp;=%2010%5E1%20%5C%5C%0Ax%5E2%20-3x%20-%2010%20&amp;=%200%20%5C%5C%0A(x+2)(x-5)%20&amp;=%200%20%5Cqquad%20%5Cleftarrow%202-5%20=%20-3%20%5Ctext%7B%20og%20%7D%202%5Ccdot%20-5%20=%20-10%20%5C%5C%0Ax=-2%20&amp;%5Cvee%20x%20=%205%0A%5Cend%7Balign*%7D%20"></p>
+<p>Men kun <img src="https://latex.codecogs.com/png.latex?x=5"> er gyldig løysing, pga. <img src="https://latex.codecogs.com/png.latex?%5Clg(x)"> i den opphavlege likninga.</p>
 </section>
 <section id="oppgåve-4" class="level3">
 <h3 class="anchored" data-anchor-id="oppgåve-4">Oppgåve 4</h3>
