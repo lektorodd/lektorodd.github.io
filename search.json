@@ -70,27 +70,6 @@
     "text": "Oppsummert\nDet er mykje kjekt ein kan gjera med vassføringsdata frå NVE. Både det å laga plott som me har gjort over, og arbeida med store datamengder som dette kan erfaringsmessig gje elevane god innsikt i samanhengar og forståing for omgrep i hydrologien.\n\n\n\n\n\n\nTips til undervisinga\n\n\n\nDei elevlaga hydrogramma er eit godt utganspunkt for diskusjonar og utforsking.\n1️⃣ Jobb med koden saman med elevane. Lag plotta.  2️⃣ Be elevane om å finna andre elver (ulik storleik, ulik geografisk plassering) og lage eigne plott.  3️⃣ Sjå på ulike hydrogram laga av elevane (utan namn på vassdraget) og ha diskusjon i klassen om kva informasjon som ligg i plotta (Nord/sør/aust/vest? Høgde? Isbre? Snøsmelting/regnflom? Regulering?)  4️⃣ Avslør namn og plassering - korleis stemte det?"
   },
   {
-    "objectID": "posts/23MMDD_eksamenS1/index.html",
-    "href": "posts/23MMDD_eksamenS1/index.html",
-    "title": "Eksamen V22 S1",
-    "section": "",
-    "text": "Her er eit forslag til løysing av våreksamen i S1 2022. I del 2 er oppgåvene stort sett løyst i Python eller CAS.\nGje gjerne ein lyd om du ser feil, så skal eg fiksa det 😊\n\nMiniatyrbilete: Exam icons created by Freepik - Flaticon\nEksamenssettet finn du hos UDIR: Finn eksamensoppgaver"
-  },
-  {
-    "objectID": "posts/23MMDD_eksamenS1/index.html#oppgåve-1",
-    "href": "posts/23MMDD_eksamenS1/index.html#oppgåve-1",
-    "title": "Eksamen V22 S1",
-    "section": "Oppgåve 1",
-    "text": "Oppgåve 1\nSkriv så enkelt som råd\n\\[ \\begin{align*}\n\\left(2a\\right)^{-1}\\cdot \\left(\\frac{b}{2}\\right)^{-3}\\cdot \\left(a\\cdot b\\right)^3\n\\end{align*}\\] —"
-  },
-  {
-    "objectID": "posts/23MMDD_eksamenS1/index.html#oppgåve-1-1",
-    "href": "posts/23MMDD_eksamenS1/index.html#oppgåve-1-1",
-    "title": "Eksamen V22 S1",
-    "section": "Oppgåve 1",
-    "text": "Oppgåve 1\nTabellen nedanfor viser talet på gardsbruk i Noreg for nokre gitte årstal.\n\n\n\nÅr\nTal gardsbruk\n\n\n\n\n1969\n154 977\n\n\n1989\n99 382\n\n\n1999\n68 539\n\n\n2009\n47 688\n\n\n2020\n38 633\n\n\n\n\na)\nBruk opplysningane i tabellen, og bestem ein modell som du meiner eignar seg til å seie noko om talet på gardsbruk i Noreg i åra framover. Grunngi valet ditt av modell.\n\nimport matplotlib.pyplot as plt\nimport numpy as np\n\når = [0, 20, 30, 40, 51]\ngårdar = [154977, 99382, 68539, 47688, 38633]\n\nplt.plot(år, gårdar, \"ro\")\nplt.show()\n\n\n\n\n\nfrom scipy.optimize import curve_fit\n\ndef f(x, a, b):\n    return a*b**x\n\nK, E = curve_fit(f, år, gårdar)\n\na, b = K\n\nx_verdiar = np.linspace(0, 65, 1000)\n\nplt.plot(x_verdiar, f(x_verdiar, a, b))\nplt.plot(år, gårdar, \"ro\")\nplt.ylim([0, 160000])\n\n(0.0, 160000.0)\n\n\n\n\n\n\nx = 2060-1969\nframtid = f(x, a, b)\nprint(f\"Gårdar i 2060: \\nf({x}) = {framtid:.0f}\")\n\nGårdar i 2060: \nf(91) = 13248\n\n\n\nx = 0\n\nf0 = f(x, a, b)\nf1 = f(x+1, a, b)\n\nwhile abs(f1-f0) >= 1000:\n    x +=1 \n    f0 = f(x, a, b)\n    f1 = f(x+1, a, b)\n\nprint(x)\nprint(\"f0\", f0)\nprint(\"f1\", f1)\nprint(f1-f0)\n\nprint(f(52, a, b))\nprint(f(53, a, b))\n\n53\nf0 37224.129686867855\nf1 36225.744558823484\n-998.3851280443705\n38250.03040847806\n37224.129686867855\n\n\n\n\nb)\n\n\nc)"
-  },
-  {
     "objectID": "posts/230127_zotero/index.html",
     "href": "posts/230127_zotero/index.html",
     "title": "Zotero - kva, kvifor, korleis?",
@@ -179,7 +158,7 @@
     "href": "index.html",
     "title": "Heim",
     "section": "",
-    "text": "Innlegg\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEksamen H22 S1\n\n\n8 min\n\n\n\neksamensoppgåve\n\n\nprogrammering\n\n\nløysingsforslag\n\n\n\n\n\n\n\nMar 27, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSamansett simulering i S2\n\n\n2 min\n\n\n\nprogrammering\n\n\ns-matte\n\n\nsimulering\n\n\neksamensoppgåve\n\n\ntips\n\n\n\n\n\n\n\nMar 3, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGrunnleggjande simulering i NumPy\n\n\n3 min\n\n\n\nprogrammering\n\n\ns-matte\n\n\nsimulering\n\n\ntips\n\n\n\n\n\n\n\nFeb 9, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHydrologiprogrammering\n\n\n4 min\n\n\n\nmodellering\n\n\nprogrammering\n\n\ntips\n\n\ngeofag\n\n\n\n\n\n\n\nFeb 2, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nZotero - kva, kvifor, korleis?\n\n\n4 min\n\n\n\nverktøy\n\n\nkjelder\n\n\ntips\n\n\n\n\n\n\n\nJan 27, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEksamen V22 S1\n\n\n0 min\n\n\n\neksamensoppgåve\n\n\nprogrammering\n\n\nløysingsforslag\n\n\n\n\n\n\n\nJan 1, 2023\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Innlegg\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEksamen H22 S1\n\n\n8 min\n\n\n\neksamensoppgåve\n\n\nprogrammering\n\n\nløysingsforslag\n\n\n\n\n\n\n\nMar 27, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSamansett simulering i S2\n\n\n2 min\n\n\n\nprogrammering\n\n\ns-matte\n\n\nsimulering\n\n\neksamensoppgåve\n\n\ntips\n\n\n\n\n\n\n\nMar 3, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGrunnleggjande simulering i NumPy\n\n\n3 min\n\n\n\nprogrammering\n\n\ns-matte\n\n\nsimulering\n\n\ntips\n\n\n\n\n\n\n\nFeb 9, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHydrologiprogrammering\n\n\n4 min\n\n\n\nmodellering\n\n\nprogrammering\n\n\ntips\n\n\ngeofag\n\n\n\n\n\n\n\nFeb 2, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nZotero - kva, kvifor, korleis?\n\n\n4 min\n\n\n\nverktøy\n\n\nkjelder\n\n\ntips\n\n\n\n\n\n\n\nJan 27, 2023\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
