@@ -20,8 +20,10 @@ website:
         href: index.xml
 format:
   html:
-    theme: journal
-    css: styles.css
+    theme: 
+    - journal
+    - custom.scss
+
 
 execute:
   freeze: auto  
