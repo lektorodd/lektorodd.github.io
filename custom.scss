@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+
+/*-- scss:default --*/
+// Fargar
+$primary: #3D5A80 !default;
+$body-color: #293241;
+$link-color: #EE6C4D;
+
+// Fontar
+$headings-font-family: "Secular One", ;
+
+/*-- scss:rules --*/
+#title-block-header.quarto-title-block.default .quarto-title .title {
+    color: white;
+}
+
+.navbar {
+    color:focus white;
+}
+
+.quarto-title .quarto-categories .quarto-category {
+    opacity:.7
+}
+
+.quarto-grid-item .listing-categories .listing-category {
+    color: #98C1D9;
+    }
