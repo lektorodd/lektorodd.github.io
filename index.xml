@@ -10,7 +10,1159 @@
 <atom:link href="https://lektorodd.github.io/index.xml" rel="self" type="application/rss+xml"/>
 <description>Blogg om digitale tips og triks i skulen</description>
 <generator>quarto-1.2.280</generator>
-<lastBuildDate>Sun, 26 Mar 2023 22:00:00 GMT</lastBuildDate>
+<lastBuildDate>Mon, 24 Apr 2023 22:00:00 GMT</lastBuildDate>
+<item>
+  <title>Jordskjelvpython</title>
+  <dc:creator>Torodd F. Ottestad</dc:creator>
+  <link>https://lektorodd.github.io/posts/230425_jordskjelv/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<section id="jordskjelvprogrammering-i-geofag-1" class="level1">
+<h1>Jordskjelvprogrammering i geofag 1</h1>
+<p>I dette opplegget tek me utgangspunkt i store mengdar ekte jordskjelvdata. Desse vil me systematisera og visualisera ved hjelp av biblioteket <code>geopandas</code> i Python <span class="emoji" data-emoji="snake">🐍</span> <br> Døme på ein av figurane me kjem til å laga ser du under.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://lektorodd.github.io/posts/230425_jordskjelv/jordskjelv_stillehavet_djupne.png" class="img-fluid figure-img" style="width:75.0%"></p>
+<p></p><figcaption class="figure-caption"><span class="emoji" data-emoji="camera">📷</span> Døme på figur</figcaption><p></p>
+</figure>
+</div>
+<div class="callout-warning callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Merk
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For å gjennomføra denne øvinga treng ein biblioteket <code>geopandas</code>. Viss ein nyttar <code>anaconda</code> eller <code>miniconda</code> så er det enklaste å laga eit eige <code>enviroment</code> for å ikkje klussa til den «vanlege» python-installasjonen. Oppskrifta du finn <a href="https://geopandas.org/en/stable/getting_started/install.html">her</a>, funkar fint!</p>
+</div>
+</div>
+<section id="laste-ned-data" class="level2">
+<h2 class="anchored" data-anchor-id="laste-ned-data">Laste ned data</h2>
+<p>Først treng me eit datasett. USGS har ein eigen «jordskjelvkatalog» der ein kan søka etter og lasta ned jordskjelvdata. Katalogen finn du <a href="https://earthquake.usgs.gov/earthquakes/search/">her</a>.</p>
+<p>Det meste ein kan lasta ned er 20 000 jordskjelv, så me må gjera nokre val i innstillingane for å få dekka eit lengre tidsrom.</p>
+<p><strong>Basic options</strong> <br> <strong><code>Magnitude</code></strong> bør ha <code>Minimum</code> sett til 5,5. <br> <strong><code>Date &amp; Time</code></strong> sin <code>Start</code> bør vera så tidleg som mogleg (gjerne 1950 berre for å ta litt i…) <br> <strong><code>Geographic Region</code></strong> står på <code>World</code></p>
+<p><strong>Output options</strong> <br> <strong><code>Format</code></strong> <span class="emoji" data-emoji="arrow_right">➡️</span> <code>csv</code> <br> <strong><code>Order By</code></strong> <span class="emoji" data-emoji="arrow_right">➡️</span> <code>Time - Newest First</code> <br> <strong><code>Limit Results</code></strong> bør ha <code>Number of Events</code> sett til 20000 (for å unngå feilmelding om for mange treff)</p>
+<p>Den nedlasta fila bør ligga i same mappe som Jupyter-notatboka (eller <code>.py</code>-fila). For å gjera det enklare for oss sjølv kan me òg endra namn på fila til <code>skjelv.csv</code> eller liknande.</p>
+<p><span class="emoji" data-emoji="green_circle">🟢</span> Eg tilrår på det sterkaste å gjera denne type programmering/utforsking i ei Jupyter-notatbok</p>
+</section>
+<section id="innlesing-av-data" class="level2">
+<h2 class="anchored" data-anchor-id="innlesing-av-data">Innlesing av data</h2>
+<p>Me startar med å importere naudsynte bibliotek.</p>
+<div class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;">import</span> pandas <span class="im" style="color: #00769E;">as</span> pd</span>
+<span id="cb1-2"><span class="im" style="color: #00769E;">import</span> geopandas <span class="im" style="color: #00769E;">as</span> gpd</span>
+<span id="cb1-3"><span class="im" style="color: #00769E;">import</span> numpy <span class="im" style="color: #00769E;">as</span> np</span>
+<span id="cb1-4"><span class="im" style="color: #00769E;">import</span> matplotlib.pyplot <span class="im" style="color: #00769E;">as</span> plt</span></code></pre></div>
+</div>
+<p>Bruker så <code>pandas</code> for å lesa inn <code>csv</code>-fila.</p>
+<div class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1">skjelv <span class="op" style="color: #5E5E5E;">=</span> pd.read_csv(<span class="st" style="color: #20794D;">"skjelv.csv"</span>)</span></code></pre></div>
+</div>
+<p>Undersøker korleis den innleste tabellen ser ut</p>
+<div class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1">skjelv.shape</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<pre><code>(20000, 22)</code></pre>
+</div>
+</div>
+<p><code>(20000, 22)</code> betyr altså at me her har ein tabell med 20 000 rader og 22 kolonner. Ser på dei fem første radene i tabellen.</p>
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1">skjelv.head()</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>time</th>
+      <th>latitude</th>
+      <th>longitude</th>
+      <th>depth</th>
+      <th>mag</th>
+      <th>magType</th>
+      <th>nst</th>
+      <th>gap</th>
+      <th>dmin</th>
+      <th>rms</th>
+      <th>...</th>
+      <th>updated</th>
+      <th>place</th>
+      <th>type</th>
+      <th>horizontalError</th>
+      <th>depthError</th>
+      <th>magError</th>
+      <th>magNst</th>
+      <th>status</th>
+      <th>locationSource</th>
+      <th>magSource</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2023-04-24T20:00:55.086Z</td>
+      <td>-0.7810</td>
+      <td>98.5339</td>
+      <td>15.462</td>
+      <td>7.1</td>
+      <td>mww</td>
+      <td>70.0</td>
+      <td>58.0</td>
+      <td>2.282</td>
+      <td>0.91</td>
+      <td>...</td>
+      <td>2023-04-25T07:46:47.683Z</td>
+      <td>170 km SSE of Teluk Dalam, Indonesia</td>
+      <td>earthquake</td>
+      <td>7.35</td>
+      <td>3.944</td>
+      <td>0.060</td>
+      <td>27.0</td>
+      <td>reviewed</td>
+      <td>us</td>
+      <td>us</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2023-04-24T02:17:56.596Z</td>
+      <td>-60.3893</td>
+      <td>-26.1923</td>
+      <td>10.000</td>
+      <td>5.6</td>
+      <td>mb</td>
+      <td>80.0</td>
+      <td>68.0</td>
+      <td>19.029</td>
+      <td>0.60</td>
+      <td>...</td>
+      <td>2023-04-25T02:21:51.035Z</td>
+      <td>South Sandwich Islands region</td>
+      <td>earthquake</td>
+      <td>11.61</td>
+      <td>1.868</td>
+      <td>0.054</td>
+      <td>120.0</td>
+      <td>reviewed</td>
+      <td>us</td>
+      <td>us</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2023-04-24T00:41:55.460Z</td>
+      <td>-29.9676</td>
+      <td>-177.8264</td>
+      <td>43.063</td>
+      <td>7.1</td>
+      <td>mww</td>
+      <td>126.0</td>
+      <td>23.0</td>
+      <td>0.708</td>
+      <td>0.50</td>
+      <td>...</td>
+      <td>2023-04-25T00:46:45.081Z</td>
+      <td>NaN</td>
+      <td>earthquake</td>
+      <td>8.37</td>
+      <td>4.305</td>
+      <td>0.048</td>
+      <td>42.0</td>
+      <td>reviewed</td>
+      <td>us</td>
+      <td>us</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2023-04-22T21:17:45.986Z</td>
+      <td>-0.9589</td>
+      <td>98.4839</td>
+      <td>10.000</td>
+      <td>5.7</td>
+      <td>mww</td>
+      <td>124.0</td>
+      <td>53.0</td>
+      <td>2.424</td>
+      <td>0.74</td>
+      <td>...</td>
+      <td>2023-04-23T21:21:04.014Z</td>
+      <td>170 km NW of Tuapejat, Indonesia</td>
+      <td>earthquake</td>
+      <td>7.18</td>
+      <td>1.806</td>
+      <td>0.060</td>
+      <td>27.0</td>
+      <td>reviewed</td>
+      <td>us</td>
+      <td>us</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2023-04-22T17:09:45.448Z</td>
+      <td>-0.7645</td>
+      <td>98.5780</td>
+      <td>27.385</td>
+      <td>5.8</td>
+      <td>mww</td>
+      <td>178.0</td>
+      <td>34.0</td>
+      <td>2.286</td>
+      <td>0.80</td>
+      <td>...</td>
+      <td>2023-04-23T17:12:44.119Z</td>
+      <td>Kepulauan Batu, Indonesia</td>
+      <td>earthquake</td>
+      <td>7.17</td>
+      <td>3.202</td>
+      <td>0.054</td>
+      <td>33.0</td>
+      <td>reviewed</td>
+      <td>us</td>
+      <td>us</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 22 columns</p>
+</div>
+</div>
+</div>
+<p>Me kan sjå litt nærare på dei statistikk frå dei numeriske kolonnene med å bruka <code>describe()</code></p>
+<div class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1">skjelv.describe()</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>latitude</th>
+      <th>longitude</th>
+      <th>depth</th>
+      <th>mag</th>
+      <th>nst</th>
+      <th>gap</th>
+      <th>dmin</th>
+      <th>rms</th>
+      <th>horizontalError</th>
+      <th>depthError</th>
+      <th>magError</th>
+      <th>magNst</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>20000.000000</td>
+      <td>20000.000000</td>
+      <td>20000.000000</td>
+      <td>20000.000000</td>
+      <td>7472.000000</td>
+      <td>10086.000000</td>
+      <td>4430.000000</td>
+      <td>19759.000000</td>
+      <td>3972.000000</td>
+      <td>7242.000000</td>
+      <td>3136.000000</td>
+      <td>4912.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>-0.308104</td>
+      <td>33.349754</td>
+      <td>70.485546</td>
+      <td>5.873034</td>
+      <td>267.023555</td>
+      <td>43.510441</td>
+      <td>4.347339</td>
+      <td>0.998922</td>
+      <td>7.115259</td>
+      <td>3.991525</td>
+      <td>0.059346</td>
+      <td>49.099959</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>30.063869</td>
+      <td>126.560024</td>
+      <td>127.629767</td>
+      <td>0.420587</td>
+      <td>160.409087</td>
+      <td>28.936826</td>
+      <td>5.492807</td>
+      <td>0.203466</td>
+      <td>2.309055</td>
+      <td>7.902934</td>
+      <td>0.031396</td>
+      <td>62.611998</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>-77.080000</td>
+      <td>-179.997000</td>
+      <td>-3.000000</td>
+      <td>5.500000</td>
+      <td>0.000000</td>
+      <td>8.000000</td>
+      <td>0.008000</td>
+      <td>0.040000</td>
+      <td>0.085000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>-20.436500</td>
+      <td>-82.415450</td>
+      <td>10.000000</td>
+      <td>5.600000</td>
+      <td>138.000000</td>
+      <td>24.000000</td>
+      <td>1.167250</td>
+      <td>0.880000</td>
+      <td>5.800000</td>
+      <td>1.800000</td>
+      <td>0.046000</td>
+      <td>19.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>-4.496500</td>
+      <td>96.297000</td>
+      <td>31.700000</td>
+      <td>5.700000</td>
+      <td>242.000000</td>
+      <td>36.000000</td>
+      <td>2.535000</td>
+      <td>1.000000</td>
+      <td>7.100000</td>
+      <td>2.000000</td>
+      <td>0.055000</td>
+      <td>33.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>22.324750</td>
+      <td>143.512750</td>
+      <td>50.300000</td>
+      <td>6.000000</td>
+      <td>372.000000</td>
+      <td>54.000000</td>
+      <td>5.144000</td>
+      <td>1.110000</td>
+      <td>8.500000</td>
+      <td>4.400000</td>
+      <td>0.068000</td>
+      <td>56.250000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>86.922900</td>
+      <td>179.998100</td>
+      <td>700.000000</td>
+      <td>9.100000</td>
+      <td>934.000000</td>
+      <td>313.000000</td>
+      <td>39.730000</td>
+      <td>2.820000</td>
+      <td>15.800000</td>
+      <td>569.200000</td>
+      <td>0.700000</td>
+      <td>941.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<p>I kolonna <code>mag</code> (styrken) ser me at både gjennomsnittet (5,87) og medianen (5,7) er ganske låge. Hugs på at den lågaste verdien her er 5,5. Tala viser oss at 50% av dei 20000 skjelva er mellom 5,5 og 5,7 i styrke. Me ser òg at gjennomsnittsdjupna på skjelva er ca. 70,5 km (<code>depth</code>).</p>
+<p>Som me har sett over har tabellen mange kolonner, ikkje alle er like relevante for oss. Me kan sortera ut dei me treng vidare. Skriv først ut ei liste med kolonnenamn for å få oversikt over alle kolonnene.</p>
+<div class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1">skjelv.columns</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<pre><code>Index(['time', 'latitude', 'longitude', 'depth', 'mag', 'magType', 'nst',
+       'gap', 'dmin', 'rms', 'net', 'id', 'updated', 'place', 'type',
+       'horizontalError', 'depthError', 'magError', 'magNst', 'status',
+       'locationSource', 'magSource'],
+      dtype='object')</code></pre>
+</div>
+</div>
+</section>
+<section id="sortere-i-datamaterialet" class="level2">
+<h2 class="anchored" data-anchor-id="sortere-i-datamaterialet">Sortere i datamaterialet</h2>
+<p>Det første me gjer er å luka ut dei radene som ikkje er jordskjelv. I koden under tek me kun vare på dei radene der <code>type</code> er <code>earthquake</code>.</p>
+<div class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1">skjelv <span class="op" style="color: #5E5E5E;">=</span> skjelv[skjelv[<span class="st" style="color: #20794D;">"type"</span>] <span class="op" style="color: #5E5E5E;">==</span> <span class="st" style="color: #20794D;">"earthquake"</span>]</span>
+<span id="cb9-2">skjelv.shape</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="8">
+<pre><code>(19890, 22)</code></pre>
+</div>
+</div>
+<p>Me ser at tabellen vart nokre rader kortare.</p>
+<p>Plukker ut dei mest relevante kolonnene. Dato, lengde- og breddegrad, djupne og styrke:</p>
+<div class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1">skjelv <span class="op" style="color: #5E5E5E;">=</span> skjelv[[<span class="st" style="color: #20794D;">"time"</span>, <span class="st" style="color: #20794D;">"latitude"</span>, <span class="st" style="color: #20794D;">"longitude"</span>, <span class="st" style="color: #20794D;">"depth"</span>, <span class="st" style="color: #20794D;">"mag"</span>]]</span>
+<span id="cb11-2">skjelv.head()</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>time</th>
+      <th>latitude</th>
+      <th>longitude</th>
+      <th>depth</th>
+      <th>mag</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2023-04-24T20:00:55.086Z</td>
+      <td>-0.7810</td>
+      <td>98.5339</td>
+      <td>15.462</td>
+      <td>7.1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2023-04-24T02:17:56.596Z</td>
+      <td>-60.3893</td>
+      <td>-26.1923</td>
+      <td>10.000</td>
+      <td>5.6</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2023-04-24T00:41:55.460Z</td>
+      <td>-29.9676</td>
+      <td>-177.8264</td>
+      <td>43.063</td>
+      <td>7.1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2023-04-22T21:17:45.986Z</td>
+      <td>-0.9589</td>
+      <td>98.4839</td>
+      <td>10.000</td>
+      <td>5.7</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2023-04-22T17:09:45.448Z</td>
+      <td>-0.7645</td>
+      <td>98.5780</td>
+      <td>27.385</td>
+      <td>5.8</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<p>Sjekkar for ordens skuld kva tid det første skjelvet er frå. Ser på dei siste 5 radene i tabellen.</p>
+<div class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb12" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1">skjelv.tail(<span class="dv" style="color: #AD0000;">5</span>)</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="17">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>time</th>
+      <th>latitude</th>
+      <th>longitude</th>
+      <th>depth</th>
+      <th>mag</th>
+      <th>geometry</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>19994</th>
+      <td>1982-08-06T20:46:13.910Z</td>
+      <td>-8.319</td>
+      <td>120.416</td>
+      <td>49.9</td>
+      <td>5.5</td>
+      <td>POINT (120.41600 -8.31900)</td>
+    </tr>
+    <tr>
+      <th>19995</th>
+      <td>1982-08-06T20:40:52.200Z</td>
+      <td>-8.375</td>
+      <td>120.577</td>
+      <td>45.7</td>
+      <td>5.9</td>
+      <td>POINT (120.57700 -8.37500)</td>
+    </tr>
+    <tr>
+      <th>19996</th>
+      <td>1982-08-05T20:42:07.300Z</td>
+      <td>-12.347</td>
+      <td>166.247</td>
+      <td>20.0</td>
+      <td>5.5</td>
+      <td>POINT (166.24700 -12.34700)</td>
+    </tr>
+    <tr>
+      <th>19997</th>
+      <td>1982-08-05T20:32:52.950Z</td>
+      <td>-12.597</td>
+      <td>165.931</td>
+      <td>30.7</td>
+      <td>7.0</td>
+      <td>POINT (165.93100 -12.59700)</td>
+    </tr>
+    <tr>
+      <th>19999</th>
+      <td>1982-08-05T07:28:08.810Z</td>
+      <td>-5.767</td>
+      <td>146.567</td>
+      <td>113.0</td>
+      <td>5.6</td>
+      <td>POINT (146.56700 -5.76700)</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<section id="visuell-oversikt-over-tabellen" class="level3">
+<h3 class="anchored" data-anchor-id="visuell-oversikt-over-tabellen">Visuell oversikt over tabellen</h3>
+<p>For å sjå (og presentera) fordelinga av styrke og djupne kan me t.d. laga heilt enkle boksplot. Startar med eit for styrken <span class="emoji" data-emoji="muscle">💪</span></p>
+<div class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1">boksplot <span class="op" style="color: #5E5E5E;">=</span> skjelv.boxplot(column <span class="op" style="color: #5E5E5E;">=</span> <span class="st" style="color: #20794D;">"mag"</span>, figsize <span class="op" style="color: #5E5E5E;">=</span> (<span class="dv" style="color: #AD0000;">6</span>,<span class="dv" style="color: #AD0000;">6</span>), color <span class="op" style="color: #5E5E5E;">=</span> <span class="st" style="color: #20794D;">"red"</span>)</span>
+<span id="cb13-2">plt.title(<span class="st" style="color: #20794D;">"Boksplott over styrkene på skjelva"</span>, fontsize <span class="op" style="color: #5E5E5E;">=</span> <span class="dv" style="color: #AD0000;">20</span>)</span>
+<span id="cb13-3">plt.ylabel(<span class="st" style="color: #20794D;">"Magnitude"</span>, fontsize <span class="op" style="color: #5E5E5E;">=</span> <span class="dv" style="color: #AD0000;">16</span>)</span>
+<span id="cb13-4">plt.show()</span></code></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="https://lektorodd.github.io/posts/230425_jordskjelv/index_files/figure-html/cell-11-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+<p>Figuren her viser at jordskjelva i all hovudsak er mellom 5,5 og ca. 6,6. Dei sterkare skjelva er så få at dei vert sett på som avvik (<em>outliers</em>).</p>
+<div class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb14" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1">boksplot <span class="op" style="color: #5E5E5E;">=</span> skjelv.boxplot(column <span class="op" style="color: #5E5E5E;">=</span> <span class="st" style="color: #20794D;">"depth"</span>, figsize <span class="op" style="color: #5E5E5E;">=</span> (<span class="dv" style="color: #AD0000;">6</span>,<span class="dv" style="color: #AD0000;">6</span>), color <span class="op" style="color: #5E5E5E;">=</span> <span class="st" style="color: #20794D;">"red"</span>)</span>
+<span id="cb14-2">plt.title(<span class="st" style="color: #20794D;">"Boksplott over djupne på skjelva"</span>, fontsize <span class="op" style="color: #5E5E5E;">=</span> <span class="dv" style="color: #AD0000;">20</span>)</span>
+<span id="cb14-3">plt.ylabel(<span class="st" style="color: #20794D;">"Djupne (km)"</span>, fontsize <span class="op" style="color: #5E5E5E;">=</span> <span class="dv" style="color: #AD0000;">16</span>)</span>
+<span id="cb14-4">plt.show()</span></code></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="https://lektorodd.github.io/posts/230425_jordskjelv/index_files/figure-html/cell-12-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+<p>Figuren for djune viser oss at dei aller fleste skjelva er mellom 0 og 110 km djupe.</p>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tips til meir visualisering <span class="emoji" data-emoji="eyes">👀</span>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Det går an å prøva seg fram med ulike visualiseringar, feks. histogram/stolpediagram. Eventuelt kan ein sjekka ut <code>seaborn</code> <a href="https://seaborn.pydata.org"><em>dokumentasjon her</em></a> og laga enno fleire fancy figurar, feks. fiolinplot eller andre fine oversikter.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="geodataframe" class="level2">
+<h2 class="anchored" data-anchor-id="geodataframe">GeoDataFrame</h2>
+<p>Først lagar me ei <code>geodataframe</code> frå vår opprinnelege <code>dataframe</code> (skjelv). Forskjellen på desse to er at førstnevnte har ei eigen kolonne <code>geometry</code>, som er punkt, linjer eller flater. I dette tilfelet punkt, som <code>geopandas</code> finn i lengde- og breiddegrad-kolonnene.</p>
+<div class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb15" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1">skjelv_gdf <span class="op" style="color: #5E5E5E;">=</span> gpd.GeoDataFrame(</span>
+<span id="cb15-2">    skjelv, </span>
+<span id="cb15-3">    geometry <span class="op" style="color: #5E5E5E;">=</span> gpd.points_from_xy(</span>
+<span id="cb15-4">        skjelv.longitude, </span>
+<span id="cb15-5">        skjelv.latitude</span>
+<span id="cb15-6">        )</span>
+<span id="cb15-7">    )</span>
+<span id="cb15-8">skjelv_gdf.head()</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="16">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>time</th>
+      <th>latitude</th>
+      <th>longitude</th>
+      <th>depth</th>
+      <th>mag</th>
+      <th>geometry</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2023-04-24T20:00:55.086Z</td>
+      <td>-0.7810</td>
+      <td>98.5339</td>
+      <td>15.462</td>
+      <td>7.1</td>
+      <td>POINT (98.53390 -0.78100)</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2023-04-24T02:17:56.596Z</td>
+      <td>-60.3893</td>
+      <td>-26.1923</td>
+      <td>10.000</td>
+      <td>5.6</td>
+      <td>POINT (-26.19230 -60.38930)</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2023-04-24T00:41:55.460Z</td>
+      <td>-29.9676</td>
+      <td>-177.8264</td>
+      <td>43.063</td>
+      <td>7.1</td>
+      <td>POINT (-177.82640 -29.96760)</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2023-04-22T21:17:45.986Z</td>
+      <td>-0.9589</td>
+      <td>98.4839</td>
+      <td>10.000</td>
+      <td>5.7</td>
+      <td>POINT (98.48390 -0.95890)</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2023-04-22T17:09:45.448Z</td>
+      <td>-0.7645</td>
+      <td>98.5780</td>
+      <td>27.385</td>
+      <td>5.8</td>
+      <td>POINT (98.57800 -0.76450)</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="plotting" class="level2">
+<h2 class="anchored" data-anchor-id="plotting">Plotting</h2>
+<p>No er alt klart for å starta med plotting. Me lagar eit <em>basekart</em> av verda og plottar jordskjelva oppå dette.</p>
+<div class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb16" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><span class="co" style="color: #5E5E5E;"># bakgrunnskart - data</span></span>
+<span id="cb16-2">world <span class="op" style="color: #5E5E5E;">=</span> gpd.read_file(gpd.datasets.get_path(<span class="st" style="color: #20794D;">"naturalearth_lowres"</span>))</span>
+<span id="cb16-3"></span>
+<span id="cb16-4"><span class="co" style="color: #5E5E5E;"># plotte bakgrunnskart</span></span>
+<span id="cb16-5">base <span class="op" style="color: #5E5E5E;">=</span> world.plot(color <span class="op" style="color: #5E5E5E;">=</span> <span class="st" style="color: #20794D;">"linen"</span>, </span>
+<span id="cb16-6">                  edgecolor <span class="op" style="color: #5E5E5E;">=</span> <span class="st" style="color: #20794D;">"gray"</span>, </span>
+<span id="cb16-7">                  figsize <span class="op" style="color: #5E5E5E;">=</span> (<span class="dv" style="color: #AD0000;">15</span>, <span class="dv" style="color: #AD0000;">8</span>)</span>
+<span id="cb16-8">                 )</span>
+<span id="cb16-9"></span>
+<span id="cb16-10">skjelv_gdf.plot(ax <span class="op" style="color: #5E5E5E;">=</span> base, markersize <span class="op" style="color: #5E5E5E;">=</span> <span class="dv" style="color: #AD0000;">2</span>) </span>
+<span id="cb16-11"></span>
+<span id="cb16-12">plt.title(<span class="st" style="color: #20794D;">"Jordskjelv sterkare enn 5,5 frå 1982 - 2023"</span>, fontsize <span class="op" style="color: #5E5E5E;">=</span> <span class="dv" style="color: #AD0000;">18</span>)</span>
+<span id="cb16-13">plt.show()</span></code></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="https://lektorodd.github.io/posts/230425_jordskjelv/index_files/figure-html/cell-14-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+<section id="variable-storleik-på-markørane" class="level3">
+<h3 class="anchored" data-anchor-id="variable-storleik-på-markørane">Variable storleik på markørane</h3>
+<p>For å få fram ulikskapar mellom skjelva kan me plotta punkta slik at dei vert større di sterkare skjelva dei representerer er. Skjelva er frå 5.5 til 9.1 i styrke. Legg til ei ny kolonne i tabellen for storleik på markør. For at den skal gå frå 1 og oppover, trekk me 4,5 frå verdien til <code>mag</code>.</p>
+<div class="cell" data-execution_count="41">
+<div class="sourceCode cell-code" id="cb17" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1">skjelv_gdf[<span class="st" style="color: #20794D;">"markør"</span>] <span class="op" style="color: #5E5E5E;">=</span> skjelv_gdf[<span class="st" style="color: #20794D;">"mag"</span>] <span class="op" style="color: #5E5E5E;">-</span> <span class="fl" style="color: #AD0000;">4.5</span></span>
+<span id="cb17-2">skjelv_gdf.head()</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="41">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>time</th>
+      <th>latitude</th>
+      <th>longitude</th>
+      <th>depth</th>
+      <th>mag</th>
+      <th>geometry</th>
+      <th>markør</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2023-04-24T20:00:55.086Z</td>
+      <td>-0.7810</td>
+      <td>98.5339</td>
+      <td>15.462</td>
+      <td>7.1</td>
+      <td>POINT (98.53390 -0.78100)</td>
+      <td>2.6</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2023-04-24T02:17:56.596Z</td>
+      <td>-60.3893</td>
+      <td>-26.1923</td>
+      <td>10.000</td>
+      <td>5.6</td>
+      <td>POINT (-26.19230 -60.38930)</td>
+      <td>1.1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2023-04-24T00:41:55.460Z</td>
+      <td>-29.9676</td>
+      <td>-177.8264</td>
+      <td>43.063</td>
+      <td>7.1</td>
+      <td>POINT (-177.82640 -29.96760)</td>
+      <td>2.6</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2023-04-22T21:17:45.986Z</td>
+      <td>-0.9589</td>
+      <td>98.4839</td>
+      <td>10.000</td>
+      <td>5.7</td>
+      <td>POINT (98.48390 -0.95890)</td>
+      <td>1.2</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2023-04-22T17:09:45.448Z</td>
+      <td>-0.7645</td>
+      <td>98.5780</td>
+      <td>27.385</td>
+      <td>5.8</td>
+      <td>POINT (98.57800 -0.76450)</td>
+      <td>1.3</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<p>Plottar på nytt. Merk at me endrar typen til <code>scatter</code> som gjer at markørstorleiken får eit anna argument <code>s</code> i staden for <code>markersize</code>. Prøv deg gjerne fram for å finna ein fin verdi for storleiken. Eg endte opp med <code>3*skjelv_gdf["markør"]**4</code>.</p>
+<div class="cell" data-execution_count="64">
+<div class="sourceCode cell-code" id="cb18" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><span class="co" style="color: #5E5E5E;"># bakgrunnskart</span></span>
+<span id="cb18-2">world <span class="op" style="color: #5E5E5E;">=</span> gpd.read_file(gpd.datasets.get_path(<span class="st" style="color: #20794D;">"naturalearth_lowres"</span>))</span>
+<span id="cb18-3"></span>
+<span id="cb18-4">base <span class="op" style="color: #5E5E5E;">=</span> world.plot(color <span class="op" style="color: #5E5E5E;">=</span> <span class="st" style="color: #20794D;">"bisque"</span>, </span>
+<span id="cb18-5">                  edgecolor <span class="op" style="color: #5E5E5E;">=</span> <span class="st" style="color: #20794D;">"gray"</span>, </span>
+<span id="cb18-6">                  figsize <span class="op" style="color: #5E5E5E;">=</span> (<span class="dv" style="color: #AD0000;">14</span>, <span class="dv" style="color: #AD0000;">8</span>)</span>
+<span id="cb18-7">                 )</span>
+<span id="cb18-8"></span>
+<span id="cb18-9"><span class="co" style="color: #5E5E5E;"># plottar skjelva</span></span>
+<span id="cb18-10">skjelv_gdf.plot(ax <span class="op" style="color: #5E5E5E;">=</span> base, </span>
+<span id="cb18-11">                kind <span class="op" style="color: #5E5E5E;">=</span> <span class="st" style="color: #20794D;">"scatter"</span>, </span>
+<span id="cb18-12">                x <span class="op" style="color: #5E5E5E;">=</span> <span class="st" style="color: #20794D;">"longitude"</span>, </span>
+<span id="cb18-13">                y <span class="op" style="color: #5E5E5E;">=</span> <span class="st" style="color: #20794D;">"latitude"</span>,</span>
+<span id="cb18-14">                marker <span class="op" style="color: #5E5E5E;">=</span> <span class="st" style="color: #20794D;">"o"</span>,</span>
+<span id="cb18-15">                color <span class="op" style="color: #5E5E5E;">=</span> <span class="st" style="color: #20794D;">"salmon"</span>,</span>
+<span id="cb18-16">                s <span class="op" style="color: #5E5E5E;">=</span> <span class="dv" style="color: #AD0000;">3</span><span class="op" style="color: #5E5E5E;">*</span>skjelv_gdf[<span class="st" style="color: #20794D;">"markør"</span>]<span class="op" style="color: #5E5E5E;">**</span><span class="dv" style="color: #AD0000;">4</span>, <span class="co" style="color: #5E5E5E;"># størrelse på pkt. </span></span>
+<span id="cb18-17">                edgecolor <span class="op" style="color: #5E5E5E;">=</span> <span class="st" style="color: #20794D;">"maroon"</span>,</span>
+<span id="cb18-18">                alpha <span class="op" style="color: #5E5E5E;">=</span> <span class="fl" style="color: #AD0000;">0.6</span> <span class="co" style="color: #5E5E5E;"># gjennomsiktighet</span></span>
+<span id="cb18-19">               )</span>
+<span id="cb18-20"></span>
+<span id="cb18-21">plt.title(<span class="st" style="color: #20794D;">"Jordskjelv sterkare enn 5,5 frå 1982 - 2023 </span><span class="ch" style="color: #20794D;">\n</span><span class="st" style="color: #20794D;">"</span>, fontsize <span class="op" style="color: #5E5E5E;">=</span> <span class="dv" style="color: #AD0000;">22</span>)</span>
+<span id="cb18-22">plt.xlabel(<span class="st" style="color: #20794D;">"Lengdegrad"</span>, fontsize <span class="op" style="color: #5E5E5E;">=</span> <span class="dv" style="color: #AD0000;">16</span>)</span>
+<span id="cb18-23">plt.ylabel(<span class="st" style="color: #20794D;">"Breiddegrad"</span>, fontsize <span class="op" style="color: #5E5E5E;">=</span> <span class="dv" style="color: #AD0000;">16</span>)</span>
+<span id="cb18-24"><span class="co" style="color: #5E5E5E;">#plt.savefig("jordskjelv_verda_styrke.png", dpi = 300) # &lt;-- bruk denne for å lagra figuren</span></span>
+<span id="cb18-25">plt.show()</span></code></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="https://lektorodd.github.io/posts/230425_jordskjelv/index_files/figure-html/cell-16-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="avgrense-område" class="level2">
+<h2 class="anchored" data-anchor-id="avgrense-område">Avgrense område</h2>
+<p>For å få betre oversikt kan me zooma inn på eit avgrensa område av jorda. Me kan t.d. sjå på områda rundt Indonesia. Les av omtrentlege lengde- og breddegrader på oversiktskartet. Legg avgrensingane inn som eigne variablar, slik at det er lett å endra dei seinare.</p>
+<div class="cell" data-execution_count="54">
+<div class="sourceCode cell-code" id="cb19" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><span class="co" style="color: #5E5E5E;"># Avgrensingar for rådata og kartplotting</span></span>
+<span id="cb19-2">lat_min <span class="op" style="color: #5E5E5E;">=</span> <span class="op" style="color: #5E5E5E;">-</span><span class="dv" style="color: #AD0000;">25</span></span>
+<span id="cb19-3">lat_maks <span class="op" style="color: #5E5E5E;">=</span> <span class="dv" style="color: #AD0000;">60</span></span>
+<span id="cb19-4">long_min <span class="op" style="color: #5E5E5E;">=</span> <span class="dv" style="color: #AD0000;">80</span></span>
+<span id="cb19-5">long_maks <span class="op" style="color: #5E5E5E;">=</span> <span class="dv" style="color: #AD0000;">170</span></span></code></pre></div>
+</div>
+<p>Bruker vidare avgrensingane til å sortera ut ein eigen tabell med dei aktuelle skjelva.</p>
+<div class="cell" data-execution_count="57">
+<div class="sourceCode cell-code" id="cb20" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><span class="co" style="color: #5E5E5E;"># lagar ny gdf til avgrensa område</span></span>
+<span id="cb20-2">område_skjelv <span class="op" style="color: #5E5E5E;">=</span> skjelv_gdf[(skjelv_gdf.latitude <span class="op" style="color: #5E5E5E;">&gt;</span> lat_min) </span>
+<span id="cb20-3">                           <span class="op" style="color: #5E5E5E;">&amp;</span> (skjelv_gdf.latitude <span class="op" style="color: #5E5E5E;">&lt;</span> lat_maks)</span>
+<span id="cb20-4">                           <span class="op" style="color: #5E5E5E;">&amp;</span> (skjelv_gdf.longitude <span class="op" style="color: #5E5E5E;">&gt;</span> long_min) </span>
+<span id="cb20-5">                           <span class="op" style="color: #5E5E5E;">&amp;</span> (skjelv_gdf.longitude <span class="op" style="color: #5E5E5E;">&lt;</span> long_maks)</span>
+<span id="cb20-6">                          ]</span>
+<span id="cb20-7"></span>
+<span id="cb20-8">område_skjelv.shape</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="57">
+<pre><code>(9302, 7)</code></pre>
+</div>
+</div>
+<p>Her ser me at me framleis har 9302 skjelv i tabellen, så omlag halvparten av dei 20 000 skjelva er frå det avgrensa området. Tar me ein kikk på dei 10 første linjene så ser me at indeksen ikkje er heilt i orden.</p>
+<div class="cell" data-execution_count="59">
+<div class="sourceCode cell-code" id="cb22" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1">område_skjelv.head(<span class="dv" style="color: #AD0000;">10</span>)</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="59">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>time</th>
+      <th>latitude</th>
+      <th>longitude</th>
+      <th>depth</th>
+      <th>mag</th>
+      <th>geometry</th>
+      <th>markør</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2023-04-24T20:00:55.086Z</td>
+      <td>-0.7810</td>
+      <td>98.5339</td>
+      <td>15.462</td>
+      <td>7.1</td>
+      <td>POINT (98.53390 -0.78100)</td>
+      <td>2.6</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2023-04-22T21:17:45.986Z</td>
+      <td>-0.9589</td>
+      <td>98.4839</td>
+      <td>10.000</td>
+      <td>5.7</td>
+      <td>POINT (98.48390 -0.95890)</td>
+      <td>1.2</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2023-04-22T17:09:45.448Z</td>
+      <td>-0.7645</td>
+      <td>98.5780</td>
+      <td>27.385</td>
+      <td>5.8</td>
+      <td>POINT (98.57800 -0.76450)</td>
+      <td>1.3</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2023-04-22T09:15:54.527Z</td>
+      <td>-5.3425</td>
+      <td>125.6370</td>
+      <td>20.667</td>
+      <td>5.5</td>
+      <td>POINT (125.63700 -5.34250)</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>2023-04-22T08:23:42.518Z</td>
+      <td>-5.2697</td>
+      <td>125.5950</td>
+      <td>7.270</td>
+      <td>6.0</td>
+      <td>POINT (125.59500 -5.26970)</td>
+      <td>1.5</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>2023-04-21T10:21:13.739Z</td>
+      <td>2.7929</td>
+      <td>127.0480</td>
+      <td>24.575</td>
+      <td>5.9</td>
+      <td>POINT (127.04800 2.79290)</td>
+      <td>1.4</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>2023-04-19T09:06:05.200Z</td>
+      <td>-5.9994</td>
+      <td>149.6062</td>
+      <td>55.674</td>
+      <td>6.3</td>
+      <td>POINT (149.60620 -5.99940)</td>
+      <td>1.8</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>2023-04-18T02:40:53.003Z</td>
+      <td>54.1600</td>
+      <td>159.9190</td>
+      <td>110.846</td>
+      <td>5.6</td>
+      <td>POINT (159.91900 54.16000)</td>
+      <td>1.1</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>2023-04-17T11:05:55.474Z</td>
+      <td>-4.8912</td>
+      <td>102.9538</td>
+      <td>58.386</td>
+      <td>5.5</td>
+      <td>POINT (102.95380 -4.89120)</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>2023-04-15T15:07:06.934Z</td>
+      <td>-4.8648</td>
+      <td>102.9744</td>
+      <td>56.688</td>
+      <td>5.5</td>
+      <td>POINT (102.97440 -4.86480)</td>
+      <td>1.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<p>Ikkje at det er veldig viktig no, men om me vil så kan me ordna dette lett.</p>
+<div class="cell" data-execution_count="60">
+<div class="sourceCode cell-code" id="cb23" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1">område_skjelv <span class="op" style="color: #5E5E5E;">=</span> område_skjelv.reset_index(drop<span class="op" style="color: #5E5E5E;">=</span><span class="va" style="color: #111111;">True</span>)</span>
+<span id="cb23-2">område_skjelv.head(<span class="dv" style="color: #AD0000;">10</span>)</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="60">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>time</th>
+      <th>latitude</th>
+      <th>longitude</th>
+      <th>depth</th>
+      <th>mag</th>
+      <th>geometry</th>
+      <th>markør</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2023-04-24T20:00:55.086Z</td>
+      <td>-0.7810</td>
+      <td>98.5339</td>
+      <td>15.462</td>
+      <td>7.1</td>
+      <td>POINT (98.53390 -0.78100)</td>
+      <td>2.6</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2023-04-22T21:17:45.986Z</td>
+      <td>-0.9589</td>
+      <td>98.4839</td>
+      <td>10.000</td>
+      <td>5.7</td>
+      <td>POINT (98.48390 -0.95890)</td>
+      <td>1.2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2023-04-22T17:09:45.448Z</td>
+      <td>-0.7645</td>
+      <td>98.5780</td>
+      <td>27.385</td>
+      <td>5.8</td>
+      <td>POINT (98.57800 -0.76450)</td>
+      <td>1.3</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2023-04-22T09:15:54.527Z</td>
+      <td>-5.3425</td>
+      <td>125.6370</td>
+      <td>20.667</td>
+      <td>5.5</td>
+      <td>POINT (125.63700 -5.34250)</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2023-04-22T08:23:42.518Z</td>
+      <td>-5.2697</td>
+      <td>125.5950</td>
+      <td>7.270</td>
+      <td>6.0</td>
+      <td>POINT (125.59500 -5.26970)</td>
+      <td>1.5</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2023-04-21T10:21:13.739Z</td>
+      <td>2.7929</td>
+      <td>127.0480</td>
+      <td>24.575</td>
+      <td>5.9</td>
+      <td>POINT (127.04800 2.79290)</td>
+      <td>1.4</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>2023-04-19T09:06:05.200Z</td>
+      <td>-5.9994</td>
+      <td>149.6062</td>
+      <td>55.674</td>
+      <td>6.3</td>
+      <td>POINT (149.60620 -5.99940)</td>
+      <td>1.8</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>2023-04-18T02:40:53.003Z</td>
+      <td>54.1600</td>
+      <td>159.9190</td>
+      <td>110.846</td>
+      <td>5.6</td>
+      <td>POINT (159.91900 54.16000)</td>
+      <td>1.1</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>2023-04-17T11:05:55.474Z</td>
+      <td>-4.8912</td>
+      <td>102.9538</td>
+      <td>58.386</td>
+      <td>5.5</td>
+      <td>POINT (102.95380 -4.89120)</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>2023-04-15T15:07:06.934Z</td>
+      <td>-4.8648</td>
+      <td>102.9744</td>
+      <td>56.688</td>
+      <td>5.5</td>
+      <td>POINT (102.97440 -4.86480)</td>
+      <td>1.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<section id="plotte-avgrensa-område" class="level3">
+<h3 class="anchored" data-anchor-id="plotte-avgrensa-område">Plotte avgrensa område</h3>
+<p>No kan me plotta det avgrensa området. Bruker variablane med grensene for å tilpassa bakgrunnskartet.</p>
+<div class="cell" data-execution_count="61">
+<div class="sourceCode cell-code" id="cb24" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1">base <span class="op" style="color: #5E5E5E;">=</span> world.plot(color<span class="op" style="color: #5E5E5E;">=</span><span class="st" style="color: #20794D;">"lightgrey"</span>,</span>
+<span id="cb24-2">                  edgecolor<span class="op" style="color: #5E5E5E;">=</span><span class="st" style="color: #20794D;">"black"</span>, </span>
+<span id="cb24-3">                  figsize<span class="op" style="color: #5E5E5E;">=</span>(<span class="dv" style="color: #AD0000;">8</span>,<span class="dv" style="color: #AD0000;">10</span>),</span>
+<span id="cb24-4">                 )</span>
+<span id="cb24-5"></span>
+<span id="cb24-6">base.set_ylim([lat_min, lat_maks])</span>
+<span id="cb24-7">base.set_xlim([long_min, long_maks])</span>
+<span id="cb24-8"></span>
+<span id="cb24-9">område_skjelv.plot(ax <span class="op" style="color: #5E5E5E;">=</span> base, </span>
+<span id="cb24-10">                   color <span class="op" style="color: #5E5E5E;">=</span> <span class="st" style="color: #20794D;">"red"</span>,</span>
+<span id="cb24-11">                   markersize <span class="op" style="color: #5E5E5E;">=</span> <span class="dv" style="color: #AD0000;">10</span></span>
+<span id="cb24-12">                  )</span>
+<span id="cb24-13"></span>
+<span id="cb24-14">plt.show()</span></code></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="https://lektorodd.github.io/posts/230425_jordskjelv/index_files/figure-html/cell-21-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+<p>På denne figuren ser me at det er nokre område der skjelva dekker breiare linjer enn ellers. Prøver å få fram kor djupe dei ulike skjelva er. Me deler inn datamaterialet i grunne, middels og djupe skjelv, med 30 km og 300 km som grenser mellom dei tre kategoriane.</p>
+<div class="cell" data-execution_count="65">
+<div class="sourceCode cell-code" id="cb25" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1">område_djup <span class="op" style="color: #5E5E5E;">=</span> område_skjelv[(område_skjelv.depth <span class="op" style="color: #5E5E5E;">&gt;</span> <span class="dv" style="color: #AD0000;">300</span>)]</span>
+<span id="cb25-2">område_middels <span class="op" style="color: #5E5E5E;">=</span> område_skjelv[(område_skjelv.depth <span class="op" style="color: #5E5E5E;">&lt;=</span> <span class="dv" style="color: #AD0000;">300</span>)</span>
+<span id="cb25-3">                               <span class="op" style="color: #5E5E5E;">&amp;</span> (område_skjelv.depth <span class="op" style="color: #5E5E5E;">&gt;</span> <span class="dv" style="color: #AD0000;">30</span>)]</span>
+<span id="cb25-4">område_grunn <span class="op" style="color: #5E5E5E;">=</span> område_skjelv[(område_skjelv.depth <span class="op" style="color: #5E5E5E;">&lt;=</span> <span class="dv" style="color: #AD0000;">30</span>)]</span></code></pre></div>
+</div>
+<p>Desse nye <code>gdf</code>-ane kan me plotta på oversiktskart over regionen:</p>
+<div class="cell" data-execution_count="67">
+<div class="sourceCode cell-code" id="cb26" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><span class="co" style="color: #5E5E5E;"># bakgrunnskart</span></span>
+<span id="cb26-2">base <span class="op" style="color: #5E5E5E;">=</span> world.plot(color<span class="op" style="color: #5E5E5E;">=</span><span class="st" style="color: #20794D;">"linen"</span>,</span>
+<span id="cb26-3">                  edgecolor<span class="op" style="color: #5E5E5E;">=</span><span class="st" style="color: #20794D;">"dimgray"</span>, </span>
+<span id="cb26-4">                  figsize<span class="op" style="color: #5E5E5E;">=</span>(<span class="dv" style="color: #AD0000;">9</span>,<span class="dv" style="color: #AD0000;">9</span>),</span>
+<span id="cb26-5">                 )</span>
+<span id="cb26-6"></span>
+<span id="cb26-7"><span class="co" style="color: #5E5E5E;"># avgrensing (til området)</span></span>
+<span id="cb26-8">base.set_ylim([lat_min, lat_maks])</span>
+<span id="cb26-9">base.set_xlim([long_min, long_maks])</span>
+<span id="cb26-10"></span>
+<span id="cb26-11"><span class="co" style="color: #5E5E5E;"># plotte skjelva</span></span>
+<span id="cb26-12">område_djup.plot(ax <span class="op" style="color: #5E5E5E;">=</span> base, color<span class="op" style="color: #5E5E5E;">=</span><span class="st" style="color: #20794D;">"dodgerblue"</span>, markersize<span class="op" style="color: #5E5E5E;">=</span><span class="dv" style="color: #AD0000;">10</span>)</span>
+<span id="cb26-13">område_middels.plot(ax <span class="op" style="color: #5E5E5E;">=</span> base, color<span class="op" style="color: #5E5E5E;">=</span><span class="st" style="color: #20794D;">"gold"</span>, markersize<span class="op" style="color: #5E5E5E;">=</span><span class="dv" style="color: #AD0000;">10</span>)</span>
+<span id="cb26-14">område_grunn.plot(ax <span class="op" style="color: #5E5E5E;">=</span> base, color<span class="op" style="color: #5E5E5E;">=</span><span class="st" style="color: #20794D;">"red"</span>, markersize<span class="op" style="color: #5E5E5E;">=</span><span class="dv" style="color: #AD0000;">10</span>)</span>
+<span id="cb26-15"></span>
+<span id="cb26-16"><span class="co" style="color: #5E5E5E;"># pynt</span></span>
+<span id="cb26-17">plt.title(<span class="st" style="color: #20794D;">"</span><span class="ch" style="color: #20794D;">\n</span><span class="st" style="color: #20794D;">Jordskjelv vest i Stillehavet</span><span class="ch" style="color: #20794D;">\n</span><span class="st" style="color: #20794D;">"</span>, fontsize <span class="op" style="color: #5E5E5E;">=</span> <span class="dv" style="color: #AD0000;">22</span>)</span>
+<span id="cb26-18">plt.xlabel(<span class="st" style="color: #20794D;">"Lengdegrad"</span>, fontsize <span class="op" style="color: #5E5E5E;">=</span> <span class="dv" style="color: #AD0000;">16</span>)</span>
+<span id="cb26-19">plt.ylabel(<span class="st" style="color: #20794D;">"Breiddegrad"</span>, fontsize <span class="op" style="color: #5E5E5E;">=</span> <span class="dv" style="color: #AD0000;">16</span>)</span>
+<span id="cb26-20">plt.legend([<span class="st" style="color: #20794D;">"djupe ($d &gt; 300 km$)"</span>, </span>
+<span id="cb26-21">           <span class="st" style="color: #20794D;">"middels ($30 km &lt; d \leq 300 km$)"</span>,</span>
+<span id="cb26-22">           <span class="st" style="color: #20794D;">"grunne ($d \leq 30 km$)"</span></span>
+<span id="cb26-23">           ])</span>
+<span id="cb26-24">plt.savefig(<span class="st" style="color: #20794D;">"jordskjelv_stillehavet_djupne.png"</span>, dpi<span class="op" style="color: #5E5E5E;">=</span><span class="dv" style="color: #AD0000;">200</span>, bbox_inches<span class="op" style="color: #5E5E5E;">=</span><span class="st" style="color: #20794D;">"tight"</span>)</span>
+<span id="cb26-25">plt.show()</span></code></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="https://lektorodd.github.io/posts/230425_jordskjelv/index_files/figure-html/cell-23-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+<p>Legg merke til <img src="https://latex.codecogs.com/png.latex?%5CLaTeX">-formateringa <code>middels ($30 km &lt; d \leq 300 km$</code> i teiknforklaringa.</p>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tips
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Figurar som dei me har laga her, i sjølvvalde område, er supert utgangspunkt for vurdering (videopresentasjon, fagsamtale e.l.). Då kan elevane forklara kva dei ulike figurane viser, <code>kvifor</code> dei ser ut som dei gjer, og vidare gjera greie for aktuelle fagomgrep og prosessar knytt til dette.</p>
+<ul>
+<li>Kva mønster ser du i styrken på skjelva? Kva kan vera årsaken til det?</li>
+<li>Kva mønster ser du i djupna på skjelva? Kva fortel det oss? Er det samanhengar mellom dei to figurane?</li>
+</ul>
+</div>
+</div>
+
+
+</section>
+</section>
+</section>
+
+ ]]></description>
+  <category>modellering</category>
+  <category>programmering</category>
+  <category>tips</category>
+  <category>geofag</category>
+  <guid>https://lektorodd.github.io/posts/230425_jordskjelv/index.html</guid>
+  <pubDate>Mon, 24 Apr 2023 22:00:00 GMT</pubDate>
+  <media:content url="https://lektorodd.github.io/posts/230425_jordskjelv/skjelv.png" medium="image" type="image/png" height="82" width="144"/>
+</item>
 <item>
   <title>Eksamen H22 S1</title>
   <dc:creator>Torodd F. Ottestad</dc:creator>
@@ -1314,7 +2466,7 @@ Tips til nedlasting
 <p>Me kan bruka trendlinja for middelflommen som modell for å seie noko om korleis utviklinga vil vera i åra framover (om utviklinga held fram som no):</p>
 <div class="cell" data-execution_count="33">
 <details>
-<summary>Code</summary>
+<summary>Kode</summary>
 <div class="sourceCode cell-code" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1">maksvf_og_middelflom.plot(figsize <span class="op" style="color: #5E5E5E;">=</span> (<span class="dv" style="color: #AD0000;">20</span>,<span class="dv" style="color: #AD0000;">9</span>), </span>
 <span id="cb13-2">                grid <span class="op" style="color: #5E5E5E;">=</span> <span class="va" style="color: #111111;">True</span>, </span>
 <span id="cb13-3">                fontsize <span class="op" style="color: #5E5E5E;">=</span> <span class="dv" style="color: #AD0000;">16</span>, </span>
@@ -1361,7 +2513,7 @@ Tips til nedlasting
 <p>Ser at verdien for 20-årsflom er 78,28 <img src="https://latex.codecogs.com/png.latex?m%5E3/s">. Plottar inn linja <img src="https://latex.codecogs.com/png.latex?y=78,28"> i samme figur som tidlegare. Bruker <code>plt.axhline()</code> for å teikna horisontal linje.</p>
 <div class="cell" data-execution_count="34">
 <details>
-<summary>Code</summary>
+<summary>Kode</summary>
 <div class="sourceCode cell-code" id="cb14" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><span class="co" style="color: #5E5E5E;"># åra me har data på middelflom</span></span>
 <span id="cb14-2"><span class="co" style="color: #5E5E5E;"># frå og med 1959 til men ikkje med 2023</span></span>
 <span id="cb14-3">x <span class="op" style="color: #5E5E5E;">=</span> np.arange(<span class="dv" style="color: #AD0000;">1959</span>, <span class="dv" style="color: #AD0000;">2023</span>) </span>

@@ -112,15 +112,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   "type": "overlay",
   "limit": 20,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-no-results-text": "Ingen treff",
+    "search-matching-documents-text": "passande dokument",
+    "search-copy-link-title": "Kopier lenke til søk",
+    "search-hide-matches-text": "Skjul resterande treff",
+    "search-more-match-text": "treff til i dokumentet",
+    "search-more-matches-text": "fleire treff i dokumentet",
+    "search-clear-button-title": "Tøm",
+    "search-detached-cancel-button-title": "Avbryt",
+    "search-submit-button-title": "Søk"
   }
 }</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
@@ -129,7 +129,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed fullcontent">
@@ -201,14 +200,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <div class="quarto-title-meta">
 
       <div>
-      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-heading">Forfattar</div>
       <div class="quarto-title-meta-contents">
                <p>Torodd F. Ottestad </p>
             </div>
     </div>
       
       <div>
-      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-heading">Publisert</div>
       <div class="quarto-title-meta-contents">
         <p class="date">February 2, 2023</p>
       </div>
@@ -270,7 +269,7 @@ Tips til nedlasting
 <div class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="opprette-dataramme" class="level2">
@@ -294,11 +293,11 @@ Tips til nedlasting
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>df.index <span class="op">=</span> pd.to_datetime(df[<span class="st">'dato'</span>]) </span>
 <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>df.index <span class="op">=</span> pd.to_datetime(df.index.date)</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.drop(columns <span class="op">=</span> [<span class="st">"dato"</span>, <span class="st">"Korrigert"</span>, <span class="st">"Kontrollert"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.drop(columns <span class="op">=</span> [<span class="st">"dato"</span>, <span class="st">"Korrigert"</span>, <span class="st">"Kontrollert"</span>])</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Sjekkar dei nyaste fem målingane i tabellen for å sjå at alt ser ok ut.</p>
 <div class="cell" data-execution_count="23">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df.tail()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df.tail()</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="23">
 
 <div>
@@ -338,7 +337,7 @@ Tips til nedlasting
 </div>
 <p>I tillegg kan me prøva å plotta verdiane i dataramma. <br> <em>Har med <code>;</code> for å unngå å visa meldinga <code>&lt;AxesSubplot: &gt;</code></em></p>
 <div class="cell" data-execution_count="24">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df.plot()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df.plot()<span class="op">;</span></span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -358,7 +357,7 @@ Tips til nedlasting
 <p>For å rekna ut dette må me altså først finna den maksimale vassføringa per år. Bruker <code>groupby</code> i Pandas for å finne dette.</p>
 <div class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>årleg_vf_maks <span class="op">=</span> df.groupby(by<span class="op">=</span>[df.index.year]).<span class="bu">max</span>()</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>årleg_vf_maks.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>årleg_vf_maks.head()</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="25">
 
 <div>
@@ -398,7 +397,7 @@ Tips til nedlasting
 </div>
 <p>Plottar den nye dataramma <code>årleg_maks</code> som kun har ei måling per år:</p>
 <div class="cell" data-execution_count="26">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>årleg_vf_maks.plot()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>årleg_vf_maks.plot()<span class="op">;</span></span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -410,7 +409,7 @@ Tips til nedlasting
 <p>På grunn av “holet” i målingane tar me berre med data frå 1930 eller seinare med oss vidare. I tillegg er det vinter (og snø/is) for dataa me har for 2023, så me avgrensar til 2022.</p>
 <div class="cell" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>årleg_vf_maks <span class="op">=</span> årleg_vf_maks.loc[<span class="dv">1930</span>:<span class="dv">2022</span>]</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>årleg_vf_maks.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>årleg_vf_maks.head()</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="27">
 
 <div>
@@ -451,11 +450,11 @@ Tips til nedlasting
 <p>Me vil finna gjennomsnittleg største årlege vassføring over fleire år. Vel her å sjå på eit gjennomsnitt på 30 år om gongen. Bruker funksjonen <code>rolling</code> og <code>mean</code> i kombinasjon. <code>rolling</code> gjer at me kan gå gjennom dataramma og sjå på dei 30 tidlegare verdiane til kvar rad i tabellen og finna gjennomsnittet (<code>mean</code>) i dette rullande vinduet.</p>
 <div class="cell" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>maksvf_og_middelflom <span class="op">=</span> årleg_vf_maks.copy()</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>maksvf_og_middelflom[<span class="st">"Middelflom"</span>] <span class="op">=</span> årleg_vf_maks.rolling(window <span class="op">=</span> <span class="dv">30</span>).mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>maksvf_og_middelflom[<span class="st">"Middelflom"</span>] <span class="op">=</span> årleg_vf_maks.rolling(window <span class="op">=</span> <span class="dv">30</span>).mean()</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Ser på dei første 5 radene</p>
 <div class="cell" data-execution_count="29">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>maksvf_og_middelflom.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>maksvf_og_middelflom.head()</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="29">
 
 <div>
@@ -501,7 +500,7 @@ Tips til nedlasting
 </div>
 <p>Ser at dei fem første radene i den nye dataramma er <code>NaN</code> (not a number). Dette skjer fordi ein ikkje kan ta gjennomsnitt av dei siste 30 åra før det har gått 30 år… Sjekkar dei nyaste radene i staden:</p>
 <div class="cell" data-execution_count="30">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>maksvf_og_middelflom.tail()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>maksvf_og_middelflom.tail()</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="30">
 
 <div>
@@ -547,7 +546,7 @@ Tips til nedlasting
 </div>
 <p>Plottar dataramma og ser korleis dei nye verdiane ser ut:</p>
 <div class="cell" data-execution_count="31">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>maksvf_og_middelflom.plot()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>maksvf_og_middelflom.plot()<span class="op">;</span></span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -595,7 +594,7 @@ Tips til nedlasting
 <span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Vassføring, kubikkmeter/s"</span>, fontsize <span class="op">=</span> <span class="dv">16</span>)</span>
 <span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"År"</span>, fontsize <span class="op">=</span> <span class="dv">16</span>)</span>
 <span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a><span class="co">#plt.savefig("Reinsnos - årleg maksvassføring og middelflom.png", dpi = 300)</span></span>
-<span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -608,7 +607,7 @@ Tips til nedlasting
 <p>Me kan bruka trendlinja for middelflommen som modell for å seie noko om korleis utviklinga vil vera i åra framover (om utviklinga held fram som no):</p>
 <div class="cell" data-execution_count="33">
 <details>
-<summary>Code</summary>
+<summary>Kode</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>maksvf_og_middelflom.plot(figsize <span class="op">=</span> (<span class="dv">20</span>,<span class="dv">9</span>), </span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>                grid <span class="op">=</span> <span class="va">True</span>, </span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>                fontsize <span class="op">=</span> <span class="dv">16</span>, </span>
@@ -632,7 +631,7 @@ Tips til nedlasting
 <span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Vassføring, kubikkmeter/s"</span>, fontsize <span class="op">=</span> <span class="dv">16</span>)</span>
 <span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"År"</span>, fontsize <span class="op">=</span> <span class="dv">16</span>)</span>
 <span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a><span class="co">#plt.savefig("Reinsnos - modellering av middelflom 2100.png", dpi = 300)</span></span>
-<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -655,7 +654,7 @@ Tips til nedlasting
 <p>Ser at verdien for 20-årsflom er 78,28 <span class="math inline">\(m^3/s\)</span>. Plottar inn linja <span class="math inline">\(y=78,28\)</span> i samme figur som tidlegare. Bruker <code>plt.axhline()</code> for å teikna horisontal linje.</p>
 <div class="cell" data-execution_count="34">
 <details>
-<summary>Code</summary>
+<summary>Kode</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># åra me har data på middelflom</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co"># frå og med 1959 til men ikkje med 2023</span></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.arange(<span class="dv">1959</span>, <span class="dv">2023</span>) </span>
@@ -699,7 +698,7 @@ Tips til nedlasting
 <span id="cb14-41"><a href="#cb14-41" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Vassføring, kubikkmeter/s"</span>, fontsize <span class="op">=</span> <span class="dv">16</span>)</span>
 <span id="cb14-42"><a href="#cb14-42" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"År"</span>, fontsize <span class="op">=</span> <span class="dv">16</span>)</span>
 <span id="cb14-43"><a href="#cb14-43" aria-hidden="true" tabindex="-1"></a><span class="co">#plt.savefig("Reinsnos - årleg maksvassføring og middelflom.png", dpi = 300)</span></span>
-<span id="cb14-44"><a href="#cb14-44" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-44"><a href="#cb14-44" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -731,7 +730,7 @@ Tips til oppgåver
 <div class="cell" data-execution_count="35">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'doy'</span>] <span class="op">=</span> df.index.dayofyear</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'år'</span>] <span class="op">=</span> df.index.year</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="35">
 
 <div>
@@ -784,7 +783,7 @@ Tips til oppgåver
 <p>Lagar ein pivottabell med dag i året som rader og årstal som kolonner</p>
 <div class="cell" data-execution_count="36">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>piv <span class="op">=</span> pd.pivot_table(df, index<span class="op">=</span>[<span class="st">'doy'</span>],columns<span class="op">=</span>[<span class="st">'år'</span>], values<span class="op">=</span>[<span class="st">'Vassføring'</span>])</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>piv.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>piv.head()</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="36">
 
 <div>
@@ -981,7 +980,7 @@ Tips til oppgåver
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>piv[<span class="st">"median"</span>] <span class="op">=</span> piv.median(axis <span class="op">=</span> <span class="dv">1</span>)</span>
 <span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>piv[<span class="st">"25%"</span>] <span class="op">=</span> piv.quantile(q <span class="op">=</span> <span class="fl">0.25</span>,axis <span class="op">=</span> <span class="dv">1</span>)</span>
 <span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>piv.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>piv.head()</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="37">
 
 <div>
@@ -1221,7 +1220,7 @@ Tips til oppgåver
 <span id="cb18-42"><a href="#cb18-42" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Vassføring - per dag i året </span><span class="ch">\n</span><span class="st">"</span>, fontsize <span class="op">=</span> <span class="dv">24</span>)</span>
 <span id="cb18-43"><a href="#cb18-43" aria-hidden="true" tabindex="-1"></a>plt.legend(fontsize <span class="op">=</span> <span class="dv">16</span>)</span>
 <span id="cb18-44"><a href="#cb18-44" aria-hidden="true" tabindex="-1"></a>plt.savefig(<span class="st">"Reinsnos - vassføring per dag gjennom året.png"</span>, dpi <span class="op">=</span> <span class="dv">300</span>)</span>
-<span id="cb18-45"><a href="#cb18-45" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb18-45"><a href="#cb18-45" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <p><img src="index_files/figure-html/cell-19-output-1.png" class="img-fluid"></p>
 </div>
@@ -1290,12 +1289,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // flash "checked"
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
+    button.setAttribute("title", "Kopiert!");
     let tooltip;
     if (window.bootstrap) {
       button.setAttribute("data-bs-toggle", "tooltip");
       button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
+      button.setAttribute("data-bs-title", "Kopiert!");
       tooltip = new bootstrap.Tooltip(button, 
         { trigger: "manual", 
           customClass: "code-copy-button-tooltip",

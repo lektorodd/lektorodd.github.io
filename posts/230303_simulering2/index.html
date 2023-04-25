@@ -112,21 +112,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   "type": "overlay",
   "limit": 20,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-no-results-text": "Ingen treff",
+    "search-matching-documents-text": "passande dokument",
+    "search-copy-link-title": "Kopier lenke til søk",
+    "search-hide-matches-text": "Skjul resterande treff",
+    "search-more-match-text": "treff til i dokumentet",
+    "search-more-matches-text": "fleire treff i dokumentet",
+    "search-clear-button-title": "Tøm",
+    "search-detached-cancel-button-title": "Avbryt",
+    "search-submit-button-title": "Søk"
   }
 }</script>
 
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed fullcontent">
@@ -199,14 +198,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <div class="quarto-title-meta">
 
       <div>
-      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-heading">Forfattar</div>
       <div class="quarto-title-meta-contents">
                <p>Torodd F. Ottestad </p>
             </div>
     </div>
       
       <div>
-      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-heading">Publisert</div>
       <div class="quarto-title-meta-contents">
         <p class="date">March 3, 2023</p>
       </div>
@@ -269,7 +268,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>gunstige <span class="op">=</span> <span class="bu">sum</span>(np.array(høgdar)<span class="op">&gt;</span><span class="dv">175</span>)</span>
 <span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>sannsyn <span class="op">=</span> gunstige <span class="op">/</span> N</span>
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Sannsynet for at ein tilfeldig elev er høgare enn 175 cm er </span><span class="sc">{</span>sannsyn<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Sannsynet for at ein tilfeldig elev er høgare enn 175 cm er </span><span class="sc">{</span>sannsyn<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Sannsynet for at ein tilfeldig elev er høgare enn 175 cm er 0.4172</code></pre>
 </div>
@@ -313,7 +312,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a><span class="co"># finn og skriv ut relativ frekvens</span></span>
 <span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>sannsyn <span class="op">=</span> gunstig<span class="op">/</span>N</span>
-<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Sannsynet for at ein tilfeldig elev er høgare enn 175 cm er </span><span class="sc">{</span>sannsyn<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Sannsynet for at ein tilfeldig elev er høgare enn 175 cm er </span><span class="sc">{</span>sannsyn<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Sannsynet for at ein tilfeldig elev er høgare enn 175 cm er 0.4169</code></pre>
 </div>
@@ -351,7 +350,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>gunstige <span class="op">=</span> <span class="bu">sum</span>(h_trekte <span class="op">&gt;</span> <span class="dv">175</span>)</span>
 <span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>sannsyn <span class="op">=</span> gunstige <span class="op">/</span> N</span>
 <span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Sannsynet for at ein tilfeldig elev er høgare enn 175 cm er </span><span class="sc">{</span>sannsyn<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Sannsynet for at ein tilfeldig elev er høgare enn 175 cm er </span><span class="sc">{</span>sannsyn<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Sannsynet for at ein tilfeldig elev er høgare enn 175 cm er 0.4168</code></pre>
 </div>
@@ -408,12 +407,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // flash "checked"
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
+    button.setAttribute("title", "Kopiert!");
     let tooltip;
     if (window.bootstrap) {
       button.setAttribute("data-bs-toggle", "tooltip");
       button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
+      button.setAttribute("data-bs-title", "Kopiert!");
       tooltip = new bootstrap.Tooltip(button, 
         { trigger: "manual", 
           customClass: "code-copy-button-tooltip",
