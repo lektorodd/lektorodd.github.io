@@ -16,9 +16,9 @@ comments: false
 ---
 ### Løysingsforslag eksamen
 
-##### [Løysingsforslag](series-lf.html)
-Her er nokre løysingsforslag til ulike eksamenar på vgs.
-På del prøver eg å nytta Python i størst mogleg grad :snake:
+##### [Løysingsforslag](/lf.qmd)
+Her er nokre løysingsforslag til ulike eksamenar på vgs. <br>
+På del 2 prøver eg å nytta Python i størst mogleg grad :snake:
 
 # Innlegg
 

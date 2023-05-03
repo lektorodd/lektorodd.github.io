@@ -10,5 +10,6 @@ listing:
   fields: [date, title, reading-time, description]
 page-layout: full
 title-block-banner: true
+comments: false
 ---
 
