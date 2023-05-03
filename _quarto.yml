@@ -21,7 +21,6 @@ website:
   google-analytics:
     tracking-id: "G-744F7V6HLG"
     anonymize-ip: true
-    storage: none
 
 format:
   html:

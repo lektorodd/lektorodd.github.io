@@ -1,0 +1,14 @@
+---
+title: "Løysingsforslag matteeksamen"
+listing:
+  type: default
+  contents: posts/lf/
+  sort: "date desc"
+  categories: true
+  sort-ui: false
+  filter-ui: false
+  fields: [date, title, reading-time, description]
+page-layout: full
+title-block-banner: true
+---
+

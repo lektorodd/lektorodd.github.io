@@ -1,5 +1,6 @@
 ---
 title: "Heim"
+from: markdown+emoji
 listing:
   type: grid
   contents: posts
@@ -13,6 +14,11 @@ page-layout: full
 title-block-banner: true
 comments: false
 ---
+### Løysingsforslag eksamen
+
+##### [Løysingsforslag](series-lf.html)
+Her er nokre løysingsforslag til ulike eksamenar på vgs.
+På del prøver eg å nytta Python i størst mogleg grad :snake:
 
 # Innlegg
 
