@@ -10,7 +10,505 @@
 <atom:link href="https://lektorodd.github.io/index.xml" rel="self" type="application/rss+xml"/>
 <description>Blogg om digitale tips og triks i skulen</description>
 <generator>quarto-1.2.280</generator>
-<lastBuildDate>Mon, 24 Apr 2023 22:00:00 GMT</lastBuildDate>
+<lastBuildDate>Tue, 02 May 2023 22:00:00 GMT</lastBuildDate>
+<item>
+  <title>Eksamen V22 S1</title>
+  <dc:creator>Torodd F. Ottestad</dc:creator>
+  <link>https://lektorodd.github.io/posts/lf/S1-V22/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<section id="løysingsforslag-eksamen-s1---v22" class="level1">
+<h1>Løysingsforslag eksamen S1 - V22</h1>
+<p>Her er eit forslag til løysing av våreksamen i S1 2022. I del 2 er oppgåvene stort sett løyst i Python eller CAS.</p>
+<p>Eg kan ikkje lova at løysinga er feilfri… 😊 Gje meg gjerne <a href="../../../about.html">ein lyd</a> om du ser feil.</p>
+<hr>
+<p>Miniatyrbilete: <a href="https://www.flaticon.com/free-icons/exam" title="exam icons">Exam icons created by Freepik - Flaticon</a></p>
+<p>Eksamenssettet finn du hos UDIR: <a href="https://sokeresultat.udir.no/eksamensoppgaver.html">Finn eksamensoppgaver</a></p>
+</section>
+<section id="del-1" class="level1">
+<h1>Del 1</h1>
+<section id="oppgåve-1" class="level2">
+<h2 class="anchored" data-anchor-id="oppgåve-1">Oppgåve 1</h2>
+<p>Skriv så enkelt som råd</p>
+<p><img src="https://latex.codecogs.com/png.latex?%20%5Cbegin%7Balign*%7D%0A%5Cleft(2a%5Cright)%5E%7B-1%7D%5Ccdot%20%5Cleft(%5Cfrac%7Bb%7D%7B2%7D%5Cright)%5E%7B-3%7D%5Ccdot%20%5Cleft(a%5Ccdot%20b%5Cright)%5E3%20&amp;=%20%5Cfrac%7B1%7D%7B2a%7D%5Ccdot%20%5Cfrac%7B2%5E3%7D%7Bb%5E3%7D%5Ccdot%20a%5E3%20%5Ccdot%20b%5E3%20%5C%5C%0A&amp;=%20%5Cfrac%7B2%5E3%20%5Ccdot%20a%5E3%20%5Ccdot%20b%5E3%7D%7B2%5Ccdot%20a%20%5Ccdot%20b%5E3%7D%20%5C%5C%0A&amp;=%202%5E2%20%5Ccdot%20a%20%5C%5C%20&amp;=%204a%0A%5Cend%7Balign*%7D"></p>
+</section>
+<section id="oppgåve-2" class="level2">
+<h2 class="anchored" data-anchor-id="oppgåve-2">Oppgåve 2</h2>
+<p>Dagleg produksjonskostnad for <img src="https://latex.codecogs.com/png.latex?x"> luer gitt ved <img src="https://latex.codecogs.com/png.latex?E(x)=0,2x+40+%5Cfrac%7B20000%7D%7Bx%7D"></p>
+<p>Deriverer <img src="https://latex.codecogs.com/png.latex?E(x)"></p>
+<p><img src="https://latex.codecogs.com/png.latex?E'(x)%20=%200,2%20+%200%20+%2020000%5Ccdot%20%5Cfrac%7B-1%7D%7Bx%5E2%7D%20=%200,2%20-%20%5Cfrac%7B20000%7D%7Bx%5E2%7D"></p>
+<p>Dermed får me</p>
+<p><img src="https://latex.codecogs.com/png.latex?E'(100)=0,2-%5Cfrac%7B20000%7D%7B10000%7D%20=%200,2-2%20=%20-1,8"></p>
+<p>Dette betyr at ved 100 produserte einingar vil <em>endringa</em> i produksjonskostnaden vera <img src="https://latex.codecogs.com/png.latex?-1,8">. Altså vil det bli om lag 1,8 kr billegare å produsere kvar lue om ein aukar produksjonen frå 100 til 101.</p>
+</section>
+<section id="oppgåve-3" class="level2">
+<h2 class="anchored" data-anchor-id="oppgåve-3">Oppgåve 3</h2>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cbegin%7Balign*%7D%0A%20%20%20%20%5Clim_%7Bx%5Crightarrow%203%7D%20%5Cfrac%7Bx-3%7D%7Bx%5E2+x-12%7D%20&amp;=%20%5Clim_%7Bx%5Crightarrow%203%7D%20%5Cfrac%7Bx-3%7D%7B(x+4)(x-3)%7D%20%5C%5C%0A%20%20%20%20&amp;=%20%5Clim_%7Bx%5Crightarrow%203%7D%20%5Cfrac%7B1%7D%7Bx+4%7D%20%5C%5C%0A%20%20%20%20&amp;=%20%5Cfrac%7B1%7D%7B3+4%7D%20%5C%5C%0A%20%20%20%20&amp;=%20%5Cfrac%7B1%7D%7B7%7D%0A%5Cend%7Balign*%7D%0A"></p>
+</section>
+<section id="oppgåve-4" class="level2">
+<h2 class="anchored" data-anchor-id="oppgåve-4">Oppgåve 4</h2>
+<p>Skal løysa likninga <img src="https://latex.codecogs.com/png.latex?e%5E%7B2x%7D-e%5Ex=2">. Bruker at <img src="https://latex.codecogs.com/png.latex?e%5E%7B2x%7D=%5Cleft(e%5Ex%5Cright)%5E2">. Dermed får me <img src="https://latex.codecogs.com/png.latex?%5Cleft(e%5Ex%5Cright)%5E2%20-%20e%5Ex%20=%202"></p>
+<p>Bytter ut <img src="https://latex.codecogs.com/png.latex?e%5Ex"> med <img src="https://latex.codecogs.com/png.latex?u"> og løyser andregradslikninga for <img src="https://latex.codecogs.com/png.latex?u"></p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cbegin%7Balign*%7D%0A%20%20%20%20u%5E2%20-%20u%20&amp;=%202%20%5C%5C%0A%20%20%20%20u%5E2%20-%20u%20-%202%20&amp;=%200%20%5C%5C%0A%20%20%20%20(u+1)(u-2)&amp;=%200%20%5C%5C%0A%20%20%20%20u=-1%20&amp;%5Cvee%20u%20=%202%20%5C%5C%0A%20%20%20%20%5Ctext%7BSom%20vil%20seie%20at%7D%20%5C%5C%0A%20%20%20%20e%5Ex%20=%20-1%20&amp;%5Cvee%20e%5Ex%20=2%20%5C%5C%0A%5Cend%7Balign*%7D%0A"></p>
+<p>Tar logarimten av begge sider for å få <img src="https://latex.codecogs.com/png.latex?x"> for å finna <img src="https://latex.codecogs.com/png.latex?x">. Får kun ei løysing, <img src="https://latex.codecogs.com/png.latex?x%20=%20%5Cln(2)">, sidan den naturlege logaritmen kun er definert for positive tal.</p>
+</section>
+<section id="oppgåve-5" class="level2">
+<h2 class="anchored" data-anchor-id="oppgåve-5">Oppgåve 5</h2>
+<p>Set inn <img src="https://latex.codecogs.com/png.latex?x=7"> i likninga <img src="https://latex.codecogs.com/png.latex?%20%5Cbegin%7Balign*%7D%0A%20%20%20%20%5Clg(x+3)%20+%20%5Clg%20(x)%20&amp;=%20%5Clg(a)%20%5C%5C%0A%20%20%20%20%5Clg(10)%20+%20%5Clg(7)%20&amp;=%20%5Clg(a)%20%5C%5C%0A%20%20%20%20%5Clg(10%5Ccdot%207)%20&amp;=%20%5Clg(a)%0A%5Cend%7Balign*%7D%20"></p>
+<p>Dermed er <img src="https://latex.codecogs.com/png.latex?a=70">.</p>
+</section>
+<section id="oppgåve-6" class="level2">
+<h2 class="anchored" data-anchor-id="oppgåve-6">Oppgåve 6</h2>
+<section id="a-programkode" class="level3">
+<h3 class="anchored" data-anchor-id="a-programkode">a) programkode</h3>
+<p>Når programmet køyrer vil det bli trilla to terningar 1000000 gongar (<code>N</code>). Ein tel opp kor mange av desse kasta summen av terningane blir 9 (<code>gunstige</code>). Til slutt skriv ein ut den relative frekvensen (<code>gunstige/N</code>).</p>
+<p>Eleven ønsker å finna ut kva sannsynet for at eit terningkast med to terningar gir summen 9 (<em>eller</em> ein terning kasta to gongar).</p>
+</section>
+<section id="b-sannsynsrekning" class="level3">
+<h3 class="anchored" data-anchor-id="b-sannsynsrekning">b) sannsynsrekning</h3>
+<p>Tel opp antall gunstige utfall (her er det lurt å teikne t.d. tabell eller valtre).</p>
+<p>Det er <img src="https://latex.codecogs.com/png.latex?4"> utfall som gjev <img src="https://latex.codecogs.com/png.latex?9"> som sum. (<img src="https://latex.codecogs.com/png.latex?3+6">, <img src="https://latex.codecogs.com/png.latex?4+5">, <img src="https://latex.codecogs.com/png.latex?5+4"> og <img src="https://latex.codecogs.com/png.latex?6+3">).</p>
+<p>Vidare er det <img src="https://latex.codecogs.com/png.latex?6%5Ccdot%206%20=%2036"> moglege utfall.</p>
+<p><img src="https://latex.codecogs.com/png.latex?P(%5Ctext%7Bsummen%20er%209%7D)%20=%20%5Cfrac%7B%5Ctext%7Bgunstige%7D%7D%7B%5Ctext%7Bmoglege%7D%7D%20=%20%5Cfrac%7B4%7D%7B36%7D=%5Cfrac%7B1%7D%7B9%7D"></p>
+</section>
+</section>
+</section>
+<section id="del-2" class="level1">
+<h1>Del 2</h1>
+<section id="oppgåve-1-1" class="level2">
+<h2 class="anchored" data-anchor-id="oppgåve-1-1">Oppgåve 1</h2>
+<p>Tabellen nedanfor viser talet på gardsbruk i Noreg for nokre gitte årstal.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>År</th>
+<th>Tal gardsbruk</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1969</td>
+<td>154 977</td>
+</tr>
+<tr class="even">
+<td>1989</td>
+<td>99 382</td>
+</tr>
+<tr class="odd">
+<td>1999</td>
+<td>68 539</td>
+</tr>
+<tr class="even">
+<td>2009</td>
+<td>47 688</td>
+</tr>
+<tr class="odd">
+<td>2020</td>
+<td>38 633</td>
+</tr>
+</tbody>
+</table>
+<section id="a-modell-for-framtida" class="level3">
+<h3 class="anchored" data-anchor-id="a-modell-for-framtida">a) modell for framtida</h3>
+<p>Plottar først datapunkta for å få ei oversikt over korleis det ser ut</p>
+<div class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;">import</span> matplotlib.pyplot <span class="im" style="color: #00769E;">as</span> plt</span>
+<span id="cb1-2"><span class="im" style="color: #00769E;">import</span> numpy <span class="im" style="color: #00769E;">as</span> np</span>
+<span id="cb1-3"></span>
+<span id="cb1-4">år <span class="op" style="color: #5E5E5E;">=</span> [<span class="dv" style="color: #AD0000;">0</span>, <span class="dv" style="color: #AD0000;">20</span>, <span class="dv" style="color: #AD0000;">30</span>, <span class="dv" style="color: #AD0000;">40</span>, <span class="dv" style="color: #AD0000;">51</span>]</span>
+<span id="cb1-5">gårdar <span class="op" style="color: #5E5E5E;">=</span> [<span class="dv" style="color: #AD0000;">154977</span>, <span class="dv" style="color: #AD0000;">99382</span>, <span class="dv" style="color: #AD0000;">68539</span>, <span class="dv" style="color: #AD0000;">47688</span>, <span class="dv" style="color: #AD0000;">38633</span>]</span>
+<span id="cb1-6"></span>
+<span id="cb1-7">plt.plot(år, gårdar, <span class="st" style="color: #20794D;">"ro"</span>)</span>
+<span id="cb1-8">plt.show()</span></code></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="https://lektorodd.github.io/posts/lf/S1-V22/index_files/figure-html/cell-2-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+<p>Det kan sjå ut som om nedgangen vert mindre og mindre. Ser om det kan passa med ein modell for prosentvis nedgang (eksponentiell modell).</p>
+<p>Bruker <code>curve_fit</code> for å finna ein funksjon på forma <img src="https://latex.codecogs.com/png.latex?f(x)=a%20%5Ccdot%20b%5Ex"></p>
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><span class="im" style="color: #00769E;">from</span> scipy.optimize <span class="im" style="color: #00769E;">import</span> curve_fit</span>
+<span id="cb2-2"></span>
+<span id="cb2-3"><span class="kw" style="color: #003B4F;">def</span> f(x, a, b):</span>
+<span id="cb2-4">    <span class="cf" style="color: #003B4F;">return</span> a<span class="op" style="color: #5E5E5E;">*</span>b<span class="op" style="color: #5E5E5E;">**</span>x</span>
+<span id="cb2-5"></span>
+<span id="cb2-6">K, E <span class="op" style="color: #5E5E5E;">=</span> curve_fit(f, år, gårdar)</span>
+<span id="cb2-7"></span>
+<span id="cb2-8">a, b <span class="op" style="color: #5E5E5E;">=</span> K</span>
+<span id="cb2-9"></span>
+<span id="cb2-10">x_verdiar <span class="op" style="color: #5E5E5E;">=</span> np.linspace(<span class="dv" style="color: #AD0000;">0</span>, <span class="dv" style="color: #AD0000;">65</span>, <span class="dv" style="color: #AD0000;">1000</span>)</span>
+<span id="cb2-11"></span>
+<span id="cb2-12">plt.plot(x_verdiar, f(x_verdiar, a, b))</span>
+<span id="cb2-13">plt.plot(år, gårdar, <span class="st" style="color: #20794D;">"ro"</span>)</span>
+<span id="cb2-14">plt.ylim([<span class="dv" style="color: #AD0000;">0</span>, <span class="dv" style="color: #AD0000;">160000</span>])</span>
+<span id="cb2-15">plt.show()</span>
+<span id="cb2-16"><span class="bu" style="color: null;">print</span>(<span class="ss" style="color: #20794D;">f"f(x)=</span><span class="sc" style="color: #5E5E5E;">{</span>a<span class="sc" style="color: #5E5E5E;">:.1f}</span><span class="ss" style="color: #20794D;">*</span><span class="sc" style="color: #5E5E5E;">{</span>b<span class="sc" style="color: #5E5E5E;">:.3f}</span><span class="ss" style="color: #20794D;">^x"</span>)</span></code></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="https://lektorodd.github.io/posts/lf/S1-V22/index_files/figure-html/cell-3-output-1.png" class="img-fluid"></p>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>f(x)=157256.2*0.973^x</code></pre>
+</div>
+</div>
+<p>Det kan sjå ut som modellen <img src="https://latex.codecogs.com/png.latex?f(x)=157256%20%5Ccdot%200,973%5Ex"> passar fint med datapunkta.</p>
+<p>I tillegg er det naturleg å tenka at talet på gardsbruk vil ha ein prosentvis nedgang som den i modellen over. På 60-70-talet var det mange små gårdsbruk som har blitt <em>slukt</em> av større gårdar. Med tanke på at me framleis held på med matproduksjon og landbruk, vil denne nedgangen i små gardsbruk (og auken i store) bli mindre og mindre over tid.</p>
+</section>
+<section id="b-framtida" class="level3">
+<h3 class="anchored" data-anchor-id="b-framtida">b) framtida</h3>
+<p>Reknar ut <img src="https://latex.codecogs.com/png.latex?f(2060-1969)">:</p>
+<div class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1">x <span class="op" style="color: #5E5E5E;">=</span> <span class="dv" style="color: #AD0000;">2060</span><span class="op" style="color: #5E5E5E;">-</span><span class="dv" style="color: #AD0000;">1969</span></span>
+<span id="cb4-2">framtid <span class="op" style="color: #5E5E5E;">=</span> f(x, a, b)</span>
+<span id="cb4-3"><span class="bu" style="color: null;">print</span>(<span class="ss" style="color: #20794D;">f"Gårdar i 2060: </span><span class="ch" style="color: #20794D;">\n</span><span class="ss" style="color: #20794D;">f(</span><span class="sc" style="color: #5E5E5E;">{</span>x<span class="sc" style="color: #5E5E5E;">}</span><span class="ss" style="color: #20794D;">) = </span><span class="sc" style="color: #5E5E5E;">{</span>framtid<span class="sc" style="color: #5E5E5E;">:.0f}</span><span class="ss" style="color: #20794D;">"</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Gårdar i 2060: 
+f(91) = 13248</code></pre>
+</div>
+</div>
+<p>Det er vanskeleg å seie mykje om dette svaret utan meir bakgrunnskunnskap og andre data. Likevel tenker eg at det er eit rimeleg svar, dersom t.d. automatisering og liknande effektiviserer landbruket, slik at det trengs færre bønder (og gjerne færre gårdar). På den andre sida kan det tenkast at ustabile globale tilhøve på matforsyning gjer at talet på gårdsbruk vert høgare. Som sagt, vanskeleg å seie noko om.</p>
+</section>
+<section id="c-nedgang-med-1000" class="level3">
+<h3 class="anchored" data-anchor-id="c-nedgang-med-1000">c) nedgang med 1000</h3>
+<p>Her kunne me jo løyst likninga <img src="https://latex.codecogs.com/png.latex?f'(x)=-1000">, men me prøver oss på ein annan framgongsmåte i Python.</p>
+<p>Lagar ei <code>while</code>-løkke som ser på skilnaden mellom eit år og det neste. Av grafen veit/ser me at i starten er nedgangen mykje større enn 1000 i året (ca. 56 000 færre frå 1969 til 1989). Held difor på så lenge skilnaden på to påfølgjande år er større enn 1000 (bruker absoluttverdi)</p>
+<div class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1">x <span class="op" style="color: #5E5E5E;">=</span> <span class="dv" style="color: #AD0000;">0</span></span>
+<span id="cb6-2"></span>
+<span id="cb6-3">f0 <span class="op" style="color: #5E5E5E;">=</span> f(x, a, b)</span>
+<span id="cb6-4">f1 <span class="op" style="color: #5E5E5E;">=</span> f(x<span class="op" style="color: #5E5E5E;">+</span><span class="dv" style="color: #AD0000;">1</span>, a, b)</span>
+<span id="cb6-5"></span>
+<span id="cb6-6"><span class="cf" style="color: #003B4F;">while</span> <span class="bu" style="color: null;">abs</span>(f1<span class="op" style="color: #5E5E5E;">-</span>f0) <span class="op" style="color: #5E5E5E;">&gt;=</span> <span class="dv" style="color: #AD0000;">1000</span>:</span>
+<span id="cb6-7">    x <span class="op" style="color: #5E5E5E;">+=</span><span class="dv" style="color: #AD0000;">1</span> </span>
+<span id="cb6-8">    f0 <span class="op" style="color: #5E5E5E;">=</span> f(x, a, b)</span>
+<span id="cb6-9">    f1 <span class="op" style="color: #5E5E5E;">=</span> f(x<span class="op" style="color: #5E5E5E;">+</span><span class="dv" style="color: #AD0000;">1</span>, a, b)</span>
+<span id="cb6-10"></span>
+<span id="cb6-11"><span class="bu" style="color: null;">print</span>(<span class="ss" style="color: #20794D;">f"x = </span><span class="sc" style="color: #5E5E5E;">{</span>x<span class="sc" style="color: #5E5E5E;">}</span><span class="ss" style="color: #20794D;">"</span>)</span>
+<span id="cb6-12"><span class="bu" style="color: null;">print</span>(<span class="ss" style="color: #20794D;">f"f(</span><span class="sc" style="color: #5E5E5E;">{</span>x<span class="sc" style="color: #5E5E5E;">}</span><span class="ss" style="color: #20794D;">) = </span><span class="sc" style="color: #5E5E5E;">{</span>f0<span class="sc" style="color: #5E5E5E;">:.1f}</span><span class="ss" style="color: #20794D;">"</span>)</span>
+<span id="cb6-13"><span class="bu" style="color: null;">print</span>(<span class="ss" style="color: #20794D;">f"f(</span><span class="sc" style="color: #5E5E5E;">{</span>x<span class="op" style="color: #5E5E5E;">+</span><span class="dv" style="color: #AD0000;">1</span><span class="sc" style="color: #5E5E5E;">}</span><span class="ss" style="color: #20794D;">) = </span><span class="sc" style="color: #5E5E5E;">{</span>f1<span class="sc" style="color: #5E5E5E;">:.1f}</span><span class="ss" style="color: #20794D;">"</span>)</span>
+<span id="cb6-14"><span class="bu" style="color: null;">print</span>(<span class="ss" style="color: #20794D;">f"Endring: </span><span class="sc" style="color: #5E5E5E;">{</span>(f1<span class="op" style="color: #5E5E5E;">-</span>f0)<span class="sc" style="color: #5E5E5E;">:.1f}</span><span class="ss" style="color: #20794D;">"</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>x = 53
+f(53) = 37224.1
+f(54) = 36225.7
+Endring: -998.4</code></pre>
+</div>
+</div>
+<p>Ser at når <img src="https://latex.codecogs.com/png.latex?x=53"> er nedgangen ca. 1000 gårdsbruk. Dvs. kring år 2022.</p>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Løyse symbolsk i <code>sympy</code>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Me kan løysa likninga <img src="https://latex.codecogs.com/png.latex?f'(x)=-1000"> med <code>sympy</code>/CAS</p>
+<div class="cell" data-execution_count="46">
+<details>
+<summary>Vis koden</summary>
+<div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><span class="co" style="color: #5E5E5E;"># importerer aktuelle funksjonar frå sympy</span></span>
+<span id="cb8-2"><span class="im" style="color: #00769E;">from</span> sympy <span class="im" style="color: #00769E;">import</span> Symbol, diff, Eq, Reals, solveset</span>
+<span id="cb8-3"></span>
+<span id="cb8-4"><span class="co" style="color: #5E5E5E;"># definerer x</span></span>
+<span id="cb8-5">x <span class="op" style="color: #5E5E5E;">=</span> Symbol(<span class="st" style="color: #20794D;">"x"</span>)</span>
+<span id="cb8-6"></span>
+<span id="cb8-7"><span class="co" style="color: #5E5E5E;"># definerer funksjonen og deriverer</span></span>
+<span id="cb8-8">f <span class="op" style="color: #5E5E5E;">=</span> a <span class="op" style="color: #5E5E5E;">*</span> b<span class="op" style="color: #5E5E5E;">**</span>x</span>
+<span id="cb8-9">df <span class="op" style="color: #5E5E5E;">=</span> diff(f, x)</span>
+<span id="cb8-10"></span>
+<span id="cb8-11"><span class="co" style="color: #5E5E5E;"># set opp likninga, og løyser den</span></span>
+<span id="cb8-12">likning <span class="op" style="color: #5E5E5E;">=</span> Eq(df, <span class="op" style="color: #5E5E5E;">-</span><span class="dv" style="color: #AD0000;">1000</span>)</span>
+<span id="cb8-13">løysing <span class="op" style="color: #5E5E5E;">=</span> solveset(likning, x, domain<span class="op" style="color: #5E5E5E;">=</span>Reals)</span>
+<span id="cb8-14"></span>
+<span id="cb8-15"><span class="co" style="color: #5E5E5E;"># skriv ut svaret</span></span>
+<span id="cb8-16"><span class="bu" style="color: null;">print</span>(<span class="ss" style="color: #20794D;">f"x = </span><span class="sc" style="color: #5E5E5E;">{</span>l<span class="sc" style="color: #5E5E5E;">ø</span>ysing<span class="sc" style="color: #5E5E5E;">.</span>evalf(<span class="dv" style="color: #AD0000;">3</span>)<span class="sc" style="color: #5E5E5E;">}</span><span class="ss" style="color: #20794D;">"</span>)</span></code></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>x = {53.4}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="oppgåve-2-1" class="level2">
+<h2 class="anchored" data-anchor-id="oppgåve-2-1">Oppgåve 2</h2>
+<section id="a-binomisk-forsøk" class="level3">
+<h3 class="anchored" data-anchor-id="a-binomisk-forsøk">a) binomisk forsøk?</h3>
+<p>Dersomm dette skal vera eit binomisk forsøk må me gå ut frå at sannsynet for at kvar av dei består er det same (74 %) og at oppkøyringa til kvar av elevane er uavhengige “delforsøk”. Dvs. at om ein elev stryk (eller består) oppkøyringa så påverkar ikkje det resultatet til dei andre. I tillegg er det her slik at kvar delforsøk kun har to utfall, <em>bestå</em> og <em>ikkje bestå</em>.</p>
+<p>I praksis vil nok ikkje sannynet vera det samme for kvar elev. Ein har ulike føresetnader, er ulikt førebudd, vert ulikt påverka av nerver/stress osb. I tillegg kan ein tenka seg at om ein av dei stryk (og dei andre får høyra det) så kan det påverka oppkøyringa til nestemann.</p>
+</section>
+<section id="b-sannsyn-for-at-8-av-12-består" class="level3">
+<h3 class="anchored" data-anchor-id="b-sannsyn-for-at-8-av-12-består">b) sannsyn for at 8 av 12 består</h3>
+<p>For å finna dette sannsynet kan me simulera dei 12 oppkøyringane mange gongar og telja opp kor mange av dei minst 8 består. Me antar at dette kan sjåast på som eit binomisk forsøk.</p>
+<div class="cell" data-execution_count="49">
+<div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><span class="im" style="color: #00769E;">import</span> numpy <span class="im" style="color: #00769E;">as</span> np</span>
+<span id="cb10-2">rng <span class="op" style="color: #5E5E5E;">=</span> np.random.default_rng()</span>
+<span id="cb10-3"></span>
+<span id="cb10-4">N <span class="op" style="color: #5E5E5E;">=</span> <span class="dv" style="color: #AD0000;">1000000</span> <span class="co" style="color: #5E5E5E;"># tal simuleringar</span></span>
+<span id="cb10-5">n <span class="op" style="color: #5E5E5E;">=</span> <span class="dv" style="color: #AD0000;">12</span>      <span class="co" style="color: #5E5E5E;"># tal elevar</span></span>
+<span id="cb10-6">p <span class="op" style="color: #5E5E5E;">=</span> <span class="fl" style="color: #AD0000;">0.74</span>    <span class="co" style="color: #5E5E5E;"># sannynet for suksess (bestå)</span></span>
+<span id="cb10-7">X <span class="op" style="color: #5E5E5E;">=</span> <span class="dv" style="color: #AD0000;">8</span>       <span class="co" style="color: #5E5E5E;"># minst X suksess</span></span>
+<span id="cb10-8"></span>
+<span id="cb10-9"><span class="co" style="color: #5E5E5E;"># simulerer</span></span>
+<span id="cb10-10">oppkøyringar <span class="op" style="color: #5E5E5E;">=</span> rng.binomial(n, p, size <span class="op" style="color: #5E5E5E;">=</span> N)</span>
+<span id="cb10-11"></span>
+<span id="cb10-12"><span class="co" style="color: #5E5E5E;"># tel opp</span></span>
+<span id="cb10-13">gunstige <span class="op" style="color: #5E5E5E;">=</span> <span class="bu" style="color: null;">sum</span>(oppkøyringar <span class="op" style="color: #5E5E5E;">&gt;=</span> X)</span>
+<span id="cb10-14"></span>
+<span id="cb10-15"><span class="co" style="color: #5E5E5E;"># finn og skriv ut sannsynet</span></span>
+<span id="cb10-16">sannsyn <span class="op" style="color: #5E5E5E;">=</span> gunstige<span class="op" style="color: #5E5E5E;">/</span>N</span>
+<span id="cb10-17"><span class="bu" style="color: null;">print</span>(<span class="ss" style="color: #20794D;">f"P(X &gt;= 8) = </span><span class="sc" style="color: #5E5E5E;">{</span>sannsyn<span class="sc" style="color: #5E5E5E;">:.4f}</span><span class="ss" style="color: #20794D;">"</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>P(X &gt;= 8) = 0.8211</code></pre>
+</div>
+</div>
+</section>
+<section id="c-akkurat-5-gutar-og-4-jenter" class="level3">
+<h3 class="anchored" data-anchor-id="c-akkurat-5-gutar-og-4-jenter">c) akkurat 5 gutar og 4 jenter</h3>
+<p>Ser på gutane og jentene for seg. Multipliserer saman sannsyna sidan dei to hendingane er uavhengige.</p>
+<div class="cell" data-execution_count="52">
+<div class="sourceCode cell-code" id="cb12" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1">N <span class="op" style="color: #5E5E5E;">=</span> <span class="dv" style="color: #AD0000;">1000000</span> <span class="co" style="color: #5E5E5E;"># tal simuleringar</span></span>
+<span id="cb12-2">n_g <span class="op" style="color: #5E5E5E;">=</span> <span class="dv" style="color: #AD0000;">7</span>     <span class="co" style="color: #5E5E5E;"># tal gutar</span></span>
+<span id="cb12-3">X_g <span class="op" style="color: #5E5E5E;">=</span> <span class="dv" style="color: #AD0000;">5</span>     <span class="co" style="color: #5E5E5E;"># gutar som består</span></span>
+<span id="cb12-4">n_j <span class="op" style="color: #5E5E5E;">=</span> <span class="dv" style="color: #AD0000;">5</span>     <span class="co" style="color: #5E5E5E;"># tal jenter</span></span>
+<span id="cb12-5">X_j <span class="op" style="color: #5E5E5E;">=</span> <span class="dv" style="color: #AD0000;">4</span>     <span class="co" style="color: #5E5E5E;"># jenter som består</span></span>
+<span id="cb12-6">p <span class="op" style="color: #5E5E5E;">=</span> <span class="fl" style="color: #AD0000;">0.74</span>    <span class="co" style="color: #5E5E5E;"># sannynet for suksess (bestå)</span></span>
+<span id="cb12-7"></span>
+<span id="cb12-8"><span class="co" style="color: #5E5E5E;"># simulerer</span></span>
+<span id="cb12-9">gutar <span class="op" style="color: #5E5E5E;">=</span> rng.binomial(n_g, p, size<span class="op" style="color: #5E5E5E;">=</span>N)</span>
+<span id="cb12-10">jenter <span class="op" style="color: #5E5E5E;">=</span> rng.binomial(n_j, p, size<span class="op" style="color: #5E5E5E;">=</span>N)</span>
+<span id="cb12-11"></span>
+<span id="cb12-12"><span class="co" style="color: #5E5E5E;"># tel opp</span></span>
+<span id="cb12-13">gunstige_g <span class="op" style="color: #5E5E5E;">=</span> <span class="bu" style="color: null;">sum</span>(gutar <span class="op" style="color: #5E5E5E;">==</span> X_g)</span>
+<span id="cb12-14">gunstige_j <span class="op" style="color: #5E5E5E;">=</span> <span class="bu" style="color: null;">sum</span>(jenter <span class="op" style="color: #5E5E5E;">==</span> X_j)</span>
+<span id="cb12-15"></span>
+<span id="cb12-16"><span class="co" style="color: #5E5E5E;"># finn og skriv ut sannsynet</span></span>
+<span id="cb12-17">sannsyn_g <span class="op" style="color: #5E5E5E;">=</span> gunstige_g<span class="op" style="color: #5E5E5E;">/</span>N</span>
+<span id="cb12-18">sannsyn_j <span class="op" style="color: #5E5E5E;">=</span> gunstige_j<span class="op" style="color: #5E5E5E;">/</span>N</span>
+<span id="cb12-19"></span>
+<span id="cb12-20"><span class="co" style="color: #5E5E5E;"># hendingane er uavhengige, dermed får me:</span></span>
+<span id="cb12-21">sannsyn <span class="op" style="color: #5E5E5E;">=</span> sannsyn_g <span class="op" style="color: #5E5E5E;">*</span> sannsyn_j</span>
+<span id="cb12-22"><span class="bu" style="color: null;">print</span>(<span class="ss" style="color: #20794D;">f"P(5 gutar og 4 jenter) = </span><span class="sc" style="color: #5E5E5E;">{</span>sannsyn<span class="sc" style="color: #5E5E5E;">:.4f}</span><span class="ss" style="color: #20794D;">"</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>P(5 gutar og 4 jenter) = 0.1232</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="oppgåve-3-1" class="level2">
+<h2 class="anchored" data-anchor-id="oppgåve-3-1">Oppgåve 3</h2>
+<p>70 000 kr på konto, med fast månadleg rentesats <img src="https://latex.codecogs.com/png.latex?B(x)%20=%2070000%5Ccdot%201,003%5Ex"></p>
+<section id="a-årleg-rentesats" class="level3">
+<h3 class="anchored" data-anchor-id="a-årleg-rentesats">a) årleg rentesats</h3>
+<div class="cell" data-execution_count="53">
+<div class="sourceCode cell-code" id="cb14" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><span class="bu" style="color: null;">print</span>(<span class="fl" style="color: #AD0000;">1.003</span><span class="op" style="color: #5E5E5E;">**</span><span class="dv" style="color: #AD0000;">12</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>1.03659998028813</code></pre>
+</div>
+</div>
+<p>Knut har ein årleg rentesats på ca. 3,7 prosent.</p>
+</section>
+<section id="b-80-000-kroner" class="level3">
+<h3 class="anchored" data-anchor-id="b-80-000-kroner">b) 80 000 kroner</h3>
+<p>Løyser likninga <img src="https://latex.codecogs.com/png.latex?B(x)=80000">.</p>
+<div class="cell" data-execution_count="59">
+<div class="sourceCode cell-code" id="cb16" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><span class="im" style="color: #00769E;">from</span> sympy <span class="im" style="color: #00769E;">import</span> Symbol, Eq, solveset, Reals</span>
+<span id="cb16-2"></span>
+<span id="cb16-3">x <span class="op" style="color: #5E5E5E;">=</span> Symbol(<span class="st" style="color: #20794D;">"x"</span>)</span>
+<span id="cb16-4"></span>
+<span id="cb16-5">likning <span class="op" style="color: #5E5E5E;">=</span> Eq(<span class="dv" style="color: #AD0000;">70000</span><span class="op" style="color: #5E5E5E;">*</span><span class="fl" style="color: #AD0000;">1.003</span><span class="op" style="color: #5E5E5E;">**</span>x, <span class="dv" style="color: #AD0000;">80000</span>)</span>
+<span id="cb16-6">løysing <span class="op" style="color: #5E5E5E;">=</span> solveset(likning, x, domain<span class="op" style="color: #5E5E5E;">=</span>Reals)</span>
+<span id="cb16-7"><span class="bu" style="color: null;">print</span>(løysing.evalf(<span class="dv" style="color: #AD0000;">3</span>))</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{44.6}</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="63">
+<div class="sourceCode cell-code" id="cb18" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><span class="bu" style="color: null;">print</span>(<span class="dv" style="color: #AD0000;">45</span> <span class="op" style="color: #5E5E5E;">//</span> <span class="dv" style="color: #AD0000;">12</span>)</span>
+<span id="cb18-2"><span class="bu" style="color: null;">print</span>(<span class="dv" style="color: #AD0000;">45</span> <span class="op" style="color: #5E5E5E;">%</span> <span class="dv" style="color: #AD0000;">12</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>3
+9</code></pre>
+</div>
+</div>
+<p>Det tek 45 månader, 3 år og 9 månader, før beløpet har passert 80000 kr.</p>
+</section>
+<section id="c-kontinuerleg" class="level3">
+<h3 class="anchored" data-anchor-id="c-kontinuerleg">c) kontinuerleg?</h3>
+<p>Aksjefond: 2000 kroner inn kvar månad (0,7 prosent avkasting per mnd.) <br> Konto: 0.3% renter.</p>
+<p><img src="https://latex.codecogs.com/png.latex?T(x)"> er den totale verdien av aksjefond og sparekonto.</p>
+<p>Sidan han set inn 2000 kroner kvar månad vil funksjonen gjera eit hopp på desse tidspunkta, og ikkje vera kontinuerleg.</p>
+</section>
+<section id="d-meir-enn-200-000-kroner" class="level3">
+<h3 class="anchored" data-anchor-id="d-meir-enn-200-000-kroner">d) meir enn 200 000 kroner?</h3>
+<p>Prøver oss fram i Python.</p>
+<div class="cell" data-execution_count="70">
+<div class="sourceCode cell-code" id="cb20" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><span class="co" style="color: #5E5E5E;"># etter nøyaktig 24 månader</span></span>
+<span id="cb20-2">konto <span class="op" style="color: #5E5E5E;">=</span> <span class="dv" style="color: #AD0000;">70000</span><span class="op" style="color: #5E5E5E;">*</span><span class="fl" style="color: #AD0000;">1.003</span><span class="op" style="color: #5E5E5E;">**</span><span class="dv" style="color: #AD0000;">24</span></span>
+<span id="cb20-3">fond <span class="op" style="color: #5E5E5E;">=</span> <span class="dv" style="color: #AD0000;">2000</span></span>
+<span id="cb20-4">total <span class="op" style="color: #5E5E5E;">=</span> konto <span class="op" style="color: #5E5E5E;">+</span> fond</span>
+<span id="cb20-5">mnd <span class="op" style="color: #5E5E5E;">=</span> <span class="dv" style="color: #AD0000;">0</span></span>
+<span id="cb20-6"></span>
+<span id="cb20-7"><span class="cf" style="color: #003B4F;">while</span> total <span class="op" style="color: #5E5E5E;">&lt;</span> <span class="dv" style="color: #AD0000;">200000</span>:</span>
+<span id="cb20-8">    konto <span class="op" style="color: #5E5E5E;">*=</span> <span class="fl" style="color: #AD0000;">1.003</span></span>
+<span id="cb20-9">    fond <span class="op" style="color: #5E5E5E;">=</span> fond<span class="op" style="color: #5E5E5E;">*</span><span class="fl" style="color: #AD0000;">1.007</span> <span class="op" style="color: #5E5E5E;">+</span> <span class="dv" style="color: #AD0000;">2000</span></span>
+<span id="cb20-10">    total <span class="op" style="color: #5E5E5E;">=</span> konto <span class="op" style="color: #5E5E5E;">+</span> fond</span>
+<span id="cb20-11">    mnd <span class="op" style="color: #5E5E5E;">+=</span> <span class="dv" style="color: #AD0000;">1</span></span>
+<span id="cb20-12">    </span>
+<span id="cb20-13"><span class="bu" style="color: null;">print</span>(<span class="ss" style="color: #20794D;">f"Etter </span><span class="sc" style="color: #5E5E5E;">{</span>mnd<span class="sc" style="color: #5E5E5E;">}</span><span class="ss" style="color: #20794D;"> månader er det </span><span class="sc" style="color: #5E5E5E;">{</span>total<span class="sc" style="color: #5E5E5E;">:.2f}</span><span class="ss" style="color: #20794D;"> kr"</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Etter 47 månader er det 200218.45 kr</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="oppgåve-4-1" class="level2">
+<h2 class="anchored" data-anchor-id="oppgåve-4-1">Oppgåve 4</h2>
+<p>Simulerer i Python.</p>
+<div class="cell" data-execution_count="74">
+<div class="sourceCode cell-code" id="cb22" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><span class="im" style="color: #00769E;">import</span> numpy <span class="im" style="color: #00769E;">as</span> np</span>
+<span id="cb22-2">rng <span class="op" style="color: #5E5E5E;">=</span> np.random.default_rng()</span>
+<span id="cb22-3"></span>
+<span id="cb22-4"><span class="co" style="color: #5E5E5E;"># antall kast</span></span>
+<span id="cb22-5">N <span class="op" style="color: #5E5E5E;">=</span> <span class="dv" style="color: #AD0000;">1000000</span></span>
+<span id="cb22-6"></span>
+<span id="cb22-7"><span class="co" style="color: #5E5E5E;"># dei tre terningane N kast</span></span>
+<span id="cb22-8">t1 <span class="op" style="color: #5E5E5E;">=</span> rng.integers(<span class="dv" style="color: #AD0000;">1</span>, <span class="dv" style="color: #AD0000;">7</span>, N)</span>
+<span id="cb22-9">t2 <span class="op" style="color: #5E5E5E;">=</span> rng.integers(<span class="dv" style="color: #AD0000;">1</span>, <span class="dv" style="color: #AD0000;">7</span>, N)</span>
+<span id="cb22-10">t3 <span class="op" style="color: #5E5E5E;">=</span> rng.integers(<span class="dv" style="color: #AD0000;">1</span>, <span class="dv" style="color: #AD0000;">7</span>, N)</span>
+<span id="cb22-11"></span>
+<span id="cb22-12"><span class="co" style="color: #5E5E5E;"># produktet av terningane, per kast</span></span>
+<span id="cb22-13">prod <span class="op" style="color: #5E5E5E;">=</span> t1 <span class="op" style="color: #5E5E5E;">*</span> t2 <span class="op" style="color: #5E5E5E;">*</span> t3</span>
+<span id="cb22-14"></span>
+<span id="cb22-15"><span class="co" style="color: #5E5E5E;"># tel opp gunstige utfall</span></span>
+<span id="cb22-16">gunstige <span class="op" style="color: #5E5E5E;">=</span> <span class="bu" style="color: null;">sum</span>(prod <span class="op" style="color: #5E5E5E;">&gt;</span> <span class="dv" style="color: #AD0000;">100</span>)</span>
+<span id="cb22-17"></span>
+<span id="cb22-18"><span class="co" style="color: #5E5E5E;"># finn sannsynet</span></span>
+<span id="cb22-19">sannsyn <span class="op" style="color: #5E5E5E;">=</span> gunstige <span class="op" style="color: #5E5E5E;">/</span> N</span>
+<span id="cb22-20"><span class="bu" style="color: null;">print</span>(<span class="ss" style="color: #20794D;">f"Sannsynet for å vinna er </span><span class="sc" style="color: #5E5E5E;">{</span>sannsyn<span class="sc" style="color: #5E5E5E;">:.4f}</span><span class="ss" style="color: #20794D;">"</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Sannsynet for å vinna er 0.0924</code></pre>
+</div>
+</div>
+<p>Køyrer programmet eit par gongar og ser at resultatet vert ganske likt. Sannsynet for å vinna er ca. 0,092</p>
+</section>
+<section id="oppgåve-5-1" class="level2">
+<h2 class="anchored" data-anchor-id="oppgåve-5-1">Oppgåve 5</h2>
+<p>Breidda på rektangelet er <img src="https://latex.codecogs.com/png.latex?2%5Ccdot%20a"> medan høgda er <img src="https://latex.codecogs.com/png.latex?b">, som er <img src="https://latex.codecogs.com/png.latex?y">-verdien til skjæringspunktet mellom linja frå <img src="https://latex.codecogs.com/png.latex?(0,%202)"> til <img src="https://latex.codecogs.com/png.latex?(2,%200)"> og <img src="https://latex.codecogs.com/png.latex?x=a">.</p>
+<p>Linja har stigningstal <img src="https://latex.codecogs.com/png.latex?-1"> og konstantledd <img src="https://latex.codecogs.com/png.latex?2">. Dvs. <img src="https://latex.codecogs.com/png.latex?f(x)=2-x">.</p>
+<p>Dermed er høgda til rektangelet <img src="https://latex.codecogs.com/png.latex?2-a">. Arealet vert då <img src="https://latex.codecogs.com/png.latex?T%20=%202%20%5Ccdot%20a%20%5Ccdot%20b%20=%202%5Ccdot%20a%20%5Ccdot(2-a)%20=%204a%20-%202a%5E2"></p>
+<p>Definerer <img src="https://latex.codecogs.com/png.latex?T(a)"> som funksjon, deriverer og finn den <img src="https://latex.codecogs.com/png.latex?a">-verdien som gjev størst <img src="https://latex.codecogs.com/png.latex?T">. (størst sidan <img src="https://latex.codecogs.com/png.latex?T"> er ein konkav/“sur” parabel).</p>
+<div class="cell" data-execution_count="77">
+<div class="sourceCode cell-code" id="cb24" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><span class="im" style="color: #00769E;">from</span> sympy <span class="im" style="color: #00769E;">import</span> Symbol, diff, Eq, solveset, Reals</span>
+<span id="cb24-2">a <span class="op" style="color: #5E5E5E;">=</span> Symbol(<span class="st" style="color: #20794D;">"a"</span>)</span>
+<span id="cb24-3"></span>
+<span id="cb24-4">T <span class="op" style="color: #5E5E5E;">=</span> <span class="dv" style="color: #AD0000;">4</span><span class="op" style="color: #5E5E5E;">*</span>a <span class="op" style="color: #5E5E5E;">-</span> <span class="dv" style="color: #AD0000;">2</span><span class="op" style="color: #5E5E5E;">*</span>a<span class="op" style="color: #5E5E5E;">**</span><span class="dv" style="color: #AD0000;">2</span></span>
+<span id="cb24-5">dT <span class="op" style="color: #5E5E5E;">=</span> diff(T, a)</span>
+<span id="cb24-6"></span>
+<span id="cb24-7">likning <span class="op" style="color: #5E5E5E;">=</span> Eq(dT, <span class="dv" style="color: #AD0000;">0</span>)</span>
+<span id="cb24-8">løysing <span class="op" style="color: #5E5E5E;">=</span> solveset(likning, a, domain<span class="op" style="color: #5E5E5E;">=</span>Reals)</span>
+<span id="cb24-9"><span class="bu" style="color: null;">print</span>(løysing)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{1}</code></pre>
+</div>
+</div>
+<p>Det vil seie at <img src="https://latex.codecogs.com/png.latex?a=1"> gir størst areal. Då er <img src="https://latex.codecogs.com/png.latex?T(1)=4%5Ccdot%201%20-%202%5Ccdot%201%5E2%20=%202"></p>
+<p><img src="https://latex.codecogs.com/png.latex?2"> er den største verdien <img src="https://latex.codecogs.com/png.latex?T"> kan ha.</p>
+</section>
+<section id="oppgåve-6-1" class="level2">
+<h2 class="anchored" data-anchor-id="oppgåve-6-1">Oppgåve 6</h2>
+<p>Temperaturen <img src="https://latex.codecogs.com/png.latex?T"> etter <img src="https://latex.codecogs.com/png.latex?t"> min er</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Cln(T-T_0)=-k%5Ccdot%20t%20+%20r"></p>
+<p>der <img src="https://latex.codecogs.com/png.latex?T_0"> er romtepmeratur og <img src="https://latex.codecogs.com/png.latex?k"> og <img src="https://latex.codecogs.com/png.latex?r"> konstantar.</p>
+<p>Får oppgitt at - <img src="https://latex.codecogs.com/png.latex?T_0=22"> - <img src="https://latex.codecogs.com/png.latex?T=82"> når <img src="https://latex.codecogs.com/png.latex?t=0"> - <img src="https://latex.codecogs.com/png.latex?T=66"> når <img src="https://latex.codecogs.com/png.latex?t=2"></p>
+<p>Dermed har me likningane</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Cbegin%7Balign*%7D%0A%20%20%20%20%5Cln(82-22)%20&amp;=%20-k%5Ccdot%200%20+%20r%20&amp;&amp;=r%20%5C%5C%0A%20%20%20%20%5Cln(66-22)%20&amp;=%20-k%5Ccdot%202%20+%20r%20&amp;&amp;=%20r-2k%0A%5Cend%7Balign*%7D%20"></p>
+<div class="cell" data-execution_count="97">
+<div class="sourceCode cell-code" id="cb26" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><span class="im" style="color: #00769E;">from</span> sympy <span class="im" style="color: #00769E;">import</span> Symbol, Eq, nsolve, solveset, Reals, log</span>
+<span id="cb26-2"></span>
+<span id="cb26-3"><span class="co" style="color: #5E5E5E;"># definerer r og k</span></span>
+<span id="cb26-4">r <span class="op" style="color: #5E5E5E;">=</span> Symbol(<span class="st" style="color: #20794D;">"r"</span>)</span>
+<span id="cb26-5">k <span class="op" style="color: #5E5E5E;">=</span> Symbol(<span class="st" style="color: #20794D;">"k"</span>)</span>
+<span id="cb26-6"></span>
+<span id="cb26-7"><span class="co" style="color: #5E5E5E;"># definerer likningane</span></span>
+<span id="cb26-8">l1 <span class="op" style="color: #5E5E5E;">=</span> Eq(log(<span class="dv" style="color: #AD0000;">82</span><span class="op" style="color: #5E5E5E;">-</span><span class="dv" style="color: #AD0000;">22</span>), r)</span>
+<span id="cb26-9">l2 <span class="op" style="color: #5E5E5E;">=</span> Eq(log(<span class="dv" style="color: #AD0000;">66</span><span class="op" style="color: #5E5E5E;">-</span><span class="dv" style="color: #AD0000;">22</span>), r<span class="op" style="color: #5E5E5E;">-</span><span class="dv" style="color: #AD0000;">2</span><span class="op" style="color: #5E5E5E;">*</span>k)</span>
+<span id="cb26-10"></span>
+<span id="cb26-11"><span class="co" style="color: #5E5E5E;"># finn numerisk verdi for r og k</span></span>
+<span id="cb26-12">løysing <span class="op" style="color: #5E5E5E;">=</span> nsolve([l1, l2], [r, k], [<span class="dv" style="color: #AD0000;">1</span>,<span class="dv" style="color: #AD0000;">1</span>])</span>
+<span id="cb26-13"></span>
+<span id="cb26-14"><span class="co" style="color: #5E5E5E;"># definerer t og ny likning med verdiar for r og k</span></span>
+<span id="cb26-15">t <span class="op" style="color: #5E5E5E;">=</span> Symbol(<span class="st" style="color: #20794D;">"t"</span>)</span>
+<span id="cb26-16">r_n <span class="op" style="color: #5E5E5E;">=</span> løysing[<span class="dv" style="color: #AD0000;">0</span>]</span>
+<span id="cb26-17">k_n <span class="op" style="color: #5E5E5E;">=</span> løysing[<span class="dv" style="color: #AD0000;">1</span>]</span>
+<span id="cb26-18">l_temp <span class="op" style="color: #5E5E5E;">=</span> Eq(log(<span class="dv" style="color: #AD0000;">40</span><span class="op" style="color: #5E5E5E;">-</span><span class="dv" style="color: #AD0000;">22</span>), <span class="op" style="color: #5E5E5E;">-</span>k_n <span class="op" style="color: #5E5E5E;">*</span> t <span class="op" style="color: #5E5E5E;">+</span> r_n)</span>
+<span id="cb26-19"></span>
+<span id="cb26-20"><span class="co" style="color: #5E5E5E;"># løyser for t og skriv ut. </span></span>
+<span id="cb26-21">ny_t <span class="op" style="color: #5E5E5E;">=</span> solveset(l_temp, t)</span>
+<span id="cb26-22"><span class="bu" style="color: null;">print</span>(<span class="ss" style="color: #20794D;">f"t = </span><span class="sc" style="color: #5E5E5E;">{</span>ny_t<span class="sc" style="color: #5E5E5E;">.</span>evalf(<span class="dv" style="color: #AD0000;">3</span>)<span class="sc" style="color: #5E5E5E;">}</span><span class="ss" style="color: #20794D;">"</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>t = {7.76}</code></pre>
+</div>
+</div>
+<p>Det tar rett over 7 min og 45 sek før temperaturen når 40 grader.</p>
+</section>
+<section id="oppgåve-7" class="level2">
+<h2 class="anchored" data-anchor-id="oppgåve-7">Oppgåve 7</h2>
+<p>Ser på dei ulike grafane og ser at</p>
+<ul>
+<li><strong>A</strong> har
+<ul>
+<li>ekstremalpunkt i <img src="https://latex.codecogs.com/png.latex?x%5Capprox%20-1"> og <img src="https://latex.codecogs.com/png.latex?x%5Capprox%201">
+<ul>
+<li>voksande før det første ekstremalpunktet (toppunkt)</li>
+<li>synkande mellom ekstremalpunkta</li>
+<li>voksande etter det siste ekstremalpunktet (botnpunkt)</li>
+</ul></li>
+<li>nullpunkt (og vendepunkt) i origo
+<ul>
+<li>grafen søkk og brattast her</li>
+</ul></li>
+</ul></li>
+<li><strong>D</strong> har
+<ul>
+<li>nullpunkt i <img src="https://latex.codecogs.com/png.latex?x%5Capprox%20-1"> og <img src="https://latex.codecogs.com/png.latex?x%5Capprox%201"></li>
+<li>ekstremalpunkt i origo (botnpunkt)</li>
+</ul></li>
+</ul>
+<p>Dermed er <strong>A</strong> grafen til <img src="https://latex.codecogs.com/png.latex?f"> og <strong>D</strong> er grafen til <img src="https://latex.codecogs.com/png.latex?f'">.</p>
+<p>Ser vidare at</p>
+<ul>
+<li><strong>B</strong> har
+<ul>
+<li>nullpunkt i <img src="https://latex.codecogs.com/png.latex?x%5Capprox%201,5"></li>
+<li>positiv før nullpunktet</li>
+<li>negativ etter nullpunktet</li>
+</ul></li>
+<li><strong>C</strong> har
+<ul>
+<li>ekstremalpunkt (toppunkt) i <img src="https://latex.codecogs.com/png.latex?x%5Capprox%201,5"></li>
+</ul></li>
+</ul>
+<p>Dermed er <strong>C</strong> grafen til <img src="https://latex.codecogs.com/png.latex?g"> og <strong>B</strong> er grafen til <img src="https://latex.codecogs.com/png.latex?g'">.</p>
+
+
+</section>
+</section>
+
+ ]]></description>
+  <category>S1</category>
+  <category>V22</category>
+  <category>eksamen</category>
+  <guid>https://lektorodd.github.io/posts/lf/S1-V22/index.html</guid>
+  <pubDate>Tue, 02 May 2023 22:00:00 GMT</pubDate>
+  <media:content url="https://lektorodd.github.io/posts/lf/S1-V22/exam.png" medium="image" type="image/png" height="144" width="144"/>
+</item>
 <item>
   <title>Jordskjelvpython</title>
   <dc:creator>Torodd F. Ottestad</dc:creator>
@@ -1166,7 +1664,7 @@ Tips
 <item>
   <title>Eksamen H22 S1</title>
   <dc:creator>Torodd F. Ottestad</dc:creator>
-  <link>https://lektorodd.github.io/posts/230327_eksamenS1/index.html</link>
+  <link>https://lektorodd.github.io/posts/lf/S1-H22/index.html</link>
   <description><![CDATA[ 
 
 
@@ -1175,7 +1673,7 @@ Tips
 <section id="løysingsforslag-eksamen-s1---h22" class="level1">
 <h1>Løysingsforslag eksamen S1 - H22</h1>
 <p>Her er eit forslag til løysing av hausteksamen i S1 2022. I del 2 er oppgåvene stort sett løyst i Python eller CAS.</p>
-<p>Kan ikkje lova at løysinga er feilfri… 😊</p>
+<p>Eg kan ikkje lova at løysinga er feilfri… 😊 Gje meg gjerne <a href="../../../about.html">ein lyd</a> om du ser feil.</p>
 <hr>
 <p>Miniatyrbilete: <a href="https://www.flaticon.com/free-icons/exam" title="exam icons">Exam icons created by Freepik - Flaticon</a></p>
 <p>Eksamenssettet finn du hos UDIR: <a href="https://sokeresultat.udir.no/eksamensoppgaver.html">Finn eksamensoppgaver</a></p>
@@ -1250,7 +1748,7 @@ Tips
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Ta gjerne ein kikk på <a href="../../posts/230209_simulering1/index.html">dette innlegget</a> om du treng meir info om grunnleggande simulering med NumPy</p>
+<p>Ta gjerne ein kikk på <a href="../../../posts/230209_simulering1/index.html">dette innlegget</a> om du treng meir info om grunnleggande simulering med NumPy</p>
 </div>
 </div>
 <div class="cell" data-execution_count="2">
@@ -1278,7 +1776,7 @@ Tips
 <p>Ser at svaret vert det samme i GG:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lektorodd.github.io/posts/230327_eksamenS1/oppg1-sannsyn.png" class="img-fluid figure-img"></p>
+<p><img src="https://lektorodd.github.io/posts/lf/S1-H22/oppg1-sannsyn.png" class="img-fluid figure-img"></p>
 <p></p><figcaption class="figure-caption"><span class="emoji" data-emoji="camera">📷</span> Sannsynskalkulatoren i GeoGebra Classic 6</figcaption><p></p>
 </figure>
 </div>
@@ -1294,7 +1792,7 @@ Tips
 <p>Bruker CAS og finn arealet av trekanten</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lektorodd.github.io/posts/230327_eksamenS1/del2-2a.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p><img src="https://lektorodd.github.io/posts/lf/S1-H22/del2-2a.png" class="img-fluid figure-img" style="width:80.0%"></p>
 <p></p><figcaption class="figure-caption"><span class="emoji" data-emoji="camera">📷</span> Skjermbilete frå CAS</figcaption><p></p>
 </figure>
 </div>
@@ -1305,7 +1803,7 @@ Tips
 <p>Gjer det samme som i (a) men med <img src="https://latex.codecogs.com/png.latex?a"> som <img src="https://latex.codecogs.com/png.latex?x">-verdien til tangeringspunktet. Finn ein funksjon for arealet, og finn ekstremalpunktet til denne. Viser ved andrederiverttesten at det er eit botnpunkt.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lektorodd.github.io/posts/230327_eksamenS1/del2-2b.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p><img src="https://lektorodd.github.io/posts/lf/S1-H22/del2-2b.png" class="img-fluid figure-img" style="width:80.0%"></p>
 <p></p><figcaption class="figure-caption"><span class="emoji" data-emoji="camera">📷</span> Skjermbilete frå CAS</figcaption><p></p>
 </figure>
 </div>
@@ -1331,7 +1829,7 @@ Tips
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lektorodd.github.io/posts/230327_eksamenS1/index_files/figure-html/cell-3-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="https://lektorodd.github.io/posts/lf/S1-H22/index_files/figure-html/cell-3-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -1353,7 +1851,7 @@ Tips
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lektorodd.github.io/posts/230327_eksamenS1/index_files/figure-html/cell-4-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="https://lektorodd.github.io/posts/lf/S1-H22/index_files/figure-html/cell-4-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -1381,7 +1879,7 @@ Tips
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lektorodd.github.io/posts/230327_eksamenS1/index_files/figure-html/cell-5-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="https://lektorodd.github.io/posts/lf/S1-H22/index_files/figure-html/cell-5-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -1402,7 +1900,7 @@ Tips
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lektorodd.github.io/posts/230327_eksamenS1/index_files/figure-html/cell-6-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="https://lektorodd.github.io/posts/lf/S1-H22/index_files/figure-html/cell-6-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -1489,7 +1987,7 @@ Skjæringspunkt 2: 46.5</code></pre>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lektorodd.github.io/posts/230327_eksamenS1/index_files/figure-html/cell-9-output-2.png" class="img-fluid figure-img"></p>
+<p><img src="https://lektorodd.github.io/posts/lf/S1-H22/index_files/figure-html/cell-9-output-2.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -1640,7 +2138,7 @@ Dag 25: 399.32 mg</code></pre>
 <p><strong>a) For kva verdiar av <img src="https://latex.codecogs.com/png.latex?k"> har likninga <img src="https://latex.codecogs.com/png.latex?f'(x)=k"> løysing?</strong></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lektorodd.github.io/posts/230327_eksamenS1/del2-6a.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p><img src="https://lektorodd.github.io/posts/lf/S1-H22/del2-6a.png" class="img-fluid figure-img" style="width:80.0%"></p>
 <p></p><figcaption class="figure-caption"><span class="emoji" data-emoji="camera">📷</span> Skjermbilete av CAS</figcaption><p></p>
 </figure>
 </div>
@@ -1650,7 +2148,7 @@ Dag 25: 399.32 mg</code></pre>
 <p>Prøver tre ulike verdiar for <img src="https://latex.codecogs.com/png.latex?k"> og ser at alle er symmetriske om linja <img src="https://latex.codecogs.com/png.latex?x=1">.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lektorodd.github.io/posts/230327_eksamenS1/del2-6b.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p><img src="https://lektorodd.github.io/posts/lf/S1-H22/del2-6b.png" class="img-fluid figure-img" style="width:80.0%"></p>
 <p></p><figcaption class="figure-caption"><span class="emoji" data-emoji="camera">📷</span> Skjermbilete av CAS</figcaption><p></p>
 </figure>
 </div>
@@ -1659,7 +2157,7 @@ Dag 25: 399.32 mg</code></pre>
 <p>Løyser likninga og ser at likninga har løysing når <img src="https://latex.codecogs.com/png.latex?a%3E4">.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lektorodd.github.io/posts/230327_eksamenS1/del2-6c.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p><img src="https://lektorodd.github.io/posts/lf/S1-H22/del2-6c.png" class="img-fluid figure-img" style="width:80.0%"></p>
 <p></p><figcaption class="figure-caption"><span class="emoji" data-emoji="camera">📷</span> Skjermbilete av CAS</figcaption><p></p>
 </figure>
 </div>
@@ -1668,7 +2166,7 @@ Dag 25: 399.32 mg</code></pre>
 <p>Ser at no er løysingane symmetriske om <img src="https://latex.codecogs.com/png.latex?x=-d">.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lektorodd.github.io/posts/230327_eksamenS1/del2-6d.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p><img src="https://lektorodd.github.io/posts/lf/S1-H22/del2-6d.png" class="img-fluid figure-img" style="width:80.0%"></p>
 <p></p><figcaption class="figure-caption"><span class="emoji" data-emoji="camera">📷</span> Skjermbilete av CAS</figcaption><p></p>
 </figure>
 </div>
@@ -1677,7 +2175,7 @@ Dag 25: 399.32 mg</code></pre>
 <p>Då er <img src="https://latex.codecogs.com/png.latex?g(x)%20=%203x%20+%20b%20+%20%5Cfrac%7B1%7D%7Bx-2%7D"> og vidare finn me <img src="https://latex.codecogs.com/png.latex?b"> ved å løysa likninga <img src="https://latex.codecogs.com/png.latex?g(1)=7"></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lektorodd.github.io/posts/230327_eksamenS1/del2-6e.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p><img src="https://lektorodd.github.io/posts/lf/S1-H22/del2-6e.png" class="img-fluid figure-img" style="width:80.0%"></p>
 <p></p><figcaption class="figure-caption"><span class="emoji" data-emoji="camera">📷</span> Skjermbilete av CAS</figcaption><p></p>
 </figure>
 </div>
@@ -1689,12 +2187,12 @@ Dag 25: 399.32 mg</code></pre>
 </section>
 
  ]]></description>
-  <category>eksamensoppgåve</category>
-  <category>programmering</category>
-  <category>løysingsforslag</category>
-  <guid>https://lektorodd.github.io/posts/230327_eksamenS1/index.html</guid>
+  <category>S1</category>
+  <category>H22</category>
+  <category>eksamen</category>
+  <guid>https://lektorodd.github.io/posts/lf/S1-H22/index.html</guid>
   <pubDate>Sun, 26 Mar 2023 22:00:00 GMT</pubDate>
-  <media:content url="https://lektorodd.github.io/posts/230327_eksamenS1/exam.png" medium="image" type="image/png" height="144" width="144"/>
+  <media:content url="https://lektorodd.github.io/posts/lf/S1-H22/exam.png" medium="image" type="image/png" height="144" width="144"/>
 </item>
 <item>
   <title>Samansett simulering i S2</title>

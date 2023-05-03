@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.280">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Torodd F. Ottestad">
+<meta name="dcterms.date" content="2023-05-03">
+
+<title>Torodd F. Ottestad - Eksamen V22 S1</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "Ingen treff",
+    "search-matching-documents-text": "passande dokument",
+    "search-copy-link-title": "Kopier lenke til søk",
+    "search-hide-matches-text": "Skjul resterande treff",
+    "search-more-match-text": "treff til i dokumentet",
+    "search-more-matches-text": "fleire treff i dokumentet",
+    "search-clear-button-title": "Tøm",
+    "search-detached-cancel-button-title": "Avbryt",
+    "search-submit-button-title": "Søk"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-744F7V6HLG"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-744F7V6HLG', { 'anonymize_ip': true});
+</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">Torodd F. Ottestad</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../about.html">
+ <span class="menu-text">Om meg</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/lektorodd/lektorodd.github.io"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://snabelen.no/@torodd"><i class="bi bi-mastodon" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/lektorodd"><i class="bi bi-twitter" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://linkedin.com/in/torodd-ottestad-b2583a59"><i class="bi bi-linkedin" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="../../../index.xml"><i class="bi bi-rss-fill" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Eksamen V22 S1</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">S1</div>
+                <div class="quarto-category">V22</div>
+                <div class="quarto-category">eksamen</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Forfattar</div>
+      <div class="quarto-title-meta-contents">
+               <p>Torodd F. Ottestad </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Publisert</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">May 3, 2023</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<section id="løysingsforslag-eksamen-s1---v22" class="level1">
+<h1>Løysingsforslag eksamen S1 - V22</h1>
+<p>Her er eit forslag til løysing av våreksamen i S1 2022. I del 2 er oppgåvene stort sett løyst i Python eller CAS.</p>
+<p>Eg kan ikkje lova at løysinga er feilfri… 😊 Gje meg gjerne <a href="../../../about.html">ein lyd</a> om du ser feil.</p>
+<hr>
+<p>Miniatyrbilete: <a href="https://www.flaticon.com/free-icons/exam" title="exam icons">Exam icons created by Freepik - Flaticon</a></p>
+<p>Eksamenssettet finn du hos UDIR: <a href="https://sokeresultat.udir.no/eksamensoppgaver.html">Finn eksamensoppgaver</a></p>
+</section>
+<section id="del-1" class="level1">
+<h1>Del 1</h1>
+<section id="oppgåve-1" class="level2">
+<h2 class="anchored" data-anchor-id="oppgåve-1">Oppgåve 1</h2>
+<p>Skriv så enkelt som råd</p>
+<p><span class="math display">\[ \begin{align*}
+\left(2a\right)^{-1}\cdot \left(\frac{b}{2}\right)^{-3}\cdot \left(a\cdot b\right)^3 &amp;= \frac{1}{2a}\cdot \frac{2^3}{b^3}\cdot a^3 \cdot b^3 \\
+&amp;= \frac{2^3 \cdot a^3 \cdot b^3}{2\cdot a \cdot b^3} \\
+&amp;= 2^2 \cdot a \\ &amp;= 4a
+\end{align*}\]</span></p>
+</section>
+<section id="oppgåve-2" class="level2">
+<h2 class="anchored" data-anchor-id="oppgåve-2">Oppgåve 2</h2>
+<p>Dagleg produksjonskostnad for <span class="math inline">\(x\)</span> luer gitt ved <span class="math display">\[E(x)=0,2x+40+\frac{20000}{x}\]</span></p>
+<p>Deriverer <span class="math inline">\(E(x)\)</span></p>
+<p><span class="math display">\[E'(x) = 0,2 + 0 + 20000\cdot \frac{-1}{x^2} = 0,2 - \frac{20000}{x^2}\]</span></p>
+<p>Dermed får me</p>
+<p><span class="math display">\[E'(100)=0,2-\frac{20000}{10000} = 0,2-2 = -1,8\]</span></p>
+<p>Dette betyr at ved 100 produserte einingar vil <em>endringa</em> i produksjonskostnaden vera <span class="math inline">\(-1,8\)</span>. Altså vil det bli om lag 1,8 kr billegare å produsere kvar lue om ein aukar produksjonen frå 100 til 101.</p>
+</section>
+<section id="oppgåve-3" class="level2">
+<h2 class="anchored" data-anchor-id="oppgåve-3">Oppgåve 3</h2>
+<p><span class="math display">\[
+\begin{align*}
+    \lim_{x\rightarrow 3} \frac{x-3}{x^2+x-12} &amp;= \lim_{x\rightarrow 3} \frac{x-3}{(x+4)(x-3)} \\
+    &amp;= \lim_{x\rightarrow 3} \frac{1}{x+4} \\
+    &amp;= \frac{1}{3+4} \\
+    &amp;= \frac{1}{7}
+\end{align*}
+\]</span></p>
+</section>
+<section id="oppgåve-4" class="level2">
+<h2 class="anchored" data-anchor-id="oppgåve-4">Oppgåve 4</h2>
+<p>Skal løysa likninga <span class="math inline">\(e^{2x}-e^x=2\)</span>. Bruker at <span class="math inline">\(e^{2x}=\left(e^x\right)^2\)</span>. Dermed får me <span class="math display">\[\left(e^x\right)^2 - e^x = 2\]</span></p>
+<p>Bytter ut <span class="math inline">\(e^x\)</span> med <span class="math inline">\(u\)</span> og løyser andregradslikninga for <span class="math inline">\(u\)</span></p>
+<p><span class="math display">\[
+\begin{align*}
+    u^2 - u &amp;= 2 \\
+    u^2 - u - 2 &amp;= 0 \\
+    (u+1)(u-2)&amp;= 0 \\
+    u=-1 &amp;\vee u = 2 \\
+    \text{Som vil seie at} \\
+    e^x = -1 &amp;\vee e^x =2 \\
+\end{align*}
+\]</span></p>
+<p>Tar logarimten av begge sider for å få <span class="math inline">\(x\)</span> for å finna <span class="math inline">\(x\)</span>. Får kun ei løysing, <span class="math inline">\(x = \ln(2)\)</span>, sidan den naturlege logaritmen kun er definert for positive tal.</p>
+</section>
+<section id="oppgåve-5" class="level2">
+<h2 class="anchored" data-anchor-id="oppgåve-5">Oppgåve 5</h2>
+<p>Set inn <span class="math inline">\(x=7\)</span> i likninga <span class="math display">\[ \begin{align*}
+    \lg(x+3) + \lg (x) &amp;= \lg(a) \\
+    \lg(10) + \lg(7) &amp;= \lg(a) \\
+    \lg(10\cdot 7) &amp;= \lg(a)
+\end{align*} \]</span></p>
+<p>Dermed er <span class="math inline">\(a=70\)</span>.</p>
+</section>
+<section id="oppgåve-6" class="level2">
+<h2 class="anchored" data-anchor-id="oppgåve-6">Oppgåve 6</h2>
+<section id="a-programkode" class="level3">
+<h3 class="anchored" data-anchor-id="a-programkode">a) programkode</h3>
+<p>Når programmet køyrer vil det bli trilla to terningar 1000000 gongar (<code>N</code>). Ein tel opp kor mange av desse kasta summen av terningane blir 9 (<code>gunstige</code>). Til slutt skriv ein ut den relative frekvensen (<code>gunstige/N</code>).</p>
+<p>Eleven ønsker å finna ut kva sannsynet for at eit terningkast med to terningar gir summen 9 (<em>eller</em> ein terning kasta to gongar).</p>
+</section>
+<section id="b-sannsynsrekning" class="level3">
+<h3 class="anchored" data-anchor-id="b-sannsynsrekning">b) sannsynsrekning</h3>
+<p>Tel opp antall gunstige utfall (her er det lurt å teikne t.d. tabell eller valtre).</p>
+<p>Det er <span class="math inline">\(4\)</span> utfall som gjev <span class="math inline">\(9\)</span> som sum. (<span class="math inline">\(3+6\)</span>, <span class="math inline">\(4+5\)</span>, <span class="math inline">\(5+4\)</span> og <span class="math inline">\(6+3\)</span>).</p>
+<p>Vidare er det <span class="math inline">\(6\cdot 6 = 36\)</span> moglege utfall.</p>
+<p><span class="math display">\[P(\text{summen er 9}) = \frac{\text{gunstige}}{\text{moglege}} = \frac{4}{36}=\frac{1}{9}\]</span></p>
+</section>
+</section>
+</section>
+<section id="del-2" class="level1">
+<h1>Del 2</h1>
+<section id="oppgåve-1-1" class="level2">
+<h2 class="anchored" data-anchor-id="oppgåve-1-1">Oppgåve 1</h2>
+<p>Tabellen nedanfor viser talet på gardsbruk i Noreg for nokre gitte årstal.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>År</th>
+<th>Tal gardsbruk</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1969</td>
+<td>154 977</td>
+</tr>
+<tr class="even">
+<td>1989</td>
+<td>99 382</td>
+</tr>
+<tr class="odd">
+<td>1999</td>
+<td>68 539</td>
+</tr>
+<tr class="even">
+<td>2009</td>
+<td>47 688</td>
+</tr>
+<tr class="odd">
+<td>2020</td>
+<td>38 633</td>
+</tr>
+</tbody>
+</table>
+<section id="a-modell-for-framtida" class="level3">
+<h3 class="anchored" data-anchor-id="a-modell-for-framtida">a) modell for framtida</h3>
+<p>Plottar først datapunkta for å få ei oversikt over korleis det ser ut</p>
+<div class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>år <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">51</span>]</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>gårdar <span class="op">=</span> [<span class="dv">154977</span>, <span class="dv">99382</span>, <span class="dv">68539</span>, <span class="dv">47688</span>, <span class="dv">38633</span>]</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>plt.plot(år, gårdar, <span class="st">"ro"</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="index_files/figure-html/cell-2-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+<p>Det kan sjå ut som om nedgangen vert mindre og mindre. Ser om det kan passa med ein modell for prosentvis nedgang (eksponentiell modell).</p>
+<p>Bruker <code>curve_fit</code> for å finna ein funksjon på forma <span class="math inline">\(f(x)=a \cdot b^x\)</span></p>
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.optimize <span class="im">import</span> curve_fit</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(x, a, b):</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a<span class="op">*</span>b<span class="op">**</span>x</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>K, E <span class="op">=</span> curve_fit(f, år, gårdar)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>a, b <span class="op">=</span> K</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>x_verdiar <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">65</span>, <span class="dv">1000</span>)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>plt.plot(x_verdiar, f(x_verdiar, a, b))</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>plt.plot(år, gårdar, <span class="st">"ro"</span>)</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>plt.ylim([<span class="dv">0</span>, <span class="dv">160000</span>])</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"f(x)=</span><span class="sc">{</span>a<span class="sc">:.1f}</span><span class="ss">*</span><span class="sc">{</span>b<span class="sc">:.3f}</span><span class="ss">^x"</span>)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="index_files/figure-html/cell-3-output-1.png" class="img-fluid"></p>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>f(x)=157256.2*0.973^x</code></pre>
+</div>
+</div>
+<p>Det kan sjå ut som modellen <span class="math display">\[f(x)=157256 \cdot 0,973^x\]</span> passar fint med datapunkta.</p>
+<p>I tillegg er det naturleg å tenka at talet på gardsbruk vil ha ein prosentvis nedgang som den i modellen over. På 60-70-talet var det mange små gårdsbruk som har blitt <em>slukt</em> av større gårdar. Med tanke på at me framleis held på med matproduksjon og landbruk, vil denne nedgangen i små gardsbruk (og auken i store) bli mindre og mindre over tid.</p>
+</section>
+<section id="b-framtida" class="level3">
+<h3 class="anchored" data-anchor-id="b-framtida">b) framtida</h3>
+<p>Reknar ut <span class="math inline">\(f(2060-1969)\)</span>:</p>
+<div class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">2060</span><span class="op">-</span><span class="dv">1969</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>framtid <span class="op">=</span> f(x, a, b)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Gårdar i 2060: </span><span class="ch">\n</span><span class="ss">f(</span><span class="sc">{</span>x<span class="sc">}</span><span class="ss">) = </span><span class="sc">{</span>framtid<span class="sc">:.0f}</span><span class="ss">"</span>)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Gårdar i 2060: 
+f(91) = 13248</code></pre>
+</div>
+</div>
+<p>Det er vanskeleg å seie mykje om dette svaret utan meir bakgrunnskunnskap og andre data. Likevel tenker eg at det er eit rimeleg svar, dersom t.d. automatisering og liknande effektiviserer landbruket, slik at det trengs færre bønder (og gjerne færre gårdar). På den andre sida kan det tenkast at ustabile globale tilhøve på matforsyning gjer at talet på gårdsbruk vert høgare. Som sagt, vanskeleg å seie noko om.</p>
+</section>
+<section id="c-nedgang-med-1000" class="level3">
+<h3 class="anchored" data-anchor-id="c-nedgang-med-1000">c) nedgang med 1000</h3>
+<p>Her kunne me jo løyst likninga <span class="math inline">\(f'(x)=-1000\)</span>, men me prøver oss på ein annan framgongsmåte i Python.</p>
+<p>Lagar ei <code>while</code>-løkke som ser på skilnaden mellom eit år og det neste. Av grafen veit/ser me at i starten er nedgangen mykje større enn 1000 i året (ca. 56 000 færre frå 1969 til 1989). Held difor på så lenge skilnaden på to påfølgjande år er større enn 1000 (bruker absoluttverdi)</p>
+<div class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>f0 <span class="op">=</span> f(x, a, b)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>f1 <span class="op">=</span> f(x<span class="op">+</span><span class="dv">1</span>, a, b)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="bu">abs</span>(f1<span class="op">-</span>f0) <span class="op">&gt;=</span> <span class="dv">1000</span>:</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    x <span class="op">+=</span><span class="dv">1</span> </span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    f0 <span class="op">=</span> f(x, a, b)</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    f1 <span class="op">=</span> f(x<span class="op">+</span><span class="dv">1</span>, a, b)</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"x = </span><span class="sc">{</span>x<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"f(</span><span class="sc">{</span>x<span class="sc">}</span><span class="ss">) = </span><span class="sc">{</span>f0<span class="sc">:.1f}</span><span class="ss">"</span>)</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"f(</span><span class="sc">{</span>x<span class="op">+</span><span class="dv">1</span><span class="sc">}</span><span class="ss">) = </span><span class="sc">{</span>f1<span class="sc">:.1f}</span><span class="ss">"</span>)</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Endring: </span><span class="sc">{</span>(f1<span class="op">-</span>f0)<span class="sc">:.1f}</span><span class="ss">"</span>)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>x = 53
+f(53) = 37224.1
+f(54) = 36225.7
+Endring: -998.4</code></pre>
+</div>
+</div>
+<p>Ser at når <span class="math inline">\(x=53\)</span> er nedgangen ca. 1000 gårdsbruk. Dvs. kring år 2022.</p>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Løyse symbolsk i <code>sympy</code>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Me kan løysa likninga <span class="math inline">\(f'(x)=-1000\)</span> med <code>sympy</code>/CAS</p>
+<div class="cell" data-execution_count="46">
+<details>
+<summary>Vis koden</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># importerer aktuelle funksjonar frå sympy</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sympy <span class="im">import</span> Symbol, diff, Eq, Reals, solveset</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># definerer x</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> Symbol(<span class="st">"x"</span>)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co"># definerer funksjonen og deriverer</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> a <span class="op">*</span> b<span class="op">**</span>x</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> diff(f, x)</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="co"># set opp likninga, og løyser den</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>likning <span class="op">=</span> Eq(df, <span class="op">-</span><span class="dv">1000</span>)</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>løysing <span class="op">=</span> solveset(likning, x, domain<span class="op">=</span>Reals)</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="co"># skriv ut svaret</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"x = </span><span class="sc">{</span>l<span class="sc">ø</span>ysing<span class="sc">.</span>evalf(<span class="dv">3</span>)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>x = {53.4}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="oppgåve-2-1" class="level2">
+<h2 class="anchored" data-anchor-id="oppgåve-2-1">Oppgåve 2</h2>
+<section id="a-binomisk-forsøk" class="level3">
+<h3 class="anchored" data-anchor-id="a-binomisk-forsøk">a) binomisk forsøk?</h3>
+<p>Dersomm dette skal vera eit binomisk forsøk må me gå ut frå at sannsynet for at kvar av dei består er det same (74 %) og at oppkøyringa til kvar av elevane er uavhengige “delforsøk”. Dvs. at om ein elev stryk (eller består) oppkøyringa så påverkar ikkje det resultatet til dei andre. I tillegg er det her slik at kvar delforsøk kun har to utfall, <em>bestå</em> og <em>ikkje bestå</em>.</p>
+<p>I praksis vil nok ikkje sannynet vera det samme for kvar elev. Ein har ulike føresetnader, er ulikt førebudd, vert ulikt påverka av nerver/stress osb. I tillegg kan ein tenka seg at om ein av dei stryk (og dei andre får høyra det) så kan det påverka oppkøyringa til nestemann.</p>
+</section>
+<section id="b-sannsyn-for-at-8-av-12-består" class="level3">
+<h3 class="anchored" data-anchor-id="b-sannsyn-for-at-8-av-12-består">b) sannsyn for at 8 av 12 består</h3>
+<p>For å finna dette sannsynet kan me simulera dei 12 oppkøyringane mange gongar og telja opp kor mange av dei minst 8 består. Me antar at dette kan sjåast på som eit binomisk forsøk.</p>
+<div class="cell" data-execution_count="49">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng()</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> <span class="dv">1000000</span> <span class="co"># tal simuleringar</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">12</span>      <span class="co"># tal elevar</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> <span class="fl">0.74</span>    <span class="co"># sannynet for suksess (bestå)</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> <span class="dv">8</span>       <span class="co"># minst X suksess</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="co"># simulerer</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>oppkøyringar <span class="op">=</span> rng.binomial(n, p, size <span class="op">=</span> N)</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="co"># tel opp</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>gunstige <span class="op">=</span> <span class="bu">sum</span>(oppkøyringar <span class="op">&gt;=</span> X)</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a><span class="co"># finn og skriv ut sannsynet</span></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>sannsyn <span class="op">=</span> gunstige<span class="op">/</span>N</span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"P(X &gt;= 8) = </span><span class="sc">{</span>sannsyn<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>P(X &gt;= 8) = 0.8211</code></pre>
+</div>
+</div>
+</section>
+<section id="c-akkurat-5-gutar-og-4-jenter" class="level3">
+<h3 class="anchored" data-anchor-id="c-akkurat-5-gutar-og-4-jenter">c) akkurat 5 gutar og 4 jenter</h3>
+<p>Ser på gutane og jentene for seg. Multipliserer saman sannsyna sidan dei to hendingane er uavhengige.</p>
+<div class="cell" data-execution_count="52">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> <span class="dv">1000000</span> <span class="co"># tal simuleringar</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>n_g <span class="op">=</span> <span class="dv">7</span>     <span class="co"># tal gutar</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>X_g <span class="op">=</span> <span class="dv">5</span>     <span class="co"># gutar som består</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>n_j <span class="op">=</span> <span class="dv">5</span>     <span class="co"># tal jenter</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>X_j <span class="op">=</span> <span class="dv">4</span>     <span class="co"># jenter som består</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> <span class="fl">0.74</span>    <span class="co"># sannynet for suksess (bestå)</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="co"># simulerer</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>gutar <span class="op">=</span> rng.binomial(n_g, p, size<span class="op">=</span>N)</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>jenter <span class="op">=</span> rng.binomial(n_j, p, size<span class="op">=</span>N)</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="co"># tel opp</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>gunstige_g <span class="op">=</span> <span class="bu">sum</span>(gutar <span class="op">==</span> X_g)</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>gunstige_j <span class="op">=</span> <span class="bu">sum</span>(jenter <span class="op">==</span> X_j)</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a><span class="co"># finn og skriv ut sannsynet</span></span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>sannsyn_g <span class="op">=</span> gunstige_g<span class="op">/</span>N</span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>sannsyn_j <span class="op">=</span> gunstige_j<span class="op">/</span>N</span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a><span class="co"># hendingane er uavhengige, dermed får me:</span></span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>sannsyn <span class="op">=</span> sannsyn_g <span class="op">*</span> sannsyn_j</span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"P(5 gutar og 4 jenter) = </span><span class="sc">{</span>sannsyn<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>P(5 gutar og 4 jenter) = 0.1232</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="oppgåve-3-1" class="level2">
+<h2 class="anchored" data-anchor-id="oppgåve-3-1">Oppgåve 3</h2>
+<p>70 000 kr på konto, med fast månadleg rentesats <span class="math display">\[B(x) = 70000\cdot 1,003^x\]</span></p>
+<section id="a-årleg-rentesats" class="level3">
+<h3 class="anchored" data-anchor-id="a-årleg-rentesats">a) årleg rentesats</h3>
+<div class="cell" data-execution_count="53">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="fl">1.003</span><span class="op">**</span><span class="dv">12</span>)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>1.03659998028813</code></pre>
+</div>
+</div>
+<p>Knut har ein årleg rentesats på ca. 3,7 prosent.</p>
+</section>
+<section id="b-80-000-kroner" class="level3">
+<h3 class="anchored" data-anchor-id="b-80-000-kroner">b) 80 000 kroner</h3>
+<p>Løyser likninga <span class="math inline">\(B(x)=80000\)</span>.</p>
+<div class="cell" data-execution_count="59">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sympy <span class="im">import</span> Symbol, Eq, solveset, Reals</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> Symbol(<span class="st">"x"</span>)</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>likning <span class="op">=</span> Eq(<span class="dv">70000</span><span class="op">*</span><span class="fl">1.003</span><span class="op">**</span>x, <span class="dv">80000</span>)</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>løysing <span class="op">=</span> solveset(likning, x, domain<span class="op">=</span>Reals)</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(løysing.evalf(<span class="dv">3</span>))</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{44.6}</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="63">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">45</span> <span class="op">//</span> <span class="dv">12</span>)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">45</span> <span class="op">%</span> <span class="dv">12</span>)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>3
+9</code></pre>
+</div>
+</div>
+<p>Det tek 45 månader, 3 år og 9 månader, før beløpet har passert 80000 kr.</p>
+</section>
+<section id="c-kontinuerleg" class="level3">
+<h3 class="anchored" data-anchor-id="c-kontinuerleg">c) kontinuerleg?</h3>
+<p>Aksjefond: 2000 kroner inn kvar månad (0,7 prosent avkasting per mnd.) <br> Konto: 0.3% renter.</p>
+<p><span class="math inline">\(T(x)\)</span> er den totale verdien av aksjefond og sparekonto.</p>
+<p>Sidan han set inn 2000 kroner kvar månad vil funksjonen gjera eit hopp på desse tidspunkta, og ikkje vera kontinuerleg.</p>
+</section>
+<section id="d-meir-enn-200-000-kroner" class="level3">
+<h3 class="anchored" data-anchor-id="d-meir-enn-200-000-kroner">d) meir enn 200 000 kroner?</h3>
+<p>Prøver oss fram i Python.</p>
+<div class="cell" data-execution_count="70">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># etter nøyaktig 24 månader</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>konto <span class="op">=</span> <span class="dv">70000</span><span class="op">*</span><span class="fl">1.003</span><span class="op">**</span><span class="dv">24</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>fond <span class="op">=</span> <span class="dv">2000</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>total <span class="op">=</span> konto <span class="op">+</span> fond</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>mnd <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> total <span class="op">&lt;</span> <span class="dv">200000</span>:</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>    konto <span class="op">*=</span> <span class="fl">1.003</span></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>    fond <span class="op">=</span> fond<span class="op">*</span><span class="fl">1.007</span> <span class="op">+</span> <span class="dv">2000</span></span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>    total <span class="op">=</span> konto <span class="op">+</span> fond</span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>    mnd <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Etter </span><span class="sc">{</span>mnd<span class="sc">}</span><span class="ss"> månader er det </span><span class="sc">{</span>total<span class="sc">:.2f}</span><span class="ss"> kr"</span>)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Etter 47 månader er det 200218.45 kr</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="oppgåve-4-1" class="level2">
+<h2 class="anchored" data-anchor-id="oppgåve-4-1">Oppgåve 4</h2>
+<p>Simulerer i Python.</p>
+<div class="cell" data-execution_count="74">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng()</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="co"># antall kast</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> <span class="dv">1000000</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="co"># dei tre terningane N kast</span></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>t1 <span class="op">=</span> rng.integers(<span class="dv">1</span>, <span class="dv">7</span>, N)</span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>t2 <span class="op">=</span> rng.integers(<span class="dv">1</span>, <span class="dv">7</span>, N)</span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>t3 <span class="op">=</span> rng.integers(<span class="dv">1</span>, <span class="dv">7</span>, N)</span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a><span class="co"># produktet av terningane, per kast</span></span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>prod <span class="op">=</span> t1 <span class="op">*</span> t2 <span class="op">*</span> t3</span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a><span class="co"># tel opp gunstige utfall</span></span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a>gunstige <span class="op">=</span> <span class="bu">sum</span>(prod <span class="op">&gt;</span> <span class="dv">100</span>)</span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a><span class="co"># finn sannsynet</span></span>
+<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a>sannsyn <span class="op">=</span> gunstige <span class="op">/</span> N</span>
+<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Sannsynet for å vinna er </span><span class="sc">{</span>sannsyn<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Sannsynet for å vinna er 0.0924</code></pre>
+</div>
+</div>
+<p>Køyrer programmet eit par gongar og ser at resultatet vert ganske likt. Sannsynet for å vinna er ca. 0,092</p>
+</section>
+<section id="oppgåve-5-1" class="level2">
+<h2 class="anchored" data-anchor-id="oppgåve-5-1">Oppgåve 5</h2>
+<p>Breidda på rektangelet er <span class="math inline">\(2\cdot a\)</span> medan høgda er <span class="math inline">\(b\)</span>, som er <span class="math inline">\(y\)</span>-verdien til skjæringspunktet mellom linja frå <span class="math inline">\((0, 2)\)</span> til <span class="math inline">\((2, 0)\)</span> og <span class="math inline">\(x=a\)</span>.</p>
+<p>Linja har stigningstal <span class="math inline">\(-1\)</span> og konstantledd <span class="math inline">\(2\)</span>. Dvs. <span class="math inline">\(f(x)=2-x\)</span>.</p>
+<p>Dermed er høgda til rektangelet <span class="math inline">\(2-a\)</span>. Arealet vert då <span class="math display">\[T = 2 \cdot a \cdot b = 2\cdot a \cdot(2-a) = 4a - 2a^2\]</span></p>
+<p>Definerer <span class="math inline">\(T(a)\)</span> som funksjon, deriverer og finn den <span class="math inline">\(a\)</span>-verdien som gjev størst <span class="math inline">\(T\)</span>. (størst sidan <span class="math inline">\(T\)</span> er ein konkav/“sur” parabel).</p>
+<div class="cell" data-execution_count="77">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sympy <span class="im">import</span> Symbol, diff, Eq, solveset, Reals</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> Symbol(<span class="st">"a"</span>)</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>T <span class="op">=</span> <span class="dv">4</span><span class="op">*</span>a <span class="op">-</span> <span class="dv">2</span><span class="op">*</span>a<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>dT <span class="op">=</span> diff(T, a)</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>likning <span class="op">=</span> Eq(dT, <span class="dv">0</span>)</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>løysing <span class="op">=</span> solveset(likning, a, domain<span class="op">=</span>Reals)</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(løysing)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{1}</code></pre>
+</div>
+</div>
+<p>Det vil seie at <span class="math inline">\(a=1\)</span> gir størst areal. Då er <span class="math display">\[T(1)=4\cdot 1 - 2\cdot 1^2 = 2\]</span></p>
+<p><span class="math inline">\(2\)</span> er den største verdien <span class="math inline">\(T\)</span> kan ha.</p>
+</section>
+<section id="oppgåve-6-1" class="level2">
+<h2 class="anchored" data-anchor-id="oppgåve-6-1">Oppgåve 6</h2>
+<p>Temperaturen <span class="math inline">\(T\)</span> etter <span class="math inline">\(t\)</span> min er</p>
+<p><span class="math display">\[\ln(T-T_0)=-k\cdot t + r\]</span></p>
+<p>der <span class="math inline">\(T_0\)</span> er romtepmeratur og <span class="math inline">\(k\)</span> og <span class="math inline">\(r\)</span> konstantar.</p>
+<p>Får oppgitt at - <span class="math inline">\(T_0=22\)</span> - <span class="math inline">\(T=82\)</span> når <span class="math inline">\(t=0\)</span> - <span class="math inline">\(T=66\)</span> når <span class="math inline">\(t=2\)</span></p>
+<p>Dermed har me likningane</p>
+<p><span class="math display">\[\begin{align*}
+    \ln(82-22) &amp;= -k\cdot 0 + r &amp;&amp;=r \\
+    \ln(66-22) &amp;= -k\cdot 2 + r &amp;&amp;= r-2k
+\end{align*} \]</span></p>
+<div class="cell" data-execution_count="97">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sympy <span class="im">import</span> Symbol, Eq, nsolve, solveset, Reals, log</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="co"># definerer r og k</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>r <span class="op">=</span> Symbol(<span class="st">"r"</span>)</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>k <span class="op">=</span> Symbol(<span class="st">"k"</span>)</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a><span class="co"># definerer likningane</span></span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>l1 <span class="op">=</span> Eq(log(<span class="dv">82</span><span class="op">-</span><span class="dv">22</span>), r)</span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>l2 <span class="op">=</span> Eq(log(<span class="dv">66</span><span class="op">-</span><span class="dv">22</span>), r<span class="op">-</span><span class="dv">2</span><span class="op">*</span>k)</span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a><span class="co"># finn numerisk verdi for r og k</span></span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a>løysing <span class="op">=</span> nsolve([l1, l2], [r, k], [<span class="dv">1</span>,<span class="dv">1</span>])</span>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a><span class="co"># definerer t og ny likning med verdiar for r og k</span></span>
+<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> Symbol(<span class="st">"t"</span>)</span>
+<span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a>r_n <span class="op">=</span> løysing[<span class="dv">0</span>]</span>
+<span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a>k_n <span class="op">=</span> løysing[<span class="dv">1</span>]</span>
+<span id="cb26-18"><a href="#cb26-18" aria-hidden="true" tabindex="-1"></a>l_temp <span class="op">=</span> Eq(log(<span class="dv">40</span><span class="op">-</span><span class="dv">22</span>), <span class="op">-</span>k_n <span class="op">*</span> t <span class="op">+</span> r_n)</span>
+<span id="cb26-19"><a href="#cb26-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-20"><a href="#cb26-20" aria-hidden="true" tabindex="-1"></a><span class="co"># løyser for t og skriv ut. </span></span>
+<span id="cb26-21"><a href="#cb26-21" aria-hidden="true" tabindex="-1"></a>ny_t <span class="op">=</span> solveset(l_temp, t)</span>
+<span id="cb26-22"><a href="#cb26-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"t = </span><span class="sc">{</span>ny_t<span class="sc">.</span>evalf(<span class="dv">3</span>)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>t = {7.76}</code></pre>
+</div>
+</div>
+<p>Det tar rett over 7 min og 45 sek før temperaturen når 40 grader.</p>
+</section>
+<section id="oppgåve-7" class="level2">
+<h2 class="anchored" data-anchor-id="oppgåve-7">Oppgåve 7</h2>
+<p>Ser på dei ulike grafane og ser at</p>
+<ul>
+<li><strong>A</strong> har
+<ul>
+<li>ekstremalpunkt i <span class="math inline">\(x\approx -1\)</span> og <span class="math inline">\(x\approx 1\)</span>
+<ul>
+<li>voksande før det første ekstremalpunktet (toppunkt)</li>
+<li>synkande mellom ekstremalpunkta</li>
+<li>voksande etter det siste ekstremalpunktet (botnpunkt)</li>
+</ul></li>
+<li>nullpunkt (og vendepunkt) i origo
+<ul>
+<li>grafen søkk og brattast her</li>
+</ul></li>
+</ul></li>
+<li><strong>D</strong> har
+<ul>
+<li>nullpunkt i <span class="math inline">\(x\approx -1\)</span> og <span class="math inline">\(x\approx 1\)</span></li>
+<li>ekstremalpunkt i origo (botnpunkt)</li>
+</ul></li>
+</ul>
+<p>Dermed er <strong>A</strong> grafen til <span class="math inline">\(f\)</span> og <strong>D</strong> er grafen til <span class="math inline">\(f'\)</span>.</p>
+<p>Ser vidare at</p>
+<ul>
+<li><strong>B</strong> har
+<ul>
+<li>nullpunkt i <span class="math inline">\(x\approx 1,5\)</span></li>
+<li>positiv før nullpunktet</li>
+<li>negativ etter nullpunktet</li>
+</ul></li>
+<li><strong>C</strong> har
+<ul>
+<li>ekstremalpunkt (toppunkt) i <span class="math inline">\(x\approx 1,5\)</span></li>
+</ul></li>
+</ul>
+<p>Dermed er <strong>C</strong> grafen til <span class="math inline">\(g\)</span> og <strong>B</strong> er grafen til <span class="math inline">\(g'\)</span>.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Kopiert!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Kopiert!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<script src="https://giscus.app/client.js" data-repo="lektorodd/lektorodd.github.io" data-repo-id="R_kgDOI1N_fg" data-category="General" data-category-id="DIC_kwDOI1N_fs4CT23b" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
