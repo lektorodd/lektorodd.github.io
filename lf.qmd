@@ -2,7 +2,7 @@
 title: "Løysingsforslag matteeksamen"
 listing:
   type: default
-  contents: posts/lf/
+  contents: lf/
   sort: "date desc"
   categories: true
   sort-ui: false
