@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.280">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Torodd F. Ottestad">
+<meta name="dcterms.date" content="2023-05-24">
+
+<title>Torodd F. Ottestad - Eksamen V23 S1</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "Ingen treff",
+    "search-matching-documents-text": "passande dokument",
+    "search-copy-link-title": "Kopier lenke til søk",
+    "search-hide-matches-text": "Skjul resterande treff",
+    "search-more-match-text": "treff til i dokumentet",
+    "search-more-matches-text": "fleire treff i dokumentet",
+    "search-clear-button-title": "Tøm",
+    "search-detached-cancel-button-title": "Avbryt",
+    "search-submit-button-title": "Søk"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-744F7V6HLG"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-744F7V6HLG', { 'anonymize_ip': true});
+</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Torodd F. Ottestad</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html">
+ <span class="menu-text">Om meg</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/lektorodd/lektorodd.github.io"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://snabelen.no/@torodd"><i class="bi bi-mastodon" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/lektorodd"><i class="bi bi-twitter" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://linkedin.com/in/torodd-ottestad-b2583a59"><i class="bi bi-linkedin" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="../../index.xml"><i class="bi bi-rss-fill" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Eksamen V23 S1</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">S1</div>
+    <div class="quarto-category">V23</div>
+    <div class="quarto-category">eksamen</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Forfattar</div>
+    <div class="quarto-title-meta-contents">
+             <p>Torodd F. Ottestad </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Publisert</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">May 24, 2023</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="løysingsforslag-eksamen-s1---v23" class="level1">
+<h1>Løysingsforslag eksamen S1 - V23</h1>
+<p>Her er eit forslag til løysing av våreksamen i S1 2023. I del 2 er oppgåvene stort sett Python brukt som hjelpemiddel.</p>
+<p>Eg kan ikkje lova at løysinga er feilfri… 😊 Gje meg gjerne ein lyd i kommentarfeltet eller <a href="../../about.html">her</a> om du ser feil <span class="emoji" data-emoji="mag">🔍</span></p>
+<p>Sist oppdatert: 24.mai</p>
+<hr>
+<p>Miniatyrbilete: <a href="https://www.flaticon.com/free-icons/exam" title="exam icons">Exam icons created by Freepik - Flaticon</a></p>
+<p>Eksamenssettet finn du hos UDIR: <a href="https://sokeresultat.udir.no/eksamensoppgaver.html">Finn eksamensoppgaver</a></p>
+</section>
+<section id="del-1---utan-hjelpemiddel" class="level1">
+<h1>Del 1 - utan hjelpemiddel</h1>
+<section id="oppgåve-1" class="level2">
+<h2 class="anchored" data-anchor-id="oppgåve-1">Oppgåve 1</h2>
+<p>Skriv så enkelt som mogleg</p>
+<p><span class="math display">\[ \begin{align*}
+\frac{\left(2ab^{-1}\right)^3 \cdot \left( a^2 b^{-2}\right)^{-1}}{4 a^2 b^{-3}}
+    &amp;= \frac{2^3 a^3 b^{-1\cdot 3} a^{2 \cdot (-1)} b^{-2 \cdot -1}}{2^2 a^2 b^{-3}} \\
+    &amp;= \frac{2^3 a^3 b^{-3} a^{-2} b^{2}}{2^2 a^2 b^{-3}} \\
+    &amp;= 2^{3-2} a^{3-2-2} b^{-3+2-(-3)} \\
+    &amp;= 2 a^{-1} b^2 \\
+    &amp;= \frac{2b^2}{a}
+\end{align*}\]</span></p>
+</section>
+<section id="oppgåve-2" class="level2">
+<h2 class="anchored" data-anchor-id="oppgåve-2">Oppgåve 2</h2>
+<p>Skal derivera funksjonen <span class="math inline">\(f\)</span> gitt ved <span class="math display">\[f(x)=x\cdot \ln(x)\]</span></p>
+<p>Ser at <span class="math inline">\(f\)</span> er eit produkt av funksjonane <span class="math inline">\(x\)</span> og <span class="math inline">\(\ln(x)\)</span>.</p>
+<p>Lar <span class="math inline">\(u=x\)</span> og <span class="math inline">\(v=\ln(x)\)</span>. Då er <span class="math inline">\(u' = 1\)</span> og <span class="math inline">\(v'=\frac{1}{x}\)</span>.</p>
+<p>Produktregelen for derivasjon gjev oss <span class="math display">\[\begin{align*}
+f(x) &amp;= u\cdot v \\
+f'(x) &amp;= u'\cdot v + u\cdot v' \\
+&amp;= 1\cdot \ln(x) + x \cdot \frac{1}{x} \\
+&amp;= \ln(x) + 1
+\end{align*}
+\]</span></p>
+</section>
+<section id="oppgåve-3" class="level2">
+<h2 class="anchored" data-anchor-id="oppgåve-3">Oppgåve 3</h2>
+<p>Bestem grenseverdien</p>
+<p><span class="math display">\[\lim_{x\rightarrow 2} \frac{x^3-8}{x^2-4}\]</span></p>
+<p>Ser at om me set inn <span class="math inline">\(x=2\)</span> i uttrykket vert både teljar og nemnar 0</p>
+<p><span class="math display">\[\frac{2^3-8}{2^2-4} = \frac{8-8}{4-4} = \frac{0}{0}\]</span></p>
+<p>Dermed kan me bruka L’Hôpitals regel, og deriverer teljar og nemnar for seg</p>
+<p><span class="math display">\[\lim_{x\rightarrow 2} \frac{x^3-8}{x^2-4} = \lim_{x\rightarrow 2} \frac{3x^2}{2x} = \frac{3\cdot 2^2}{2\cdot 2}=3\]</span></p>
+</section>
+<section id="oppgåve-4" class="level2">
+<h2 class="anchored" data-anchor-id="oppgåve-4">Oppgåve 4</h2>
+<p>Tre svarte og fire kvite kuler i ei krukke, trekk tre kuler uten tilbakelegging.</p>
+<section id="a-to-av-tre-er-svarte" class="level3">
+<h3 class="anchored" data-anchor-id="a-to-av-tre-er-svarte">a) To av tre er svarte</h3>
+<p>Her har me ein todelt populasjon (kulene i krukka) og gjer eit utval som også er todelt. Me kan dermed sjå på dete som eit hypergeometrisk forsøk.</p>
+<p>La tal svarte kuler i utvalet vera <span class="math inline">\(X\)</span>. Me vil då finna <span class="math inline">\(P(X=2)\)</span>.</p>
+<p><span class="math display">\[P(X=2)= \frac{\left(3 \atop 2\right) \left( 4\atop 1\right)}{\left(7 \atop 3\right)} = \frac{3\cdot 4}{35}= \frac{12}{35}\]</span></p>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Binomialkoeffesientane
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><span class="math inline">\(\left(3 \atop 2\right) = \frac{3\cdot 2}{2\cdot 1} = 3\)</span></li>
+<li><span class="math inline">\(\left(4 \atop 1\right) = \frac{4}{1} = 4\)</span></li>
+<li><span class="math inline">\(\left(7 \atop 3\right) = \frac{7\cdot 6 \cdot 5}{3\cdot 2\cdot 1} = 35\)</span></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="b-minst-to-kvite" class="level3">
+<h3 class="anchored" data-anchor-id="b-minst-to-kvite">b) Minst to kvite</h3>
+<p>Viss me skal trekka minst to kvite kuler, så vert det i eit utval på 3 dei utfalla som gjev to kvite kuler eller tre kvite kuler.</p>
+<p>Lar <span class="math inline">\(Y\)</span> vera tal kvite kuler i utvalet. Vil no finna <span class="math inline">\(P(Y\geq 2) = P(Y=2) + P(Y=3)\)</span></p>
+<p>Finn først <span class="math inline">\(P(Y=2)\)</span>:</p>
+<p><span class="math display">\[P(Y=2)= \frac{\left(4 \atop 2\right) \left( 3\atop 1\right)}{\left(7 \atop 3\right)} = \frac{6\cdot 3}{35}= \frac{18}{35}\]</span></p>
+<p>og deretter <span class="math inline">\(P(Y=3)\)</span>:</p>
+<p><span class="math display">\[P(Y=3)= \frac{\left(4 \atop 3\right) \left( 3\atop 0\right)}{\left(7 \atop 3\right)} = \frac{4\cdot 1}{35}= \frac{4}{35}\]</span></p>
+<p>Dermed får me</p>
+<p><span class="math display">\[P(Y\geq 2) = P(Y=2) + P(Y=3) = \frac{18}{35} + \frac{4}{35} = \frac{22}{35}\]</span></p>
+</section>
+<section id="alternativ-løysing-på-b" class="level3">
+<h3 class="anchored" data-anchor-id="alternativ-løysing-på-b">Alternativ løysing på b)</h3>
+<p>Me kan bruka resultatet frå <strong>a)</strong>. Der fann me sannsynet for at to kuler var svarte. Om me i tillegg finn sannsynet for at tre av tre kuler er svarte, så kan me bruka at</p>
+<p><span class="math display">\[P(Y\geq 2) = 1 - P(X=2) - P(X=3)\]</span></p>
+<p>Me finn <span class="math inline">\(P(X=3)\)</span>: <span class="math display">\[P(X=3)= \frac{\left(3 \atop 3\right) \left( 4\atop 0\right)}{\left(7 \atop 3\right)} = \frac{1\cdot 1}{35}= \frac{1}{35}\]</span></p>
+<p>Dermed får me <span class="math display">\[P(Y\geq 2) = 1 - P(X=2) - P(X=3) = 1 - \frac{12}{35} -\frac{1}{35} = \frac{22}{35}\]</span></p>
+</section>
+</section>
+<section id="oppgåve-5" class="level2">
+<h2 class="anchored" data-anchor-id="oppgåve-5">Oppgåve 5</h2>
+<p>Kostnad <span class="math inline">\(K\)</span> ved produksjon av <span class="math inline">\(x\)</span> einingar per veke gitt ved <span class="math display">\[K(X)=0,2x^2+140x+7000\]</span></p>
+<p>Bedrifta har laga programmet:</p>
+<div class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">def</span> K(x):</span>
+<span id="cb1-2"><a href="#cb1-2"></a>    <span class="cf">return</span> <span class="fl">0.2</span><span class="op">*</span>x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">140</span><span class="op">*</span>x <span class="op">+</span> <span class="dv">7000</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a></span>
+<span id="cb1-4"><a href="#cb1-4"></a>v <span class="op">=</span> <span class="dv">260</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a>h <span class="op">=</span> <span class="fl">0.0001</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a>x <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb1-7"><a href="#cb1-7"></a></span>
+<span id="cb1-8"><a href="#cb1-8"></a><span class="cf">while</span> (K(x<span class="op">+</span>h)<span class="op">-</span>K(x))<span class="op">/</span>h <span class="op">&lt;</span> v:</span>
+<span id="cb1-9"><a href="#cb1-9"></a>    x <span class="op">=</span> x <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb1-10"><a href="#cb1-10"></a></span>
+<span id="cb1-11"><a href="#cb1-11"></a><span class="bu">print</span>(x)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Me kjenner att <code>K(x + h) - K(x))/h</code> som definisjonen til den deriverte av <span class="math inline">\(K\)</span>. Programmet finn dermed ut kva tid den deriverte til <span class="math inline">\(K\)</span>, <em>grensekostnaden (kompetansemål i S2)</em>, blir større enn/passerer <code>v = 260</code>.</p>
+<p>Resultatet når ein køyrer programmet vert då den siste x-verdien (heiltal) som gjer <span class="math inline">\(K'(x) \leq 260\)</span>.</p>
+<p>Løyser likninga <span class="math inline">\(K'(x)=260\)</span>:</p>
+<p><span class="math display">\[\begin{align*}
+K'(x) &amp;= 260 \\
+0,4x + 140 &amp;= 260 \\
+0,4x &amp;= 260 - 140 \\
+x &amp;= \frac{120}{0,4} = 300
+\end{align*} \]</span></p>
+<p>Dermed er <span class="math inline">\(K'(300) = 260\)</span> som vil seie at programmet skriv ut <code>300</code> når det køyrer, sidan <span class="math inline">\(K'(301)\)</span> vil vera større enn vilkåret i <code>while</code>-løkka i rad 8. (sidan <span class="math inline">\(K'(x)\)</span> er ein lineær funksjon med positivt stigningstal).</p>
+<p>Dette fortel bedrifta at om ein aukar produksjonen frå 300 til 301 einingar per veke så vil kostnadane auka med omlag 260 kr.</p>
+</section>
+</section>
+<section id="del-2" class="level1">
+<h1>Del 2</h1>
+<section id="oppgåve-1-1" class="level2">
+<h2 class="anchored" data-anchor-id="oppgåve-1-1">Oppgåve 1</h2>
+<p>Tabellen nedanfor viser timelønna til ei yrkesgruppe.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>År</th>
+<th>Timeløn</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2008</td>
+<td>272,55</td>
+</tr>
+<tr class="even">
+<td>2010</td>
+<td>285,50</td>
+</tr>
+<tr class="odd">
+<td>2013</td>
+<td>307,30</td>
+</tr>
+<tr class="even">
+<td>2015</td>
+<td>314,00</td>
+</tr>
+<tr class="odd">
+<td>2019</td>
+<td>327,60</td>
+</tr>
+<tr class="even">
+<td>2022</td>
+<td>340,10</td>
+</tr>
+</tbody>
+</table>
+<section id="a-prosentvis-vekst" class="level3">
+<h3 class="anchored" data-anchor-id="a-prosentvis-vekst">a) Prosentvis vekst</h3>
+<p>Gjennomsnittleg årleg prosentvis vekst frå 2008 til 2022. Det er snakk om <span class="math inline">\(2022-2008=14\)</span> år. Løyser likninga</p>
+<p><span class="math display">\[272,55 \cdot x^{14} = 340,10\]</span> for å finna vekstfaktoren</p>
+<div class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sympy <span class="im">import</span> Symbol, diff, Eq, Reals, solveset</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># definerer x</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> Symbol(<span class="st">"x"</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># definerer vs og hs av likninga</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>vs <span class="op">=</span> <span class="fl">272.55</span> <span class="op">*</span> x<span class="op">**</span><span class="dv">14</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>hs <span class="op">=</span> <span class="fl">340.10</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># set opp likninga, og løyser ho</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>likning <span class="op">=</span> Eq(vs, hs)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>løysing <span class="op">=</span> solveset(likning, x, domain<span class="op">=</span>Reals)</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co"># skriv ut svaret</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"x = </span><span class="sc">{</span>l<span class="sc">ø</span>ysing<span class="sc">.</span>evalf(<span class="dv">4</span>)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>x = {-1.016, 1.016}</code></pre>
+</div>
+</div>
+<p>Ser at vekstfaktoren her er 1.016 som tilsvarar ein årleg gjennomsnittleg prosentvis auke på 1,6%.</p>
+</section>
+<section id="b-eksponentialfunksjon" class="level3">
+<h3 class="anchored" data-anchor-id="b-eksponentialfunksjon">b) Eksponentialfunksjon</h3>
+<p>Finn passande eksponentialfunksjon med <code>curve_fit</code> i <code>Scipy</code>/Python.</p>
+<div class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.optimize <span class="im">import</span> curve_fit</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># generell eksponentialfunksjon</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> g(x, a, b):</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a<span class="op">*</span>b<span class="op">**</span>x</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># data frå oppgåva</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>år <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">11</span>, <span class="dv">14</span>]</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>lønn <span class="op">=</span> [<span class="fl">272.55</span>, <span class="fl">285.50</span>, <span class="fl">307.30</span>, <span class="fl">314.00</span>, <span class="fl">327.60</span>, <span class="fl">340.10</span>]</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="co"># finn funksjonen</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>K, E <span class="op">=</span> curve_fit(g, år, lønn)</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="co"># hentar ut koeff.</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>a, b <span class="op">=</span> K</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="co"># skriv ut funksjonsuttrykket</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"g(x) = </span><span class="sc">{</span>a<span class="sc">:.1f}</span><span class="ss"> * </span><span class="sc">{</span>b<span class="sc">:.4f}</span><span class="ss">^x"</span>)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>g(x) = 278.5 * 1.0151^x</code></pre>
+</div>
+</div>
+<p>Ein modell for timeløna til yrkesgruppa <span class="math inline">\(x\)</span> år etter 2008 er <span class="math display">\[g(x) = 278,5 \cdot 1,015^x\]</span></p>
+</section>
+<section id="c-samla-løn" class="level3">
+<h3 class="anchored" data-anchor-id="c-samla-løn">c) Samla løn</h3>
+<p>Amalie har hatt lønnsauke med 2,3 % kvart år, og starta med timelønn på 272,55 kroner i 2008. Ho har jobba 1700 timar per år. Løyser denne i python med ei <code>for-løkke</code></p>
+<div class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>samla_løn <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>vf <span class="op">=</span> <span class="fl">1.023</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>timeløn <span class="op">=</span> <span class="fl">272.55</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># i frå og med 0 til og med 14</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># finn ny årsløn og legg til samla løn dei 15 åra</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">15</span>):</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    samla_løn <span class="op">+=</span> <span class="dv">1700</span> <span class="op">*</span> timeløn<span class="op">*</span>vf<span class="op">**</span>i</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Samla løn, Amalie: </span><span class="sc">{</span>samla_l<span class="sc">ø</span>n<span class="sc">:.2f}</span><span class="ss">"</span>)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Samla løn, Amalie: 8188601.24</code></pre>
+</div>
+</div>
+<p>Samla løn Per kan me finna på ulike måtar.</p>
+<p>Dersom me går ut frå at Per føl tabellen nøyaktig, dvs. 272,55 kr pr. time i 2008 og 2009, 285,50 kr pr. time i 2010, 2011, 2012 osv. vert den samla løna hans:</p>
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> periodeløn(tal_år, timeløn):</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> tal_år <span class="op">*</span> <span class="dv">1700</span> <span class="op">*</span> timeløn</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># løn kvar periode</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>p1 <span class="op">=</span> periodeløn(<span class="dv">2010</span><span class="op">-</span><span class="dv">2008</span>, <span class="fl">272.55</span>)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>p2 <span class="op">=</span> periodeløn(<span class="dv">2013</span><span class="op">-</span><span class="dv">2010</span>, <span class="fl">285.50</span>)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>p3 <span class="op">=</span> periodeløn(<span class="dv">2015</span><span class="op">-</span><span class="dv">2013</span>, <span class="fl">307.30</span>)</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>p4 <span class="op">=</span> periodeløn(<span class="dv">2019</span><span class="op">-</span><span class="dv">2015</span>, <span class="fl">314.00</span>)</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>p5 <span class="op">=</span> periodeløn(<span class="dv">2022</span><span class="op">-</span><span class="dv">2019</span>, <span class="fl">327.60</span>)</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>p6 <span class="op">=</span> periodeløn(<span class="dv">2023</span><span class="op">-</span><span class="dv">2022</span>, <span class="fl">340.10</span>)</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>samla_løn <span class="op">=</span> p1 <span class="op">+</span> p2 <span class="op">+</span> p3 <span class="op">+</span> p4 <span class="op">+</span> p5 <span class="op">+</span> p6</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Samla løn, Per: </span><span class="sc">{</span>samla_l<span class="sc">ø</span>n<span class="sc">:.2f}</span><span class="ss">"</span>)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Samla løn, Per: 7811670.00</code></pre>
+</div>
+</div>
+<p>Om me på den andre sida bruker modellen for timeløn som me fann i <strong>b)</strong> så kan me bruka den:</p>
+<div class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>samla_løn <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co"># modell for timeløn</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> g(x):</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fl">278.5</span> <span class="op">*</span> <span class="fl">1.0151</span><span class="op">**</span>x</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co"># i frå og med 0 til og med 14</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="co"># finn ny årsløn og legg til samla løn dei 15 åra</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">15</span>):</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>    samla_løn <span class="op">+=</span> <span class="dv">1700</span> <span class="op">*</span> g(i)</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Samla løn, Per: </span><span class="sc">{</span>samla_l<span class="sc">ø</span>n<span class="sc">:.2f}</span><span class="ss">"</span>)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Samla løn, Per: 7903823.68</code></pre>
+</div>
+</div>
+<p>Ser at skilnaden på dei to strategiane er rundt 92 000 kr i løpet av dei 15 åra (f.o.m. 2008, t.o.m. 2022).</p>
+</section>
+<section id="d-lønnskrav" class="level3">
+<h3 class="anchored" data-anchor-id="d-lønnskrav">d) Lønnskrav</h3>
+<p>I 2022 har Per timeløn 340,10 kr og Amalie timeløn <span class="math inline">\(272.55 \cdot 1.023^{14} \approx 374,72\)</span> Viss Per skal ha same timeløn som Amalie i 2025 (om 3 år) må</p>
+<p><span class="math display">\[340,10 \cdot x^3 = 374,72 \cdot 1,023^3\]</span></p>
+<p>Løyser likninga i Python:</p>
+<div class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sympy <span class="im">import</span> Symbol, diff, Eq, Reals, solveset</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># definerer x</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> Symbol(<span class="st">"x"</span>)</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="co"># definerer vs og hs av likninga</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>vs <span class="op">=</span> <span class="fl">340.10</span> <span class="op">*</span> x<span class="op">**</span><span class="dv">3</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>hs <span class="op">=</span> <span class="fl">374.72</span> <span class="op">*</span> <span class="fl">1.023</span><span class="op">**</span><span class="dv">3</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="co"># set opp likninga, og løyser ho</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>likning <span class="op">=</span> Eq(vs, hs)</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>løysing <span class="op">=</span> solveset(likning, x, domain<span class="op">=</span>Reals)</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="co"># skriv ut svaret</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"x = </span><span class="sc">{</span>l<span class="sc">ø</span>ysing<span class="sc">.</span>evalf(<span class="dv">4</span>)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>x = {1.057}</code></pre>
+</div>
+</div>
+<p>Dersom kravet skal bli innfridd må Løna til Per stiga med 5,7% kvart år dei neste 3 åra.</p>
+</section>
+</section>
+<section id="oppgåve-2-1" class="level2">
+<h2 class="anchored" data-anchor-id="oppgåve-2-1">Oppgåve 2</h2>
+<section id="a-påstand-1---logaritmar" class="level3">
+<h3 class="anchored" data-anchor-id="a-påstand-1---logaritmar">a) Påstand 1 - logaritmar</h3>
+<p>La <span class="math inline">\(x=e\)</span>. Då er <span class="math inline">\(x&gt;0\)</span> og <span class="math inline">\(\ln(x)=\ln(e)=1\)</span>. Dermed får me</p>
+<p><span class="math display">\[
+\begin{align*}
+    (\ln(x))^4 &amp;= 4\ln(x) \\
+    1^4 &amp;\neq 4\cdot 1
+\end{align*}
+\]</span></p>
+<p><strong>Påstanden er usann</strong></p>
+</section>
+<section id="b-påstand-2---fjerdegradsfunksjonar" class="level3">
+<h3 class="anchored" data-anchor-id="b-påstand-2---fjerdegradsfunksjonar">b) Påstand 2 - fjerdegradsfunksjonar</h3>
+<p>Talet på ekstremalpunkt til ein funksjon er knytt saman med talet på nullpunkt til den deriverte til funksjonen.</p>
+<p>Den deriverte til ein fjerdegradsfunksjon er ein tredjegradsfunksjon. Alle tredjegradsfunksjonar har minst eitt nullpunkt.</p>
+<p>Sidan alle tredjegradsfunksjonar har minst eitt nullpunkt har alle fjerdegradsfunksjonar minst eitt ekstremalpunkt.</p>
+<p><strong>Påstanden er sann</strong></p>
+</section>
+<section id="c-påstand-3---lotto" class="level3">
+<h3 class="anchored" data-anchor-id="c-påstand-3---lotto">c) Påstand 3 - Lotto</h3>
+<p>Kan sjå på dette som hypergeometrisk sannsyn, der populasjon og utval er delt i to grupper, <em>mindre enn 18</em> og <em>ikkje mindre enn 18</em>.</p>
+<p>Det er 17 av tala som er <em>mindre enn 18</em>, <span class="math inline">\(0\rightarrow 17\)</span>, og 17 tala som er <em>ikkje mindre enn 18</em>, <span class="math inline">\(18\rightarrow 34\)</span>.</p>
+<p>La <span class="math inline">\(X\)</span> vera antall kuler mindre enn 18. Då er</p>
+<p><span class="math display">\[P(X=7) = \frac{\left(17 \atop 7 \right) \left(17 \atop 0 \right)}{\left(34 \atop 7\right)}\]</span></p>
+<p>og samtidig er</p>
+<p><span class="math display">\[P(X=0) = \frac{\left(17 \atop 0 \right) \left(17 \atop 7 \right)}{\left(34 \atop 7\right)}\]</span></p>
+<p>Dermed ser me at <span class="math inline">\(P(X=7) = P(X=0)\)</span>.</p>
+<p><strong>Påstanden er sann</strong></p>
+</section>
+</section>
+<section id="oppgåve-3-1" class="level2">
+<h2 class="anchored" data-anchor-id="oppgåve-3-1">Oppgåve 3</h2>
+<p>Eit spel med to terningar. Mona finn sannsyn med programmet</p>
+<div class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a>g <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb14-2"><a href="#cb14-2"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">7</span>):</span>
+<span id="cb14-3"><a href="#cb14-3"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">7</span>):</span>
+<span id="cb14-4"><a href="#cb14-4"></a>        <span class="cf">if</span> i<span class="op">+</span>j <span class="op">&gt;=</span> <span class="dv">8</span>:</span>
+<span id="cb14-5"><a href="#cb14-5"></a>            g <span class="op">=</span> g <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb14-6"><a href="#cb14-6"></a></span>
+<span id="cb14-7"><a href="#cb14-7"></a><span class="bu">print</span>(g<span class="op">/</span><span class="dv">36</span>)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0.4166666666666667</code></pre>
+</div>
+</div>
+<section id="a-sannsyn-i-programkoden" class="level3">
+<h3 class="anchored" data-anchor-id="a-sannsyn-i-programkoden">a) Sannsyn i programkoden</h3>
+<p>Med dette programmet tel Mona opp kor mange av dei moglege utfalla (summen av to terningar) som blir 8 eller større. Løkka går gjennom alle kombinasjonar av dei to terningane <code>i=1, j=1</code>, <code>i=1, j=2</code>, …, <code>i=2, j=1</code> osb.</p>
+</section>
+<section id="b-nytt-program---tre-terningar" class="level3">
+<h3 class="anchored" data-anchor-id="b-nytt-program---tre-terningar">b) Nytt program - tre terningar</h3>
+<p>Eit anna spel med tre terningar. Gevinst om summen av auge er 7 eller 11. Kan utvida programmet frå <strong>a)</strong>. Endrar nemnaren til 216 (<span class="math inline">\(6\cdot 6 \cdot 6\)</span>) i siste linja.</p>
+<div class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a>g <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">7</span>):</span>
+<span id="cb16-3"><a href="#cb16-3"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">7</span>):</span>
+<span id="cb16-4"><a href="#cb16-4"></a>        <span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">7</span>):</span>
+<span id="cb16-5"><a href="#cb16-5"></a>            <span class="cf">if</span> (i<span class="op">+</span>j<span class="op">+</span>k <span class="op">==</span> <span class="dv">7</span>) <span class="kw">or</span> (i<span class="op">+</span>j<span class="op">+</span>k <span class="op">==</span> <span class="dv">11</span>):</span>
+<span id="cb16-6"><a href="#cb16-6"></a>                g <span class="op">=</span> g <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb16-7"><a href="#cb16-7"></a></span>
+<span id="cb16-8"><a href="#cb16-8"></a><span class="bu">print</span>(g<span class="op">/</span><span class="dv">216</span>)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0.19444444444444445</code></pre>
+</div>
+</div>
+<p>Sannsynet for å vinna dette spelet er <span class="math inline">\(0,194\)</span>.</p>
+</section>
+</section>
+<section id="oppgåve-4-1" class="level2">
+<h2 class="anchored" data-anchor-id="oppgåve-4-1">Oppgåve 4</h2>
+<section id="a-pris-40-kr" class="level3">
+<h3 class="anchored" data-anchor-id="a-pris-40-kr">a) Pris 40 kr</h3>
+<p>Viss <span class="math inline">\(p=40\)</span> les me av grafen at <span class="math inline">\(e=2100\)</span>.</p>
+<p>Det vil seie at ein sel 2100 einingar til 40 kr pr. stk.</p>
+<p>Daglege inntekter på <span class="math inline">\(2100 \cdot 40 kr = 84 000 kr\)</span>.</p>
+</section>
+<section id="b-inntekt-75-000-kr" class="level3">
+<h3 class="anchored" data-anchor-id="b-inntekt-75-000-kr">b) Inntekt 75 000 kr</h3>
+<p>Ser av grafen at <span class="math inline">\(e(p)\)</span> har konstantledd 4500 og stigningstal -60. (Nedgang frå 4500 til 3900 på y-aksen når ein går frå 0 til 10 på x-aksen)</p>
+<p>Dvs. <span class="math inline">\(e(p) = 4500 - 60p\)</span>.</p>
+<p>Daglege inntekter er tal eiingar gange prisen, <span class="math inline">\(e(p)\cdot p\)</span>.</p>
+<p>Løyser likninga <span class="math inline">\(e(p)\cdot p = 75000\)</span>.</p>
+<div class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sympy <span class="im">import</span> Symbol, diff, Eq, Reals, solveset</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="co"># definerer p</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> Symbol(<span class="st">"p"</span>)</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="co"># definerer vs og hs av likninga</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>vs <span class="op">=</span> (<span class="dv">4500</span> <span class="op">-</span> <span class="dv">60</span><span class="op">*</span>p)<span class="op">*</span>p</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>hs <span class="op">=</span> <span class="dv">75000</span></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a><span class="co"># set opp likninga, og løyser ho</span></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>likning <span class="op">=</span> Eq(vs, hs)</span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>løysing <span class="op">=</span> solveset(likning, p, domain<span class="op">=</span>Reals)</span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a><span class="co"># skriv ut svaret</span></span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"p = </span><span class="sc">{</span>l<span class="sc">ø</span>ysing<span class="sc">.</span>evalf(<span class="dv">4</span>)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>p = {25.0, 50.0}</code></pre>
+</div>
+</div>
+<p>Ser at om prisen er 25 kr eller 50 kr så vil dei daglege inntektene bli 75000 kr.</p>
+</section>
+<section id="c-størst-inntekt" class="level3">
+<h3 class="anchored" data-anchor-id="c-størst-inntekt">c) Størst inntekt</h3>
+<p>Sidan funksjonen for daglege inntekter er ein konkav andregradsfunksjon (<span class="math inline">\((4500-60p)p = -60p^2+45000\)</span>) er ekstremalpunktet eit toppunkt. Av symmetri i andregradsfunksjonar følgjer det at toppunktet ligg midt mellom 25 kr og 50 kr.</p>
+<p>Pris på $(25 kr + 50 kr)/2 = 37,5 kr $ gjev størst inntekt.</p>
+</section>
+</section>
+<section id="oppgåve-5-1" class="level2">
+<h2 class="anchored" data-anchor-id="oppgåve-5-1">Oppgåve 5</h2>
+<section id="a-bestem-sannsyn" class="level3">
+<h3 class="anchored" data-anchor-id="a-bestem-sannsyn">a) Bestem sannsyn</h3>
+<p>Her kan me gå ut frå at det binomisk sannsyn sidan me har - to utfall i kvart delforsøk, kvar bilett (brukt/ikkje brukt) - likt sannsyn for at billetten vert brukt (0,45) i kvart delforsøk - uavhengige delforsøk (viss me går ut frå at dei som får gratisbillettane ikkje påverkar kvarande med om dei bruker eller ikkje bruker billetten…)</p>
+<p>Lar <span class="math inline">\(X\)</span> vera tal billettar som vert brukt.</p>
+<p>Finn <span class="math inline">\(P(X\geq 600)\)</span> ved simulering</p>
+<div class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng()</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> <span class="dv">10000000</span> <span class="co"># tal simuleringar</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> <span class="fl">0.45</span>     <span class="co"># P(brukt billett)</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">1300</span>     <span class="co"># tal gratisbillettar</span></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="co"># simulerer </span></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>brukte_billettar <span class="op">=</span> rng.binomial(n, p, size<span class="op">=</span>N)</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a><span class="co"># finn sannsynet</span></span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>gunstige <span class="op">=</span> <span class="bu">sum</span>(brukte_billettar <span class="op">&gt;=</span> <span class="dv">600</span>)</span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>sannsyn <span class="op">=</span> gunstige <span class="op">/</span> N</span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"P(X ≥ 600) = </span><span class="sc">{</span>sannsyn<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>P(X ≥ 600) = 0.2097</code></pre>
+</div>
+</div>
+<p>Sannynet for at minst 600 av billettane vert brukt er omlag 0,21.</p>
+</section>
+<section id="b-finn-tal-gratisbilettar" class="level3">
+<h3 class="anchored" data-anchor-id="b-finn-tal-gratisbilettar">b) Finn tal gratisbilettar</h3>
+<p>Vil finna ut kor mange gratisbillettar dei må dela ut dersom sannsynet for at minst 600 blir brukt skal vera over 95 %.</p>
+<p>Gjer simuleringa frå <strong>a)</strong> til ein funksjon og testar med fleire og fleire gratisbillettar til sannsynet for at minst 600 blir brukt passerer 95 %.</p>
+<div class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># sannsynsfunksjon</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> sannsyn(n):</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>    N <span class="op">=</span> <span class="dv">1000000</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>    p <span class="op">=</span> <span class="fl">0.45</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># simulerer </span></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>    brukte_billettar <span class="op">=</span> rng.binomial(n, p, size<span class="op">=</span>N)</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># finn sannsynet</span></span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>    gunstige <span class="op">=</span> <span class="bu">sum</span>(brukte_billettar <span class="op">&gt;=</span> <span class="dv">600</span>)</span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>    sannsyn <span class="op">=</span> gunstige <span class="op">/</span> N</span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> sannsyn</span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">1300</span></span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a><span class="co"># aukar tal gratisbillettar til sannsynet er 95% eller meir</span></span>
+<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> sannsyn(n) <span class="op">&lt;</span> <span class="fl">0.95</span>:</span>
+<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a>    n <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(n)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>1401</code></pre>
+</div>
+</div>
+<p>Dvs. om dei deler ut 1400 bilettar vil det vera over 95 % sannsynleg at minst 600 av dei vert brukt.</p>
+</section>
+</section>
+<section id="oppgåve-6" class="level2">
+<h2 class="anchored" data-anchor-id="oppgåve-6">Oppgåve 6</h2>
+<p>Samanhengen mellom lydstyrken <span class="math inline">\(L\)</span> (målt i <span class="math inline">\(dB\)</span>) og lydintensiteten <span class="math inline">\(I\)</span> (målt i <span class="math inline">\(W/m^2\)</span>) er gitt ved</p>
+<p><span class="math display">\[L = 120 + 10\cdot \lg(I)\]</span></p>
+<p>Smertegrense for menneske på kring 130 <span class="math inline">\(dB\)</span></p>
+<section id="a-bestem-lydintensitet" class="level3">
+<h3 class="anchored" data-anchor-id="a-bestem-lydintensitet">a) Bestem lydintensitet</h3>
+<p>Set inn <span class="math inline">\(L=130\)</span> og løyser likninga for <span class="math inline">\(I\)</span>.</p>
+<div class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sympy <span class="im">import</span> Symbol, diff, Eq, Reals, solveset, log</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="co"># definerer I</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>I <span class="op">=</span> Symbol(<span class="st">"I"</span>)</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="co"># definerer vs og hs av likninga</span></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>vs <span class="op">=</span> <span class="dv">130</span></span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>hs <span class="op">=</span> <span class="dv">120</span> <span class="op">+</span> <span class="dv">10</span><span class="op">*</span>log(I, <span class="dv">10</span>)</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a><span class="co"># set opp likninga, og løyser ho</span></span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>likning <span class="op">=</span> Eq(vs, hs)</span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>løysing <span class="op">=</span> solveset(likning, I, domain<span class="op">=</span>Reals)</span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a><span class="co"># skriv ut svaret</span></span>
+<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"I = </span><span class="sc">{</span>l<span class="sc">ø</span>ysing<span class="sc">.</span>evalf(<span class="dv">4</span>)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>I = {10.0}</code></pre>
+</div>
+</div>
+<p>Lydintensiteten er <span class="math inline">\(10 W/m^2\)</span> når lydstyrken er <span class="math inline">\(130dB\)</span>.</p>
+</section>
+<section id="b-auke-i-intensitet" class="level3">
+<h3 class="anchored" data-anchor-id="b-auke-i-intensitet">b) Auke i intensitet</h3>
+<p>Finn intensiten ved <span class="math inline">\(132dB\)</span>.</p>
+<div class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># definerer vs og hs av likninga</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>vs <span class="op">=</span> <span class="dv">132</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>hs <span class="op">=</span> <span class="dv">120</span> <span class="op">+</span> <span class="dv">10</span><span class="op">*</span>log(I, <span class="dv">10</span>)</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="co"># set opp likninga, og løyser ho</span></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>likning <span class="op">=</span> Eq(vs, hs)</span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>løysing <span class="op">=</span> solveset(likning, I, domain<span class="op">=</span>Reals)</span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a><span class="co"># skriv ut svaret</span></span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"I = </span><span class="sc">{</span>l<span class="sc">ø</span>ysing<span class="sc">.</span>evalf(<span class="dv">4</span>)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>I = {15.85}</code></pre>
+</div>
+</div>
+<p>Lydinsiteten har auka frå 10 til 15,85. Det gir oss vekstfaktor <span class="math inline">\(15,85 / 10 = 1,581\)</span>.</p>
+<p>Auken i lydintensitet er omlag 58,1 % når ein aukar lydstyrken med <span class="math inline">\(2 dB\)</span>.</p>
+</section>
+<section id="c-minste-avstand-til-flyet" class="level3">
+<h3 class="anchored" data-anchor-id="c-minste-avstand-til-flyet">c) Minste avstand til flyet</h3>
+<p>Effekten til lyd frå lydkjelde, <span class="math inline">\(E\)</span>, vil gje lydintensitet <span class="math inline">\(I\)</span> i ein avstand <span class="math inline">\(r\)</span> (målt i <span class="math inline">\(m\)</span>) frå lydkjelda vera <span class="math display">\[I = \frac{E}{4\pi \cdot r^2}\]</span>.</p>
+<p>Lydstyrke frå eit fly er <span class="math inline">\(140 dB\)</span> når ein er <span class="math inline">\(50 m\)</span> frå flyet.</p>
+<p>Bestem den minste avstanden til flyet der lydstyrken er mindre enn <span class="math inline">\(130dB\)</span>.</p>
+<p>Finn intensiteten ved <span class="math inline">\(140 dB\)</span>:</p>
+<div class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># definerer vs og hs av likninga</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>vs <span class="op">=</span> <span class="dv">140</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>hs <span class="op">=</span> <span class="dv">120</span> <span class="op">+</span> <span class="dv">10</span><span class="op">*</span>log(I, <span class="dv">10</span>)</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="co"># set opp likninga, og løyser ho</span></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>likning <span class="op">=</span> Eq(vs, hs)</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>løysing <span class="op">=</span> solveset(likning, I, domain<span class="op">=</span>Reals)</span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a><span class="co"># skriv ut svaret</span></span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"I = </span><span class="sc">{</span>l<span class="sc">ø</span>ysing<span class="sc">.</span>evalf(<span class="dv">4</span>)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>I = {100.0}</code></pre>
+</div>
+</div>
+<p>Vidare bruker me at <span class="math inline">\(I=100\)</span> for å finna E. <span class="math display">\[\begin{align*}
+I &amp;= \frac{E}{4\pi\cdot r^2} \\
+100 &amp;= \frac{E}{4\pi\cdot 50^2} \\
+E &amp;= 100 \cdot 4\pi\cdot 50^2
+\end{align*} \]</span></p>
+<p>Dette gjev oss likninga</p>
+<p><span class="math display">\[\begin{align*}
+L &amp;= 120 + 10\lg(I) \\
+&amp;= 120 + 10\lg\left(\frac{E}{4\pi\cdot r^2}\right) \\
+&amp;= 120 + 10\lg\left(\frac{100 \cdot 4\pi\cdot 50^2}{4\pi\cdot r^2}\right) \\
+&amp;= 120 + 10\lg\left(\frac{100 \cdot50^2}{r^2}\right)
+\end{align*} \]</span></p>
+<p>Løyser likninga for <span class="math inline">\(r\)</span> når <span class="math inline">\(L=130\)</span>.</p>
+<div class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># definerer r</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>r <span class="op">=</span> Symbol(<span class="st">"r"</span>)</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="co"># definerer vs og hs av likninga</span></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>vs <span class="op">=</span> <span class="dv">130</span></span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>hs <span class="op">=</span> <span class="dv">120</span> <span class="op">+</span> <span class="dv">10</span><span class="op">*</span>log((<span class="dv">100</span><span class="op">*</span><span class="dv">50</span><span class="op">**</span><span class="dv">2</span>)<span class="op">/</span>(r<span class="op">**</span><span class="dv">2</span>), <span class="dv">10</span>)</span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a><span class="co"># set opp likninga, og løyser ho</span></span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>likning <span class="op">=</span> Eq(vs, hs)</span>
+<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a>løysing <span class="op">=</span> solveset(likning, r, domain<span class="op">=</span>Reals)</span>
+<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a><span class="co"># skriv ut svaret</span></span>
+<span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"r = </span><span class="sc">{</span>l<span class="sc">ø</span>ysing<span class="sc">.</span>evalf(<span class="dv">4</span>)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>r = {-158.1, 158.1}</code></pre>
+</div>
+</div>
+<p>Den minste avstanden er 158 meter.</p>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Kopiert!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Kopiert!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<script src="https://giscus.app/client.js" data-repo="lektorodd/lektorodd.github.io" data-repo-id="R_kgDOI1N_fg" data-category="General" data-category-id="DIC_kwDOI1N_fs4CT23b" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
