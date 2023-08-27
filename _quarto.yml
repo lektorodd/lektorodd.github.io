@@ -27,6 +27,7 @@ format:
     theme: 
     - journal
     - custom.scss
+    code-line-numbers: true
 execute:
   freeze: auto  
 comments:

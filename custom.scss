@@ -2,26 +2,68 @@
 
 /*-- scss:default --*/
 // Fargar
-$primary: #3D5A80 !default;
-$body-color: #293241;
-$link-color: #EE6C4D;
+$lys-beige: #FDF9ED;
+$beige: #F9EDCC;
+$mork-bla: #293241;
+$mork-gul: #F9DF74;
+
+$primary: #3D5A80 !default; // blå
+$secondary: #EE6C4D; // oransj
+
+$body-color: $mork-bla;
+$link-color: $secondary;
+
+// Kodeblokk bakgrunnsfarge
+$code-block-bg: $lys-beige;
+
+// inlinekode bakgrunnsfarge
+$code-bg: $beige;
+
+// inlinekode kodefarge
+$code-color: $primary;
+
+$code-block-border-left: $mork-gul;
+$code-block-border-left-size: 2px;
 
 // Fontar
-$headings-font-family: "Secular One", ;
+$headings-font-family: "Secular One";
+
 
 /*-- scss:rules --*/
+// tittelfarge
 #title-block-header.quarto-title-block.default .quarto-title .title {
     color: white;
 }
 
-.navbar {
-    color:focus white;
+// fargar på kategoriar
+.quarto-title .quarto-categories .quarto-category {
+    opacity:1;
+    background-color: $beige;
+    color: $primary;
 }
 
-.quarto-title .quarto-categories .quarto-category {
-    opacity:.7
+.quarto-grid-item .card-title {
+color: $mork-bla;
+}
+
+// fonstorleik boktittel
+.subtitle.lead {
+    font-size: 1.5rem;
 }
 
 .quarto-grid-item .listing-categories .listing-category {
     color: #98C1D9;
     }
+
+// feite typar i inline-kode
+p code:not(.sourceCode) {
+    white-space: pre-wrap;
+    font-weight: bold;
+}
+
+// kapittelnummerfarge
+.header-section-number {
+color: $secondary;
+}
+
+
