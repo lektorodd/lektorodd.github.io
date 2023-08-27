@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.280">
+<meta name="generator" content="quarto-1.3.433">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -19,9 +19,10 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -48,43 +49,13 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
-    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -120,7 +91,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     "search-more-matches-text": "fleire treff i dokumentet",
     "search-clear-button-title": "Tøm",
     "search-detached-cancel-button-title": "Avbryt",
-    "search-submit-button-title": "Søk"
+    "search-submit-button-title": "Søk",
+    "search-label": "Search"
   }
 }</script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-744F7V6HLG"></script>
@@ -150,42 +122,44 @@ gtag('config', 'G-744F7V6HLG', { 'anonymize_ip': true});
     <span class="navbar-title">Torodd F. Ottestad</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html">
+    <a class="nav-link" href="../../about.html" rel="" target="">
  <span class="menu-text">Om meg</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/lektorodd/lektorodd.github.io"><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/lektorodd/lektorodd.github.io" rel="" target=""><i class="bi bi-github" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://snabelen.no/@torodd"><i class="bi bi-mastodon" role="img">
+    <a class="nav-link" href="https://snabelen.no/@torodd" rel="" target=""><i class="bi bi-mastodon" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/lektorodd"><i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://twitter.com/lektorodd" rel="" target=""><i class="bi bi-twitter" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://linkedin.com/in/torodd-ottestad-b2583a59"><i class="bi bi-linkedin" role="img">
+    <a class="nav-link" href="https://linkedin.com/in/torodd-ottestad-b2583a59" rel="" target=""><i class="bi bi-linkedin" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="../../index.xml"><i class="bi bi-rss-fill" role="img">
+    <a class="nav-link" href="../../index.xml" rel="" target=""><i class="bi bi-rss-fill" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
 </ul>
-              <div id="quarto-search" class="" title="Search"></div>
+            <div class="quarto-navbar-tools">
+</div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
@@ -246,525 +220,531 @@ gtag('config', 'G-744F7V6HLG', { 'anonymize_ip': true});
 <h2 class="anchored" data-anchor-id="gis-test">GIS-test</h2>
 <p>Eit forsøk på å gjera litt meir ut av datasettet frå <a href="./posts/230425_jordskjelv/index.ipynb">dette innlegget</a></p>
 <div class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> geopandas <span class="im">as</span> gpd</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="im">import</span> geopandas <span class="im">as</span> gpd</span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Eg tek her utgangspunkt i <code>geodataframe</code>-en me laga i jordskjelvprosjektet:</p>
 <div class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display" data-execution_count="2">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>time</th>
-      <th>latitude</th>
-      <th>longitude</th>
-      <th>depth</th>
-      <th>mag</th>
-      <th>geometry</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>2023-04-24T20:00:55.086Z</td>
-      <td>-0.7810</td>
-      <td>98.5339</td>
-      <td>15.462</td>
-      <td>7.1</td>
-      <td>POINT (98.53390 -0.78100)</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2023-04-24T02:17:56.596Z</td>
-      <td>-60.3893</td>
-      <td>-26.1923</td>
-      <td>10.000</td>
-      <td>5.6</td>
-      <td>POINT (-26.19230 -60.38930)</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2023-04-24T00:41:55.460Z</td>
-      <td>-29.9676</td>
-      <td>-177.8264</td>
-      <td>43.063</td>
-      <td>7.1</td>
-      <td>POINT (-177.82640 -29.96760)</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>2023-04-22T21:17:45.986Z</td>
-      <td>-0.9589</td>
-      <td>98.4839</td>
-      <td>10.000</td>
-      <td>5.7</td>
-      <td>POINT (98.48390 -0.95890)</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>2023-04-22T17:09:45.448Z</td>
-      <td>-0.7645</td>
-      <td>98.5780</td>
-      <td>27.385</td>
-      <td>5.8</td>
-      <td>POINT (98.57800 -0.76450)</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">time</th>
+<th data-quarto-table-cell-role="th">latitude</th>
+<th data-quarto-table-cell-role="th">longitude</th>
+<th data-quarto-table-cell-role="th">depth</th>
+<th data-quarto-table-cell-role="th">mag</th>
+<th data-quarto-table-cell-role="th">geometry</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>2023-04-24T20:00:55.086Z</td>
+<td>-0.7810</td>
+<td>98.5339</td>
+<td>15.462</td>
+<td>7.1</td>
+<td>POINT (98.53390 -0.78100)</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>2023-04-24T02:17:56.596Z</td>
+<td>-60.3893</td>
+<td>-26.1923</td>
+<td>10.000</td>
+<td>5.6</td>
+<td>POINT (-26.19230 -60.38930)</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>2023-04-24T00:41:55.460Z</td>
+<td>-29.9676</td>
+<td>-177.8264</td>
+<td>43.063</td>
+<td>7.1</td>
+<td>POINT (-177.82640 -29.96760)</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>2023-04-22T21:17:45.986Z</td>
+<td>-0.9589</td>
+<td>98.4839</td>
+<td>10.000</td>
+<td>5.7</td>
+<td>POINT (98.48390 -0.95890)</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>2023-04-22T17:09:45.448Z</td>
+<td>-0.7645</td>
+<td>98.5780</td>
+<td>27.385</td>
+<td>5.8</td>
+<td>POINT (98.57800 -0.76450)</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
 <p>I tillegg bruker me datasettet som me laga bakgrunnskart frå:</p>
 <div class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>world <span class="op">=</span> gpd.read_file(gpd.datasets.get_path(<span class="st">"naturalearth_lowres"</span>))</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>world.head()</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>world <span class="op">=</span> gpd.read_file(gpd.datasets.get_path(<span class="st">"naturalearth_lowres"</span>))</span>
+<span id="cb2-2"><a href="#cb2-2"></a>world.head()</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>pop_est</th>
-      <th>continent</th>
-      <th>name</th>
-      <th>iso_a3</th>
-      <th>gdp_md_est</th>
-      <th>geometry</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>889953.0</td>
-      <td>Oceania</td>
-      <td>Fiji</td>
-      <td>FJI</td>
-      <td>5496</td>
-      <td>MULTIPOLYGON (((180.00000 -16.06713, 180.00000...</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>58005463.0</td>
-      <td>Africa</td>
-      <td>Tanzania</td>
-      <td>TZA</td>
-      <td>63177</td>
-      <td>POLYGON ((33.90371 -0.95000, 34.07262 -1.05982...</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>603253.0</td>
-      <td>Africa</td>
-      <td>W. Sahara</td>
-      <td>ESH</td>
-      <td>907</td>
-      <td>POLYGON ((-8.66559 27.65643, -8.66512 27.58948...</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>37589262.0</td>
-      <td>North America</td>
-      <td>Canada</td>
-      <td>CAN</td>
-      <td>1736425</td>
-      <td>MULTIPOLYGON (((-122.84000 49.00000, -122.9742...</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>328239523.0</td>
-      <td>North America</td>
-      <td>United States of America</td>
-      <td>USA</td>
-      <td>21433226</td>
-      <td>MULTIPOLYGON (((-122.84000 49.00000, -120.0000...</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">pop_est</th>
+<th data-quarto-table-cell-role="th">continent</th>
+<th data-quarto-table-cell-role="th">name</th>
+<th data-quarto-table-cell-role="th">iso_a3</th>
+<th data-quarto-table-cell-role="th">gdp_md_est</th>
+<th data-quarto-table-cell-role="th">geometry</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>889953.0</td>
+<td>Oceania</td>
+<td>Fiji</td>
+<td>FJI</td>
+<td>5496</td>
+<td>MULTIPOLYGON (((180.00000 -16.06713, 180.00000...</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>58005463.0</td>
+<td>Africa</td>
+<td>Tanzania</td>
+<td>TZA</td>
+<td>63177</td>
+<td>POLYGON ((33.90371 -0.95000, 34.07262 -1.05982...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>603253.0</td>
+<td>Africa</td>
+<td>W. Sahara</td>
+<td>ESH</td>
+<td>907</td>
+<td>POLYGON ((-8.66559 27.65643, -8.66512 27.58948...</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>37589262.0</td>
+<td>North America</td>
+<td>Canada</td>
+<td>CAN</td>
+<td>1736425</td>
+<td>MULTIPOLYGON (((-122.84000 49.00000, -122.9742...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>328239523.0</td>
+<td>North America</td>
+<td>United States of America</td>
+<td>USA</td>
+<td>21433226</td>
+<td>MULTIPOLYGON (((-122.84000 49.00000, -120.0000...</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
 <p>Me kan prøva å finna ut kor mange gongar kvart land er råka av jordskjelv i tabellen, og sortera dei ti med flest “treff”.</p>
 <div class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># lager ein ny gdf med land som indeks</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>land <span class="op">=</span> world.copy()</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>land.set_index(<span class="st">'name'</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>land.head()</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># lager ein ny gdf med land som indeks</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a>land <span class="op">=</span> world.copy()</span>
+<span id="cb3-3"><a href="#cb3-3"></a>land.set_index(<span class="st">'name'</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb3-4"><a href="#cb3-4"></a>land.head()</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="13">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>pop_est</th>
-      <th>continent</th>
-      <th>iso_a3</th>
-      <th>gdp_md_est</th>
-      <th>geometry</th>
-    </tr>
-    <tr>
-      <th>name</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Fiji</th>
-      <td>889953.0</td>
-      <td>Oceania</td>
-      <td>FJI</td>
-      <td>5496</td>
-      <td>MULTIPOLYGON (((180.00000 -16.06713, 180.00000...</td>
-    </tr>
-    <tr>
-      <th>Tanzania</th>
-      <td>58005463.0</td>
-      <td>Africa</td>
-      <td>TZA</td>
-      <td>63177</td>
-      <td>POLYGON ((33.90371 -0.95000, 34.07262 -1.05982...</td>
-    </tr>
-    <tr>
-      <th>W. Sahara</th>
-      <td>603253.0</td>
-      <td>Africa</td>
-      <td>ESH</td>
-      <td>907</td>
-      <td>POLYGON ((-8.66559 27.65643, -8.66512 27.58948...</td>
-    </tr>
-    <tr>
-      <th>Canada</th>
-      <td>37589262.0</td>
-      <td>North America</td>
-      <td>CAN</td>
-      <td>1736425</td>
-      <td>MULTIPOLYGON (((-122.84000 49.00000, -122.9742...</td>
-    </tr>
-    <tr>
-      <th>United States of America</th>
-      <td>328239523.0</td>
-      <td>North America</td>
-      <td>USA</td>
-      <td>21433226</td>
-      <td>MULTIPOLYGON (((-122.84000 49.00000, -120.0000...</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">pop_est</th>
+<th data-quarto-table-cell-role="th">continent</th>
+<th data-quarto-table-cell-role="th">iso_a3</th>
+<th data-quarto-table-cell-role="th">gdp_md_est</th>
+<th data-quarto-table-cell-role="th">geometry</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">name</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Fiji</td>
+<td>889953.0</td>
+<td>Oceania</td>
+<td>FJI</td>
+<td>5496</td>
+<td>MULTIPOLYGON (((180.00000 -16.06713, 180.00000...</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Tanzania</td>
+<td>58005463.0</td>
+<td>Africa</td>
+<td>TZA</td>
+<td>63177</td>
+<td>POLYGON ((33.90371 -0.95000, 34.07262 -1.05982...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">W. Sahara</td>
+<td>603253.0</td>
+<td>Africa</td>
+<td>ESH</td>
+<td>907</td>
+<td>POLYGON ((-8.66559 27.65643, -8.66512 27.58948...</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Canada</td>
+<td>37589262.0</td>
+<td>North America</td>
+<td>CAN</td>
+<td>1736425</td>
+<td>MULTIPOLYGON (((-122.84000 49.00000, -122.9742...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">United States of America</td>
+<td>328239523.0</td>
+<td>North America</td>
+<td>USA</td>
+<td>21433226</td>
+<td>MULTIPOLYGON (((-122.84000 49.00000, -120.0000...</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
 <div class="cell" data-execution_count="16">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>land[<span class="st">"n_skjelv"</span>] <span class="op">=</span> land.<span class="bu">apply</span>(<span class="kw">lambda</span> x:</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>     skjelv_gdf[<span class="st">'geometry'</span>].within(x[<span class="st">'geometry'</span>]).<span class="bu">sum</span>(), axis<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>land.head()</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>land[<span class="st">"n_skjelv"</span>] <span class="op">=</span> land.<span class="bu">apply</span>(<span class="kw">lambda</span> x:</span>
+<span id="cb4-2"><a href="#cb4-2"></a>     skjelv_gdf[<span class="st">'geometry'</span>].within(x[<span class="st">'geometry'</span>]).<span class="bu">sum</span>(), axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb4-3"><a href="#cb4-3"></a></span>
+<span id="cb4-4"><a href="#cb4-4"></a>land.head()</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="16">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>pop_est</th>
-      <th>continent</th>
-      <th>iso_a3</th>
-      <th>gdp_md_est</th>
-      <th>geometry</th>
-      <th>n_skjelv</th>
-    </tr>
-    <tr>
-      <th>name</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Fiji</th>
-      <td>889953.0</td>
-      <td>Oceania</td>
-      <td>FJI</td>
-      <td>5496</td>
-      <td>MULTIPOLYGON (((180.00000 -16.06713, 180.00000...</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>Tanzania</th>
-      <td>58005463.0</td>
-      <td>Africa</td>
-      <td>TZA</td>
-      <td>63177</td>
-      <td>POLYGON ((33.90371 -0.95000, 34.07262 -1.05982...</td>
-      <td>17</td>
-    </tr>
-    <tr>
-      <th>W. Sahara</th>
-      <td>603253.0</td>
-      <td>Africa</td>
-      <td>ESH</td>
-      <td>907</td>
-      <td>POLYGON ((-8.66559 27.65643, -8.66512 27.58948...</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>Canada</th>
-      <td>37589262.0</td>
-      <td>North America</td>
-      <td>CAN</td>
-      <td>1736425</td>
-      <td>MULTIPOLYGON (((-122.84000 49.00000, -122.9742...</td>
-      <td>19</td>
-    </tr>
-    <tr>
-      <th>United States of America</th>
-      <td>328239523.0</td>
-      <td>North America</td>
-      <td>USA</td>
-      <td>21433226</td>
-      <td>MULTIPOLYGON (((-122.84000 49.00000, -120.0000...</td>
-      <td>149</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">pop_est</th>
+<th data-quarto-table-cell-role="th">continent</th>
+<th data-quarto-table-cell-role="th">iso_a3</th>
+<th data-quarto-table-cell-role="th">gdp_md_est</th>
+<th data-quarto-table-cell-role="th">geometry</th>
+<th data-quarto-table-cell-role="th">n_skjelv</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">name</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Fiji</td>
+<td>889953.0</td>
+<td>Oceania</td>
+<td>FJI</td>
+<td>5496</td>
+<td>MULTIPOLYGON (((180.00000 -16.06713, 180.00000...</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Tanzania</td>
+<td>58005463.0</td>
+<td>Africa</td>
+<td>TZA</td>
+<td>63177</td>
+<td>POLYGON ((33.90371 -0.95000, 34.07262 -1.05982...</td>
+<td>17</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">W. Sahara</td>
+<td>603253.0</td>
+<td>Africa</td>
+<td>ESH</td>
+<td>907</td>
+<td>POLYGON ((-8.66559 27.65643, -8.66512 27.58948...</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Canada</td>
+<td>37589262.0</td>
+<td>North America</td>
+<td>CAN</td>
+<td>1736425</td>
+<td>MULTIPOLYGON (((-122.84000 49.00000, -122.9742...</td>
+<td>19</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">United States of America</td>
+<td>328239523.0</td>
+<td>North America</td>
+<td>USA</td>
+<td>21433226</td>
+<td>MULTIPOLYGON (((-122.84000 49.00000, -120.0000...</td>
+<td>149</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
 <div class="cell" data-execution_count="32">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>land.sort_values(by <span class="op">=</span> [<span class="st">"n_skjelv"</span>], ascending<span class="op">=</span><span class="va">False</span>).head(<span class="dv">10</span>)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>land.sort_values(by <span class="op">=</span> [<span class="st">"n_skjelv"</span>], ascending<span class="op">=</span><span class="va">False</span>).head(<span class="dv">10</span>)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="32">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>pop_est</th>
-      <th>continent</th>
-      <th>iso_a3</th>
-      <th>gdp_md_est</th>
-      <th>geometry</th>
-      <th>n_skjelv</th>
-      <th>gdp_pc</th>
-    </tr>
-    <tr>
-      <th>name</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Indonesia</th>
-      <td>2.706256e+08</td>
-      <td>Asia</td>
-      <td>IDN</td>
-      <td>1119190</td>
-      <td>MULTIPOLYGON (((141.00021 -2.60015, 141.01706 ...</td>
-      <td>404</td>
-      <td>0.004136</td>
-    </tr>
-    <tr>
-      <th>Papua New Guinea</th>
-      <td>8.776109e+06</td>
-      <td>Oceania</td>
-      <td>PNG</td>
-      <td>24829</td>
-      <td>MULTIPOLYGON (((141.00021 -2.60015, 142.73525 ...</td>
-      <td>392</td>
-      <td>0.002829</td>
-    </tr>
-    <tr>
-      <th>Chile</th>
-      <td>1.895204e+07</td>
-      <td>South America</td>
-      <td>CHL</td>
-      <td>282318</td>
-      <td>MULTIPOLYGON (((-68.63401 -52.63637, -68.63335...</td>
-      <td>329</td>
-      <td>0.014896</td>
-    </tr>
-    <tr>
-      <th>China</th>
-      <td>1.397715e+09</td>
-      <td>Asia</td>
-      <td>CHN</td>
-      <td>14342903</td>
-      <td>MULTIPOLYGON (((109.47521 18.19770, 108.65521 ...</td>
-      <td>258</td>
-      <td>0.010262</td>
-    </tr>
-    <tr>
-      <th>Peru</th>
-      <td>3.251045e+07</td>
-      <td>South America</td>
-      <td>PER</td>
-      <td>226848</td>
-      <td>POLYGON ((-69.89364 -4.29819, -70.79477 -4.251...</td>
-      <td>205</td>
-      <td>0.006978</td>
-    </tr>
-    <tr>
-      <th>Argentina</th>
-      <td>4.493871e+07</td>
-      <td>South America</td>
-      <td>ARG</td>
-      <td>445445</td>
-      <td>MULTIPOLYGON (((-68.63401 -52.63637, -68.25000...</td>
-      <td>182</td>
-      <td>0.009912</td>
-    </tr>
-    <tr>
-      <th>Mexico</th>
-      <td>1.275755e+08</td>
-      <td>North America</td>
-      <td>MEX</td>
-      <td>1268870</td>
-      <td>POLYGON ((-117.12776 32.53534, -115.99135 32.6...</td>
-      <td>157</td>
-      <td>0.009946</td>
-    </tr>
-    <tr>
-      <th>Philippines</th>
-      <td>1.081166e+08</td>
-      <td>Asia</td>
-      <td>PHL</td>
-      <td>376795</td>
-      <td>MULTIPOLYGON (((120.83390 12.70450, 120.32344 ...</td>
-      <td>156</td>
-      <td>0.003485</td>
-    </tr>
-    <tr>
-      <th>Japan</th>
-      <td>1.262649e+08</td>
-      <td>Asia</td>
-      <td>JPN</td>
-      <td>5081769</td>
-      <td>MULTIPOLYGON (((141.88460 39.18086, 140.95949 ...</td>
-      <td>156</td>
-      <td>0.040247</td>
-    </tr>
-    <tr>
-      <th>United States of America</th>
-      <td>3.282395e+08</td>
-      <td>North America</td>
-      <td>USA</td>
-      <td>21433226</td>
-      <td>MULTIPOLYGON (((-122.84000 49.00000, -120.0000...</td>
-      <td>149</td>
-      <td>0.065298</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">pop_est</th>
+<th data-quarto-table-cell-role="th">continent</th>
+<th data-quarto-table-cell-role="th">iso_a3</th>
+<th data-quarto-table-cell-role="th">gdp_md_est</th>
+<th data-quarto-table-cell-role="th">geometry</th>
+<th data-quarto-table-cell-role="th">n_skjelv</th>
+<th data-quarto-table-cell-role="th">gdp_pc</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">name</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Indonesia</td>
+<td>2.706256e+08</td>
+<td>Asia</td>
+<td>IDN</td>
+<td>1119190</td>
+<td>MULTIPOLYGON (((141.00021 -2.60015, 141.01706 ...</td>
+<td>404</td>
+<td>0.004136</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Papua New Guinea</td>
+<td>8.776109e+06</td>
+<td>Oceania</td>
+<td>PNG</td>
+<td>24829</td>
+<td>MULTIPOLYGON (((141.00021 -2.60015, 142.73525 ...</td>
+<td>392</td>
+<td>0.002829</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Chile</td>
+<td>1.895204e+07</td>
+<td>South America</td>
+<td>CHL</td>
+<td>282318</td>
+<td>MULTIPOLYGON (((-68.63401 -52.63637, -68.63335...</td>
+<td>329</td>
+<td>0.014896</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">China</td>
+<td>1.397715e+09</td>
+<td>Asia</td>
+<td>CHN</td>
+<td>14342903</td>
+<td>MULTIPOLYGON (((109.47521 18.19770, 108.65521 ...</td>
+<td>258</td>
+<td>0.010262</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Peru</td>
+<td>3.251045e+07</td>
+<td>South America</td>
+<td>PER</td>
+<td>226848</td>
+<td>POLYGON ((-69.89364 -4.29819, -70.79477 -4.251...</td>
+<td>205</td>
+<td>0.006978</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Argentina</td>
+<td>4.493871e+07</td>
+<td>South America</td>
+<td>ARG</td>
+<td>445445</td>
+<td>MULTIPOLYGON (((-68.63401 -52.63637, -68.25000...</td>
+<td>182</td>
+<td>0.009912</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Mexico</td>
+<td>1.275755e+08</td>
+<td>North America</td>
+<td>MEX</td>
+<td>1268870</td>
+<td>POLYGON ((-117.12776 32.53534, -115.99135 32.6...</td>
+<td>157</td>
+<td>0.009946</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Philippines</td>
+<td>1.081166e+08</td>
+<td>Asia</td>
+<td>PHL</td>
+<td>376795</td>
+<td>MULTIPOLYGON (((120.83390 12.70450, 120.32344 ...</td>
+<td>156</td>
+<td>0.003485</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Japan</td>
+<td>1.262649e+08</td>
+<td>Asia</td>
+<td>JPN</td>
+<td>5081769</td>
+<td>MULTIPOLYGON (((141.88460 39.18086, 140.95949 ...</td>
+<td>156</td>
+<td>0.040247</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">United States of America</td>
+<td>3.282395e+08</td>
+<td>North America</td>
+<td>USA</td>
+<td>21433226</td>
+<td>MULTIPOLYGON (((-122.84000 49.00000, -120.0000...</td>
+<td>149</td>
+<td>0.065298</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
 <div class="cell" data-execution_count="25">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>land[<span class="st">"gdp_pc"</span>] <span class="op">=</span> land[<span class="st">"gdp_md_est"</span>] <span class="op">/</span> land[<span class="st">"pop_est"</span>]</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>land.head()</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>land[<span class="st">"gdp_pc"</span>] <span class="op">=</span> land[<span class="st">"gdp_md_est"</span>] <span class="op">/</span> land[<span class="st">"pop_est"</span>]</span>
+<span id="cb6-2"><a href="#cb6-2"></a>land.head()</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="25">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>pop_est</th>
-      <th>continent</th>
-      <th>iso_a3</th>
-      <th>gdp_md_est</th>
-      <th>geometry</th>
-      <th>n_skjelv</th>
-      <th>gdp_pc</th>
-    </tr>
-    <tr>
-      <th>name</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Fiji</th>
-      <td>889953.0</td>
-      <td>Oceania</td>
-      <td>FJI</td>
-      <td>5496</td>
-      <td>MULTIPOLYGON (((180.00000 -16.06713, 180.00000...</td>
-      <td>0</td>
-      <td>0.006176</td>
-    </tr>
-    <tr>
-      <th>Tanzania</th>
-      <td>58005463.0</td>
-      <td>Africa</td>
-      <td>TZA</td>
-      <td>63177</td>
-      <td>POLYGON ((33.90371 -0.95000, 34.07262 -1.05982...</td>
-      <td>17</td>
-      <td>0.001089</td>
-    </tr>
-    <tr>
-      <th>W. Sahara</th>
-      <td>603253.0</td>
-      <td>Africa</td>
-      <td>ESH</td>
-      <td>907</td>
-      <td>POLYGON ((-8.66559 27.65643, -8.66512 27.58948...</td>
-      <td>0</td>
-      <td>0.001504</td>
-    </tr>
-    <tr>
-      <th>Canada</th>
-      <td>37589262.0</td>
-      <td>North America</td>
-      <td>CAN</td>
-      <td>1736425</td>
-      <td>MULTIPOLYGON (((-122.84000 49.00000, -122.9742...</td>
-      <td>19</td>
-      <td>0.046195</td>
-    </tr>
-    <tr>
-      <th>United States of America</th>
-      <td>328239523.0</td>
-      <td>North America</td>
-      <td>USA</td>
-      <td>21433226</td>
-      <td>MULTIPOLYGON (((-122.84000 49.00000, -120.0000...</td>
-      <td>149</td>
-      <td>0.065298</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">pop_est</th>
+<th data-quarto-table-cell-role="th">continent</th>
+<th data-quarto-table-cell-role="th">iso_a3</th>
+<th data-quarto-table-cell-role="th">gdp_md_est</th>
+<th data-quarto-table-cell-role="th">geometry</th>
+<th data-quarto-table-cell-role="th">n_skjelv</th>
+<th data-quarto-table-cell-role="th">gdp_pc</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">name</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Fiji</td>
+<td>889953.0</td>
+<td>Oceania</td>
+<td>FJI</td>
+<td>5496</td>
+<td>MULTIPOLYGON (((180.00000 -16.06713, 180.00000...</td>
+<td>0</td>
+<td>0.006176</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Tanzania</td>
+<td>58005463.0</td>
+<td>Africa</td>
+<td>TZA</td>
+<td>63177</td>
+<td>POLYGON ((33.90371 -0.95000, 34.07262 -1.05982...</td>
+<td>17</td>
+<td>0.001089</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">W. Sahara</td>
+<td>603253.0</td>
+<td>Africa</td>
+<td>ESH</td>
+<td>907</td>
+<td>POLYGON ((-8.66559 27.65643, -8.66512 27.58948...</td>
+<td>0</td>
+<td>0.001504</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Canada</td>
+<td>37589262.0</td>
+<td>North America</td>
+<td>CAN</td>
+<td>1736425</td>
+<td>MULTIPOLYGON (((-122.84000 49.00000, -122.9742...</td>
+<td>19</td>
+<td>0.046195</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">United States of America</td>
+<td>328239523.0</td>
+<td>North America</td>
+<td>USA</td>
+<td>21433226</td>
+<td>MULTIPOLYGON (((-122.84000 49.00000, -120.0000...</td>
+<td>149</td>
+<td>0.065298</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
@@ -772,7 +752,7 @@ gtag('config', 'G-744F7V6HLG', { 'anonymize_ip': true});
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Gjenbruk</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></section></div></main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Gjenbruk</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -800,9 +780,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -867,6 +861,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
