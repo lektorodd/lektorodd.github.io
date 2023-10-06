@@ -9,7 +9,7 @@
 <link>https://lektorodd.github.io/index.html</link>
 <atom:link href="https://lektorodd.github.io/index.xml" rel="self" type="application/rss+xml"/>
 <description>Blogg med digitale tips og triks i skulen</description>
-<generator>quarto-1.3.433</generator>
+<generator>quarto-1.3.450</generator>
 <lastBuildDate>Wed, 10 May 2023 22:00:00 GMT</lastBuildDate>
 <item>
   <title>Nyttige simuleringskommandoar</title>
@@ -710,6 +710,8 @@ Merk
 </div>
 <div class="callout-body-container callout-body">
 <p>For å gjennomføra denne øvinga treng ein biblioteket <code>geopandas</code>. Viss ein nyttar <code>anaconda</code> eller <code>miniconda</code> så er det enklaste å laga eit eige <code>enviroment</code> for å ikkje klussa til den «vanlege» python-installasjonen. Oppskrifta du finn <a href="https://geopandas.org/en/stable/getting_started/install.html">her</a>, funkar fint!</p>
+<p><strong>OBS:</strong> For å installera Jupyter Lab kan du endre siste linja til</p>
+<div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode numberSource {shell} number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1">conda install python=3 geopandas jupyterlab</span></code></pre></div>
 </div>
 </div>
 <section id="laste-ned-data" class="level2">
@@ -725,22 +727,22 @@ Merk
 <h2 class="anchored" data-anchor-id="innlesing-av-data">Innlesing av data</h2>
 <p>Me startar med å importere naudsynte bibliotek.</p>
 <div class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
+<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">import</span> pandas <span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">as</span> pd</span>
-<span id="cb1-2"><span class="im" style="color: #00769E;
+<span id="cb2-2"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">import</span> geopandas <span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">as</span> gpd</span>
-<span id="cb1-3"><span class="im" style="color: #00769E;
+<span id="cb2-3"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">import</span> numpy <span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">as</span> np</span>
-<span id="cb1-4"><span class="im" style="color: #00769E;
+<span id="cb2-4"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">import</span> matplotlib.pyplot <span class="im" style="color: #00769E;
 background-color: null;
@@ -748,7 +750,7 @@ font-style: inherit;">as</span> plt</span></code></pre></div>
 </div>
 <p>Bruker så <code>pandas</code> for å lesa inn <code>csv</code>-fila.</p>
 <div class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1">skjelv <span class="op" style="color: #5E5E5E;
+<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1">skjelv <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> pd.read_csv(<span class="st" style="color: #20794D;
 background-color: null;
@@ -756,14 +758,14 @@ font-style: inherit;">"skjelv.csv"</span>)</span></code></pre></div>
 </div>
 <p>Undersøker korleis den innleste tabellen ser ut</p>
 <div class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1">skjelv.shape</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1">skjelv.shape</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>(20000, 22)</code></pre>
 </div>
 </div>
 <p><code>(20000, 22)</code> betyr altså at me her har ein tabell med 20 000 rader og 22 kolonner. Ser på dei fem første radene i tabellen.</p>
 <div class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1">skjelv.head()</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1">skjelv.head()</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <div>
 
@@ -925,7 +927,7 @@ font-style: inherit;">"skjelv.csv"</span>)</span></code></pre></div>
 </div>
 <p>Me kan sjå litt nærare på dei statistikk frå dei numeriske kolonnene med å bruka <code>describe()</code></p>
 <div class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1">skjelv.describe()</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1">skjelv.describe()</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <div>
 
@@ -1078,7 +1080,7 @@ font-style: inherit;">"skjelv.csv"</span>)</span></code></pre></div>
 <p>I kolonna <code>mag</code> (styrken) ser me at både gjennomsnittet (5,87) og medianen (5,7) er ganske låge. Hugs på at den lågaste verdien her er 5,5. Tala viser oss at 50% av dei 20000 skjelva er mellom 5,5 og 5,7 i styrke. Me ser òg at gjennomsnittsdjupna på skjelva er ca. 70,5 km (<code>depth</code>).</p>
 <p>Som me har sett over har tabellen mange kolonner, ikkje alle er like relevante for oss. Me kan sortera ut dei me treng vidare. Skriv først ut ei liste med kolonnenamn for å få oversikt over alle kolonnene.</p>
 <div class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1">skjelv.columns</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1">skjelv.columns</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
 <pre><code>Index(['time', 'latitude', 'longitude', 'depth', 'mag', 'magType', 'nst',
        'gap', 'dmin', 'rms', 'net', 'id', 'updated', 'place', 'type',
@@ -1092,7 +1094,7 @@ font-style: inherit;">"skjelv.csv"</span>)</span></code></pre></div>
 <h2 class="anchored" data-anchor-id="sortere-i-datamaterialet">Sortere i datamaterialet</h2>
 <p>Det første me gjer er å luka ut dei radene som ikkje er jordskjelv. I koden under tek me kun vare på dei radene der <code>type</code> er <code>earthquake</code>.</p>
 <div class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1">skjelv <span class="op" style="color: #5E5E5E;
+<div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1">skjelv <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> skjelv[skjelv[<span class="st" style="color: #20794D;
 background-color: null;
@@ -1101,7 +1103,7 @@ background-color: null;
 font-style: inherit;">==</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"earthquake"</span>]</span>
-<span id="cb9-2">skjelv.shape</span></code></pre></div>
+<span id="cb10-2">skjelv.shape</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>(19890, 22)</code></pre>
 </div>
@@ -1109,7 +1111,7 @@ font-style: inherit;">"earthquake"</span>]</span>
 <p>Me ser at tabellen vart nokre rader kortare.</p>
 <p>Plukker ut dei mest relevante kolonnene. Dato, lengde- og breddegrad, djupne og styrke:</p>
 <div class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1">skjelv <span class="op" style="color: #5E5E5E;
+<div class="sourceCode cell-code" id="cb12" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1">skjelv <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> skjelv[[<span class="st" style="color: #20794D;
 background-color: null;
@@ -1122,7 +1124,7 @@ background-color: null;
 font-style: inherit;">"depth"</span>, <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"mag"</span>]]</span>
-<span id="cb11-2">skjelv.head()</span></code></pre></div>
+<span id="cb12-2">skjelv.head()</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
 <div>
 
@@ -1187,7 +1189,7 @@ font-style: inherit;">"mag"</span>]]</span>
 </div>
 <p>Sjekkar for ordens skuld kva tid det første skjelvet er frå. Ser på dei siste 5 radene i tabellen.</p>
 <div class="cell" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb12" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1">skjelv.tail(<span class="dv" style="color: #AD0000;
+<div class="sourceCode cell-code" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1">skjelv.tail(<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">5</span>)</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="17">
@@ -1262,7 +1264,7 @@ font-style: inherit;">5</span>)</span></code></pre></div>
 <h3 class="anchored" data-anchor-id="visuell-oversikt-over-tabellen">Visuell oversikt over tabellen</h3>
 <p>For å sjå (og presentera) fordelinga av styrke og djupne kan me t.d. laga heilt enkle boksplot. Startar med eit for styrken <span class="emoji" data-emoji="muscle">💪</span></p>
 <div class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1">boksplot <span class="op" style="color: #5E5E5E;
+<div class="sourceCode cell-code" id="cb14" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1">boksplot <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> skjelv.boxplot(column <span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -1279,28 +1281,28 @@ background-color: null;
 font-style: inherit;">=</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"red"</span>)</span>
-<span id="cb13-2">plt.title(<span class="st" style="color: #20794D;
+<span id="cb14-2">plt.title(<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Boksplott over styrkene på skjelva"</span>, fontsize <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">20</span>)</span>
-<span id="cb13-3">plt.ylabel(<span class="st" style="color: #20794D;
+<span id="cb14-3">plt.ylabel(<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Magnitude"</span>, fontsize <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">16</span>)</span>
-<span id="cb13-4">plt.show()</span></code></pre></div>
+<span id="cb14-4">plt.show()</span></code></pre></div>
 <div class="cell-output cell-output-display">
 <p><img src="https://lektorodd.github.io/posts/230425_jordskjelv/index_files/figure-html/cell-11-output-1.png" class="img-fluid"></p>
 </div>
 </div>
 <p>Figuren her viser at jordskjelva i all hovudsak er mellom 5,5 og ca. 6,6. Dei sterkare skjelva er så få at dei vert sett på som avvik (<em>outliers</em>).</p>
 <div class="cell" data-execution_count="15">
-<div class="sourceCode cell-code" id="cb14" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1">boksplot <span class="op" style="color: #5E5E5E;
+<div class="sourceCode cell-code" id="cb15" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1">boksplot <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> skjelv.boxplot(column <span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -1317,21 +1319,21 @@ background-color: null;
 font-style: inherit;">=</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"red"</span>)</span>
-<span id="cb14-2">plt.title(<span class="st" style="color: #20794D;
+<span id="cb15-2">plt.title(<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Boksplott over djupne på skjelva"</span>, fontsize <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">20</span>)</span>
-<span id="cb14-3">plt.ylabel(<span class="st" style="color: #20794D;
+<span id="cb15-3">plt.ylabel(<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Djupne (km)"</span>, fontsize <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">16</span>)</span>
-<span id="cb14-4">plt.show()</span></code></pre></div>
+<span id="cb15-4">plt.show()</span></code></pre></div>
 <div class="cell-output cell-output-display">
 <p><img src="https://lektorodd.github.io/posts/230425_jordskjelv/index_files/figure-html/cell-12-output-1.png" class="img-fluid"></p>
 </div>
@@ -1356,18 +1358,18 @@ Tips til meir visualisering <span class="emoji" data-emoji="eyes">👀</span>
 <h2 class="anchored" data-anchor-id="geodataframe">GeoDataFrame</h2>
 <p>Først lagar me ei <code>geodataframe</code> frå vår opprinnelege <code>dataframe</code> (skjelv). Forskjellen på desse to er at førstnevnte har ei eigen kolonne <code>geometry</code>, som er punkt, linjer eller flater. I dette tilfelet punkt, som <code>geopandas</code> finn i lengde- og breiddegrad-kolonnene.</p>
 <div class="cell" data-execution_count="16">
-<div class="sourceCode cell-code" id="cb15" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1">skjelv_gdf <span class="op" style="color: #5E5E5E;
+<div class="sourceCode cell-code" id="cb16" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1">skjelv_gdf <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> gpd.GeoDataFrame(</span>
-<span id="cb15-2">    skjelv, </span>
-<span id="cb15-3">    geometry <span class="op" style="color: #5E5E5E;
+<span id="cb16-2">    skjelv, </span>
+<span id="cb16-3">    geometry <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> gpd.points_from_xy(</span>
-<span id="cb15-4">        skjelv.longitude, </span>
-<span id="cb15-5">        skjelv.latitude</span>
-<span id="cb15-6">        )</span>
-<span id="cb15-7">    )</span>
-<span id="cb15-8">skjelv_gdf.head()</span></code></pre></div>
+<span id="cb16-4">        skjelv.longitude, </span>
+<span id="cb16-5">        skjelv.latitude</span>
+<span id="cb16-6">        )</span>
+<span id="cb16-7">    )</span>
+<span id="cb16-8">skjelv_gdf.head()</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="16">
 <div>
 
@@ -1441,55 +1443,55 @@ font-style: inherit;">=</span> gpd.points_from_xy(</span>
 <h2 class="anchored" data-anchor-id="plotting">Plotting</h2>
 <p>No er alt klart for å starta med plotting. Me lagar eit <em>basekart</em> av verda og plottar jordskjelva oppå dette.</p>
 <div class="cell" data-execution_count="22">
-<div class="sourceCode cell-code" id="cb16" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><span class="co" style="color: #5E5E5E;
+<div class="sourceCode cell-code" id="cb17" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># bakgrunnskart - data</span></span>
-<span id="cb16-2">world <span class="op" style="color: #5E5E5E;
+<span id="cb17-2">world <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> gpd.read_file(gpd.datasets.get_path(<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"naturalearth_lowres"</span>))</span>
-<span id="cb16-3"></span>
-<span id="cb16-4"><span class="co" style="color: #5E5E5E;
+<span id="cb17-3"></span>
+<span id="cb17-4"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># plotte bakgrunnskart</span></span>
-<span id="cb16-5">base <span class="op" style="color: #5E5E5E;
+<span id="cb17-5">base <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> world.plot(color <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"linen"</span>, </span>
-<span id="cb16-6">                  edgecolor <span class="op" style="color: #5E5E5E;
+<span id="cb17-6">                  edgecolor <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"gray"</span>, </span>
-<span id="cb16-7">                  figsize <span class="op" style="color: #5E5E5E;
+<span id="cb17-7">                  figsize <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> (<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">15</span>, <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">8</span>)</span>
-<span id="cb16-8">                 )</span>
-<span id="cb16-9"></span>
-<span id="cb16-10">skjelv_gdf.plot(ax <span class="op" style="color: #5E5E5E;
+<span id="cb17-8">                 )</span>
+<span id="cb17-9"></span>
+<span id="cb17-10">skjelv_gdf.plot(ax <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> base, markersize <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">2</span>) </span>
-<span id="cb16-11"></span>
-<span id="cb16-12">plt.title(<span class="st" style="color: #20794D;
+<span id="cb17-11"></span>
+<span id="cb17-12">plt.title(<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Jordskjelv sterkare enn 5,5 frå 1982 - 2023"</span>, fontsize <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">18</span>)</span>
-<span id="cb16-13">plt.show()</span></code></pre></div>
+<span id="cb17-13">plt.show()</span></code></pre></div>
 <div class="cell-output cell-output-display">
 <p><img src="https://lektorodd.github.io/posts/230425_jordskjelv/index_files/figure-html/cell-14-output-1.png" class="img-fluid"></p>
 </div>
@@ -1498,7 +1500,7 @@ font-style: inherit;">18</span>)</span>
 <h3 class="anchored" data-anchor-id="variable-storleik-på-markørane">Variable storleik på markørane</h3>
 <p>For å få fram ulikskapar mellom skjelva kan me plotta punkta slik at dei vert større di sterkare skjelva dei representerer er. Skjelva er frå 5.5 til 9.1 i styrke. Legg til ei ny kolonne i tabellen for storleik på markør. For at den skal gå frå 1 og oppover, trekk me 4,5 frå verdien til <code>mag</code>.</p>
 <div class="cell" data-execution_count="41">
-<div class="sourceCode cell-code" id="cb17" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1">skjelv_gdf[<span class="st" style="color: #20794D;
+<div class="sourceCode cell-code" id="cb18" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1">skjelv_gdf[<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"markør"</span>] <span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -1509,7 +1511,7 @@ background-color: null;
 font-style: inherit;">-</span> <span class="fl" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">4.5</span></span>
-<span id="cb17-2">skjelv_gdf.head()</span></code></pre></div>
+<span id="cb18-2">skjelv_gdf.head()</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="41">
 <div>
 
@@ -1586,68 +1588,68 @@ font-style: inherit;">4.5</span></span>
 </div>
 <p>Plottar på nytt. Merk at me endrar typen til <code>scatter</code> som gjer at markørstorleiken får eit anna argument <code>s</code> i staden for <code>markersize</code>. Prøv deg gjerne fram for å finna ein fin verdi for storleiken. Eg endte opp med <code>3*skjelv_gdf["markør"]**4</code>.</p>
 <div class="cell" data-execution_count="64">
-<div class="sourceCode cell-code" id="cb18" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><span class="co" style="color: #5E5E5E;
+<div class="sourceCode cell-code" id="cb19" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># bakgrunnskart</span></span>
-<span id="cb18-2">world <span class="op" style="color: #5E5E5E;
+<span id="cb19-2">world <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> gpd.read_file(gpd.datasets.get_path(<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"naturalearth_lowres"</span>))</span>
-<span id="cb18-3"></span>
-<span id="cb18-4">base <span class="op" style="color: #5E5E5E;
+<span id="cb19-3"></span>
+<span id="cb19-4">base <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> world.plot(color <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"bisque"</span>, </span>
-<span id="cb18-5">                  edgecolor <span class="op" style="color: #5E5E5E;
+<span id="cb19-5">                  edgecolor <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"gray"</span>, </span>
-<span id="cb18-6">                  figsize <span class="op" style="color: #5E5E5E;
+<span id="cb19-6">                  figsize <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> (<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">14</span>, <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">8</span>)</span>
-<span id="cb18-7">                 )</span>
-<span id="cb18-8"></span>
-<span id="cb18-9"><span class="co" style="color: #5E5E5E;
+<span id="cb19-7">                 )</span>
+<span id="cb19-8"></span>
+<span id="cb19-9"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># plottar skjelva</span></span>
-<span id="cb18-10">skjelv_gdf.plot(ax <span class="op" style="color: #5E5E5E;
+<span id="cb19-10">skjelv_gdf.plot(ax <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> base, </span>
-<span id="cb18-11">                kind <span class="op" style="color: #5E5E5E;
+<span id="cb19-11">                kind <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"scatter"</span>, </span>
-<span id="cb18-12">                x <span class="op" style="color: #5E5E5E;
+<span id="cb19-12">                x <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"longitude"</span>, </span>
-<span id="cb18-13">                y <span class="op" style="color: #5E5E5E;
+<span id="cb19-13">                y <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"latitude"</span>,</span>
-<span id="cb18-14">                marker <span class="op" style="color: #5E5E5E;
+<span id="cb19-14">                marker <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"o"</span>,</span>
-<span id="cb18-15">                color <span class="op" style="color: #5E5E5E;
+<span id="cb19-15">                color <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"salmon"</span>,</span>
-<span id="cb18-16">                s <span class="op" style="color: #5E5E5E;
+<span id="cb19-16">                s <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
 background-color: null;
@@ -1662,21 +1664,21 @@ background-color: null;
 font-style: inherit;">4</span>, <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># størrelse på pkt. </span></span>
-<span id="cb18-17">                edgecolor <span class="op" style="color: #5E5E5E;
+<span id="cb19-17">                edgecolor <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"maroon"</span>,</span>
-<span id="cb18-18">                alpha <span class="op" style="color: #5E5E5E;
+<span id="cb19-18">                alpha <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="fl" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">0.6</span> <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># gjennomsiktighet</span></span>
-<span id="cb18-19">               )</span>
-<span id="cb18-20"></span>
-<span id="cb18-21">plt.title(<span class="st" style="color: #20794D;
+<span id="cb19-19">               )</span>
+<span id="cb19-20"></span>
+<span id="cb19-21">plt.title(<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Jordskjelv sterkare enn 5,5 frå 1982 - 2023 </span><span class="ch" style="color: #20794D;
 background-color: null;
@@ -1687,24 +1689,24 @@ background-color: null;
 font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">22</span>)</span>
-<span id="cb18-22">plt.xlabel(<span class="st" style="color: #20794D;
+<span id="cb19-22">plt.xlabel(<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Lengdegrad"</span>, fontsize <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">16</span>)</span>
-<span id="cb18-23">plt.ylabel(<span class="st" style="color: #20794D;
+<span id="cb19-23">plt.ylabel(<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Breiddegrad"</span>, fontsize <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">16</span>)</span>
-<span id="cb18-24"><span class="co" style="color: #5E5E5E;
+<span id="cb19-24"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">#plt.savefig("jordskjelv_verda_styrke.png", dpi = 300) # &lt;-- bruk denne for å lagra figuren</span></span>
-<span id="cb18-25">plt.show()</span></code></pre></div>
+<span id="cb19-25">plt.show()</span></code></pre></div>
 <div class="cell-output cell-output-display">
 <p><img src="https://lektorodd.github.io/posts/230425_jordskjelv/index_files/figure-html/cell-16-output-1.png" class="img-fluid"></p>
 </div>
@@ -1715,27 +1717,27 @@ font-style: inherit;">#plt.savefig("jordskjelv_verda_styrke.png", dpi = 300) # &
 <h2 class="anchored" data-anchor-id="avgrense-område">Avgrense område</h2>
 <p>For å få betre oversikt kan me zooma inn på eit avgrensa område av jorda. Me kan t.d. sjå på områda rundt Indonesia. Les av omtrentlege lengde- og breddegrader på oversiktskartet. Legg avgrensingane inn som eigne variablar, slik at det er lett å endra dei seinare.</p>
 <div class="cell" data-execution_count="54">
-<div class="sourceCode cell-code" id="cb19" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><span class="co" style="color: #5E5E5E;
+<div class="sourceCode cell-code" id="cb20" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># Avgrensingar for rådata og kartplotting</span></span>
-<span id="cb19-2">lat_min <span class="op" style="color: #5E5E5E;
+<span id="cb20-2">lat_min <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">25</span></span>
-<span id="cb19-3">lat_maks <span class="op" style="color: #5E5E5E;
+<span id="cb20-3">lat_maks <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">60</span></span>
-<span id="cb19-4">long_min <span class="op" style="color: #5E5E5E;
+<span id="cb20-4">long_min <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">80</span></span>
-<span id="cb19-5">long_maks <span class="op" style="color: #5E5E5E;
+<span id="cb20-5">long_maks <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
 background-color: null;
@@ -1743,39 +1745,39 @@ font-style: inherit;">170</span></span></code></pre></div>
 </div>
 <p>Bruker vidare avgrensingane til å sortera ut ein eigen tabell med dei aktuelle skjelva.</p>
 <div class="cell" data-execution_count="57">
-<div class="sourceCode cell-code" id="cb20" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><span class="co" style="color: #5E5E5E;
+<div class="sourceCode cell-code" id="cb21" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># lagar ny gdf til avgrensa område</span></span>
-<span id="cb20-2">område_skjelv <span class="op" style="color: #5E5E5E;
+<span id="cb21-2">område_skjelv <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> skjelv_gdf[(skjelv_gdf.latitude <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">&gt;</span> lat_min) </span>
-<span id="cb20-3">                           <span class="op" style="color: #5E5E5E;
+<span id="cb21-3">                           <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">&amp;</span> (skjelv_gdf.latitude <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">&lt;</span> lat_maks)</span>
-<span id="cb20-4">                           <span class="op" style="color: #5E5E5E;
+<span id="cb21-4">                           <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">&amp;</span> (skjelv_gdf.longitude <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">&gt;</span> long_min) </span>
-<span id="cb20-5">                           <span class="op" style="color: #5E5E5E;
+<span id="cb21-5">                           <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">&amp;</span> (skjelv_gdf.longitude <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">&lt;</span> long_maks)</span>
-<span id="cb20-6">                          ]</span>
-<span id="cb20-7"></span>
-<span id="cb20-8">område_skjelv.shape</span></code></pre></div>
+<span id="cb21-6">                          ]</span>
+<span id="cb21-7"></span>
+<span id="cb21-8">område_skjelv.shape</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="57">
 <pre><code>(9302, 7)</code></pre>
 </div>
 </div>
 <p>Her ser me at me framleis har 9302 skjelv i tabellen, så omlag halvparten av dei 20 000 skjelva er frå det avgrensa området. Tar me ein kikk på dei 10 første linjene så ser me at indeksen ikkje er heilt i orden.</p>
 <div class="cell" data-execution_count="59">
-<div class="sourceCode cell-code" id="cb22" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1">område_skjelv.head(<span class="dv" style="color: #AD0000;
+<div class="sourceCode cell-code" id="cb23" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1">område_skjelv.head(<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">10</span>)</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="59">
@@ -1904,14 +1906,14 @@ font-style: inherit;">10</span>)</span></code></pre></div>
 </div>
 <p>Ikkje at det er veldig viktig no, men om me vil så kan me ordna dette lett.</p>
 <div class="cell" data-execution_count="60">
-<div class="sourceCode cell-code" id="cb23" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1">område_skjelv <span class="op" style="color: #5E5E5E;
+<div class="sourceCode cell-code" id="cb24" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1">område_skjelv <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> område_skjelv.reset_index(drop<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span><span class="va" style="color: #111111;
 background-color: null;
 font-style: inherit;">True</span>)</span>
-<span id="cb23-2">område_skjelv.head(<span class="dv" style="color: #AD0000;
+<span id="cb24-2">område_skjelv.head(<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">10</span>)</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="60">
@@ -2042,74 +2044,74 @@ font-style: inherit;">10</span>)</span></code></pre></div>
 <h3 class="anchored" data-anchor-id="plotte-avgrensa-område">Plotte avgrensa område</h3>
 <p>No kan me plotta det avgrensa området. Bruker variablane med grensene for å tilpassa bakgrunnskartet.</p>
 <div class="cell" data-execution_count="61">
-<div class="sourceCode cell-code" id="cb24" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1">base <span class="op" style="color: #5E5E5E;
+<div class="sourceCode cell-code" id="cb25" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1">base <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> world.plot(color<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span><span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"lightgrey"</span>,</span>
-<span id="cb24-2">                  edgecolor<span class="op" style="color: #5E5E5E;
+<span id="cb25-2">                  edgecolor<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span><span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"black"</span>, </span>
-<span id="cb24-3">                  figsize<span class="op" style="color: #5E5E5E;
+<span id="cb25-3">                  figsize<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span>(<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">8</span>,<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">10</span>),</span>
-<span id="cb24-4">                 )</span>
-<span id="cb24-5"></span>
-<span id="cb24-6">base.set_ylim([lat_min, lat_maks])</span>
-<span id="cb24-7">base.set_xlim([long_min, long_maks])</span>
-<span id="cb24-8"></span>
-<span id="cb24-9">område_skjelv.plot(ax <span class="op" style="color: #5E5E5E;
+<span id="cb25-4">                 )</span>
+<span id="cb25-5"></span>
+<span id="cb25-6">base.set_ylim([lat_min, lat_maks])</span>
+<span id="cb25-7">base.set_xlim([long_min, long_maks])</span>
+<span id="cb25-8"></span>
+<span id="cb25-9">område_skjelv.plot(ax <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> base, </span>
-<span id="cb24-10">                   color <span class="op" style="color: #5E5E5E;
+<span id="cb25-10">                   color <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"red"</span>,</span>
-<span id="cb24-11">                   markersize <span class="op" style="color: #5E5E5E;
+<span id="cb25-11">                   markersize <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">10</span></span>
-<span id="cb24-12">                  )</span>
-<span id="cb24-13"></span>
-<span id="cb24-14">plt.show()</span></code></pre></div>
+<span id="cb25-12">                  )</span>
+<span id="cb25-13"></span>
+<span id="cb25-14">plt.show()</span></code></pre></div>
 <div class="cell-output cell-output-display">
 <p><img src="https://lektorodd.github.io/posts/230425_jordskjelv/index_files/figure-html/cell-21-output-1.png" class="img-fluid"></p>
 </div>
 </div>
 <p>På denne figuren ser me at det er nokre område der skjelva dekker breiare linjer enn ellers. Prøver å få fram kor djupe dei ulike skjelva er. Me deler inn datamaterialet i grunne, middels og djupe skjelv, med 30 km og 300 km som grenser mellom dei tre kategoriane.</p>
 <div class="cell" data-execution_count="65">
-<div class="sourceCode cell-code" id="cb25" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1">område_djup <span class="op" style="color: #5E5E5E;
+<div class="sourceCode cell-code" id="cb26" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1">område_djup <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> område_skjelv[(område_skjelv.depth <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">&gt;</span> <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">300</span>)]</span>
-<span id="cb25-2">område_middels <span class="op" style="color: #5E5E5E;
+<span id="cb26-2">område_middels <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> område_skjelv[(område_skjelv.depth <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">&lt;=</span> <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">300</span>)</span>
-<span id="cb25-3">                               <span class="op" style="color: #5E5E5E;
+<span id="cb26-3">                               <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">&amp;</span> (område_skjelv.depth <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">&gt;</span> <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">30</span>)]</span>
-<span id="cb25-4">område_grunn <span class="op" style="color: #5E5E5E;
+<span id="cb26-4">område_grunn <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> område_skjelv[(område_skjelv.depth <span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -2119,40 +2121,40 @@ font-style: inherit;">30</span>)]</span></code></pre></div>
 </div>
 <p>Desse nye <code>gdf</code>-ane kan me plotta på oversiktskart over regionen:</p>
 <div class="cell" data-execution_count="67">
-<div class="sourceCode cell-code" id="cb26" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><span class="co" style="color: #5E5E5E;
+<div class="sourceCode cell-code" id="cb27" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># bakgrunnskart</span></span>
-<span id="cb26-2">base <span class="op" style="color: #5E5E5E;
+<span id="cb27-2">base <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> world.plot(color<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span><span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"linen"</span>,</span>
-<span id="cb26-3">                  edgecolor<span class="op" style="color: #5E5E5E;
+<span id="cb27-3">                  edgecolor<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span><span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"dimgray"</span>, </span>
-<span id="cb26-4">                  figsize<span class="op" style="color: #5E5E5E;
+<span id="cb27-4">                  figsize<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span>(<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">9</span>,<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">9</span>),</span>
-<span id="cb26-5">                 )</span>
-<span id="cb26-6"></span>
-<span id="cb26-7"><span class="co" style="color: #5E5E5E;
+<span id="cb27-5">                 )</span>
+<span id="cb27-6"></span>
+<span id="cb27-7"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># avgrensing (til området)</span></span>
-<span id="cb26-8">base.set_ylim([lat_min, lat_maks])</span>
-<span id="cb26-9">base.set_xlim([long_min, long_maks])</span>
-<span id="cb26-10"></span>
-<span id="cb26-11"><span class="co" style="color: #5E5E5E;
+<span id="cb27-8">base.set_ylim([lat_min, lat_maks])</span>
+<span id="cb27-9">base.set_xlim([long_min, long_maks])</span>
+<span id="cb27-10"></span>
+<span id="cb27-11"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># plotte skjelva</span></span>
-<span id="cb26-12">område_djup.plot(ax <span class="op" style="color: #5E5E5E;
+<span id="cb27-12">område_djup.plot(ax <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> base, color<span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -2163,7 +2165,7 @@ background-color: null;
 font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">10</span>)</span>
-<span id="cb26-13">område_middels.plot(ax <span class="op" style="color: #5E5E5E;
+<span id="cb27-13">område_middels.plot(ax <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> base, color<span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -2174,7 +2176,7 @@ background-color: null;
 font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">10</span>)</span>
-<span id="cb26-14">område_grunn.plot(ax <span class="op" style="color: #5E5E5E;
+<span id="cb27-14">område_grunn.plot(ax <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> base, color<span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -2185,11 +2187,11 @@ background-color: null;
 font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">10</span>)</span>
-<span id="cb26-15"></span>
-<span id="cb26-16"><span class="co" style="color: #5E5E5E;
+<span id="cb27-15"></span>
+<span id="cb27-16"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># pynt</span></span>
-<span id="cb26-17">plt.title(<span class="st" style="color: #20794D;
+<span id="cb27-17">plt.title(<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"</span><span class="ch" style="color: #20794D;
 background-color: null;
@@ -2204,31 +2206,31 @@ background-color: null;
 font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">22</span>)</span>
-<span id="cb26-18">plt.xlabel(<span class="st" style="color: #20794D;
+<span id="cb27-18">plt.xlabel(<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Lengdegrad"</span>, fontsize <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">16</span>)</span>
-<span id="cb26-19">plt.ylabel(<span class="st" style="color: #20794D;
+<span id="cb27-19">plt.ylabel(<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Breiddegrad"</span>, fontsize <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">16</span>)</span>
-<span id="cb26-20">plt.legend([<span class="st" style="color: #20794D;
+<span id="cb27-20">plt.legend([<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"djupe ($d &gt; 300 km$)"</span>, </span>
-<span id="cb26-21">           <span class="st" style="color: #20794D;
+<span id="cb27-21">           <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"middels ($30 km &lt; d \leq 300 km$)"</span>,</span>
-<span id="cb26-22">           <span class="st" style="color: #20794D;
+<span id="cb27-22">           <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"grunne ($d \leq 30 km$)"</span></span>
-<span id="cb26-23">           ])</span>
-<span id="cb26-24">plt.savefig(<span class="st" style="color: #20794D;
+<span id="cb27-23">           ])</span>
+<span id="cb27-24">plt.savefig(<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"jordskjelv_stillehavet_djupne.png"</span>, dpi<span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -2239,7 +2241,7 @@ background-color: null;
 font-style: inherit;">=</span><span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"tight"</span>)</span>
-<span id="cb26-25">plt.show()</span></code></pre></div>
+<span id="cb27-25">plt.show()</span></code></pre></div>
 <div class="cell-output cell-output-display">
 <p><img src="https://lektorodd.github.io/posts/230425_jordskjelv/index_files/figure-html/cell-23-output-1.png" class="img-fluid"></p>
 </div>
