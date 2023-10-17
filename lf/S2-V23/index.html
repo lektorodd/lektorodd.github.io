@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.3.433">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -142,7 +142,7 @@ gtag('config', 'G-744F7V6HLG', { 'anonymize_ip': true});
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/lektorodd" rel="" target=""><i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://www.youtube.com/channel/UCWfDrIj3Mq3Niz77HJ6cTNg" rel="" target=""><i class="bi bi-youtube" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
@@ -318,7 +318,7 @@ O'(x) &amp;= I'(x) - K'(x)
 <h2 class="anchored" data-anchor-id="oppgåve-3">Oppgåve 3</h2>
 <section id="a-totalt-sannsyn" class="level3">
 <h3 class="anchored" data-anchor-id="a-totalt-sannsyn">a) totalt sannsyn</h3>
-<p>Summen av sannsyna i sannsynsfordelinga må vera 1. Dermed har me at</p>
+<p>Det totale sannsynet, summen av sannsyna i sannsynsfordelinga, må vera 1. Dermed har me at</p>
 <p><span class="math display">\[\begin{align*}
 k + 0,3 + (k-0,2) + 0,1 &amp;= 1  \\
 2k + 0,2 &amp;= 1 \\
@@ -428,6 +428,59 @@ k = 0,4
 </table>
 <section id="a-lag-ein-modell" class="level3">
 <h3 class="anchored" data-anchor-id="a-lag-ein-modell">a) Lag ein modell</h3>
+<p>Me startar med å lage to arrays med <span class="math inline">\(x\)</span> og <span class="math inline">\(y\)</span>-verdiar. Sidan <span class="math inline">\(F(0)\)</span> skal tilsvare talet på strøymingar i 2008 let me <span class="math inline">\(x\)</span> vera år etter 2008.</p>
+<div class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># importerer aktuelle pakkar</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-4"><a href="#cb2-4"></a><span class="im">from</span> scipy.optimize <span class="im">import</span> curve_fit</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>x <span class="op">=</span> np.array([<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">10</span>])</span>
+<span id="cb3-2"><a href="#cb3-2"></a>y <span class="op">=</span> np.array([<span class="dv">2</span>, <span class="dv">70</span>, <span class="dv">246</span>, <span class="dv">456</span>, <span class="dv">582</span>, <span class="dv">655</span>])</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Plottar datapunkta for å få ei oversikt over korleis dei ser ut.</p>
+<div class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>plt.plot(x, y, <span class="st">"o:"</span>)</span>
+<span id="cb4-2"><a href="#cb4-2"></a>plt.show()</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="index_files/figure-html/cell-5-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+<p>Det kan sjå ut som om punkta ligg på ei S-kurve, slak stigning i starten og slutten, med bratt stigning på midten. Prøver difor å laga ein logistisk modell.</p>
+<div class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">def</span> F(x, a, b, k):</span>
+<span id="cb5-2"><a href="#cb5-2"></a>    <span class="cf">return</span> a <span class="op">/</span> (<span class="dv">1</span> <span class="op">+</span> b<span class="op">*</span>np.exp(<span class="op">-</span>k<span class="op">*</span>x))</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>K</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="24">
+<pre><code>array([660.36349891,  30.72074365,   0.70655784])</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>x_verdiar <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">1000</span>)</span>
+<span id="cb8-2"><a href="#cb8-2"></a></span>
+<span id="cb8-3"><a href="#cb8-3"></a></span>
+<span id="cb8-4"><a href="#cb8-4"></a><span class="co"># gjetter ca koeffverdi</span></span>
+<span id="cb8-5"><a href="#cb8-5"></a>gjett <span class="op">=</span> [<span class="dv">650</span>, <span class="dv">25</span>, <span class="dv">1</span>]</span>
+<span id="cb8-6"><a href="#cb8-6"></a></span>
+<span id="cb8-7"><a href="#cb8-7"></a><span class="co"># finn funksjonen</span></span>
+<span id="cb8-8"><a href="#cb8-8"></a>K, E <span class="op">=</span> curve_fit(F, x, y, p0<span class="op">=</span>gjett)</span>
+<span id="cb8-9"><a href="#cb8-9"></a></span>
+<span id="cb8-10"><a href="#cb8-10"></a><span class="co"># hentar ut koeff.</span></span>
+<span id="cb8-11"><a href="#cb8-11"></a>a, b, k <span class="op">=</span> K</span>
+<span id="cb8-12"><a href="#cb8-12"></a></span>
+<span id="cb8-13"><a href="#cb8-13"></a></span>
+<span id="cb8-14"><a href="#cb8-14"></a>y_verdiar <span class="op">=</span> F(x_verdiar, a, b, k)</span>
+<span id="cb8-15"><a href="#cb8-15"></a></span>
+<span id="cb8-16"><a href="#cb8-16"></a></span>
+<span id="cb8-17"><a href="#cb8-17"></a>plt.plot(x_verdiar, y_verdiar)</span>
+<span id="cb8-18"><a href="#cb8-18"></a>plt.plot(x, y, <span class="st">"o"</span>)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="index_files/figure-html/cell-8-output-1.png" class="img-fluid"></p>
+</div>
+</div>
 </section>
 <section id="b-bestem-konstantane" class="level3">
 <h3 class="anchored" data-anchor-id="b-bestem-konstantane">b) bestem konstantane</h3>
