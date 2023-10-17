@@ -14,9 +14,9 @@ about:
     - icon: mastodon
       text: Mastodon
       href: https://snabelen.no/@torodd
-    - icon: twitter
-      text: Twitter
-      href: https://twitter.com/lektorodd
+    - icon: youtube
+      text: YouTube
+      href: https://www.youtube.com/channel/UCWfDrIj3Mq3Niz77HJ6cTNg
     - icon: linkedin
       text: LinkedIn
       href: https://linkedin.com/in/torodd-ottestad-b2583a59 
