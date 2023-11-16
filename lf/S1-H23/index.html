@@ -558,6 +558,7 @@ Løyse i GeoGebra sin CAS
 <section id="a-minst-25-gutar-er-venstrehendte" class="level3">
 <h3 class="anchored" data-anchor-id="a-minst-25-gutar-er-venstrehendte">a) minst 25 gutar er venstrehendte</h3>
 <p>Bestem sannsynet for at minst 25 av gutane er venstrehendte.</p>
+<p>Bruker ein binomisk modell for å løysa dette sidan det er * to utfall (venstrehendt og ikkje venstrehendt) * uavhengige delforsøk (om ein gut er venstrehendt påverkar ikkje sannsynet for at neste gut er venstrehendt) * likt sannsyn for alle delforsøka (<span class="math inline">\(p=0,10\)</span>)</p>
 <div class="cell" data-execution_count="134">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb10-2"><a href="#cb10-2"></a></span>
@@ -584,7 +585,7 @@ Løyse i GeoGebra sin CAS
 <section id="b-pminst-tre-gutar-venstrehendt-0.20" class="level3">
 <h3 class="anchored" data-anchor-id="b-pminst-tre-gutar-venstrehendt-0.20">b) P(minst tre gutar venstrehendt) &gt; 0.20</h3>
 <p>Kor mange gutar må det vere i ein klasse dersom sannsynet for at minst tre av gutane er venstrehendte, skal vere større enn 20 %?</p>
-<p>Finn svaret med simuleringar.</p>
+<p>Framleis binomisk. Finn svaret med simuleringar.</p>
 <div class="cell" data-execution_count="135">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a><span class="kw">def</span> minst_tre_av(n):</span>
 <span id="cb12-2"><a href="#cb12-2"></a>    <span class="co"># tal simuleringar </span></span>
@@ -613,7 +614,8 @@ Løyse i GeoGebra sin CAS
 </section>
 <section id="c-nøyaktig-tre-venstrehendte-elevar-i-klassen" class="level3">
 <h3 class="anchored" data-anchor-id="c-nøyaktig-tre-venstrehendte-elevar-i-klassen">c) Nøyaktig tre venstrehendte elevar i klassen</h3>
-<p>I ein klasse er det 13 gutar og 17 jenter. Bestem sannsynet for at nøyaktig tre av elevane i klassen er venstrehendte</p>
+<p>I ein klasse er det 13 gutar og 17 jenter. Bestem sannsynet for at nøyaktig tre av elevane i klassen er venstrehendte.</p>
+<p>Her òg er det binomisk sannsyn. Bruker simuleringar og finn jentene og gutane for seg.</p>
 <div class="cell" data-execution_count="136">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a><span class="co"># tal simuleringar</span></span>
 <span id="cb14-2"><a href="#cb14-2"></a>N <span class="op">=</span> <span class="dv">10000000</span></span>
@@ -622,7 +624,7 @@ Løyse i GeoGebra sin CAS
 <span id="cb14-5"><a href="#cb14-5"></a>jenter <span class="op">=</span> rng.binomial(n<span class="op">=</span><span class="dv">17</span>, p<span class="op">=</span><span class="fl">0.08</span>, size<span class="op">=</span>N)</span>
 <span id="cb14-6"><a href="#cb14-6"></a>gutar <span class="op">=</span> rng.binomial(n<span class="op">=</span><span class="dv">13</span>, p<span class="op">=</span><span class="fl">0.10</span>, size<span class="op">=</span>N)</span>
 <span id="cb14-7"><a href="#cb14-7"></a></span>
-<span id="cb14-8"><a href="#cb14-8"></a><span class="co"># finn totalt simulert tal venstrehendte i klassen</span></span>
+<span id="cb14-8"><a href="#cb14-8"></a><span class="co"># finn totalt tal venstrehendte kvart forsøk</span></span>
 <span id="cb14-9"><a href="#cb14-9"></a>venstrehendte <span class="op">=</span> jenter <span class="op">+</span> gutar </span>
 <span id="cb14-10"><a href="#cb14-10"></a></span>
 <span id="cb14-11"><a href="#cb14-11"></a><span class="co"># tel opp gunstige og finn sannsynet. </span></span>
