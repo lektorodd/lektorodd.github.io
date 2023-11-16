@@ -256,6 +256,8 @@ Merk
 </div>
 <div class="callout-body-container callout-body">
 <p>For å gjennomføra denne øvinga treng ein biblioteket <code>geopandas</code>. Viss ein nyttar <code>anaconda</code> eller <code>miniconda</code> så er det enklaste å laga eit eige <code>enviroment</code> for å ikkje klussa til den «vanlege» python-installasjonen. Oppskrifta du finn <a href="https://geopandas.org/en/stable/getting_started/install.html">her</a>, funkar fint!</p>
+<p><strong>OBS:</strong> For å installera Jupyter Lab kan du endre siste linja til</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource {shell} number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a href="#cb1-1"></a>conda install python=3 geopandas jupyterlab</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <section id="laste-ned-data" class="level2">
@@ -271,25 +273,25 @@ Merk
 <h2 class="anchored" data-anchor-id="innlesing-av-data">Innlesing av data</h2>
 <p>Me startar med å importere naudsynte bibliotek.</p>
 <div class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="im">import</span> geopandas <span class="im">as</span> gpd</span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="im">import</span> geopandas <span class="im">as</span> gpd</span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-4"><a href="#cb2-4"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Bruker så <code>pandas</code> for å lesa inn <code>csv</code>-fila.</p>
 <div class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>skjelv <span class="op">=</span> pd.read_csv(<span class="st">"skjelv.csv"</span>)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>skjelv <span class="op">=</span> pd.read_csv(<span class="st">"skjelv.csv"</span>)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Undersøker korleis den innleste tabellen ser ut</p>
 <div class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>skjelv.shape</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>skjelv.shape</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>(20000, 22)</code></pre>
 </div>
 </div>
 <p><code>(20000, 22)</code> betyr altså at me her har ein tabell med 20 000 rader og 22 kolonner. Ser på dei fem første radene i tabellen.</p>
 <div class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>skjelv.head()</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>skjelv.head()</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <div>
 
@@ -451,7 +453,7 @@ Merk
 </div>
 <p>Me kan sjå litt nærare på dei statistikk frå dei numeriske kolonnene med å bruka <code>describe()</code></p>
 <div class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>skjelv.describe()</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a>skjelv.describe()</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <div>
 
@@ -604,7 +606,7 @@ Merk
 <p>I kolonna <code>mag</code> (styrken) ser me at både gjennomsnittet (5,87) og medianen (5,7) er ganske låge. Hugs på at den lågaste verdien her er 5,5. Tala viser oss at 50% av dei 20000 skjelva er mellom 5,5 og 5,7 i styrke. Me ser òg at gjennomsnittsdjupna på skjelva er ca. 70,5 km (<code>depth</code>).</p>
 <p>Som me har sett over har tabellen mange kolonner, ikkje alle er like relevante for oss. Me kan sortera ut dei me treng vidare. Skriv først ut ei liste med kolonnenamn for å få oversikt over alle kolonnene.</p>
 <div class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a>skjelv.columns</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>skjelv.columns</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
 <pre><code>Index(['time', 'latitude', 'longitude', 'depth', 'mag', 'magType', 'nst',
        'gap', 'dmin', 'rms', 'net', 'id', 'updated', 'place', 'type',
@@ -618,8 +620,8 @@ Merk
 <h2 class="anchored" data-anchor-id="sortere-i-datamaterialet">Sortere i datamaterialet</h2>
 <p>Det første me gjer er å luka ut dei radene som ikkje er jordskjelv. I koden under tek me kun vare på dei radene der <code>type</code> er <code>earthquake</code>.</p>
 <div class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>skjelv <span class="op">=</span> skjelv[skjelv[<span class="st">"type"</span>] <span class="op">==</span> <span class="st">"earthquake"</span>]</span>
-<span id="cb9-2"><a href="#cb9-2"></a>skjelv.shape</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a>skjelv <span class="op">=</span> skjelv[skjelv[<span class="st">"type"</span>] <span class="op">==</span> <span class="st">"earthquake"</span>]</span>
+<span id="cb10-2"><a href="#cb10-2"></a>skjelv.shape</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>(19890, 22)</code></pre>
 </div>
@@ -627,8 +629,8 @@ Merk
 <p>Me ser at tabellen vart nokre rader kortare.</p>
 <p>Plukker ut dei mest relevante kolonnene. Dato, lengde- og breddegrad, djupne og styrke:</p>
 <div class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a>skjelv <span class="op">=</span> skjelv[[<span class="st">"time"</span>, <span class="st">"latitude"</span>, <span class="st">"longitude"</span>, <span class="st">"depth"</span>, <span class="st">"mag"</span>]]</span>
-<span id="cb11-2"><a href="#cb11-2"></a>skjelv.head()</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a>skjelv <span class="op">=</span> skjelv[[<span class="st">"time"</span>, <span class="st">"latitude"</span>, <span class="st">"longitude"</span>, <span class="st">"depth"</span>, <span class="st">"mag"</span>]]</span>
+<span id="cb12-2"><a href="#cb12-2"></a>skjelv.head()</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
 <div>
 
@@ -693,7 +695,7 @@ Merk
 </div>
 <p>Sjekkar for ordens skuld kva tid det første skjelvet er frå. Ser på dei siste 5 radene i tabellen.</p>
 <div class="cell" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a>skjelv.tail(<span class="dv">5</span>)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a>skjelv.tail(<span class="dv">5</span>)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="17">
 <div>
 
@@ -766,20 +768,20 @@ Merk
 <h3 class="anchored" data-anchor-id="visuell-oversikt-over-tabellen">Visuell oversikt over tabellen</h3>
 <p>For å sjå (og presentera) fordelinga av styrke og djupne kan me t.d. laga heilt enkle boksplot. Startar med eit for styrken <span class="emoji" data-emoji="muscle">💪</span></p>
 <div class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a>boksplot <span class="op">=</span> skjelv.boxplot(column <span class="op">=</span> <span class="st">"mag"</span>, figsize <span class="op">=</span> (<span class="dv">6</span>,<span class="dv">6</span>), color <span class="op">=</span> <span class="st">"red"</span>)</span>
-<span id="cb13-2"><a href="#cb13-2"></a>plt.title(<span class="st">"Boksplott over styrkene på skjelva"</span>, fontsize <span class="op">=</span> <span class="dv">20</span>)</span>
-<span id="cb13-3"><a href="#cb13-3"></a>plt.ylabel(<span class="st">"Magnitude"</span>, fontsize <span class="op">=</span> <span class="dv">16</span>)</span>
-<span id="cb13-4"><a href="#cb13-4"></a>plt.show()</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a>boksplot <span class="op">=</span> skjelv.boxplot(column <span class="op">=</span> <span class="st">"mag"</span>, figsize <span class="op">=</span> (<span class="dv">6</span>,<span class="dv">6</span>), color <span class="op">=</span> <span class="st">"red"</span>)</span>
+<span id="cb14-2"><a href="#cb14-2"></a>plt.title(<span class="st">"Boksplott over styrkene på skjelva"</span>, fontsize <span class="op">=</span> <span class="dv">20</span>)</span>
+<span id="cb14-3"><a href="#cb14-3"></a>plt.ylabel(<span class="st">"Magnitude"</span>, fontsize <span class="op">=</span> <span class="dv">16</span>)</span>
+<span id="cb14-4"><a href="#cb14-4"></a>plt.show()</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <p><img src="index_files/figure-html/cell-11-output-1.png" class="img-fluid"></p>
 </div>
 </div>
 <p>Figuren her viser at jordskjelva i all hovudsak er mellom 5,5 og ca. 6,6. Dei sterkare skjelva er så få at dei vert sett på som avvik (<em>outliers</em>).</p>
 <div class="cell" data-execution_count="15">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a>boksplot <span class="op">=</span> skjelv.boxplot(column <span class="op">=</span> <span class="st">"depth"</span>, figsize <span class="op">=</span> (<span class="dv">6</span>,<span class="dv">6</span>), color <span class="op">=</span> <span class="st">"red"</span>)</span>
-<span id="cb14-2"><a href="#cb14-2"></a>plt.title(<span class="st">"Boksplott over djupne på skjelva"</span>, fontsize <span class="op">=</span> <span class="dv">20</span>)</span>
-<span id="cb14-3"><a href="#cb14-3"></a>plt.ylabel(<span class="st">"Djupne (km)"</span>, fontsize <span class="op">=</span> <span class="dv">16</span>)</span>
-<span id="cb14-4"><a href="#cb14-4"></a>plt.show()</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a>boksplot <span class="op">=</span> skjelv.boxplot(column <span class="op">=</span> <span class="st">"depth"</span>, figsize <span class="op">=</span> (<span class="dv">6</span>,<span class="dv">6</span>), color <span class="op">=</span> <span class="st">"red"</span>)</span>
+<span id="cb15-2"><a href="#cb15-2"></a>plt.title(<span class="st">"Boksplott over djupne på skjelva"</span>, fontsize <span class="op">=</span> <span class="dv">20</span>)</span>
+<span id="cb15-3"><a href="#cb15-3"></a>plt.ylabel(<span class="st">"Djupne (km)"</span>, fontsize <span class="op">=</span> <span class="dv">16</span>)</span>
+<span id="cb15-4"><a href="#cb15-4"></a>plt.show()</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <p><img src="index_files/figure-html/cell-12-output-1.png" class="img-fluid"></p>
 </div>
@@ -804,14 +806,14 @@ Tips til meir visualisering <span class="emoji" data-emoji="eyes">👀</span>
 <h2 class="anchored" data-anchor-id="geodataframe">GeoDataFrame</h2>
 <p>Først lagar me ei <code>geodataframe</code> frå vår opprinnelege <code>dataframe</code> (skjelv). Forskjellen på desse to er at førstnevnte har ei eigen kolonne <code>geometry</code>, som er punkt, linjer eller flater. I dette tilfelet punkt, som <code>geopandas</code> finn i lengde- og breiddegrad-kolonnene.</p>
 <div class="cell" data-execution_count="16">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a>skjelv_gdf <span class="op">=</span> gpd.GeoDataFrame(</span>
-<span id="cb15-2"><a href="#cb15-2"></a>    skjelv, </span>
-<span id="cb15-3"><a href="#cb15-3"></a>    geometry <span class="op">=</span> gpd.points_from_xy(</span>
-<span id="cb15-4"><a href="#cb15-4"></a>        skjelv.longitude, </span>
-<span id="cb15-5"><a href="#cb15-5"></a>        skjelv.latitude</span>
-<span id="cb15-6"><a href="#cb15-6"></a>        )</span>
-<span id="cb15-7"><a href="#cb15-7"></a>    )</span>
-<span id="cb15-8"><a href="#cb15-8"></a>skjelv_gdf.head()</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a>skjelv_gdf <span class="op">=</span> gpd.GeoDataFrame(</span>
+<span id="cb16-2"><a href="#cb16-2"></a>    skjelv, </span>
+<span id="cb16-3"><a href="#cb16-3"></a>    geometry <span class="op">=</span> gpd.points_from_xy(</span>
+<span id="cb16-4"><a href="#cb16-4"></a>        skjelv.longitude, </span>
+<span id="cb16-5"><a href="#cb16-5"></a>        skjelv.latitude</span>
+<span id="cb16-6"><a href="#cb16-6"></a>        )</span>
+<span id="cb16-7"><a href="#cb16-7"></a>    )</span>
+<span id="cb16-8"><a href="#cb16-8"></a>skjelv_gdf.head()</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="16">
 <div>
 
@@ -885,19 +887,19 @@ Tips til meir visualisering <span class="emoji" data-emoji="eyes">👀</span>
 <h2 class="anchored" data-anchor-id="plotting">Plotting</h2>
 <p>No er alt klart for å starta med plotting. Me lagar eit <em>basekart</em> av verda og plottar jordskjelva oppå dette.</p>
 <div class="cell" data-execution_count="22">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a><span class="co"># bakgrunnskart - data</span></span>
-<span id="cb16-2"><a href="#cb16-2"></a>world <span class="op">=</span> gpd.read_file(gpd.datasets.get_path(<span class="st">"naturalearth_lowres"</span>))</span>
-<span id="cb16-3"><a href="#cb16-3"></a></span>
-<span id="cb16-4"><a href="#cb16-4"></a><span class="co"># plotte bakgrunnskart</span></span>
-<span id="cb16-5"><a href="#cb16-5"></a>base <span class="op">=</span> world.plot(color <span class="op">=</span> <span class="st">"linen"</span>, </span>
-<span id="cb16-6"><a href="#cb16-6"></a>                  edgecolor <span class="op">=</span> <span class="st">"gray"</span>, </span>
-<span id="cb16-7"><a href="#cb16-7"></a>                  figsize <span class="op">=</span> (<span class="dv">15</span>, <span class="dv">8</span>)</span>
-<span id="cb16-8"><a href="#cb16-8"></a>                 )</span>
-<span id="cb16-9"><a href="#cb16-9"></a></span>
-<span id="cb16-10"><a href="#cb16-10"></a>skjelv_gdf.plot(ax <span class="op">=</span> base, markersize <span class="op">=</span> <span class="dv">2</span>) </span>
-<span id="cb16-11"><a href="#cb16-11"></a></span>
-<span id="cb16-12"><a href="#cb16-12"></a>plt.title(<span class="st">"Jordskjelv sterkare enn 5,5 frå 1982 - 2023"</span>, fontsize <span class="op">=</span> <span class="dv">18</span>)</span>
-<span id="cb16-13"><a href="#cb16-13"></a>plt.show()</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a><span class="co"># bakgrunnskart - data</span></span>
+<span id="cb17-2"><a href="#cb17-2"></a>world <span class="op">=</span> gpd.read_file(gpd.datasets.get_path(<span class="st">"naturalearth_lowres"</span>))</span>
+<span id="cb17-3"><a href="#cb17-3"></a></span>
+<span id="cb17-4"><a href="#cb17-4"></a><span class="co"># plotte bakgrunnskart</span></span>
+<span id="cb17-5"><a href="#cb17-5"></a>base <span class="op">=</span> world.plot(color <span class="op">=</span> <span class="st">"linen"</span>, </span>
+<span id="cb17-6"><a href="#cb17-6"></a>                  edgecolor <span class="op">=</span> <span class="st">"gray"</span>, </span>
+<span id="cb17-7"><a href="#cb17-7"></a>                  figsize <span class="op">=</span> (<span class="dv">15</span>, <span class="dv">8</span>)</span>
+<span id="cb17-8"><a href="#cb17-8"></a>                 )</span>
+<span id="cb17-9"><a href="#cb17-9"></a></span>
+<span id="cb17-10"><a href="#cb17-10"></a>skjelv_gdf.plot(ax <span class="op">=</span> base, markersize <span class="op">=</span> <span class="dv">2</span>) </span>
+<span id="cb17-11"><a href="#cb17-11"></a></span>
+<span id="cb17-12"><a href="#cb17-12"></a>plt.title(<span class="st">"Jordskjelv sterkare enn 5,5 frå 1982 - 2023"</span>, fontsize <span class="op">=</span> <span class="dv">18</span>)</span>
+<span id="cb17-13"><a href="#cb17-13"></a>plt.show()</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <p><img src="index_files/figure-html/cell-14-output-1.png" class="img-fluid"></p>
 </div>
@@ -906,8 +908,8 @@ Tips til meir visualisering <span class="emoji" data-emoji="eyes">👀</span>
 <h3 class="anchored" data-anchor-id="variable-storleik-på-markørane">Variable storleik på markørane</h3>
 <p>For å få fram ulikskapar mellom skjelva kan me plotta punkta slik at dei vert større di sterkare skjelva dei representerer er. Skjelva er frå 5.5 til 9.1 i styrke. Legg til ei ny kolonne i tabellen for storleik på markør. For at den skal gå frå 1 og oppover, trekk me 4,5 frå verdien til <code>mag</code>.</p>
 <div class="cell" data-execution_count="41">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a>skjelv_gdf[<span class="st">"markør"</span>] <span class="op">=</span> skjelv_gdf[<span class="st">"mag"</span>] <span class="op">-</span> <span class="fl">4.5</span></span>
-<span id="cb17-2"><a href="#cb17-2"></a>skjelv_gdf.head()</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1"></a>skjelv_gdf[<span class="st">"markør"</span>] <span class="op">=</span> skjelv_gdf[<span class="st">"mag"</span>] <span class="op">-</span> <span class="fl">4.5</span></span>
+<span id="cb18-2"><a href="#cb18-2"></a>skjelv_gdf.head()</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="41">
 <div>
 
@@ -984,31 +986,31 @@ Tips til meir visualisering <span class="emoji" data-emoji="eyes">👀</span>
 </div>
 <p>Plottar på nytt. Merk at me endrar typen til <code>scatter</code> som gjer at markørstorleiken får eit anna argument <code>s</code> i staden for <code>markersize</code>. Prøv deg gjerne fram for å finna ein fin verdi for storleiken. Eg endte opp med <code>3*skjelv_gdf["markør"]**4</code>.</p>
 <div class="cell" data-execution_count="64">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1"></a><span class="co"># bakgrunnskart</span></span>
-<span id="cb18-2"><a href="#cb18-2"></a>world <span class="op">=</span> gpd.read_file(gpd.datasets.get_path(<span class="st">"naturalearth_lowres"</span>))</span>
-<span id="cb18-3"><a href="#cb18-3"></a></span>
-<span id="cb18-4"><a href="#cb18-4"></a>base <span class="op">=</span> world.plot(color <span class="op">=</span> <span class="st">"bisque"</span>, </span>
-<span id="cb18-5"><a href="#cb18-5"></a>                  edgecolor <span class="op">=</span> <span class="st">"gray"</span>, </span>
-<span id="cb18-6"><a href="#cb18-6"></a>                  figsize <span class="op">=</span> (<span class="dv">14</span>, <span class="dv">8</span>)</span>
-<span id="cb18-7"><a href="#cb18-7"></a>                 )</span>
-<span id="cb18-8"><a href="#cb18-8"></a></span>
-<span id="cb18-9"><a href="#cb18-9"></a><span class="co"># plottar skjelva</span></span>
-<span id="cb18-10"><a href="#cb18-10"></a>skjelv_gdf.plot(ax <span class="op">=</span> base, </span>
-<span id="cb18-11"><a href="#cb18-11"></a>                kind <span class="op">=</span> <span class="st">"scatter"</span>, </span>
-<span id="cb18-12"><a href="#cb18-12"></a>                x <span class="op">=</span> <span class="st">"longitude"</span>, </span>
-<span id="cb18-13"><a href="#cb18-13"></a>                y <span class="op">=</span> <span class="st">"latitude"</span>,</span>
-<span id="cb18-14"><a href="#cb18-14"></a>                marker <span class="op">=</span> <span class="st">"o"</span>,</span>
-<span id="cb18-15"><a href="#cb18-15"></a>                color <span class="op">=</span> <span class="st">"salmon"</span>,</span>
-<span id="cb18-16"><a href="#cb18-16"></a>                s <span class="op">=</span> <span class="dv">3</span><span class="op">*</span>skjelv_gdf[<span class="st">"markør"</span>]<span class="op">**</span><span class="dv">4</span>, <span class="co"># størrelse på pkt. </span></span>
-<span id="cb18-17"><a href="#cb18-17"></a>                edgecolor <span class="op">=</span> <span class="st">"maroon"</span>,</span>
-<span id="cb18-18"><a href="#cb18-18"></a>                alpha <span class="op">=</span> <span class="fl">0.6</span> <span class="co"># gjennomsiktighet</span></span>
-<span id="cb18-19"><a href="#cb18-19"></a>               )</span>
-<span id="cb18-20"><a href="#cb18-20"></a></span>
-<span id="cb18-21"><a href="#cb18-21"></a>plt.title(<span class="st">"Jordskjelv sterkare enn 5,5 frå 1982 - 2023 </span><span class="ch">\n</span><span class="st">"</span>, fontsize <span class="op">=</span> <span class="dv">22</span>)</span>
-<span id="cb18-22"><a href="#cb18-22"></a>plt.xlabel(<span class="st">"Lengdegrad"</span>, fontsize <span class="op">=</span> <span class="dv">16</span>)</span>
-<span id="cb18-23"><a href="#cb18-23"></a>plt.ylabel(<span class="st">"Breiddegrad"</span>, fontsize <span class="op">=</span> <span class="dv">16</span>)</span>
-<span id="cb18-24"><a href="#cb18-24"></a><span class="co">#plt.savefig("jordskjelv_verda_styrke.png", dpi = 300) # &lt;-- bruk denne for å lagra figuren</span></span>
-<span id="cb18-25"><a href="#cb18-25"></a>plt.show()</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1"></a><span class="co"># bakgrunnskart</span></span>
+<span id="cb19-2"><a href="#cb19-2"></a>world <span class="op">=</span> gpd.read_file(gpd.datasets.get_path(<span class="st">"naturalearth_lowres"</span>))</span>
+<span id="cb19-3"><a href="#cb19-3"></a></span>
+<span id="cb19-4"><a href="#cb19-4"></a>base <span class="op">=</span> world.plot(color <span class="op">=</span> <span class="st">"bisque"</span>, </span>
+<span id="cb19-5"><a href="#cb19-5"></a>                  edgecolor <span class="op">=</span> <span class="st">"gray"</span>, </span>
+<span id="cb19-6"><a href="#cb19-6"></a>                  figsize <span class="op">=</span> (<span class="dv">14</span>, <span class="dv">8</span>)</span>
+<span id="cb19-7"><a href="#cb19-7"></a>                 )</span>
+<span id="cb19-8"><a href="#cb19-8"></a></span>
+<span id="cb19-9"><a href="#cb19-9"></a><span class="co"># plottar skjelva</span></span>
+<span id="cb19-10"><a href="#cb19-10"></a>skjelv_gdf.plot(ax <span class="op">=</span> base, </span>
+<span id="cb19-11"><a href="#cb19-11"></a>                kind <span class="op">=</span> <span class="st">"scatter"</span>, </span>
+<span id="cb19-12"><a href="#cb19-12"></a>                x <span class="op">=</span> <span class="st">"longitude"</span>, </span>
+<span id="cb19-13"><a href="#cb19-13"></a>                y <span class="op">=</span> <span class="st">"latitude"</span>,</span>
+<span id="cb19-14"><a href="#cb19-14"></a>                marker <span class="op">=</span> <span class="st">"o"</span>,</span>
+<span id="cb19-15"><a href="#cb19-15"></a>                color <span class="op">=</span> <span class="st">"salmon"</span>,</span>
+<span id="cb19-16"><a href="#cb19-16"></a>                s <span class="op">=</span> <span class="dv">3</span><span class="op">*</span>skjelv_gdf[<span class="st">"markør"</span>]<span class="op">**</span><span class="dv">4</span>, <span class="co"># størrelse på pkt. </span></span>
+<span id="cb19-17"><a href="#cb19-17"></a>                edgecolor <span class="op">=</span> <span class="st">"maroon"</span>,</span>
+<span id="cb19-18"><a href="#cb19-18"></a>                alpha <span class="op">=</span> <span class="fl">0.6</span> <span class="co"># gjennomsiktighet</span></span>
+<span id="cb19-19"><a href="#cb19-19"></a>               )</span>
+<span id="cb19-20"><a href="#cb19-20"></a></span>
+<span id="cb19-21"><a href="#cb19-21"></a>plt.title(<span class="st">"Jordskjelv sterkare enn 5,5 frå 1982 - 2023 </span><span class="ch">\n</span><span class="st">"</span>, fontsize <span class="op">=</span> <span class="dv">22</span>)</span>
+<span id="cb19-22"><a href="#cb19-22"></a>plt.xlabel(<span class="st">"Lengdegrad"</span>, fontsize <span class="op">=</span> <span class="dv">16</span>)</span>
+<span id="cb19-23"><a href="#cb19-23"></a>plt.ylabel(<span class="st">"Breiddegrad"</span>, fontsize <span class="op">=</span> <span class="dv">16</span>)</span>
+<span id="cb19-24"><a href="#cb19-24"></a><span class="co">#plt.savefig("jordskjelv_verda_styrke.png", dpi = 300) # &lt;-- bruk denne for å lagra figuren</span></span>
+<span id="cb19-25"><a href="#cb19-25"></a>plt.show()</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <p><img src="index_files/figure-html/cell-16-output-1.png" class="img-fluid"></p>
 </div>
@@ -1019,29 +1021,29 @@ Tips til meir visualisering <span class="emoji" data-emoji="eyes">👀</span>
 <h2 class="anchored" data-anchor-id="avgrense-område">Avgrense område</h2>
 <p>For å få betre oversikt kan me zooma inn på eit avgrensa område av jorda. Me kan t.d. sjå på områda rundt Indonesia. Les av omtrentlege lengde- og breddegrader på oversiktskartet. Legg avgrensingane inn som eigne variablar, slik at det er lett å endra dei seinare.</p>
 <div class="cell" data-execution_count="54">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1"></a><span class="co"># Avgrensingar for rådata og kartplotting</span></span>
-<span id="cb19-2"><a href="#cb19-2"></a>lat_min <span class="op">=</span> <span class="op">-</span><span class="dv">25</span></span>
-<span id="cb19-3"><a href="#cb19-3"></a>lat_maks <span class="op">=</span> <span class="dv">60</span></span>
-<span id="cb19-4"><a href="#cb19-4"></a>long_min <span class="op">=</span> <span class="dv">80</span></span>
-<span id="cb19-5"><a href="#cb19-5"></a>long_maks <span class="op">=</span> <span class="dv">170</span></span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1"></a><span class="co"># Avgrensingar for rådata og kartplotting</span></span>
+<span id="cb20-2"><a href="#cb20-2"></a>lat_min <span class="op">=</span> <span class="op">-</span><span class="dv">25</span></span>
+<span id="cb20-3"><a href="#cb20-3"></a>lat_maks <span class="op">=</span> <span class="dv">60</span></span>
+<span id="cb20-4"><a href="#cb20-4"></a>long_min <span class="op">=</span> <span class="dv">80</span></span>
+<span id="cb20-5"><a href="#cb20-5"></a>long_maks <span class="op">=</span> <span class="dv">170</span></span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Bruker vidare avgrensingane til å sortera ut ein eigen tabell med dei aktuelle skjelva.</p>
 <div class="cell" data-execution_count="57">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1"></a><span class="co"># lagar ny gdf til avgrensa område</span></span>
-<span id="cb20-2"><a href="#cb20-2"></a>område_skjelv <span class="op">=</span> skjelv_gdf[(skjelv_gdf.latitude <span class="op">&gt;</span> lat_min) </span>
-<span id="cb20-3"><a href="#cb20-3"></a>                           <span class="op">&amp;</span> (skjelv_gdf.latitude <span class="op">&lt;</span> lat_maks)</span>
-<span id="cb20-4"><a href="#cb20-4"></a>                           <span class="op">&amp;</span> (skjelv_gdf.longitude <span class="op">&gt;</span> long_min) </span>
-<span id="cb20-5"><a href="#cb20-5"></a>                           <span class="op">&amp;</span> (skjelv_gdf.longitude <span class="op">&lt;</span> long_maks)</span>
-<span id="cb20-6"><a href="#cb20-6"></a>                          ]</span>
-<span id="cb20-7"><a href="#cb20-7"></a></span>
-<span id="cb20-8"><a href="#cb20-8"></a>område_skjelv.shape</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1"></a><span class="co"># lagar ny gdf til avgrensa område</span></span>
+<span id="cb21-2"><a href="#cb21-2"></a>område_skjelv <span class="op">=</span> skjelv_gdf[(skjelv_gdf.latitude <span class="op">&gt;</span> lat_min) </span>
+<span id="cb21-3"><a href="#cb21-3"></a>                           <span class="op">&amp;</span> (skjelv_gdf.latitude <span class="op">&lt;</span> lat_maks)</span>
+<span id="cb21-4"><a href="#cb21-4"></a>                           <span class="op">&amp;</span> (skjelv_gdf.longitude <span class="op">&gt;</span> long_min) </span>
+<span id="cb21-5"><a href="#cb21-5"></a>                           <span class="op">&amp;</span> (skjelv_gdf.longitude <span class="op">&lt;</span> long_maks)</span>
+<span id="cb21-6"><a href="#cb21-6"></a>                          ]</span>
+<span id="cb21-7"><a href="#cb21-7"></a></span>
+<span id="cb21-8"><a href="#cb21-8"></a>område_skjelv.shape</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="57">
 <pre><code>(9302, 7)</code></pre>
 </div>
 </div>
 <p>Her ser me at me framleis har 9302 skjelv i tabellen, så omlag halvparten av dei 20 000 skjelva er frå det avgrensa området. Tar me ein kikk på dei 10 første linjene så ser me at indeksen ikkje er heilt i orden.</p>
 <div class="cell" data-execution_count="59">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1"></a>område_skjelv.head(<span class="dv">10</span>)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1"></a>område_skjelv.head(<span class="dv">10</span>)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="59">
 <div>
 
@@ -1168,8 +1170,8 @@ Tips til meir visualisering <span class="emoji" data-emoji="eyes">👀</span>
 </div>
 <p>Ikkje at det er veldig viktig no, men om me vil så kan me ordna dette lett.</p>
 <div class="cell" data-execution_count="60">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1"></a>område_skjelv <span class="op">=</span> område_skjelv.reset_index(drop<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb23-2"><a href="#cb23-2"></a>område_skjelv.head(<span class="dv">10</span>)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1"></a>område_skjelv <span class="op">=</span> område_skjelv.reset_index(drop<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb24-2"><a href="#cb24-2"></a>område_skjelv.head(<span class="dv">10</span>)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="60">
 <div>
 
@@ -1298,58 +1300,58 @@ Tips til meir visualisering <span class="emoji" data-emoji="eyes">👀</span>
 <h3 class="anchored" data-anchor-id="plotte-avgrensa-område">Plotte avgrensa område</h3>
 <p>No kan me plotta det avgrensa området. Bruker variablane med grensene for å tilpassa bakgrunnskartet.</p>
 <div class="cell" data-execution_count="61">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1"></a>base <span class="op">=</span> world.plot(color<span class="op">=</span><span class="st">"lightgrey"</span>,</span>
-<span id="cb24-2"><a href="#cb24-2"></a>                  edgecolor<span class="op">=</span><span class="st">"black"</span>, </span>
-<span id="cb24-3"><a href="#cb24-3"></a>                  figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">10</span>),</span>
-<span id="cb24-4"><a href="#cb24-4"></a>                 )</span>
-<span id="cb24-5"><a href="#cb24-5"></a></span>
-<span id="cb24-6"><a href="#cb24-6"></a>base.set_ylim([lat_min, lat_maks])</span>
-<span id="cb24-7"><a href="#cb24-7"></a>base.set_xlim([long_min, long_maks])</span>
-<span id="cb24-8"><a href="#cb24-8"></a></span>
-<span id="cb24-9"><a href="#cb24-9"></a>område_skjelv.plot(ax <span class="op">=</span> base, </span>
-<span id="cb24-10"><a href="#cb24-10"></a>                   color <span class="op">=</span> <span class="st">"red"</span>,</span>
-<span id="cb24-11"><a href="#cb24-11"></a>                   markersize <span class="op">=</span> <span class="dv">10</span></span>
-<span id="cb24-12"><a href="#cb24-12"></a>                  )</span>
-<span id="cb24-13"><a href="#cb24-13"></a></span>
-<span id="cb24-14"><a href="#cb24-14"></a>plt.show()</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1"></a>base <span class="op">=</span> world.plot(color<span class="op">=</span><span class="st">"lightgrey"</span>,</span>
+<span id="cb25-2"><a href="#cb25-2"></a>                  edgecolor<span class="op">=</span><span class="st">"black"</span>, </span>
+<span id="cb25-3"><a href="#cb25-3"></a>                  figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">10</span>),</span>
+<span id="cb25-4"><a href="#cb25-4"></a>                 )</span>
+<span id="cb25-5"><a href="#cb25-5"></a></span>
+<span id="cb25-6"><a href="#cb25-6"></a>base.set_ylim([lat_min, lat_maks])</span>
+<span id="cb25-7"><a href="#cb25-7"></a>base.set_xlim([long_min, long_maks])</span>
+<span id="cb25-8"><a href="#cb25-8"></a></span>
+<span id="cb25-9"><a href="#cb25-9"></a>område_skjelv.plot(ax <span class="op">=</span> base, </span>
+<span id="cb25-10"><a href="#cb25-10"></a>                   color <span class="op">=</span> <span class="st">"red"</span>,</span>
+<span id="cb25-11"><a href="#cb25-11"></a>                   markersize <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb25-12"><a href="#cb25-12"></a>                  )</span>
+<span id="cb25-13"><a href="#cb25-13"></a></span>
+<span id="cb25-14"><a href="#cb25-14"></a>plt.show()</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <p><img src="index_files/figure-html/cell-21-output-1.png" class="img-fluid"></p>
 </div>
 </div>
 <p>På denne figuren ser me at det er nokre område der skjelva dekker breiare linjer enn ellers. Prøver å få fram kor djupe dei ulike skjelva er. Me deler inn datamaterialet i grunne, middels og djupe skjelv, med 30 km og 300 km som grenser mellom dei tre kategoriane.</p>
 <div class="cell" data-execution_count="65">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1"></a>område_djup <span class="op">=</span> område_skjelv[(område_skjelv.depth <span class="op">&gt;</span> <span class="dv">300</span>)]</span>
-<span id="cb25-2"><a href="#cb25-2"></a>område_middels <span class="op">=</span> område_skjelv[(område_skjelv.depth <span class="op">&lt;=</span> <span class="dv">300</span>)</span>
-<span id="cb25-3"><a href="#cb25-3"></a>                               <span class="op">&amp;</span> (område_skjelv.depth <span class="op">&gt;</span> <span class="dv">30</span>)]</span>
-<span id="cb25-4"><a href="#cb25-4"></a>område_grunn <span class="op">=</span> område_skjelv[(område_skjelv.depth <span class="op">&lt;=</span> <span class="dv">30</span>)]</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1"></a>område_djup <span class="op">=</span> område_skjelv[(område_skjelv.depth <span class="op">&gt;</span> <span class="dv">300</span>)]</span>
+<span id="cb26-2"><a href="#cb26-2"></a>område_middels <span class="op">=</span> område_skjelv[(område_skjelv.depth <span class="op">&lt;=</span> <span class="dv">300</span>)</span>
+<span id="cb26-3"><a href="#cb26-3"></a>                               <span class="op">&amp;</span> (område_skjelv.depth <span class="op">&gt;</span> <span class="dv">30</span>)]</span>
+<span id="cb26-4"><a href="#cb26-4"></a>område_grunn <span class="op">=</span> område_skjelv[(område_skjelv.depth <span class="op">&lt;=</span> <span class="dv">30</span>)]</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Desse nye <code>gdf</code>-ane kan me plotta på oversiktskart over regionen:</p>
 <div class="cell" data-execution_count="67">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1"></a><span class="co"># bakgrunnskart</span></span>
-<span id="cb26-2"><a href="#cb26-2"></a>base <span class="op">=</span> world.plot(color<span class="op">=</span><span class="st">"linen"</span>,</span>
-<span id="cb26-3"><a href="#cb26-3"></a>                  edgecolor<span class="op">=</span><span class="st">"dimgray"</span>, </span>
-<span id="cb26-4"><a href="#cb26-4"></a>                  figsize<span class="op">=</span>(<span class="dv">9</span>,<span class="dv">9</span>),</span>
-<span id="cb26-5"><a href="#cb26-5"></a>                 )</span>
-<span id="cb26-6"><a href="#cb26-6"></a></span>
-<span id="cb26-7"><a href="#cb26-7"></a><span class="co"># avgrensing (til området)</span></span>
-<span id="cb26-8"><a href="#cb26-8"></a>base.set_ylim([lat_min, lat_maks])</span>
-<span id="cb26-9"><a href="#cb26-9"></a>base.set_xlim([long_min, long_maks])</span>
-<span id="cb26-10"><a href="#cb26-10"></a></span>
-<span id="cb26-11"><a href="#cb26-11"></a><span class="co"># plotte skjelva</span></span>
-<span id="cb26-12"><a href="#cb26-12"></a>område_djup.plot(ax <span class="op">=</span> base, color<span class="op">=</span><span class="st">"dodgerblue"</span>, markersize<span class="op">=</span><span class="dv">10</span>)</span>
-<span id="cb26-13"><a href="#cb26-13"></a>område_middels.plot(ax <span class="op">=</span> base, color<span class="op">=</span><span class="st">"gold"</span>, markersize<span class="op">=</span><span class="dv">10</span>)</span>
-<span id="cb26-14"><a href="#cb26-14"></a>område_grunn.plot(ax <span class="op">=</span> base, color<span class="op">=</span><span class="st">"red"</span>, markersize<span class="op">=</span><span class="dv">10</span>)</span>
-<span id="cb26-15"><a href="#cb26-15"></a></span>
-<span id="cb26-16"><a href="#cb26-16"></a><span class="co"># pynt</span></span>
-<span id="cb26-17"><a href="#cb26-17"></a>plt.title(<span class="st">"</span><span class="ch">\n</span><span class="st">Jordskjelv vest i Stillehavet</span><span class="ch">\n</span><span class="st">"</span>, fontsize <span class="op">=</span> <span class="dv">22</span>)</span>
-<span id="cb26-18"><a href="#cb26-18"></a>plt.xlabel(<span class="st">"Lengdegrad"</span>, fontsize <span class="op">=</span> <span class="dv">16</span>)</span>
-<span id="cb26-19"><a href="#cb26-19"></a>plt.ylabel(<span class="st">"Breiddegrad"</span>, fontsize <span class="op">=</span> <span class="dv">16</span>)</span>
-<span id="cb26-20"><a href="#cb26-20"></a>plt.legend([<span class="st">"djupe ($d &gt; 300 km$)"</span>, </span>
-<span id="cb26-21"><a href="#cb26-21"></a>           <span class="st">"middels ($30 km &lt; d \leq 300 km$)"</span>,</span>
-<span id="cb26-22"><a href="#cb26-22"></a>           <span class="st">"grunne ($d \leq 30 km$)"</span></span>
-<span id="cb26-23"><a href="#cb26-23"></a>           ])</span>
-<span id="cb26-24"><a href="#cb26-24"></a>plt.savefig(<span class="st">"jordskjelv_stillehavet_djupne.png"</span>, dpi<span class="op">=</span><span class="dv">200</span>, bbox_inches<span class="op">=</span><span class="st">"tight"</span>)</span>
-<span id="cb26-25"><a href="#cb26-25"></a>plt.show()</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1"></a><span class="co"># bakgrunnskart</span></span>
+<span id="cb27-2"><a href="#cb27-2"></a>base <span class="op">=</span> world.plot(color<span class="op">=</span><span class="st">"linen"</span>,</span>
+<span id="cb27-3"><a href="#cb27-3"></a>                  edgecolor<span class="op">=</span><span class="st">"dimgray"</span>, </span>
+<span id="cb27-4"><a href="#cb27-4"></a>                  figsize<span class="op">=</span>(<span class="dv">9</span>,<span class="dv">9</span>),</span>
+<span id="cb27-5"><a href="#cb27-5"></a>                 )</span>
+<span id="cb27-6"><a href="#cb27-6"></a></span>
+<span id="cb27-7"><a href="#cb27-7"></a><span class="co"># avgrensing (til området)</span></span>
+<span id="cb27-8"><a href="#cb27-8"></a>base.set_ylim([lat_min, lat_maks])</span>
+<span id="cb27-9"><a href="#cb27-9"></a>base.set_xlim([long_min, long_maks])</span>
+<span id="cb27-10"><a href="#cb27-10"></a></span>
+<span id="cb27-11"><a href="#cb27-11"></a><span class="co"># plotte skjelva</span></span>
+<span id="cb27-12"><a href="#cb27-12"></a>område_djup.plot(ax <span class="op">=</span> base, color<span class="op">=</span><span class="st">"dodgerblue"</span>, markersize<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb27-13"><a href="#cb27-13"></a>område_middels.plot(ax <span class="op">=</span> base, color<span class="op">=</span><span class="st">"gold"</span>, markersize<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb27-14"><a href="#cb27-14"></a>område_grunn.plot(ax <span class="op">=</span> base, color<span class="op">=</span><span class="st">"red"</span>, markersize<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb27-15"><a href="#cb27-15"></a></span>
+<span id="cb27-16"><a href="#cb27-16"></a><span class="co"># pynt</span></span>
+<span id="cb27-17"><a href="#cb27-17"></a>plt.title(<span class="st">"</span><span class="ch">\n</span><span class="st">Jordskjelv vest i Stillehavet</span><span class="ch">\n</span><span class="st">"</span>, fontsize <span class="op">=</span> <span class="dv">22</span>)</span>
+<span id="cb27-18"><a href="#cb27-18"></a>plt.xlabel(<span class="st">"Lengdegrad"</span>, fontsize <span class="op">=</span> <span class="dv">16</span>)</span>
+<span id="cb27-19"><a href="#cb27-19"></a>plt.ylabel(<span class="st">"Breiddegrad"</span>, fontsize <span class="op">=</span> <span class="dv">16</span>)</span>
+<span id="cb27-20"><a href="#cb27-20"></a>plt.legend([<span class="st">"djupe ($d &gt; 300 km$)"</span>, </span>
+<span id="cb27-21"><a href="#cb27-21"></a>           <span class="st">"middels ($30 km &lt; d \leq 300 km$)"</span>,</span>
+<span id="cb27-22"><a href="#cb27-22"></a>           <span class="st">"grunne ($d \leq 30 km$)"</span></span>
+<span id="cb27-23"><a href="#cb27-23"></a>           ])</span>
+<span id="cb27-24"><a href="#cb27-24"></a>plt.savefig(<span class="st">"jordskjelv_stillehavet_djupne.png"</span>, dpi<span class="op">=</span><span class="dv">200</span>, bbox_inches<span class="op">=</span><span class="st">"tight"</span>)</span>
+<span id="cb27-25"><a href="#cb27-25"></a>plt.show()</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <p><img src="index_files/figure-html/cell-23-output-1.png" class="img-fluid"></p>
 </div>
