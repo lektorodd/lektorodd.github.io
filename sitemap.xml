@@ -1,55 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://lektorodd.github.io/lf/S1-V23/index.html</loc>
-    <lastmod>2023-11-30T17:38:36.363Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lektorodd.github.io/lf/S1-V22/index.html</loc>
-    <lastmod>2023-11-30T17:38:34.100Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lektorodd.github.io/lf/S1-H23/index.html</loc>
-    <lastmod>2023-11-30T17:38:31.780Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lektorodd.github.io/index.html</loc>
-    <lastmod>2023-11-30T17:38:30.398Z</lastmod>
-  </url>
-  <url>
     <loc>https://lektorodd.github.io/posts/230511_simulering3/index.html</loc>
-    <lastmod>2023-11-30T17:38:29.452Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lektorodd.github.io/posts/230303_simulering2/index.html</loc>
-    <lastmod>2023-11-30T17:38:26.631Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lektorodd.github.io/posts/230202_hydrologimodellering/index.html</loc>
-    <lastmod>2023-11-30T17:38:21.862Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lektorodd.github.io/posts/230127_zotero/index.html</loc>
-    <lastmod>2023-11-30T17:38:23.562Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lektorodd.github.io/posts/230209_simulering1/index.html</loc>
-    <lastmod>2023-11-30T17:38:25.750Z</lastmod>
+    <lastmod>2024-01-05T12:19:24.765Z</lastmod>
   </url>
   <url>
     <loc>https://lektorodd.github.io/posts/230425_jordskjelv/index.html</loc>
-    <lastmod>2023-11-30T17:38:28.483Z</lastmod>
+    <lastmod>2024-01-05T12:19:22.097Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lektorodd.github.io/posts/230202_hydrologimodellering/index.html</loc>
+    <lastmod>2024-01-05T12:19:16.011Z</lastmod>
   </url>
   <url>
     <loc>https://lektorodd.github.io/lf.html</loc>
-    <lastmod>2023-11-30T17:38:29.797Z</lastmod>
+    <lastmod>2024-01-05T12:19:12.962Z</lastmod>
   </url>
   <url>
-    <loc>https://lektorodd.github.io/about.html</loc>
-    <lastmod>2023-11-30T17:38:30.630Z</lastmod>
+    <loc>https://lektorodd.github.io/lf/S2-H23/index.html</loc>
+    <lastmod>2024-01-05T12:19:11.011Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lektorodd.github.io/lf/S1-V22/index.html</loc>
+    <lastmod>2024-01-05T12:19:08.020Z</lastmod>
   </url>
   <url>
     <loc>https://lektorodd.github.io/lf/S1-H22/index.html</loc>
-    <lastmod>2023-11-30T17:38:33.042Z</lastmod>
+    <lastmod>2024-01-05T12:19:04.905Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lektorodd.github.io/about.html</loc>
+    <lastmod>2024-01-05T12:19:01.116Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lektorodd.github.io/index.html</loc>
+    <lastmod>2024-01-05T12:19:02.869Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lektorodd.github.io/lf/S1-H23/index.html</loc>
+    <lastmod>2024-01-05T12:19:06.645Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lektorodd.github.io/lf/S1-V23/index.html</loc>
+    <lastmod>2024-01-05T12:19:09.436Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lektorodd.github.io/posts/230127_zotero/index.html</loc>
+    <lastmod>2024-01-05T12:19:14.106Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lektorodd.github.io/posts/230209_simulering1/index.html</loc>
+    <lastmod>2024-01-05T12:19:17.077Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lektorodd.github.io/posts/230303_simulering2/index.html</loc>
+    <lastmod>2024-01-05T12:19:19.531Z</lastmod>
   </url>
 </urlset>
