@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.433">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Torodd F. Ottestad">
+<meta name="dcterms.date" content="2024-01-19">
+<meta name="description" content="Erfaringar med, og tankar kring Google-utfordraren Perplexity.ai">
+
+<title>Torodd F. Ottestad - Perplexity.ai</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "Ingen treff",
+    "search-matching-documents-text": "passande dokument",
+    "search-copy-link-title": "Kopier lenke til søk",
+    "search-hide-matches-text": "Skjul resterande treff",
+    "search-more-match-text": "treff til i dokumentet",
+    "search-more-matches-text": "fleire treff i dokumentet",
+    "search-clear-button-title": "Tøm",
+    "search-detached-cancel-button-title": "Avbryt",
+    "search-submit-button-title": "Søk",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-744F7V6HLG"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-744F7V6HLG', { 'anonymize_ip': true});
+</script>
+
+
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Torodd F. Ottestad</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html" rel="" target="">
+ <span class="menu-text">Om meg</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/lektorodd/lektorodd.github.io" rel="" target=""><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://bsky.app/profile/torodd.bsky.social" rel="" target=""><i class="bi bi-clouds-fill" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.youtube.com/channel/UCWfDrIj3Mq3Niz77HJ6cTNg" rel="" target=""><i class="bi bi-youtube" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://linkedin.com/in/torodd-ottestad-b2583a59" rel="" target=""><i class="bi bi-linkedin" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="../../index.xml" rel="" target=""><i class="bi bi-rss-fill" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Perplexity.ai</h1>
+                  <div>
+        <div class="description">
+          Erfaringar med, og tankar kring Google-utfordraren Perplexity.ai
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">KI</div>
+                <div class="quarto-category">verktøy</div>
+                <div class="quarto-category">tips</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Forfattar</div>
+      <div class="quarto-title-meta-contents">
+               <p>Torodd F. Ottestad </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Publisert</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">January 19, 2024</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Innhald</h2>
+   
+  <ul>
+  <li><a href="#søke-med-kunstig-intelligens" id="toc-søke-med-kunstig-intelligens" class="nav-link active" data-scroll-target="#søke-med-kunstig-intelligens">Søke med kunstig intelligens?</a></li>
+  <li><a href="#fordelar" id="toc-fordelar" class="nav-link" data-scroll-target="#fordelar">Fordelar</a>
+  <ul class="collapse">
+  <li><a href="#kjelder-og-organisering" id="toc-kjelder-og-organisering" class="nav-link" data-scroll-target="#kjelder-og-organisering">Kjelder og organisering</a></li>
+  <li><a href="#annonsefritt" id="toc-annonsefritt" class="nav-link" data-scroll-target="#annonsefritt">Annonsefritt</a></li>
+  <li><a href="#ai-profil" id="toc-ai-profil" class="nav-link" data-scroll-target="#ai-profil">AI-profil</a></li>
+  <li><a href="#fokus" id="toc-fokus" class="nav-link" data-scroll-target="#fokus">Fokus</a></li>
+  </ul></li>
+  <li><a href="#ulemper" id="toc-ulemper" class="nav-link" data-scroll-target="#ulemper">Ulemper</a>
+  <ul class="collapse">
+  <li><a href="#kjeldekritikk-og-filterboble" id="toc-kjeldekritikk-og-filterboble" class="nav-link" data-scroll-target="#kjeldekritikk-og-filterboble">Kjeldekritikk og filterboble</a></li>
+  <li><a href="#pro-vs-gratis" id="toc-pro-vs-gratis" class="nav-link" data-scroll-target="#pro-vs-gratis">Pro vs gratis</a></li>
+  </ul></li>
+  <li><a href="#konklusjon" id="toc-konklusjon" class="nav-link" data-scroll-target="#konklusjon">Konklusjon</a></li>
+  <li><a href="#tips-og-triks" id="toc-tips-og-triks" class="nav-link" data-scroll-target="#tips-og-triks">Tips og triks 🚀</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<p>Dei siste månadane har eg prøvd ut det nye søkeverktøyet <a href="https://www.perplexity.ai/">Perplexity</a>. Verktøyet baserer seg på <em>samtalebaserte søk</em> etter informasjon og kunnskap, og nyttar kunstig intelligens i prosessen.</p>
+<blockquote class="blockquote">
+<p>Perplexity was founded on the belief that searching for information should be a straightforward, efficient experience, free from the influence of advertising-driven models<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+</blockquote>
+<p>I den siste tida har firmaet hatt god vind i segla, etter at dei i sin andre innsamlingsrunde <a href="https://blog.perplexity.ai/blog/perplexity-raises-series-b-funding-round">samla inn nesten 800 millionar kroner</a>. Her fekk dei mellom anna støtte av Jeff Bezos (mannen bak <em>Amazon</em>) og teknologi-giganten <em>NVIDIA</em>.</p>
+<section id="søke-med-kunstig-intelligens" class="level2">
+<h2 class="anchored" data-anchor-id="søke-med-kunstig-intelligens">Søke med kunstig intelligens?</h2>
+<p>Perplaxity nyttar kunstig intelligens på ulike måtar. Det vert nytta store språkmodellar (LLM) til å forstå spørsmålet og lage søkeord og setningar. Vidare skriv verktøyet eit svar eller ei oppsummering ut frå resultata til søket. I svaret vert det referert til kjelder og det ligg ved ei liste over alle resultata som er nytta i søket. Eit døme på eit resultat <a href="https://www.perplexity.ai/search/Perplexityai-PDbmrD8HR6evAzagNHwFDg?s=c">ser slik ut</a>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="startskjerm.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Startskjermen</figcaption>
+</figure>
+</div>
+</section>
+<section id="fordelar" class="level2">
+<h2 class="anchored" data-anchor-id="fordelar">Fordelar</h2>
+<p>Det er fleire fordelar med eit slikt verktøy. Her er nokre av dei.</p>
+<section id="kjelder-og-organisering" class="level3">
+<h3 class="anchored" data-anchor-id="kjelder-og-organisering">Kjelder og organisering</h3>
+<p>Kjelder vert oppgitt som ein del av svaret, i motsetnad til om ein spør store språkmodellar om faktaspørsmål som ligg i deira «generelle kunnskap». I tillegg er det lett å organisera resultat frå ulike søk i samlingar (<em>Collections</em>) og dela søkeresultata med andre. Det er òg mogleik for «samsøking» eller invitera andre bidragsytarar til å jobba i samme samling. Har du ein profil er det i tillegg enkelt å spørja vidare frå ein eksisterande tråd.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="samlingar.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Døme på samlingar</figcaption>
+</figure>
+</div>
+</section>
+<section id="annonsefritt" class="level3">
+<h3 class="anchored" data-anchor-id="annonsefritt">Annonsefritt</h3>
+<p>Eit anna pluss er at Perplexity ikkje er reklamebasert som t.d. Google. Det gjer at det ikkje på same måte er annonser og brukardata som avgjer kva resultat som kjem øvst i resultatlista når ein søker. I tillegg finns det ein gratisversjon av Perplexity som har mange av dei same funksjonane som betalingsversjonen.</p>
+</section>
+<section id="ai-profil" class="level3">
+<h3 class="anchored" data-anchor-id="ai-profil">AI-profil</h3>
+<p>Sist men ikkje minst kan du laga deg ein <code>AI-profil</code>. Dette er informasjon du kan gje Perplexity som kan påverka både søkinga. Du kan gje instruksjonar om interessefelt, alder, svarspråk, søkespråk og andre preferansar. Profilen kan vera «global», altså påverka alle søk, eller så kan det lagast eigne profilar for kvar samling. Denne profilen kan ein laga så avansert og spesifikk som ein vil, det er berre tida og interessen som set grenser 🤓</p>
+</section>
+<section id="fokus" class="level3">
+<h3 class="anchored" data-anchor-id="fokus">Fokus</h3>
+<p>For å spissa søket er det òg mogleikar for å velga eit <em>fokus</em> i søket. Her er det mogleg å spissa søket inn mot t.d. YouTube-videoar eller akademiske kjelder.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fokus.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Ulike fokus</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="ulemper" class="level2">
+<h2 class="anchored" data-anchor-id="ulemper">Ulemper</h2>
+<p>Sjølv om det er mange gode sider med eit verkøy som dette er det samstundes viktig å reflektera rundt dei dårlege sidene.</p>
+<section id="kjeldekritikk-og-filterboble" class="level3">
+<h3 class="anchored" data-anchor-id="kjeldekritikk-og-filterboble">Kjeldekritikk og filterboble</h3>
+<p>Sidan det er store språkmodellar som baserer seg på sannsyn som lagar svara må ein vera kritisk til informasjonen, også her. I tillegg må ein sjå over kva kjelder som ligg til grunn for svaret. Det er ikkje sjølvsagt at kjeldene som vert funnen og brukt er dei beste.</p>
+<p>Sjølv om søkeresultata er tydeleg på kva kjelder som vert <strong>inkludert</strong> i svaret, er det ikkje like klart kva resultat som vert <strong>ekskludert</strong>. Frå erfaringa vår med tradisjonelle søkemotorar er dei fleste kjend med <a href="https://www.perplexity.ai/search/Kva-er-filterboble-e8lLtSqxTLqEYeRZfwC.hQ?s=c">filterbobla</a> ein kan hamna i basert på dataspor ein legg att på nettet. Sidan Perplexity ikkje er reklame- og annonsebasert unngår ein den type påverknad av søkeresultata. Samstundes er det gjerne slik at Perplexity samlar informasjon om bruksmønster hjå brukarane som skal vera med på å <em>tilpassa</em> søkeresultata og gjera dei relevante. Dette kan igjen vera med på å filtrera ut kjelder som kanskje kunne vore interessante. Erfaringa til no er likevel at i dei aller fleste søka eg har gjort finn verktøyet gode og som oftast pålitelege og relevante kjelder.</p>
+</section>
+<section id="pro-vs-gratis" class="level3">
+<h3 class="anchored" data-anchor-id="pro-vs-gratis">Pro vs gratis</h3>
+<p>For å få tilgang til dei kraftigaste språkmodellane (GPT-4, Claude 2.1, <a href="https://blog.perplexity.ai/blog/introducing-pplx-online-llms">Perplexity sin eigenutvikla modell</a> osb.) må ein ha Pro-abonnement til 200 USD i året. Utan dette abonnementet er det GPT-3.5 som vert nytta. Som mange kjenner til er denne tidlegare varianten ganske underlegen samanlikna med dei nyaste modellane på feltet.</p>
+<p>Med Pro-abonnement får ein òg ubegrensa tilgang til <a href="https://blog.perplexity.ai/getting-started#copilot">Copilot</a> som hjelper til med å forstå spørsmålet og laga relevante søketermar. Dette er mogleg å få til i ChatGPT med å inkludera t.d. <code>still relevante oppklaringsspørsmål</code> i ledeteksten. Med pro-abonnement får ein også tilgang til Perplexity sine eigne API-ar og 5 USD i kreditt kvar månad.</p>
+</section>
+</section>
+<section id="konklusjon" class="level2">
+<h2 class="anchored" data-anchor-id="konklusjon">Konklusjon</h2>
+<p>Alt i alt er Perplexity.ai ein spennande utfordrar til Google og dei etablerte tradisjonelle søkemotorane. Utviklinga går raskt og dei eigenutvikla modellane deira vert stadig betre. Når ein i tillegg ser på kor raskt dei samlar inn pengar og kven som støtter dei ser det ganske lovande ut for nykommaren. For min eigen del har eg bytta ut standard søkemotor i nettlesaren med Perplexity og lærer stadig nye ting om både verda og verktøyet 😊</p>
+</section>
+<section id="tips-og-triks" class="level2">
+<h2 class="anchored" data-anchor-id="tips-og-triks">Tips og triks 🚀</h2>
+<p>For å testa verktøyet skikkeleg og ikkje gløyma det vekk har er gjort det til standard søkemotor i nettlesaren min. Det er litt ulikt korleis ein gjer det frå nettlesar til nettlesar. Eg nyttar Brave som nettlesar (<a href="https://www.perplexity.ai/search/Brave-VS-Firefox-gRNt_tBDR5eRzt.YrfFxlg?s=c">ein av fleire med personvern- og datasporingsfokus</a>). Under <code>innstillingar/søkemotor</code> kan ein legga til Perplexity som søkemotor med følgjande lenke:</p>
+<p><code>https://www.perplexity.ai/?q=%s</code></p>
+<p>Med denne som standard vert alle søk frå adresselinja gjort i Perplexity. Om ein likevel vil gjera eit kjapt google-søk ligg det inne snarvegar for det. Startar ein søket/adresselinja med <code>:g</code> vert Google nytta likvel.</p>
+<p><img src="Brave Browser anim.gif" class="img-fluid"></p>
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Fotnotar</h2>
+
+<ol>
+<li id="fn1"><p><a href="https://blog.perplexity.ai/about">https://blog.perplexity.ai/about</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Gjenbruk</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Kopiert!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Kopiert!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<script src="https://giscus.app/client.js" data-repo="lektorodd/lektorodd.github.io" data-repo-id="R_kgDOI1N_fg" data-category="General" data-category-id="DIC_kwDOI1N_fs4CT23b" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
