@@ -10,8 +10,8 @@ website:
       - about.qmd
       - icon: github
         href: https://github.com/lektorodd/lektorodd.github.io
-      - icon: mastodon
-        href: https://snabelen.no/@torodd
+      - icon: clouds-fill
+        href: https://bsky.app/profile/torodd.bsky.social
       - icon: youtube
         href: https://www.youtube.com/channel/UCWfDrIj3Mq3Niz77HJ6cTNg
       - icon: linkedin
