@@ -4,10 +4,16 @@ description: "Litt testing med kjelder frå Zotero i Quarto/VS Code samt ein tan
 from: markdown+emoji
 author: "Torodd F. Ottestad"
 date: "2024-02-27"
-categories: [KI, , kjelder, verktøy, tips]
+categories: [KI, kjelder, verktøy, tips]
 image: "kjelder.png"
+engine: jupyter
 ---
 
 # Avansert bruk av Zotero
 
 Som [tidlegare nemnt](posts\\230127_zotero\index.qmd) er Zotero ei særs god hjelp til føring og lagring av kjelder.
+
+```{python}
+import numpy as np
+print(np.pi)
+```
