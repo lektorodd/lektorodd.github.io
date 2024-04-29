@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
+<meta name="generator" content="quarto-1.4.550">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -24,7 +24,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -81,7 +81,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "Ingen treff",
     "search-matching-documents-text": "passande dokument",
@@ -90,6 +96,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "treff til i dokumentet",
     "search-more-matches-text": "fleire treff i dokumentet",
     "search-clear-button-title": "Tøm",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Avbryt",
     "search-submit-button-title": "Søk",
     "search-label": "Search"
@@ -108,15 +115,42 @@ gtag('config', 'G-744F7V6HLG', { 'anonymize_ip': true});
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
 </head>
 
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Torodd F. Ottestad</span>
     </a>
@@ -128,38 +162,38 @@ gtag('config', 'G-744F7V6HLG', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html" rel="" target="">
- <span class="menu-text">Om meg</span></a>
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">Om meg</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/lektorodd/lektorodd.github.io" rel="" target=""><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/lektorodd/lektorodd.github.io"> <i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://bsky.app/profile/torodd.bsky.social" rel="" target=""><i class="bi bi-clouds-fill" role="img">
+    <a class="nav-link" href="https://bsky.app/profile/torodd.bsky.social"> <i class="bi bi-clouds-fill" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://www.youtube.com/channel/UCWfDrIj3Mq3Niz77HJ6cTNg" rel="" target=""><i class="bi bi-youtube" role="img">
+    <a class="nav-link" href="https://www.youtube.com/channel/UCWfDrIj3Mq3Niz77HJ6cTNg"> <i class="bi bi-youtube" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://linkedin.com/in/torodd-ottestad-b2583a59" rel="" target=""><i class="bi bi-linkedin" role="img">
+    <a class="nav-link" href="https://linkedin.com/in/torodd-ottestad-b2583a59"> <i class="bi bi-linkedin" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="../../index.xml" rel="" target=""><i class="bi bi-rss-fill" role="img">
+    <a class="nav-link" href="../../index.xml"> <i class="bi bi-rss-fill" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools">
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -266,6 +300,7 @@ gtag('config', 'G-744F7V6HLG', { 'anonymize_ip': true});
 
 
 
+
 <section id="løysingsforslag-eksamen-s1---h23" class="level1">
 <h1>Løysingsforslag eksamen S1 - H23</h1>
 <p>Her er eit forslag til løysing av hausteksamen i S1 2023. I del 2 er oppgåvene stort sett Python brukt som hjelpemiddel.</p>
@@ -343,7 +378,7 @@ a &amp;= \pm 2
 <h2 class="anchored" data-anchor-id="oppgåve-5">Oppgåve 5</h2>
 <p>Ei bedrift produserer ei vare. Dei daglege kostnadane <span class="math inline">\(K\)</span> i kroner ved produksjon av <span class="math inline">\(x\)</span> einingar av vara er gitt ved <span class="math display">\[K(x) = 0,1x^2 + 100x + 9000\]</span></p>
 <p>Den økonomiansvarlege i bedrifta har laga programmet nedanfor.</p>
-<div class="cell" data-execution_count="128">
+<div id="cell-7" class="cell" data-execution_count="128">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">def</span> K(x):</span>
 <span id="cb1-2"><a href="#cb1-2"></a>    <span class="cf">return</span> <span class="fl">0.1</span><span class="op">*</span>x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">100</span><span class="op">*</span>x <span class="op">+</span> <span class="dv">9000</span></span>
 <span id="cb1-3"><a href="#cb1-3"></a></span>
@@ -416,7 +451,7 @@ x &amp;= \frac{100}{0,2} = 500
 <section id="a-finne-ox" class="level3">
 <h3 class="anchored" data-anchor-id="a-finne-ox">a) Finne O(x)</h3>
 <p>Bruker regresjon til å finna eit uttrykk for <span class="math inline">\(K(x)\)</span> som passar med tala i tabellen. <span class="math inline">\(x\)</span> er talet på sofaar produsert.</p>
-<div class="cell" data-execution_count="129">
+<div id="cell-13" class="cell" data-execution_count="129">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="im">import</span> numpy <span class="im">as</span> np </span>
 <span id="cb2-2"><a href="#cb2-2"></a></span>
 <span id="cb2-3"><a href="#cb2-3"></a><span class="co"># definerer variablar for x og y</span></span>
@@ -439,7 +474,7 @@ x &amp;= \frac{100}{0,2} = 500
 <section id="b-størst-overskot" class="level3">
 <h3 class="anchored" data-anchor-id="b-størst-overskot">b) Størst overskot</h3>
 <p>Finn ekstremalpunktet til <span class="math inline">\(O(x)\)</span> for å finna produksjonsmengda som gjev størst overskot. Sidan andregradsleddet er negativ er grafen konkav og ekstremalpunktet er difor eit toppunkt (<em>størst overskot</em>).</p>
-<div class="cell" data-execution_count="130">
+<div id="cell-16" class="cell" data-execution_count="130">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="im">from</span> sympy <span class="im">import</span> Symbol, diff, Eq, Reals, solveset</span>
 <span id="cb4-2"><a href="#cb4-2"></a></span>
 <span id="cb4-3"><a href="#cb4-3"></a><span class="co"># definerer x</span></span>
@@ -467,7 +502,7 @@ x &amp;= \frac{100}{0,2} = 500
 <h3 class="anchored" data-anchor-id="c-lågast-salspris">c) Lågast salspris</h3>
 <p>Fabrikken ønskjer at overskotet skal vere 1 000 000 kr per månad. Dei vil endre salsprisen på sofaane. Bestem den lågaste salsprisen dei kan setje per sofa dersom dei skal få dette overskotet.</p>
 <p>Løyser likninga med CAS i Python (<code>SymPy</code>).</p>
-<div class="cell" data-execution_count="131">
+<div id="cell-19" class="cell" data-execution_count="131">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="im">from</span> sympy <span class="im">import</span> Symbol, diff, Eq, Reals, solveset</span>
 <span id="cb6-2"><a href="#cb6-2"></a></span>
 <span id="cb6-3"><a href="#cb6-3"></a><span class="co"># definerer symboler</span></span>
@@ -489,12 +524,12 @@ x &amp;= \frac{100}{0,2} = 500
 <span id="cb6-19"><a href="#cb6-19"></a>likning <span class="op">=</span> Eq(vs, hs)</span>
 <span id="cb6-20"><a href="#cb6-20"></a>løysing <span class="op">=</span> solveset(likning, x, domain<span class="op">=</span>Reals)</span>
 <span id="cb6-21"><a href="#cb6-21"></a>løysing</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="131">
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="131">
 <p><span class="math inline">\(\displaystyle \mathbb{R} \cap \left\{12.1951219512195 a - 207.317073170732\right\}\)</span></p>
 </div>
 </div>
 <p>Ser at <span class="math inline">\(O(x)\)</span> har ekstremalpunkt i <span class="math inline">\(x=12.2a - 207.3\)</span>.</p>
-<div class="cell" data-execution_count="132">
+<div id="cell-21" class="cell" data-execution_count="132">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># definerer x-verdien til ekstremalpunktet uttrykt ved a</span></span>
 <span id="cb7-2"><a href="#cb7-2"></a>x_topp <span class="op">=</span> <span class="fl">12.2</span><span class="op">*</span>a <span class="op">-</span> <span class="fl">207.3</span></span>
 <span id="cb7-3"><a href="#cb7-3"></a></span>
@@ -509,12 +544,12 @@ x &amp;= \frac{100}{0,2} = 500
 <span id="cb7-12"><a href="#cb7-12"></a>likning <span class="op">=</span> Eq(vs, hs)</span>
 <span id="cb7-13"><a href="#cb7-13"></a>løysing <span class="op">=</span> solveset(likning, a, domain<span class="op">=</span>Reals)</span>
 <span id="cb7-14"><a href="#cb7-14"></a>løysing</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="132">
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="132">
 <p><span class="math inline">\(\displaystyle \left\{3.55039004456709, 30.449616515434\right\}\)</span></p>
 </div>
 </div>
 <p>Ser at <span class="math inline">\(a = 3.55 \vee a = 30.45\)</span>. Sjekkar kva <span class="math inline">\(x\)</span> er for dei ulike verdiane.</p>
-<div class="cell" data-execution_count="133">
+<div id="cell-23" class="cell" data-execution_count="133">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>a1 <span class="op">=</span> <span class="fl">3.55</span></span>
 <span id="cb8-2"><a href="#cb8-2"></a>a2 <span class="op">=</span> <span class="fl">30.45</span></span>
 <span id="cb8-3"><a href="#cb8-3"></a></span>
@@ -544,7 +579,7 @@ Løyse i GeoGebra sin CAS
 <p>Her er løysing av 1c i “vanleg” CAS.</p>
 <div class="quarto-figure quarto-figure-left">
 <figure class="figure">
-<p><img src="cas-1c-del2.png" class="img-fluid figure-img" style="width:60.0%" alt="Bilde av 1c løyst i CAS."></p>
+<p><img src="cas-1c-del2.png" class="img-fluid quarto-figure quarto-figure-left figure-img" style="width:60.0%" alt="Bilde av 1c løyst i CAS."></p>
 </figure>
 </div>
 </div>
@@ -564,7 +599,7 @@ Løyse i GeoGebra sin CAS
 <li>uavhengige delforsøk (om ein gut er venstrehendt påverkar ikkje sannsynet for at neste gut er venstrehendt)</li>
 <li>likt sannsyn for alle delforsøka (<span class="math inline">\(p=0,10\)</span>)</li>
 </ul>
-<div class="cell" data-execution_count="134">
+<div id="cell-27" class="cell" data-execution_count="134">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb10-2"><a href="#cb10-2"></a></span>
 <span id="cb10-3"><a href="#cb10-3"></a><span class="co"># definerer tilfeldighetsgeneratoren</span></span>
@@ -591,7 +626,7 @@ Løyse i GeoGebra sin CAS
 <h3 class="anchored" data-anchor-id="b-pminst-tre-gutar-venstrehendt-0.20">b) P(minst tre gutar venstrehendt) &gt; 0.20</h3>
 <p>Kor mange gutar må det vere i ein klasse dersom sannsynet for at minst tre av gutane er venstrehendte, skal vere større enn 20 %?</p>
 <p>Framleis binomisk. Finn svaret med simuleringar.</p>
-<div class="cell" data-execution_count="135">
+<div id="cell-30" class="cell" data-execution_count="135">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a><span class="kw">def</span> minst_tre_av(n):</span>
 <span id="cb12-2"><a href="#cb12-2"></a>    <span class="co"># tal simuleringar </span></span>
 <span id="cb12-3"><a href="#cb12-3"></a>    N <span class="op">=</span> <span class="dv">1000</span></span>
@@ -621,7 +656,7 @@ Løyse i GeoGebra sin CAS
 <h3 class="anchored" data-anchor-id="c-nøyaktig-tre-venstrehendte-elevar-i-klassen">c) Nøyaktig tre venstrehendte elevar i klassen</h3>
 <p>I ein klasse er det 13 gutar og 17 jenter. Bestem sannsynet for at nøyaktig tre av elevane i klassen er venstrehendte.</p>
 <p>Her òg er det binomisk sannsyn. Bruker simuleringar og finn jentene og gutane for seg.</p>
-<div class="cell" data-execution_count="136">
+<div id="cell-33" class="cell" data-execution_count="136">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a><span class="co"># tal simuleringar</span></span>
 <span id="cb14-2"><a href="#cb14-2"></a>N <span class="op">=</span> <span class="dv">10000000</span></span>
 <span id="cb14-3"><a href="#cb14-3"></a></span>
@@ -650,7 +685,7 @@ Løyse i GeoGebra sin CAS
 <h3 class="anchored" data-anchor-id="a-finne-sparebeløp">a) finne sparebeløp</h3>
 <p>Kva for eit beløp må Per setje inn dersom han skal ha 30 000 kroner på kontoen etter 8 år?</p>
 <p>Løyser likninga <span class="math inline">\(x\cdot 1.03^8 = 30000\)</span> i CAS:</p>
-<div class="cell" data-execution_count="138">
+<div id="cell-38" class="cell" data-execution_count="138">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a><span class="im">from</span> sympy <span class="im">import</span> Symbol, Eq, Reals, solveset</span>
 <span id="cb16-2"><a href="#cb16-2"></a></span>
 <span id="cb16-3"><a href="#cb16-3"></a><span class="co"># definerer symboler</span></span>
@@ -664,7 +699,7 @@ Løyse i GeoGebra sin CAS
 <span id="cb16-11"><a href="#cb16-11"></a>likning <span class="op">=</span> Eq(vs, hs)</span>
 <span id="cb16-12"><a href="#cb16-12"></a>løysing <span class="op">=</span> solveset(likning, x, domain<span class="op">=</span>Reals)</span>
 <span id="cb16-13"><a href="#cb16-13"></a>løysing</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="138">
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="138">
 <p><span class="math inline">\(\displaystyle \left\{23682.2770294181\right\}\)</span></p>
 </div>
 </div>
@@ -686,7 +721,7 @@ Løyse i GeoGebra sin CAS
 <p>Kallar innskotet for <span class="math inline">\(I\)</span>. Då får me likninga</p>
 <p><span class="math display">\[I\cdot 1.03^x + I\cdot 1.06^x = 4I \Leftrightarrow 1.03^x + 1.06^x = 4\]</span></p>
 <p>Løyser i CAS:</p>
-<div class="cell" data-execution_count="139">
+<div id="cell-43" class="cell" data-execution_count="139">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a><span class="im">from</span> sympy <span class="im">import</span> Symbol, Eq, nsolve</span>
 <span id="cb17-2"><a href="#cb17-2"></a></span>
 <span id="cb17-3"><a href="#cb17-3"></a><span class="co"># definerer symboler</span></span>
@@ -714,7 +749,7 @@ Løyse i GeoGebra sin CAS
 <h3 class="anchored" data-anchor-id="a-minst-to-like">a) minst to like</h3>
 <p>Bestem sannsynet for at minst to av terningane viser same tal på auge. <span class="math display">\[P(\text{minst to like}) = 1 - P(\text{ingen like})\]</span></p>
 <p>Reknar ut med python:</p>
-<div class="cell" data-execution_count="140">
+<div id="cell-46" class="cell" data-execution_count="140">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1"></a><span class="co"># gunstige / moglege utfall</span></span>
 <span id="cb19-2"><a href="#cb19-2"></a>ingen_like <span class="op">=</span> (<span class="dv">6</span><span class="op">*</span><span class="dv">5</span><span class="op">*</span><span class="dv">4</span><span class="op">*</span><span class="dv">3</span><span class="op">*</span><span class="dv">2</span>) <span class="op">/</span> (<span class="dv">6</span><span class="op">**</span><span class="dv">5</span>)</span>
 <span id="cb19-3"><a href="#cb19-3"></a></span>
@@ -731,7 +766,7 @@ Løyse i GeoGebra sin CAS
 <h3 class="anchored" data-anchor-id="b-sum-auge">b) sum auge</h3>
 <p>La X vere summen av talet på auge på dei fem terningane. Bruk programmering til å bestemme <span class="math inline">\(P(X&gt;20)\)</span>.</p>
 <p>Bruker simulering til å svara på dette:</p>
-<div class="cell" data-execution_count="141">
+<div id="cell-48" class="cell" data-execution_count="141">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb21-2"><a href="#cb21-2"></a></span>
 <span id="cb21-3"><a href="#cb21-3"></a><span class="co"># definerer tilfeldighetsgeneratoren</span></span>
@@ -772,7 +807,7 @@ Forklaring av kodelinjer 10-13 ⬆️
 <div class="callout-body-container callout-body">
 <p>Her bruker eg ei todimensjonal array/tabell for å rekna ut sannsynet.</p>
 <p>Trillar terningar:</p>
-<div class="cell" data-execution_count="142">
+<div id="cell-50" class="cell" data-execution_count="142">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1"></a>N <span class="op">=</span> <span class="dv">10</span></span>
 <span id="cb23-2"><a href="#cb23-2"></a></span>
 <span id="cb23-3"><a href="#cb23-3"></a>terningar <span class="op">=</span> rng.integers(<span class="dv">1</span>, <span class="dv">7</span>, size<span class="op">=</span>(<span class="dv">5</span>, N))</span>
@@ -788,7 +823,7 @@ Forklaring av kodelinjer 10-13 ⬆️
 </div>
 <p>Ser at denne tabellen får 5 rader og <code>N</code> kolonner.</p>
 <p>Finn vidare summen av kvar kolonne:</p>
-<div class="cell" data-execution_count="143">
+<div id="cell-52" class="cell" data-execution_count="143">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1"></a>kolonnesum <span class="op">=</span> terningar.<span class="bu">sum</span>(axis<span class="op">=</span><span class="dv">0</span>)</span>
 <span id="cb25-2"><a href="#cb25-2"></a><span class="bu">print</span>(kolonnesum)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -803,7 +838,7 @@ Forklaring av kodelinjer 10-13 ⬆️
 <h3 class="anchored" data-anchor-id="c-bestemme-k">c) bestemme k</h3>
 <p>Bestem den største verdien av k som er slik at <span class="math inline">\(P(X\geq k )&gt; 0,8\)</span></p>
 <p>Startar med å gjera koden frå (b) om til ein funksjon som returnerer sannsynet for at P(X&gt;= k).</p>
-<div class="cell" data-execution_count="144">
+<div id="cell-55" class="cell" data-execution_count="144">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb27-2"><a href="#cb27-2"></a>rng <span class="op">=</span> np.random.default_rng()</span>
 <span id="cb27-3"><a href="#cb27-3"></a></span>
@@ -816,7 +851,7 @@ Forklaring av kodelinjer 10-13 ⬆️
 <span id="cb27-10"><a href="#cb27-10"></a>    <span class="cf">return</span> p   </span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Bruker denne funksjonen til å sjå på ulike verdiar for <code>k</code>. Startar med 30 (som er maks sum) og reduserer med 1 til sannsynet vert mindre enn 0,8.</p>
-<div class="cell" data-execution_count="145">
+<div id="cell-57" class="cell" data-execution_count="145">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1"></a>k <span class="op">=</span> <span class="dv">30</span></span>
 <span id="cb28-2"><a href="#cb28-2"></a></span>
 <span id="cb28-3"><a href="#cb28-3"></a><span class="cf">while</span> sum_større_eller_lik(k) <span class="op">&lt;</span> <span class="fl">0.8</span>:</span>
@@ -838,7 +873,7 @@ Forklaring av kodelinjer 10-13 ⬆️
 <p>Kva er det største volumet kassen kan få dersom sidene i botnen skal vere <span class="math inline">\(5\, dm\)</span>?</p>
 <p>Lagar uttrykk for areal og volum. Kallar sidene til grunnflata <span class="math inline">\(s\)</span> og høgda <span class="math inline">\(h\)</span>. <span class="math display">\[V = s^2 h\]</span> <span class="math display">\[A = s^2 + 4sh\]</span></p>
 <p>Med <span class="math inline">\(s=5\)</span> er det begrensinga i areal av platene på <span class="math inline">\(120\,dm^2\)</span> som er avgrensande. Finn høgda når <span class="math inline">\(A=120\)</span>. Bruker CAS:</p>
-<div class="cell" data-execution_count="146">
+<div id="cell-60" class="cell" data-execution_count="146">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1"></a><span class="im">from</span> sympy <span class="im">import</span> Symbol, Eq, Reals, solveset</span>
 <span id="cb30-2"><a href="#cb30-2"></a></span>
 <span id="cb30-3"><a href="#cb30-3"></a><span class="co"># definerer symboler</span></span>
@@ -854,15 +889,15 @@ Forklaring av kodelinjer 10-13 ⬆️
 <span id="cb30-13"><a href="#cb30-13"></a>likning <span class="op">=</span> Eq(A_2, <span class="dv">120</span>)</span>
 <span id="cb30-14"><a href="#cb30-14"></a>løysing <span class="op">=</span> solveset(likning, h, domain<span class="op">=</span>Reals)</span>
 <span id="cb30-15"><a href="#cb30-15"></a>løysing</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="146">
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="146">
 <p><span class="math inline">\(\displaystyle \left\{\frac{19}{4}\right\}\)</span></p>
 </div>
 </div>
 <p>Bruker <span class="math inline">\(h=\frac{19}{4}\)</span> for å finne volumet.</p>
-<div class="cell" data-execution_count="147">
+<div id="cell-62" class="cell" data-execution_count="147">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1"></a>volum <span class="op">=</span> V.subs(s, <span class="dv">5</span>).subs(h, <span class="dv">19</span><span class="op">/</span><span class="dv">4</span>).evalf()</span>
 <span id="cb31-2"><a href="#cb31-2"></a>volum</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="147">
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="147">
 <p><span class="math inline">\(\displaystyle 118.75\)</span></p>
 </div>
 </div>
@@ -872,24 +907,24 @@ Forklaring av kodelinjer 10-13 ⬆️
 <h3 class="anchored" data-anchor-id="b-maks-volum">b) maks volum</h3>
 <p>Kva er det maksimale volumet kassen kan få?</p>
 <p>Lagar uttrykk for <span class="math inline">\(h\)</span> uttrykt ved <span class="math inline">\(s\)</span>. Brukar det til å laga funksjon for volum som funksjon av sidelengde, <span class="math inline">\(V(s)\)</span>. Finn ekstremalpunktet til denne funksjonen.</p>
-<div class="cell" data-execution_count="148">
+<div id="cell-65" class="cell" data-execution_count="148">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1"></a><span class="co"># finn uttrykk for h</span></span>
 <span id="cb32-2"><a href="#cb32-2"></a>likning <span class="op">=</span> Eq(A, <span class="dv">120</span>)</span>
 <span id="cb32-3"><a href="#cb32-3"></a>løysing <span class="op">=</span> solveset(likning, h, domain<span class="op">=</span>Reals)</span>
 <span id="cb32-4"><a href="#cb32-4"></a>løysing</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="148">
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="148">
 <p><span class="math inline">\(\displaystyle \mathbb{R} \cap \left\{\frac{120 - s^{2}}{4 s}\right\}\)</span></p>
 </div>
 </div>
-<div class="cell" data-execution_count="149">
+<div id="cell-66" class="cell" data-execution_count="149">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1"></a><span class="co"># byttar ut h med uttrykket for h. </span></span>
 <span id="cb33-2"><a href="#cb33-2"></a>V_funk <span class="op">=</span> V.subs(h, (<span class="dv">120</span><span class="op">-</span>s<span class="op">**</span><span class="dv">2</span>)<span class="op">/</span>(<span class="dv">4</span><span class="op">*</span>s))</span>
 <span id="cb33-3"><a href="#cb33-3"></a>V_funk</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="149">
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="149">
 <p><span class="math inline">\(\displaystyle \frac{s \left(120 - s^{2}\right)}{4}\)</span></p>
 </div>
 </div>
-<div class="cell" data-execution_count="150">
+<div id="cell-67" class="cell" data-execution_count="150">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1"></a><span class="im">from</span> sympy <span class="im">import</span> diff</span>
 <span id="cb34-2"><a href="#cb34-2"></a></span>
 <span id="cb34-3"><a href="#cb34-3"></a><span class="co"># deriverer</span></span>
@@ -899,14 +934,14 @@ Forklaring av kodelinjer 10-13 ⬆️
 <span id="cb34-7"><a href="#cb34-7"></a>likning <span class="op">=</span> Eq(dV, <span class="dv">0</span>)</span>
 <span id="cb34-8"><a href="#cb34-8"></a>løysing <span class="op">=</span> solveset(likning, s, domain<span class="op">=</span>Reals)</span>
 <span id="cb34-9"><a href="#cb34-9"></a>løysing</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="150">
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="150">
 <p><span class="math inline">\(\displaystyle \left\{- 2 \sqrt{10}, 2 \sqrt{10}\right\}\)</span></p>
 </div>
 </div>
 <p>Sidan lengda på sidekanten må vera positiv forkastar me den negative løysinga. Finn volumet når <span class="math inline">\(s=2\sqrt{10}\)</span>.</p>
-<div class="cell" data-execution_count="151">
+<div id="cell-69" class="cell" data-execution_count="151">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1"></a>V_funk.subs(s, <span class="dv">2</span><span class="op">*</span>np.sqrt(<span class="dv">10</span>))</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="151">
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="151">
 <p><span class="math inline">\(\displaystyle 126.491106406735\)</span></p>
 </div>
 </div>
@@ -915,37 +950,37 @@ Forklaring av kodelinjer 10-13 ⬆️
 <section id="c-minst-areal" class="level3">
 <h3 class="anchored" data-anchor-id="c-minst-areal">c) minst areal</h3>
 <p>Du skal lage ein slik kasse som rommar <span class="math inline">\(80\, dm^3\)</span>. Kva er det minste samla arealet platene kan ha, dersom du skal lage ein slik kasse?</p>
-<div class="cell" data-execution_count="152">
+<div id="cell-72" class="cell" data-execution_count="152">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1"></a><span class="co"># finn uttrykk for h når V=80</span></span>
 <span id="cb36-2"><a href="#cb36-2"></a>likning <span class="op">=</span> Eq(V, <span class="dv">80</span>)</span>
 <span id="cb36-3"><a href="#cb36-3"></a>løysing <span class="op">=</span> solveset(likning, h, domain<span class="op">=</span>Reals)</span>
 <span id="cb36-4"><a href="#cb36-4"></a>løysing</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="152">
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="152">
 <p><span class="math inline">\(\displaystyle \mathbb{R} \cap \left\{\frac{80}{s^{2}}\right\}\)</span></p>
 </div>
 </div>
-<div class="cell" data-execution_count="153">
+<div id="cell-73" class="cell" data-execution_count="153">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1"></a><span class="co"># set dette uttrykket inn i A</span></span>
 <span id="cb37-2"><a href="#cb37-2"></a>A_funk <span class="op">=</span> A.subs(h, <span class="dv">80</span><span class="op">/</span>(s<span class="op">**</span><span class="dv">2</span>))</span>
 <span id="cb37-3"><a href="#cb37-3"></a>A_funk</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="153">
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="153">
 <p><span class="math inline">\(\displaystyle s^{2} + \frac{320}{s}\)</span></p>
 </div>
 </div>
-<div class="cell" data-execution_count="154">
+<div id="cell-74" class="cell" data-execution_count="154">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1"></a><span class="co"># deriverer og finn ekstremalpunkt</span></span>
 <span id="cb38-2"><a href="#cb38-2"></a>dA <span class="op">=</span> A_funk.diff()</span>
 <span id="cb38-3"><a href="#cb38-3"></a>likning <span class="op">=</span> Eq(dA, <span class="dv">0</span>)</span>
 <span id="cb38-4"><a href="#cb38-4"></a>løysing <span class="op">=</span> solveset(likning, s, domain<span class="op">=</span>Reals)</span>
 <span id="cb38-5"><a href="#cb38-5"></a>løysing.evalf(<span class="dv">3</span>)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="154">
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="154">
 <p><span class="math inline">\(\displaystyle \left\{5.43\right\}\)</span></p>
 </div>
 </div>
-<div class="cell" data-execution_count="155">
+<div id="cell-75" class="cell" data-execution_count="155">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1"></a><span class="co"># finn arealet med s=5.43</span></span>
 <span id="cb39-2"><a href="#cb39-2"></a>A_funk.subs(s, <span class="fl">5.43</span>).evalf(<span class="dv">3</span>)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="155">
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="155">
 <p><span class="math inline">\(\displaystyle 88.4\)</span></p>
 </div>
 </div>
@@ -960,7 +995,7 @@ Forklaring av kodelinjer 10-13 ⬆️
 <p>Grafen til <span class="math inline">\(f\)</span> har minst eitt ekstremalpunkt.</p>
 <p>Viss <span class="math inline">\(f\)</span> skal ha minst eitt ekstremalpunkt må <span class="math inline">\(f'\)</span> ha minst eitt nullpunkt.</p>
 <p><span class="math display">\[f(x) = ax^3 + bx^2 + cx + d \Leftrightarrow f'(x)=3ax^2+2bx+c\]</span></p>
-<div class="cell" data-execution_count="156">
+<div id="cell-78" class="cell" data-execution_count="156">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1"></a><span class="im">from</span> sympy <span class="im">import</span> symbols, diff, solve</span>
 <span id="cb40-2"><a href="#cb40-2"></a></span>
 <span id="cb40-3"><a href="#cb40-3"></a><span class="co"># definerer symboler</span></span>
@@ -975,7 +1010,7 @@ Forklaring av kodelinjer 10-13 ⬆️
 <span id="cb40-12"><a href="#cb40-12"></a><span class="co"># finn nullpunkta til f'(x)</span></span>
 <span id="cb40-13"><a href="#cb40-13"></a>løysingar <span class="op">=</span> solveset(Eq(df, <span class="dv">0</span>), x, domain<span class="op">=</span>Reals)</span>
 <span id="cb40-14"><a href="#cb40-14"></a>løysingar</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="156">
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="156">
 <p><span class="math inline">\(\displaystyle \mathbb{R} \cap \left\{- \frac{b}{3 a} - \frac{\sqrt{- 3 a c + b^{2}}}{3 a}, - \frac{b}{3 a} + \frac{\sqrt{- 3 a c + b^{2}}}{3 a}\right\}\)</span></p>
 </div>
 </div>
@@ -985,24 +1020,24 @@ Forklaring av kodelinjer 10-13 ⬆️
 <section id="b-påstand-2" class="level3">
 <h3 class="anchored" data-anchor-id="b-påstand-2">b) Påstand 2</h3>
 <p>Alle linjer på forma <span class="math inline">\(y=ax + b\)</span>, der <span class="math inline">\(a, b, \in \mathbb{R}\)</span> vil skjere grafen til <span class="math inline">\(f\)</span>.</p>
-<div class="cell" data-execution_count="157">
+<div id="cell-81" class="cell" data-execution_count="157">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1"></a><span class="im">from</span> sympy <span class="im">import</span> limit, oo</span>
 <span id="cb41-2"><a href="#cb41-2"></a></span>
 <span id="cb41-3"><a href="#cb41-3"></a><span class="co"># definerer funksjonen og symbola</span></span>
 <span id="cb41-4"><a href="#cb41-4"></a>x, a, b, c, d <span class="op">=</span> symbols(<span class="st">"x a b c d"</span>)</span>
 <span id="cb41-5"><a href="#cb41-5"></a>f <span class="op">=</span> a<span class="op">*</span>x<span class="op">**</span><span class="dv">3</span> <span class="op">+</span> b<span class="op">*</span>x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> c<span class="op">*</span>x <span class="op">+</span> d </span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="158">
+<div id="cell-82" class="cell" data-execution_count="158">
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1"></a><span class="co"># grense mot uendeleg</span></span>
 <span id="cb42-2"><a href="#cb42-2"></a>limit(f, x, oo)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="158">
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="158">
 <p><span class="math inline">\(\displaystyle \infty \operatorname{sign}{\left(a \right)}\)</span></p>
 </div>
 </div>
-<div class="cell" data-execution_count="159">
+<div id="cell-83" class="cell" data-execution_count="159">
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1"></a><span class="co"># grense mot minus uendeleg</span></span>
 <span id="cb43-2"><a href="#cb43-2"></a>limit(f, x, <span class="op">-</span>oo)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="159">
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="159">
 <p><span class="math inline">\(\displaystyle - \infty \operatorname{sign}{\left(a \right)}\)</span></p>
 </div>
 </div>
@@ -1020,7 +1055,7 @@ Forklaring av kodelinjer 10-13 ⬆️
 </section>
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Gjenbruk</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div></main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Gjenbruk</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -1100,10 +1135,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1113,8 +1147,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1127,6 +1170,125 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1170,6 +1332,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1195,6 +1358,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1256,7 +1445,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <script src="https://giscus.app/client.js" data-repo="lektorodd/lektorodd.github.io" data-repo-id="R_kgDOI1N_fg" data-category="General" data-category-id="DIC_kwDOI1N_fs4CT23b" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
 </script>
+<input type="hidden" id="giscus-base-theme" value="light">
+<input type="hidden" id="giscus-alt-theme" value="dark">
 </div> <!-- /content -->
+
 
 
 

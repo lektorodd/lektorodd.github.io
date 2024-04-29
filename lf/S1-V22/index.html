@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
+<meta name="generator" content="quarto-1.4.550">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -24,7 +24,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -81,7 +81,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "Ingen treff",
     "search-matching-documents-text": "passande dokument",
@@ -90,6 +96,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "treff til i dokumentet",
     "search-more-matches-text": "fleire treff i dokumentet",
     "search-clear-button-title": "Tøm",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Avbryt",
     "search-submit-button-title": "Søk",
     "search-label": "Search"
@@ -108,15 +115,42 @@ gtag('config', 'G-744F7V6HLG', { 'anonymize_ip': true});
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
 </head>
 
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Torodd F. Ottestad</span>
     </a>
@@ -128,38 +162,38 @@ gtag('config', 'G-744F7V6HLG', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html" rel="" target="">
- <span class="menu-text">Om meg</span></a>
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">Om meg</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/lektorodd/lektorodd.github.io" rel="" target=""><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/lektorodd/lektorodd.github.io"> <i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://bsky.app/profile/torodd.bsky.social" rel="" target=""><i class="bi bi-clouds-fill" role="img">
+    <a class="nav-link" href="https://bsky.app/profile/torodd.bsky.social"> <i class="bi bi-clouds-fill" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://www.youtube.com/channel/UCWfDrIj3Mq3Niz77HJ6cTNg" rel="" target=""><i class="bi bi-youtube" role="img">
+    <a class="nav-link" href="https://www.youtube.com/channel/UCWfDrIj3Mq3Niz77HJ6cTNg"> <i class="bi bi-youtube" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://linkedin.com/in/torodd-ottestad-b2583a59" rel="" target=""><i class="bi bi-linkedin" role="img">
+    <a class="nav-link" href="https://linkedin.com/in/torodd-ottestad-b2583a59"> <i class="bi bi-linkedin" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="../../index.xml" rel="" target=""><i class="bi bi-rss-fill" role="img">
+    <a class="nav-link" href="../../index.xml"> <i class="bi bi-rss-fill" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools">
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -250,6 +284,7 @@ gtag('config', 'G-744F7V6HLG', { 'anonymize_ip': true});
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
+
 
 
 
@@ -372,7 +407,7 @@ gtag('config', 'G-744F7V6HLG', { 'anonymize_ip': true});
 <section id="a-modell-for-framtida" class="level3">
 <h3 class="anchored" data-anchor-id="a-modell-for-framtida">a) modell for framtida</h3>
 <p>Plottar først datapunkta for å få ei oversikt over korleis det ser ut</p>
-<div class="cell" data-execution_count="1">
+<div id="cell-10" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3"></a></span>
@@ -382,12 +417,16 @@ gtag('config', 'G-744F7V6HLG', { 'anonymize_ip': true});
 <span id="cb1-7"><a href="#cb1-7"></a>plt.plot(år, gårdar, <span class="st">"ro"</span>)</span>
 <span id="cb1-8"><a href="#cb1-8"></a>plt.show()</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-2-output-1.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-2-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Det kan sjå ut som om nedgangen vert mindre og mindre. Ser om det kan passa med ein modell for prosentvis nedgang (eksponentiell modell).</p>
 <p>Bruker <code>curve_fit</code> for å finna ein funksjon på forma <span class="math inline">\(f(x)=a \cdot b^x\)</span></p>
-<div class="cell" data-execution_count="5">
+<div id="cell-12" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="im">from</span> scipy.optimize <span class="im">import</span> curve_fit</span>
 <span id="cb2-2"><a href="#cb2-2"></a></span>
 <span id="cb2-3"><a href="#cb2-3"></a><span class="kw">def</span> f(x, a, b):</span>
@@ -405,7 +444,11 @@ gtag('config', 'G-744F7V6HLG', { 'anonymize_ip': true});
 <span id="cb2-15"><a href="#cb2-15"></a>plt.show()</span>
 <span id="cb2-16"><a href="#cb2-16"></a><span class="bu">print</span>(<span class="ss">f"f(x)=</span><span class="sc">{</span>a<span class="sc">:.1f}</span><span class="ss">*</span><span class="sc">{</span>b<span class="sc">:.3f}</span><span class="ss">^x"</span>)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-3-output-1.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-3-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>f(x)=157256.2*0.973^x</code></pre>
@@ -417,7 +460,7 @@ gtag('config', 'G-744F7V6HLG', { 'anonymize_ip': true});
 <section id="b-framtida" class="level3">
 <h3 class="anchored" data-anchor-id="b-framtida">b) framtida</h3>
 <p>Reknar ut <span class="math inline">\(f(2060-1969)\)</span>:</p>
-<div class="cell" data-execution_count="6">
+<div id="cell-15" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>x <span class="op">=</span> <span class="dv">2060</span><span class="op">-</span><span class="dv">1969</span></span>
 <span id="cb4-2"><a href="#cb4-2"></a>framtid <span class="op">=</span> f(x, a, b)</span>
 <span id="cb4-3"><a href="#cb4-3"></a><span class="bu">print</span>(<span class="ss">f"Gårdar i 2060: </span><span class="ch">\n</span><span class="ss">f(</span><span class="sc">{</span>x<span class="sc">}</span><span class="ss">) = </span><span class="sc">{</span>framtid<span class="sc">:.0f}</span><span class="ss">"</span>)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -432,7 +475,7 @@ f(91) = 13248</code></pre>
 <h3 class="anchored" data-anchor-id="c-nedgang-med-1000">c) nedgang med 1000</h3>
 <p>Her kunne me jo løyst likninga <span class="math inline">\(f'(x)=-1000\)</span>, men me prøver oss på ein annan framgongsmåte i Python.</p>
 <p>Lagar ei <code>while</code>-løkke som ser på skilnaden mellom eit år og det neste. Av grafen veit/ser me at i starten er nedgangen mykje større enn 1000 i året (ca. 56 000 færre frå 1969 til 1989). Held difor på så lenge skilnaden på to påfølgjande år er større enn 1000 (bruker absoluttverdi)</p>
-<div class="cell" data-execution_count="9">
+<div id="cell-18" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>x <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb6-2"><a href="#cb6-2"></a></span>
 <span id="cb6-3"><a href="#cb6-3"></a>f0 <span class="op">=</span> f(x, a, b)</span>
@@ -466,8 +509,8 @@ Løyse symbolsk i <code>sympy</code>
 </div>
 <div class="callout-body-container callout-body">
 <p>Me kan løysa likninga <span class="math inline">\(f'(x)=-1000\)</span> med <code>sympy</code>/CAS</p>
-<div class="cell" data-execution_count="46">
-<details>
+<div id="cell-21" class="cell" data-execution_count="46">
+<details class="code-fold">
 <summary>Vis koden</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># importerer aktuelle funksjonar frå sympy</span></span>
 <span id="cb8-2"><a href="#cb8-2"></a><span class="im">from</span> sympy <span class="im">import</span> Symbol, diff, Eq, Reals, solveset</span>
@@ -504,7 +547,7 @@ Løyse symbolsk i <code>sympy</code>
 <section id="b-sannsyn-for-at-8-av-12-består" class="level3">
 <h3 class="anchored" data-anchor-id="b-sannsyn-for-at-8-av-12-består">b) sannsyn for at 8 av 12 består</h3>
 <p>For å finna dette sannsynet kan me simulera dei 12 oppkøyringane mange gongar og telja opp kor mange av dei minst 8 består. Me antar at dette kan sjåast på som eit binomisk forsøk.</p>
-<div class="cell" data-execution_count="49">
+<div id="cell-25" class="cell" data-execution_count="49">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb10-2"><a href="#cb10-2"></a>rng <span class="op">=</span> np.random.default_rng()</span>
 <span id="cb10-3"><a href="#cb10-3"></a></span>
@@ -530,7 +573,7 @@ Løyse symbolsk i <code>sympy</code>
 <section id="c-akkurat-5-gutar-og-4-jenter" class="level3">
 <h3 class="anchored" data-anchor-id="c-akkurat-5-gutar-og-4-jenter">c) akkurat 5 gutar og 4 jenter</h3>
 <p>Ser på gutane og jentene for seg. Multipliserer saman sannsyna sidan dei to hendingane er uavhengige.</p>
-<div class="cell" data-execution_count="52">
+<div id="cell-27" class="cell" data-execution_count="52">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a>N <span class="op">=</span> <span class="dv">1000000</span> <span class="co"># tal simuleringar</span></span>
 <span id="cb12-2"><a href="#cb12-2"></a>n_g <span class="op">=</span> <span class="dv">7</span>     <span class="co"># tal gutar</span></span>
 <span id="cb12-3"><a href="#cb12-3"></a>X_g <span class="op">=</span> <span class="dv">5</span>     <span class="co"># gutar som består</span></span>
@@ -564,7 +607,7 @@ Løyse symbolsk i <code>sympy</code>
 <p>70 000 kr på konto, med fast månadleg rentesats <span class="math display">\[B(x) = 70000\cdot 1,003^x\]</span></p>
 <section id="a-årleg-rentesats" class="level3">
 <h3 class="anchored" data-anchor-id="a-årleg-rentesats">a) årleg rentesats</h3>
-<div class="cell" data-execution_count="53">
+<div id="cell-29" class="cell" data-execution_count="53">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a><span class="bu">print</span>(<span class="fl">1.003</span><span class="op">**</span><span class="dv">12</span>)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>1.03659998028813</code></pre>
@@ -575,7 +618,7 @@ Løyse symbolsk i <code>sympy</code>
 <section id="b-80-000-kroner" class="level3">
 <h3 class="anchored" data-anchor-id="b-80-000-kroner">b) 80 000 kroner</h3>
 <p>Løyser likninga <span class="math inline">\(B(x)=80000\)</span>.</p>
-<div class="cell" data-execution_count="59">
+<div id="cell-32" class="cell" data-execution_count="59">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a><span class="im">from</span> sympy <span class="im">import</span> Symbol, Eq, solveset, Reals</span>
 <span id="cb16-2"><a href="#cb16-2"></a></span>
 <span id="cb16-3"><a href="#cb16-3"></a>x <span class="op">=</span> Symbol(<span class="st">"x"</span>)</span>
@@ -587,7 +630,7 @@ Løyse symbolsk i <code>sympy</code>
 <pre><code>{44.6}</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="63">
+<div id="cell-33" class="cell" data-execution_count="63">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1"></a><span class="bu">print</span>(<span class="dv">45</span> <span class="op">//</span> <span class="dv">12</span>)</span>
 <span id="cb18-2"><a href="#cb18-2"></a><span class="bu">print</span>(<span class="dv">45</span> <span class="op">%</span> <span class="dv">12</span>)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -606,7 +649,7 @@ Løyse symbolsk i <code>sympy</code>
 <section id="d-meir-enn-200-000-kroner" class="level3">
 <h3 class="anchored" data-anchor-id="d-meir-enn-200-000-kroner">d) meir enn 200 000 kroner?</h3>
 <p>Prøver oss fram i Python.</p>
-<div class="cell" data-execution_count="70">
+<div id="cell-37" class="cell" data-execution_count="70">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1"></a><span class="co"># etter nøyaktig 24 månader</span></span>
 <span id="cb20-2"><a href="#cb20-2"></a>konto <span class="op">=</span> <span class="dv">70000</span><span class="op">*</span><span class="fl">1.003</span><span class="op">**</span><span class="dv">24</span></span>
 <span id="cb20-3"><a href="#cb20-3"></a>fond <span class="op">=</span> <span class="dv">2000</span></span>
@@ -629,7 +672,7 @@ Løyse symbolsk i <code>sympy</code>
 <section id="oppgåve-4-1" class="level2">
 <h2 class="anchored" data-anchor-id="oppgåve-4-1">Oppgåve 4</h2>
 <p>Simulerer i Python.</p>
-<div class="cell" data-execution_count="74">
+<div id="cell-39" class="cell" data-execution_count="74">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb22-2"><a href="#cb22-2"></a>rng <span class="op">=</span> np.random.default_rng()</span>
 <span id="cb22-3"><a href="#cb22-3"></a></span>
@@ -662,7 +705,7 @@ Løyse symbolsk i <code>sympy</code>
 <p>Linja har stigningstal <span class="math inline">\(-1\)</span> og konstantledd <span class="math inline">\(2\)</span>. Dvs. <span class="math inline">\(f(x)=2-x\)</span>.</p>
 <p>Dermed er høgda til rektangelet <span class="math inline">\(2-a\)</span>. Arealet vert då <span class="math display">\[T = 2 \cdot a \cdot b = 2\cdot a \cdot(2-a) = 4a - 2a^2\]</span></p>
 <p>Definerer <span class="math inline">\(T(a)\)</span> som funksjon, deriverer og finn den <span class="math inline">\(a\)</span>-verdien som gjev størst <span class="math inline">\(T\)</span>. (størst sidan <span class="math inline">\(T\)</span> er ein konkav/“sur” parabel).</p>
-<div class="cell" data-execution_count="77">
+<div id="cell-43" class="cell" data-execution_count="77">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1"></a><span class="im">from</span> sympy <span class="im">import</span> Symbol, diff, Eq, solveset, Reals</span>
 <span id="cb24-2"><a href="#cb24-2"></a>a <span class="op">=</span> Symbol(<span class="st">"a"</span>)</span>
 <span id="cb24-3"><a href="#cb24-3"></a></span>
@@ -690,7 +733,7 @@ Løyse symbolsk i <code>sympy</code>
     \ln(82-22) &amp;= -k\cdot 0 + r &amp;&amp;=r \\
     \ln(66-22) &amp;= -k\cdot 2 + r &amp;&amp;= r-2k
 \end{align*} \]</span></p>
-<div class="cell" data-execution_count="97">
+<div id="cell-48" class="cell" data-execution_count="97">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1"></a><span class="im">from</span> sympy <span class="im">import</span> Symbol, Eq, nsolve, solveset, Reals, log</span>
 <span id="cb26-2"><a href="#cb26-2"></a></span>
 <span id="cb26-3"><a href="#cb26-3"></a><span class="co"># definerer r og k</span></span>
@@ -762,7 +805,7 @@ Løyse symbolsk i <code>sympy</code>
 </section>
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Gjenbruk</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div></main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Gjenbruk</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -842,10 +885,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -855,8 +897,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -869,6 +920,125 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -912,6 +1082,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -937,6 +1108,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -998,7 +1195,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <script src="https://giscus.app/client.js" data-repo="lektorodd/lektorodd.github.io" data-repo-id="R_kgDOI1N_fg" data-category="General" data-category-id="DIC_kwDOI1N_fs4CT23b" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
 </script>
+<input type="hidden" id="giscus-base-theme" value="light">
+<input type="hidden" id="giscus-alt-theme" value="dark">
 </div> <!-- /content -->
+
 
 
 

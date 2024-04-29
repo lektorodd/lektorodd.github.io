@@ -6,16 +6,17 @@
       version="2.0">
 <channel>
 <title>Torodd F. Ottestad</title>
-<link>https://lektorodd.github.io/index.html</link>
+<link>https://lektorodd.github.io/</link>
 <atom:link href="https://lektorodd.github.io/index.xml" rel="self" type="application/rss+xml"/>
 <description>Blogg med digitale tips og triks i skulen</description>
-<generator>quarto-1.3.433</generator>
+<generator>quarto-1.4.550</generator>
 <lastBuildDate>Thu, 18 Jan 2024 23:00:00 GMT</lastBuildDate>
 <item>
   <title>Perplexity.ai</title>
   <dc:creator>Torodd F. Ottestad</dc:creator>
-  <link>https://lektorodd.github.io/posts/240112_perplexity/index.html</link>
+  <link>https://lektorodd.github.io/posts/240112_perplexity/</link>
   <description><![CDATA[ 
+
 
 
 
@@ -31,7 +32,7 @@
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://lektorodd.github.io/posts/240112_perplexity/startskjerm.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Startskjermen</figcaption>
+<figcaption>Startskjermen</figcaption>
 </figure>
 </div>
 </section>
@@ -44,7 +45,7 @@
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://lektorodd.github.io/posts/240112_perplexity/samlingar.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Døme på samlingar</figcaption>
+<figcaption>Døme på samlingar</figcaption>
 </figure>
 </div>
 </section>
@@ -62,7 +63,7 @@
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://lektorodd.github.io/posts/240112_perplexity/fokus.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Ulike fokus</figcaption>
+<figcaption>Ulike fokus</figcaption>
 </figure>
 </div>
 </section>
@@ -99,21 +100,22 @@
 <div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Fotnotar</h2>
 
 <ol>
-<li id="fn1"><p><a href="https://blog.perplexity.ai/about">https://blog.perplexity.ai/about</a>↩︎</p></li>
+<li id="fn1"><p><a href="https://blog.perplexity.ai/about" class="uri">https://blog.perplexity.ai/about</a>↩︎</p></li>
 </ol>
-</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Gjenbruk</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
+</section><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Gjenbruk</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></div></div></section></div> ]]></description>
   <category>KI</category>
   <category>verktøy</category>
   <category>tips</category>
-  <guid>https://lektorodd.github.io/posts/240112_perplexity/index.html</guid>
+  <guid>https://lektorodd.github.io/posts/240112_perplexity/</guid>
   <pubDate>Thu, 18 Jan 2024 23:00:00 GMT</pubDate>
   <media:content url="https://lektorodd.github.io/posts/240112_perplexity/robotsvarar.png" medium="image" type="image/png" height="82" width="144"/>
 </item>
 <item>
   <title>Nyttige simuleringskommandoar</title>
   <dc:creator>Torodd F. Ottestad</dc:creator>
-  <link>https://lektorodd.github.io/posts/230511_simulering3/index.html</link>
+  <link>https://lektorodd.github.io/posts/230511_simulering3/</link>
   <description><![CDATA[ 
+
 
 
 
@@ -121,7 +123,7 @@
 <section id="komme-i-gang" class="level2">
 <h2 class="anchored" data-anchor-id="komme-i-gang">Komme i gang</h2>
 <p>Standard importering og oppsett av tilfeldighetsgenerator frå <code>NumPy</code>.</p>
-<div class="cell" data-execution_count="18">
+<div id="cell-2" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">import</span> numpy <span class="im" style="color: #00769E;
@@ -138,7 +140,7 @@ font-style: inherit;">=</span> np.random.default_rng()</span></code></pre></div>
 <section id="døme---myntkast" class="level3">
 <h3 class="anchored" data-anchor-id="døme---myntkast">Døme - myntkast</h3>
 <p>Viss ein skal simulera myntkast kan ein la <code>0</code> vera mynt og <code>1</code> vera kron.</p>
-<div class="cell" data-execution_count="19">
+<div id="cell-5" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># antall kast</span></span>
@@ -169,7 +171,7 @@ font-style: inherit;">print</span>(mynt_kast)</span></code></pre></div>
 </div>
 </div>
 <p>Dermed kan ein enkelt telja opp kor mange kron det var:</p>
-<div class="cell" data-execution_count="25">
+<div id="cell-7" class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><span class="bu" style="color: null;
 background-color: null;
 font-style: inherit;">sum</span>(mynt_kast)</span></code></pre></div>
@@ -186,7 +188,7 @@ font-style: inherit;">sum</span>(mynt_kast)</span></code></pre></div>
 <h3 class="anchored" data-anchor-id="døme">Døme</h3>
 <p>Plantar 100 frø. Sannsynet for at eitt frø spirer er 0.7 <span class="emoji" data-emoji="seedling">🌱</span></p>
 <p>Dette kan me simulera:</p>
-<div class="cell" data-execution_count="21">
+<div id="cell-9" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># simulererer forsøket N gongar</span></span>
@@ -218,7 +220,7 @@ font-style: inherit;">print</span>(spirer)</span></code></pre></div>
 </div>
 <p>Tala her viser kor mange av dei 100 frøa som spirte i kvar av dei 10 gjennomførte forsøka.</p>
 <p>Me kan telja opp kor mange av forsøka som tilfredsstiller eit vilkår. T.d. kor mange gongar spira 70 eller fleire av frøa?</p>
-<div class="cell" data-execution_count="22">
+<div id="cell-11" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1">spirer <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">&gt;=</span> <span class="dv" style="color: #AD0000;
@@ -230,7 +232,7 @@ font-style: inherit;">70</span></span></code></pre></div>
 </div>
 </div>
 <p>Ser at me her får sanningsvariablar. Python reknar <code>false</code> som 0 og <code>true</code> som 1. Dermed blir det lett å telja opp:</p>
-<div class="cell" data-execution_count="23">
+<div id="cell-13" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><span class="bu" style="color: null;
 background-color: null;
 font-style: inherit;">sum</span>(spirer <span class="op" style="color: #5E5E5E;
@@ -246,7 +248,7 @@ font-style: inherit;">70</span>)</span></code></pre></div>
 <blockquote class="blockquote">
 <p>Du plantar 100 frø, sannsynet for at eitt frø spirer er 0.7. Kva er sannsynet for at 70 eller fleire av frøa spirer?</p>
 </blockquote>
-<div class="cell" data-execution_count="24">
+<div id="cell-15" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb12" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># antall forsøk</span></span>
@@ -321,7 +323,7 @@ font-style: inherit;">"</span>)</span></code></pre></div>
 <blockquote class="blockquote">
 <p>Det ligg 12 raude og 7 blå kuler i ei korg. Du trekk ut 5 kuler. Kva er sannsynet for at minst to av dei er raude?</p>
 </blockquote>
-<div class="cell" data-execution_count="26">
+<div id="cell-17" class="cell" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb14" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1">N <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
@@ -365,7 +367,7 @@ font-style: inherit;">=</span>N)</span></code></pre></div>
 </div>
 <p>Tala me får ut her er antall raude (ngood) i kvart forsøk. Resten av utvalet blir då blå.</p>
 <p>Bruker dette til å løysa oppgåva.</p>
-<div class="cell" data-execution_count="27">
+<div id="cell-19" class="cell" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb16" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1">N <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
@@ -451,7 +453,7 @@ font-style: inherit;">"</span>)</span></code></pre></div>
 <section id="døme-1" class="level3">
 <h3 class="anchored" data-anchor-id="døme-1">Døme</h3>
 <p>På ein skule er gjennomsnittshøgda på elevane 172 cm og standardavviket 9 cm. Kva er sannsynet for at ein tilfeldig elev er høgare enn 180 cm?</p>
-<div class="cell" data-execution_count="28">
+<div id="cell-21" class="cell" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb18" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1">N <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
@@ -531,7 +533,7 @@ Samansett simulering
 <p>I ei skål ligg det 7 banan-twist og 3 daim-twist. Kva er sannsynet for at me får to banan når me trekk ut to bitar frå skåla.</p>
 </blockquote>
 <p>Startar med å “lage” twistskåla.</p>
-<div class="cell" data-execution_count="29">
+<div id="cell-25" class="cell" data-execution_count="29">
 <div class="sourceCode cell-code" id="cb20" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1">twistskål <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
@@ -559,7 +561,7 @@ font-style: inherit;">print</span>(twistskål)</span></code></pre></div>
 <section id="med-tilbakelegging" class="level3">
 <h3 class="anchored" data-anchor-id="med-tilbakelegging">med tilbakelegging</h3>
 <p>Ser først på forsøket <em>med tilbakelegging</em> (dette er default i <code>choice</code>).</p>
-<div class="cell" data-execution_count="31">
+<div id="cell-27" class="cell" data-execution_count="31">
 <div class="sourceCode cell-code" id="cb22" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1">N <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
@@ -636,7 +638,7 @@ font-style: inherit;">"</span>)</span></code></pre></div>
 <section id="utan-tilbakelegging" class="level3">
 <h3 class="anchored" data-anchor-id="utan-tilbakelegging">utan tilbakelegging</h3>
 <p>Dette er nesten heilt likt, men me legg til argumentet <code>replace=False</code>.</p>
-<div class="cell" data-execution_count="32">
+<div id="cell-29" class="cell" data-execution_count="32">
 <div class="sourceCode cell-code" id="cb24" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1">N <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
@@ -714,7 +716,7 @@ font-style: inherit;">"</span>)</span></code></pre></div>
 <section id="ikkje-uniformt-sannsyn" class="level3">
 <h3 class="anchored" data-anchor-id="ikkje-uniformt-sannsyn">ikkje-uniformt sannsyn</h3>
 <p>Sannsynet over var ikkje-uniformt, men såpass enkelt at me laga ei liste med heile utfallsrommet. Det vert fort upraktisk om me har mange ulike utfall med store variasjonar i antall. Me kan heller legga inn sannsynet for kvart av utfalla direkte i <code>rng.choice()</code></p>
-<div class="cell" data-execution_count="33">
+<div id="cell-31" class="cell" data-execution_count="33">
 <div class="sourceCode cell-code" id="cb26" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1">twistar <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
@@ -770,20 +772,21 @@ font-style: inherit;">print</span>(to_twist)</span></code></pre></div>
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Gjenbruk</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Gjenbruk</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></div></div></section></div> ]]></description>
   <category>programmering</category>
   <category>s-matte</category>
   <category>simulering</category>
   <category>eksamen</category>
-  <guid>https://lektorodd.github.io/posts/230511_simulering3/index.html</guid>
+  <guid>https://lektorodd.github.io/posts/230511_simulering3/</guid>
   <pubDate>Wed, 10 May 2023 22:00:00 GMT</pubDate>
   <media:content url="https://lektorodd.github.io/posts/230511_simulering3/lykkehjul.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>Jordskjelvpython</title>
   <dc:creator>Torodd F. Ottestad</dc:creator>
-  <link>https://lektorodd.github.io/posts/230425_jordskjelv/index.html</link>
+  <link>https://lektorodd.github.io/posts/230425_jordskjelv/</link>
   <description><![CDATA[ 
+
 
 
 
@@ -793,8 +796,8 @@ font-style: inherit;">print</span>(to_twist)</span></code></pre></div>
 <p>I dette opplegget tek me utgangspunkt i store mengdar ekte jordskjelvdata. Desse vil me systematisera og visualisera ved hjelp av biblioteket <code>geopandas</code> i Python <span class="emoji" data-emoji="snake">🐍</span> <br> Døme på ein av figurane me kjem til å laga ser du under.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lektorodd.github.io/posts/230425_jordskjelv/jordskjelv_stillehavet_djupne.png" class="img-fluid figure-img" style="width:75.0%"></p>
-<figcaption class="figure-caption"><span class="emoji" data-emoji="camera">📷</span> Døme på figur</figcaption>
+<p><img src="https://lektorodd.github.io/posts/230425_jordskjelv/jordskjelv_stillehavet_djupne.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:75.0%"></p>
+<figcaption><span class="emoji" data-emoji="camera">📷</span> Døme på figur</figcaption>
 </figure>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled">
@@ -824,7 +827,7 @@ Merk
 <section id="innlesing-av-data" class="level2">
 <h2 class="anchored" data-anchor-id="innlesing-av-data">Innlesing av data</h2>
 <p>Me startar med å importere naudsynte bibliotek.</p>
-<div class="cell" data-execution_count="1">
+<div id="cell-5" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">import</span> pandas <span class="im" style="color: #00769E;
@@ -847,7 +850,7 @@ background-color: null;
 font-style: inherit;">as</span> plt</span></code></pre></div>
 </div>
 <p>Bruker så <code>pandas</code> for å lesa inn <code>csv</code>-fila.</p>
-<div class="cell" data-execution_count="2">
+<div id="cell-7" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1">skjelv <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> pd.read_csv(<span class="st" style="color: #20794D;
@@ -855,16 +858,17 @@ background-color: null;
 font-style: inherit;">"skjelv.csv"</span>)</span></code></pre></div>
 </div>
 <p>Undersøker korleis den innleste tabellen ser ut</p>
-<div class="cell" data-execution_count="4">
+<div id="cell-9" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1">skjelv.shape</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>(20000, 22)</code></pre>
 </div>
 </div>
 <p><code>(20000, 22)</code> betyr altså at me her har ein tabell med 20 000 rader og 22 kolonner. Ser på dei fem første radene i tabellen.</p>
-<div class="cell" data-execution_count="5">
+<div id="cell-11" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1">skjelv.head()</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
+<div>
 <div>
 
 
@@ -1023,10 +1027,12 @@ font-style: inherit;">"skjelv.csv"</span>)</span></code></pre></div>
 </div>
 </div>
 </div>
+</div>
 <p>Me kan sjå litt nærare på dei statistikk frå dei numeriske kolonnene med å bruka <code>describe()</code></p>
-<div class="cell" data-execution_count="6">
+<div id="cell-13" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1">skjelv.describe()</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
+<div>
 <div>
 
 
@@ -1175,9 +1181,10 @@ font-style: inherit;">"skjelv.csv"</span>)</span></code></pre></div>
 </div>
 </div>
 </div>
+</div>
 <p>I kolonna <code>mag</code> (styrken) ser me at både gjennomsnittet (5,87) og medianen (5,7) er ganske låge. Hugs på at den lågaste verdien her er 5,5. Tala viser oss at 50% av dei 20000 skjelva er mellom 5,5 og 5,7 i styrke. Me ser òg at gjennomsnittsdjupna på skjelva er ca. 70,5 km (<code>depth</code>).</p>
 <p>Som me har sett over har tabellen mange kolonner, ikkje alle er like relevante for oss. Me kan sortera ut dei me treng vidare. Skriv først ut ei liste med kolonnenamn for å få oversikt over alle kolonnene.</p>
-<div class="cell" data-execution_count="7">
+<div id="cell-15" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1">skjelv.columns</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
 <pre><code>Index(['time', 'latitude', 'longitude', 'depth', 'mag', 'magType', 'nst',
@@ -1191,7 +1198,7 @@ font-style: inherit;">"skjelv.csv"</span>)</span></code></pre></div>
 <section id="sortere-i-datamaterialet" class="level2">
 <h2 class="anchored" data-anchor-id="sortere-i-datamaterialet">Sortere i datamaterialet</h2>
 <p>Det første me gjer er å luka ut dei radene som ikkje er jordskjelv. I koden under tek me kun vare på dei radene der <code>type</code> er <code>earthquake</code>.</p>
-<div class="cell" data-execution_count="8">
+<div id="cell-17" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1">skjelv <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> skjelv[skjelv[<span class="st" style="color: #20794D;
@@ -1208,7 +1215,7 @@ font-style: inherit;">"earthquake"</span>]</span>
 </div>
 <p>Me ser at tabellen vart nokre rader kortare.</p>
 <p>Plukker ut dei mest relevante kolonnene. Dato, lengde- og breddegrad, djupne og styrke:</p>
-<div class="cell" data-execution_count="9">
+<div id="cell-19" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb12" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1">skjelv <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> skjelv[[<span class="st" style="color: #20794D;
@@ -1224,6 +1231,7 @@ background-color: null;
 font-style: inherit;">"mag"</span>]]</span>
 <span id="cb12-2">skjelv.head()</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
+<div>
 <div>
 
 
@@ -1285,12 +1293,14 @@ font-style: inherit;">"mag"</span>]]</span>
 </div>
 </div>
 </div>
+</div>
 <p>Sjekkar for ordens skuld kva tid det første skjelvet er frå. Ser på dei siste 5 radene i tabellen.</p>
-<div class="cell" data-execution_count="17">
+<div id="cell-21" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1">skjelv.tail(<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">5</span>)</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="17">
+<div>
 <div>
 
 
@@ -1358,10 +1368,11 @@ font-style: inherit;">5</span>)</span></code></pre></div>
 </div>
 </div>
 </div>
+</div>
 <section id="visuell-oversikt-over-tabellen" class="level3">
 <h3 class="anchored" data-anchor-id="visuell-oversikt-over-tabellen">Visuell oversikt over tabellen</h3>
 <p>For å sjå (og presentera) fordelinga av styrke og djupne kan me t.d. laga heilt enkle boksplot. Startar med eit for styrken <span class="emoji" data-emoji="muscle">💪</span></p>
-<div class="cell" data-execution_count="13">
+<div id="cell-23" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb14" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1">boksplot <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> skjelv.boxplot(column <span class="op" style="color: #5E5E5E;
@@ -1395,11 +1406,15 @@ background-color: null;
 font-style: inherit;">16</span>)</span>
 <span id="cb14-4">plt.show()</span></code></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="https://lektorodd.github.io/posts/230425_jordskjelv/index_files/figure-html/cell-11-output-1.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="https://lektorodd.github.io/posts/230425_jordskjelv/index_files/figure-html/cell-11-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Figuren her viser at jordskjelva i all hovudsak er mellom 5,5 og ca. 6,6. Dei sterkare skjelva er så få at dei vert sett på som avvik (<em>outliers</em>).</p>
-<div class="cell" data-execution_count="15">
+<div id="cell-25" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb15" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1">boksplot <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> skjelv.boxplot(column <span class="op" style="color: #5E5E5E;
@@ -1433,7 +1448,11 @@ background-color: null;
 font-style: inherit;">16</span>)</span>
 <span id="cb15-4">plt.show()</span></code></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="https://lektorodd.github.io/posts/230425_jordskjelv/index_files/figure-html/cell-12-output-1.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="https://lektorodd.github.io/posts/230425_jordskjelv/index_files/figure-html/cell-12-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Figuren for djune viser oss at dei aller fleste skjelva er mellom 0 og 110 km djupe.</p>
@@ -1455,7 +1474,7 @@ Tips til meir visualisering <span class="emoji" data-emoji="eyes">👀</span>
 <section id="geodataframe" class="level2">
 <h2 class="anchored" data-anchor-id="geodataframe">GeoDataFrame</h2>
 <p>Først lagar me ei <code>geodataframe</code> frå vår opprinnelege <code>dataframe</code> (skjelv). Forskjellen på desse to er at førstnevnte har ei eigen kolonne <code>geometry</code>, som er punkt, linjer eller flater. I dette tilfelet punkt, som <code>geopandas</code> finn i lengde- og breiddegrad-kolonnene.</p>
-<div class="cell" data-execution_count="16">
+<div id="cell-28" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb16" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1">skjelv_gdf <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> gpd.GeoDataFrame(</span>
@@ -1469,6 +1488,7 @@ font-style: inherit;">=</span> gpd.points_from_xy(</span>
 <span id="cb16-7">    )</span>
 <span id="cb16-8">skjelv_gdf.head()</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="16">
+<div>
 <div>
 
 
@@ -1536,11 +1556,12 @@ font-style: inherit;">=</span> gpd.points_from_xy(</span>
 </div>
 </div>
 </div>
+</div>
 </section>
 <section id="plotting" class="level2">
 <h2 class="anchored" data-anchor-id="plotting">Plotting</h2>
 <p>No er alt klart for å starta med plotting. Me lagar eit <em>basekart</em> av verda og plottar jordskjelva oppå dette.</p>
-<div class="cell" data-execution_count="22">
+<div id="cell-30" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb17" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># bakgrunnskart - data</span></span>
@@ -1591,13 +1612,17 @@ background-color: null;
 font-style: inherit;">18</span>)</span>
 <span id="cb17-13">plt.show()</span></code></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="https://lektorodd.github.io/posts/230425_jordskjelv/index_files/figure-html/cell-14-output-1.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="https://lektorodd.github.io/posts/230425_jordskjelv/index_files/figure-html/cell-14-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <section id="variable-storleik-på-markørane" class="level3">
 <h3 class="anchored" data-anchor-id="variable-storleik-på-markørane">Variable storleik på markørane</h3>
 <p>For å få fram ulikskapar mellom skjelva kan me plotta punkta slik at dei vert større di sterkare skjelva dei representerer er. Skjelva er frå 5.5 til 9.1 i styrke. Legg til ei ny kolonne i tabellen for storleik på markør. For at den skal gå frå 1 og oppover, trekk me 4,5 frå verdien til <code>mag</code>.</p>
-<div class="cell" data-execution_count="41">
+<div id="cell-32" class="cell" data-execution_count="41">
 <div class="sourceCode cell-code" id="cb18" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1">skjelv_gdf[<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"markør"</span>] <span class="op" style="color: #5E5E5E;
@@ -1611,6 +1636,7 @@ background-color: null;
 font-style: inherit;">4.5</span></span>
 <span id="cb18-2">skjelv_gdf.head()</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="41">
+<div>
 <div>
 
 
@@ -1684,8 +1710,9 @@ font-style: inherit;">4.5</span></span>
 </div>
 </div>
 </div>
+</div>
 <p>Plottar på nytt. Merk at me endrar typen til <code>scatter</code> som gjer at markørstorleiken får eit anna argument <code>s</code> i staden for <code>markersize</code>. Prøv deg gjerne fram for å finna ein fin verdi for storleiken. Eg endte opp med <code>3*skjelv_gdf["markør"]**4</code>.</p>
-<div class="cell" data-execution_count="64">
+<div id="cell-34" class="cell" data-execution_count="64">
 <div class="sourceCode cell-code" id="cb19" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># bakgrunnskart</span></span>
@@ -1806,7 +1833,11 @@ background-color: null;
 font-style: inherit;">#plt.savefig("jordskjelv_verda_styrke.png", dpi = 300) # &lt;-- bruk denne for å lagra figuren</span></span>
 <span id="cb19-25">plt.show()</span></code></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="https://lektorodd.github.io/posts/230425_jordskjelv/index_files/figure-html/cell-16-output-1.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="https://lektorodd.github.io/posts/230425_jordskjelv/index_files/figure-html/cell-16-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -1814,7 +1845,7 @@ font-style: inherit;">#plt.savefig("jordskjelv_verda_styrke.png", dpi = 300) # &
 <section id="avgrense-område" class="level2">
 <h2 class="anchored" data-anchor-id="avgrense-område">Avgrense område</h2>
 <p>For å få betre oversikt kan me zooma inn på eit avgrensa område av jorda. Me kan t.d. sjå på områda rundt Indonesia. Les av omtrentlege lengde- og breddegrader på oversiktskartet. Legg avgrensingane inn som eigne variablar, slik at det er lett å endra dei seinare.</p>
-<div class="cell" data-execution_count="54">
+<div id="cell-36" class="cell" data-execution_count="54">
 <div class="sourceCode cell-code" id="cb20" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># Avgrensingar for rådata og kartplotting</span></span>
@@ -1842,7 +1873,7 @@ background-color: null;
 font-style: inherit;">170</span></span></code></pre></div>
 </div>
 <p>Bruker vidare avgrensingane til å sortera ut ein eigen tabell med dei aktuelle skjelva.</p>
-<div class="cell" data-execution_count="57">
+<div id="cell-38" class="cell" data-execution_count="57">
 <div class="sourceCode cell-code" id="cb21" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># lagar ny gdf til avgrensa område</span></span>
@@ -1874,11 +1905,12 @@ font-style: inherit;">&lt;</span> long_maks)</span>
 </div>
 </div>
 <p>Her ser me at me framleis har 9302 skjelv i tabellen, så omlag halvparten av dei 20 000 skjelva er frå det avgrensa området. Tar me ein kikk på dei 10 første linjene så ser me at indeksen ikkje er heilt i orden.</p>
-<div class="cell" data-execution_count="59">
+<div id="cell-40" class="cell" data-execution_count="59">
 <div class="sourceCode cell-code" id="cb23" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1">område_skjelv.head(<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">10</span>)</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="59">
+<div>
 <div>
 
 
@@ -2002,8 +2034,9 @@ font-style: inherit;">10</span>)</span></code></pre></div>
 </div>
 </div>
 </div>
+</div>
 <p>Ikkje at det er veldig viktig no, men om me vil så kan me ordna dette lett.</p>
-<div class="cell" data-execution_count="60">
+<div id="cell-42" class="cell" data-execution_count="60">
 <div class="sourceCode cell-code" id="cb24" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1">område_skjelv <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> område_skjelv.reset_index(drop<span class="op" style="color: #5E5E5E;
@@ -2015,6 +2048,7 @@ font-style: inherit;">True</span>)</span>
 background-color: null;
 font-style: inherit;">10</span>)</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="60">
+<div>
 <div>
 
 
@@ -2138,10 +2172,11 @@ font-style: inherit;">10</span>)</span></code></pre></div>
 </div>
 </div>
 </div>
+</div>
 <section id="plotte-avgrensa-område" class="level3">
 <h3 class="anchored" data-anchor-id="plotte-avgrensa-område">Plotte avgrensa område</h3>
 <p>No kan me plotta det avgrensa området. Bruker variablane med grensene for å tilpassa bakgrunnskartet.</p>
-<div class="cell" data-execution_count="61">
+<div id="cell-44" class="cell" data-execution_count="61">
 <div class="sourceCode cell-code" id="cb25" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1">base <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> world.plot(color<span class="op" style="color: #5E5E5E;
@@ -2183,11 +2218,15 @@ font-style: inherit;">10</span></span>
 <span id="cb25-13"></span>
 <span id="cb25-14">plt.show()</span></code></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="https://lektorodd.github.io/posts/230425_jordskjelv/index_files/figure-html/cell-21-output-1.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="https://lektorodd.github.io/posts/230425_jordskjelv/index_files/figure-html/cell-21-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>På denne figuren ser me at det er nokre område der skjelva dekker breiare linjer enn ellers. Prøver å få fram kor djupe dei ulike skjelva er. Me deler inn datamaterialet i grunne, middels og djupe skjelv, med 30 km og 300 km som grenser mellom dei tre kategoriane.</p>
-<div class="cell" data-execution_count="65">
+<div id="cell-46" class="cell" data-execution_count="65">
 <div class="sourceCode cell-code" id="cb26" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1">område_djup <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> område_skjelv[(område_skjelv.depth <span class="op" style="color: #5E5E5E;
@@ -2218,7 +2257,7 @@ background-color: null;
 font-style: inherit;">30</span>)]</span></code></pre></div>
 </div>
 <p>Desse nye <code>gdf</code>-ane kan me plotta på oversiktskart over regionen:</p>
-<div class="cell" data-execution_count="67">
+<div id="cell-48" class="cell" data-execution_count="67">
 <div class="sourceCode cell-code" id="cb27" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># bakgrunnskart</span></span>
@@ -2341,7 +2380,11 @@ background-color: null;
 font-style: inherit;">"tight"</span>)</span>
 <span id="cb27-25">plt.show()</span></code></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="https://lektorodd.github.io/posts/230425_jordskjelv/index_files/figure-html/cell-23-output-1.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="https://lektorodd.github.io/posts/230425_jordskjelv/index_files/figure-html/cell-23-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Legg merke til <img src="https://latex.codecogs.com/png.latex?%5CLaTeX">-formateringa <code>middels ($30 km &lt; d \leq 300 km$</code> i teiknforklaringa.</p>
@@ -2368,20 +2411,21 @@ Tips
 </section>
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Gjenbruk</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Gjenbruk</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></div></div></section></div> ]]></description>
   <category>modellering</category>
   <category>programmering</category>
   <category>tips</category>
   <category>geofag</category>
-  <guid>https://lektorodd.github.io/posts/230425_jordskjelv/index.html</guid>
+  <guid>https://lektorodd.github.io/posts/230425_jordskjelv/</guid>
   <pubDate>Mon, 24 Apr 2023 22:00:00 GMT</pubDate>
   <media:content url="https://lektorodd.github.io/posts/230425_jordskjelv/skjelv.png" medium="image" type="image/png" height="82" width="144"/>
 </item>
 <item>
   <title>Samansett simulering i S2</title>
   <dc:creator>Torodd F. Ottestad</dc:creator>
-  <link>https://lektorodd.github.io/posts/230303_simulering2/index.html</link>
+  <link>https://lektorodd.github.io/posts/230303_simulering2/</link>
   <description><![CDATA[ 
+
 
 
 
@@ -2405,7 +2449,7 @@ Tips
 <section id="løkker" class="level2">
 <h2 class="anchored" data-anchor-id="løkker"><span class="emoji" data-emoji="one">1️⃣</span> Løkker</h2>
 <p>Tanken her er å trekka ein elev <code>N</code> gongar. Trekk eit tal mellom 0 og 323+301, og seier at dei 323 første (fom. 0 tom. 322) er jenter, og dei siste (resten) er gutar. Simulerer høgda til kvar elev etter det. Tel til slutt opp kor mange som er over 175 cm.</p>
-<div class="cell" data-execution_count="6">
+<div id="cell-4" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">import</span> numpy <span class="im" style="color: #00769E;
@@ -2519,7 +2563,7 @@ font-style: inherit;">"</span>)</span></code></pre></div>
 <section id="funksjonar" class="level2">
 <h2 class="anchored" data-anchor-id="funksjonar"><span class="emoji" data-emoji="two">2️⃣</span> funksjonar…</h2>
 <p>Her gjer me <span class="emoji" data-emoji="one">1️⃣</span> litt meir fancy. Mykje lik tankegang.</p>
-<div class="cell" data-execution_count="7">
+<div id="cell-7" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">import</span> numpy <span class="im" style="color: #00769E;
@@ -2679,7 +2723,7 @@ font-style: inherit;">"</span>)</span></code></pre></div>
 <section id="alt-i-arrays" class="level2">
 <h2 class="anchored" data-anchor-id="alt-i-arrays"><span class="emoji" data-emoji="three">3️⃣</span> Alt i arrays <span class="emoji" data-emoji="rocket">🚀</span></h2>
 <p>For å gjera programmet effektivt, raskt og lett leseleg droppar eg løkker og funksjonar.</p>
-<div class="cell" data-execution_count="8">
+<div id="cell-10" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">import</span> numpy <span class="im" style="color: #00769E;
@@ -2819,21 +2863,22 @@ font-style: inherit;">"</span>)</span></code></pre></div>
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Gjenbruk</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Gjenbruk</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></div></div></section></div> ]]></description>
   <category>programmering</category>
   <category>s-matte</category>
   <category>simulering</category>
   <category>eksamensoppgåve</category>
   <category>tips</category>
-  <guid>https://lektorodd.github.io/posts/230303_simulering2/index.html</guid>
+  <guid>https://lektorodd.github.io/posts/230303_simulering2/</guid>
   <pubDate>Thu, 02 Mar 2023 23:00:00 GMT</pubDate>
   <media:content url="https://lektorodd.github.io/posts/230303_simulering2/kuleramme.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>Grunnleggjande simulering i NumPy</title>
   <dc:creator>Torodd F. Ottestad</dc:creator>
-  <link>https://lektorodd.github.io/posts/230209_simulering1/index.html</link>
+  <link>https://lektorodd.github.io/posts/230209_simulering1/</link>
   <description><![CDATA[ 
+
 
 
 
@@ -2844,7 +2889,7 @@ font-style: inherit;">"</span>)</span></code></pre></div>
 <section id="random-generator" class="level2">
 <h2 class="anchored" data-anchor-id="random-generator">Random generator</h2>
 <p>For å simulera lagar me ein <em>random generator</em>. Denne kallar me for <code>rng</code> (<em>random number generator</em>). Me kan tilpassa <code>default_rng()</code> med å gje han ulike argument (feks. <code>seed</code> for å få reproduserbare tal) men i praksis i S1 og S2 er det ikkje noko me treng å tenka på.</p>
-<div class="cell" data-execution_count="25">
+<div id="cell-3" class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">import</span> numpy <span class="im" style="color: #00769E;
@@ -2855,7 +2900,7 @@ background-color: null;
 font-style: inherit;">=</span> np.random.default_rng()</span></code></pre></div>
 </div>
 <p>Denne generatoren kan me bruka til mange ulike simuleringar. Om me vil kasta ein terning ein gong kan me trekka eit heiltal. Det gjer me med funksjonen <code>integers(low, high)</code> som ligg i <code>rng</code>-en vår.</p>
-<div class="cell" data-execution_count="26">
+<div id="cell-5" class="cell" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1">terning <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> rng.integers(<span class="dv" style="color: #AD0000;
@@ -2886,7 +2931,7 @@ Pass på
 </div>
 </div>
 <p>Om me vil kasta fleire terningar kan me i tillegg gje inn <code>size</code> som argument til <code>rng.integers</code></p>
-<div class="cell" data-execution_count="27">
+<div id="cell-8" class="cell" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1">terningar <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> rng.integers(<span class="dv" style="color: #AD0000;
@@ -2905,7 +2950,7 @@ font-style: inherit;">print</span>(terningar)</span></code></pre></div>
 </div>
 <p>Vidare kan me rekna med resultata. Desse er lagra i ein <code>array</code> (ein variabeltype som minnar om lister).</p>
 <p>Me kan t.d. sjekka kor mange av dei 10 terningane me kasta som vart seksarar. Først kan me sjekka kva verdiar som er 6:</p>
-<div class="cell" data-execution_count="28">
+<div id="cell-10" class="cell" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1">terningar <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">==</span> <span class="dv" style="color: #AD0000;
@@ -2917,7 +2962,7 @@ font-style: inherit;">6</span></span></code></pre></div>
 </div>
 </div>
 <p>Dette kan me bruka til å rekna med. Sidan <code>False</code> vert tolka som 0 og <code>True</code> vert tolka som 1 kan me finna summen av arrayen med sanningsvariablane:</p>
-<div class="cell" data-execution_count="29">
+<div id="cell-12" class="cell" data-execution_count="29">
 <div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><span class="bu" style="color: null;
 background-color: null;
 font-style: inherit;">sum</span>(terningar <span class="op" style="color: #5E5E5E;
@@ -2935,7 +2980,7 @@ font-style: inherit;">6</span>)</span></code></pre></div>
 <p>Me trillar terning.</p>
 <p><img src="https://latex.codecogs.com/png.latex?A">: terningen viser 5 eller 6.</p>
 <p>Finn <img src="https://latex.codecogs.com/png.latex?P(A)"> ved hjelp av simulering.</p>
-<div class="cell" data-execution_count="30">
+<div id="cell-14" class="cell" data-execution_count="30">
 <div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">import</span> numpy <span class="im" style="color: #00769E;
@@ -3007,7 +3052,7 @@ font-style: inherit;">"</span>)</span></code></pre></div>
 <p>I eit spel kastar du tre terningar. Du multipliserer saman augetalet på terningane. Dersom dette produktet er større enn 100, vinn du. Bestem sannsynet for å vinne ved å køyre simuleringar. Hugs å vise korleis du kjem fram til svaret. <a href="https://sokeresultat.udir.no/eksamensoppgaver.html?query=s1">UDIR (2022) - Eksamen S1-V22</a></p>
 </blockquote>
 <p>For å svare på denne oppgåva treng me litt meir kjennskap til korleis me kan jobba med arrays. Arrays er ein form for lister eller vektorar. Me kan utføra ulike rekneoperasjonar med dei. Me kan t.d. legga dei saman og multiplisera dei:</p>
-<div class="cell" data-execution_count="31">
+<div id="cell-18" class="cell" data-execution_count="31">
 <div class="sourceCode cell-code" id="cb12" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1">a <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> np.array([<span class="dv" style="color: #AD0000;
@@ -3055,7 +3100,7 @@ font-style: inherit;">*</span>b)</span></code></pre></div>
 </div>
 </div>
 <p>Då har me alt me treng for å løysa eksamensoppgåva:</p>
-<div class="cell" data-execution_count="32">
+<div id="cell-20" class="cell" data-execution_count="32">
 <div class="sourceCode cell-code" id="cb14" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">import</span> numpy <span class="im" style="color: #00769E;
@@ -3158,7 +3203,7 @@ font-style: inherit;">"</span>)</span></code></pre></div>
 <p>Me plantar 150 frø. Sannsynet for at eit frø spirer er 85%.</p>
 <p>Kva er sannsynet for at minst 130 frø spirer?</p>
 <p><img src="https://latex.codecogs.com/png.latex?X">: antall frø som spirer.</p>
-<div class="cell" data-execution_count="33">
+<div id="cell-23" class="cell" data-execution_count="33">
 <div class="sourceCode cell-code" id="cb16" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">import</span> numpy <span class="im" style="color: #00769E;
@@ -3241,7 +3286,7 @@ font-style: inherit;">"</span>)</span></code></pre></div>
 <section id="døme-på-bruk-1" class="level2">
 <h2 class="anchored" data-anchor-id="døme-på-bruk-1">Døme på bruk</h2>
 <p>Det ligg 4 daim og 7 banantwist i ei skål. Du trekk 3 bitar. Kva er sannsynet for at akkurat to av desse er daim?</p>
-<div class="cell" data-execution_count="34">
+<div id="cell-26" class="cell" data-execution_count="34">
 <div class="sourceCode cell-code" id="cb18" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">import</span> numpy <span class="im" style="color: #00769E;
@@ -3335,28 +3380,29 @@ font-style: inherit;">"</span>)</span></code></pre></div>
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Gjenbruk</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Gjenbruk</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></div></div></section></div> ]]></description>
   <category>programmering</category>
   <category>s-matte</category>
   <category>simulering</category>
   <category>tips</category>
-  <guid>https://lektorodd.github.io/posts/230209_simulering1/index.html</guid>
+  <guid>https://lektorodd.github.io/posts/230209_simulering1/</guid>
   <pubDate>Wed, 08 Feb 2023 23:00:00 GMT</pubDate>
   <media:content url="https://lektorodd.github.io/posts/230209_simulering1/terning.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>Hydrologiprogrammering</title>
   <dc:creator>Torodd F. Ottestad</dc:creator>
-  <link>https://lektorodd.github.io/posts/230202_hydrologimodellering/index.html</link>
+  <link>https://lektorodd.github.io/posts/230202_hydrologimodellering/</link>
   <description><![CDATA[ 
+
 
 
 
 
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lektorodd.github.io/posts/230202_hydrologimodellering/island.jpg" class="img-fluid figure-img" style="width:90.0%"></p>
-<figcaption class="figure-caption">📷 Dettifoss, Island</figcaption>
+<p><img src="https://lektorodd.github.io/posts/230202_hydrologimodellering/island.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></p>
+<figcaption>📷 Dettifoss, Island</figcaption>
 </figure>
 </div>
 <section id="hydrologiprosjekt-i-geofag-1" class="level1">
@@ -3382,8 +3428,8 @@ Tips til nedlasting
 <p>1️⃣ Finn deg ei elv på <a href="https://sildre.nve.no">sildre.nve.no</a> <br> 2️⃣ Trykk på <code>last ned som csv</code> <br> 3️⃣ Kryss av på aktuelle instillingar <br> 4️⃣ Last ned</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lektorodd.github.io/posts/230202_hydrologimodellering/laste_ned.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">⬇️ Laste ned data</figcaption>
+<p><img src="https://lektorodd.github.io/posts/230202_hydrologimodellering/laste_ned.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<figcaption>⬇️ Laste ned data</figcaption>
 </figure>
 </div>
 </div>
@@ -3392,7 +3438,7 @@ Tips til nedlasting
 <section id="importere-bibliotek" class="level2">
 <h2 class="anchored" data-anchor-id="importere-bibliotek">Importere bibliotek</h2>
 <p>Vassføringsdataa er lasta ned i csv-format. Me bruker <code>pandas</code> for å jobba med dette effektivt. I tillegg vert det litt plotting og matematikk, så me treng <code>pyplot</code> og <code>numpy</code> i tillegg.</p>
-<div class="cell" data-execution_count="21">
+<div id="9bdf8874" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">import</span> pandas <span class="im" style="color: #00769E;
@@ -3415,11 +3461,11 @@ font-style: inherit;">as</span> np</span></code></pre></div>
 <p>CSV-fila med vassføringsdata les me inn i ei <code>dataramme</code> (<em>dataframe</em>). Viss ein tar ein kikk på fila ser ein at det er brukt semikolon for å skilja verdiane, det er to rader før verdiane kjem. Me lagar litt forenkla namn på kolonnene, og les inn data. I tillegg er det nytta komma (og ikkje punktum) som desimalteikn.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lektorodd.github.io/posts/230202_hydrologimodellering/df.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">🔍 Dei første linjene</figcaption>
+<p><img src="https://lektorodd.github.io/posts/230202_hydrologimodellering/df.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<figcaption>🔍 Dei første linjene</figcaption>
 </figure>
 </div>
-<div class="cell" data-execution_count="22">
+<div id="4f11450e" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1">df <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> pd.read_csv(</span>
@@ -3480,9 +3526,10 @@ background-color: null;
 font-style: inherit;">"Kontrollert"</span>])</span></code></pre></div>
 </div>
 <p>Sjekkar dei nyaste fem målingane i tabellen for å sjå at alt ser ok ut.</p>
-<div class="cell" data-execution_count="23">
+<div id="fea38cc9" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1">df.tail()</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="23">
+<div>
 <div>
 
 
@@ -3520,15 +3567,16 @@ font-style: inherit;">"Kontrollert"</span>])</span></code></pre></div>
 </div>
 </div>
 </div>
+</div>
 <p>I tillegg kan me prøva å plotta verdiane i dataramma. <br> <em>Har med <code>;</code> for å unngå å visa meldinga <code>&lt;AxesSubplot: &gt;</code></em></p>
-<div class="cell" data-execution_count="24">
+<div id="18381b06" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1">df.plot()<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span></span></code></pre></div>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lektorodd.github.io/posts/230202_hydrologimodellering/index_files/figure-html/cell-5-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="https://lektorodd.github.io/posts/230202_hydrologimodellering/index_files/figure-html/cell-5-output-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
 </div>
@@ -3542,7 +3590,7 @@ font-style: inherit;">;</span></span></code></pre></div>
 <p>En middelflom (normal flom) defineres som gjennomsnittet av høyeste vannføring hvert år i en lang årrekke.</p>
 </blockquote>
 <p>For å rekna ut dette må me altså først finna den maksimale vassføringa per år. Bruker <code>groupby</code> i Pandas for å finne dette.</p>
-<div class="cell" data-execution_count="25">
+<div id="494bf395" class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1">årleg_vf_maks <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> df.groupby(by<span class="op" style="color: #5E5E5E;
@@ -3552,6 +3600,7 @@ background-color: null;
 font-style: inherit;">max</span>()</span>
 <span id="cb5-2">årleg_vf_maks.head()</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="25">
+<div>
 <div>
 
 
@@ -3589,21 +3638,22 @@ font-style: inherit;">max</span>()</span>
 </div>
 </div>
 </div>
+</div>
 <p>Plottar den nye dataramma <code>årleg_maks</code> som kun har ei måling per år:</p>
-<div class="cell" data-execution_count="26">
+<div id="28c9ea65" class="cell" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1">årleg_vf_maks.plot()<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span></span></code></pre></div>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lektorodd.github.io/posts/230202_hydrologimodellering/index_files/figure-html/cell-7-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="https://lektorodd.github.io/posts/230202_hydrologimodellering/index_files/figure-html/cell-7-output-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>På grunn av “holet” i målingane tar me berre med data frå 1930 eller seinare med oss vidare. I tillegg er det vinter (og snø/is) for dataa me har for 2023, så me avgrensar til 2022.</p>
-<div class="cell" data-execution_count="27">
+<div id="3401c70f" class="cell" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1">årleg_vf_maks <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> årleg_vf_maks.loc[<span class="dv" style="color: #AD0000;
@@ -3613,6 +3663,7 @@ background-color: null;
 font-style: inherit;">2022</span>]</span>
 <span id="cb7-2">årleg_vf_maks.head()</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="27">
+<div>
 <div>
 
 
@@ -3650,8 +3701,9 @@ font-style: inherit;">2022</span>]</span>
 </div>
 </div>
 </div>
+</div>
 <p>Me vil finna gjennomsnittleg største årlege vassføring over fleire år. Vel her å sjå på eit gjennomsnitt på 30 år om gongen. Bruker funksjonen <code>rolling</code> og <code>mean</code> i kombinasjon. <code>rolling</code> gjer at me kan gå gjennom dataramma og sjå på dei 30 tidlegare verdiane til kvar rad i tabellen og finna gjennomsnittet (<code>mean</code>) i dette rullande vinduet.</p>
-<div class="cell" data-execution_count="28">
+<div id="777a1455" class="cell" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1">maksvf_og_middelflom <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> årleg_vf_maks.copy()</span>
@@ -3666,9 +3718,10 @@ background-color: null;
 font-style: inherit;">30</span>).mean()</span></code></pre></div>
 </div>
 <p>Ser på dei første 5 radene</p>
-<div class="cell" data-execution_count="29">
+<div id="02efc07e" class="cell" data-execution_count="29">
 <div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1">maksvf_og_middelflom.head()</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="29">
+<div>
 <div>
 
 
@@ -3712,10 +3765,12 @@ font-style: inherit;">30</span>).mean()</span></code></pre></div>
 </div>
 </div>
 </div>
+</div>
 <p>Ser at dei fem første radene i den nye dataramma er <code>NaN</code> (not a number). Dette skjer fordi ein ikkje kan ta gjennomsnitt av dei siste 30 åra før det har gått 30 år… Sjekkar dei nyaste radene i staden:</p>
-<div class="cell" data-execution_count="30">
+<div id="3d0a5e0f" class="cell" data-execution_count="30">
 <div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1">maksvf_og_middelflom.tail()</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="30">
+<div>
 <div>
 
 
@@ -3759,15 +3814,16 @@ font-style: inherit;">30</span>).mean()</span></code></pre></div>
 </div>
 </div>
 </div>
+</div>
 <p>Plottar dataramma og ser korleis dei nye verdiane ser ut:</p>
-<div class="cell" data-execution_count="31">
+<div id="bda3e51c" class="cell" data-execution_count="31">
 <div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1">maksvf_og_middelflom.plot()<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span></span></code></pre></div>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lektorodd.github.io/posts/230202_hydrologimodellering/index_files/figure-html/cell-12-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="https://lektorodd.github.io/posts/230202_hydrologimodellering/index_files/figure-html/cell-12-output-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
 </div>
@@ -3776,7 +3832,7 @@ font-style: inherit;">;</span></span></code></pre></div>
 <section id="modellering-av-middelflom" class="level2">
 <h2 class="anchored" data-anchor-id="modellering-av-middelflom">Modellering av middelflom</h2>
 <p>Ser at trenden er oppadgåande og relativt lineær. Ønsker å laga ein lineær modell. Bruker <code>polyfit</code> frå <code>NumPy</code>.</p>
-<div class="cell" data-execution_count="32">
+<div id="ac5d728f" class="cell" data-execution_count="32">
 <div class="sourceCode cell-code" id="cb12" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># åra me har data på middelflom</span></span>
@@ -3917,15 +3973,15 @@ font-style: inherit;">#plt.savefig("Reinsnos - årleg maksvassføring og middelf
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lektorodd.github.io/posts/230202_hydrologimodellering/index_files/figure-html/cell-13-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="https://lektorodd.github.io/posts/230202_hydrologimodellering/index_files/figure-html/cell-13-output-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
 <p><strong>Ekstrapolasjon - modell for framtidig middelflom</strong></p>
 <p>Me kan bruka trendlinja for middelflommen som modell for å seie noko om korleis utviklinga vil vera i åra framover (om utviklinga held fram som no):</p>
-<div class="cell" data-execution_count="33">
-<details>
+<div id="7aac9019" class="cell" data-execution_count="33">
+<details class="code-fold">
 <summary>Kode</summary>
 <div class="sourceCode cell-code" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1">maksvf_og_middelflom.plot(figsize <span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -4039,7 +4095,7 @@ font-style: inherit;">#plt.savefig("Reinsnos - modellering av middelflom 2100.pn
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lektorodd.github.io/posts/230202_hydrologimodellering/index_files/figure-html/cell-14-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="https://lektorodd.github.io/posts/230202_hydrologimodellering/index_files/figure-html/cell-14-output-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
 </div>
@@ -4050,13 +4106,13 @@ font-style: inherit;">#plt.savefig("Reinsnos - modellering av middelflom 2100.pn
 <p>Frå stasjonsssida til Reinsnosvatn kan me finna data om ulike typar flom.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lektorodd.github.io/posts/230202_hydrologimodellering/flomdata_nve.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Flomdata frå <a href="https://sildre.nve.no/station/48.5.0?48.5.0_tab=2">NVE</a></figcaption>
+<p><img src="https://lektorodd.github.io/posts/230202_hydrologimodellering/flomdata_nve.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<figcaption>Flomdata frå <a href="https://sildre.nve.no/station/48.5.0?48.5.0_tab=2">NVE</a></figcaption>
 </figure>
 </div>
 <p>Ser at verdien for 20-årsflom er 78,28 <img src="https://latex.codecogs.com/png.latex?m%5E3/s">. Plottar inn linja <img src="https://latex.codecogs.com/png.latex?y=78,28"> i samme figur som tidlegare. Bruker <code>plt.axhline()</code> for å teikna horisontal linje.</p>
-<div class="cell" data-execution_count="34">
-<details>
+<div id="13118de9" class="cell" data-execution_count="34">
+<details class="code-fold">
 <summary>Kode</summary>
 <div class="sourceCode cell-code" id="cb14" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
@@ -4230,7 +4286,7 @@ font-style: inherit;">#plt.savefig("Reinsnos - årleg maksvassføring og middelf
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lektorodd.github.io/posts/230202_hydrologimodellering/index_files/figure-html/cell-15-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="https://lektorodd.github.io/posts/230202_hydrologimodellering/index_files/figure-html/cell-15-output-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
 </div>
@@ -4254,7 +4310,7 @@ Tips til oppgåver
 <h1>Hydrogram - vassføring per dag</h1>
 <p>Denne store tabellen vår med daglege data frå over 100 år kan me gjera mykje gøy med. Me kan t.d. sortera alle observasjonane til dag i året, og sjå korleis vassføringa <em>vanlegvis</em> er gjennom eit år. I koden under gjer me dette, og i tillegg fargelegg me området mellom 25 og 75-persenilen. På denne måten får me fargelagt dei 50% midterste målingane per dag. Det er òg greitt å visa medianen (som blir hydrogrammet) på figuren.</p>
 <p>Startar med å sortera den opprinnelege <code>df</code> til <em>dag i året</em> (day of year - <code>doy</code>). Etterpå grupperer me materialet i ein ny tabell.</p>
-<div class="cell" data-execution_count="35">
+<div id="16fca768" class="cell" data-execution_count="35">
 <div class="sourceCode cell-code" id="cb15" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1">df[<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">'doy'</span>] <span class="op" style="color: #5E5E5E;
@@ -4267,6 +4323,7 @@ background-color: null;
 font-style: inherit;">=</span> df.index.year</span>
 <span id="cb15-3">df.head()</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="35">
+<div>
 <div>
 
 
@@ -4316,8 +4373,9 @@ font-style: inherit;">=</span> df.index.year</span>
 </div>
 </div>
 </div>
+</div>
 <p>Lagar ein pivottabell med dag i året som rader og årstal som kolonner</p>
-<div class="cell" data-execution_count="36">
+<div id="7ad1a61d" class="cell" data-execution_count="36">
 <div class="sourceCode cell-code" id="cb16" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1">piv <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> pd.pivot_table(df, index<span class="op" style="color: #5E5E5E;
@@ -4335,6 +4393,7 @@ background-color: null;
 font-style: inherit;">'Vassføring'</span>])</span>
 <span id="cb16-2">piv.head()</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="36">
+<div>
 <div>
 
 
@@ -4521,10 +4580,11 @@ font-style: inherit;">'Vassføring'</span>])</span>
 </div>
 </div>
 </div>
+</div>
 <section id="utrekningar" class="level2">
 <h2 class="anchored" data-anchor-id="utrekningar">Utrekningar</h2>
 <p>Finn ulike verdiar per dag i året over dei 104 åra.</p>
-<div class="cell" data-execution_count="37">
+<div id="d64e1f24" class="cell" data-execution_count="37">
 <div class="sourceCode cell-code" id="cb17" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1">piv[<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"min"</span>] <span class="op" style="color: #5E5E5E;
@@ -4585,6 +4645,7 @@ font-style: inherit;">1</span>)</span>
 <span id="cb17-6"></span>
 <span id="cb17-7">piv.head()</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="37">
+<div>
 <div>
 
 
@@ -4776,10 +4837,11 @@ font-style: inherit;">1</span>)</span>
 </div>
 </div>
 </div>
+</div>
 </section>
 <section id="plottar" class="level2">
 <h2 class="anchored" data-anchor-id="plottar">Plottar</h2>
-<div class="cell" data-execution_count="38">
+<div id="9c03184a" class="cell" data-execution_count="38">
 <div class="sourceCode cell-code" id="cb18" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># Plottar minimumsverdiar</span></span>
@@ -4964,7 +5026,11 @@ background-color: null;
 font-style: inherit;">300</span>)</span>
 <span id="cb18-45">plt.show()</span></code></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="https://lektorodd.github.io/posts/230202_hydrologimodellering/index_files/figure-html/cell-19-output-1.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="https://lektorodd.github.io/posts/230202_hydrologimodellering/index_files/figure-html/cell-19-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -4990,20 +5056,21 @@ Tips til undervisinga
 </section>
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Gjenbruk</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Gjenbruk</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></div></div></section></div> ]]></description>
   <category>modellering</category>
   <category>programmering</category>
   <category>tips</category>
   <category>geofag</category>
-  <guid>https://lektorodd.github.io/posts/230202_hydrologimodellering/index.html</guid>
+  <guid>https://lektorodd.github.io/posts/230202_hydrologimodellering/</guid>
   <pubDate>Wed, 01 Feb 2023 23:00:00 GMT</pubDate>
   <media:content url="https://lektorodd.github.io/posts/230202_hydrologimodellering/island.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>Zotero - kva, kvifor, korleis?</title>
   <dc:creator>Torodd F. Ottestad</dc:creator>
-  <link>https://lektorodd.github.io/posts/230127_zotero/index.html</link>
+  <link>https://lektorodd.github.io/posts/230127_zotero/</link>
   <description><![CDATA[ 
+
 
 
 
@@ -5012,7 +5079,7 @@ Tips til undervisinga
 <h1>Kva er Zotero?</h1>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lektorodd.github.io/posts/230127_zotero/forside_zot.jpg" class="img-fluid figure-img" style="width:70.0%"></p>
+<p><img src="https://lektorodd.github.io/posts/230127_zotero/forside_zot.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></p>
 </figure>
 </div>
 <p><a href="https://www.zotero.org/">Zotero</a> er eit verktøy for å handtera kjelder og siteringar. Det er relativt enkelt å bruka, og kan nyttast på tvers av ulike platformar og programvare. Terskelen for å implementera Zotero i undervisinga kan kanskje opplevast som litt høg. Så her kjem eit par argument for kvifor det kan vera ein fordel å ta dette steget, samt eit par konkrete tips og triks <span class="emoji" data-emoji="rocket">🚀</span></p>
@@ -5045,8 +5112,8 @@ Tips til undervisinga
 <p>Når du har lasta ned Zotero startar du med eit tomt bibliotek. Dette kan du organisera i <em>samlingar</em> (mapper). Du lager nye samlingar med å trykka på knappen til venstre over <em>Mitt bibliotek</em></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lektorodd.github.io/posts/230127_zotero/bibliotek.jpg" class="img-fluid figure-img" style="width:80.0%"></p>
-<figcaption class="figure-caption">Organisere biblioteket</figcaption>
+<p><img src="https://lektorodd.github.io/posts/230127_zotero/bibliotek.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+<figcaption>Organisere biblioteket</figcaption>
 </figure>
 </div>
 <p>Her kan ein t.d. dela inn etter fag, etter årstrinn eller andre inndelingar slik ein ønsker. Det er mogleg å ha under-samlingar viss ein ønsker det.</p>
@@ -5062,13 +5129,13 @@ Tips til undervisinga
 <p><strong>Legge til manuelt</strong></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lektorodd.github.io/posts/230127_zotero/leggetilmanuelt.jpg" class="img-fluid figure-img" style="width:80.0%"></p>
+<p><img src="https://lektorodd.github.io/posts/230127_zotero/leggetilmanuelt.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 <p>For å legga til kjelder trykker ein på det grøne pluss-teiknet og vel ein passande type (t.d. <em>bok</em>). Når ein har gjort dette får ein opp ei kolonne til høgre med ulike felt som må fyllast ut:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lektorodd.github.io/posts/230127_zotero/felt.jpg" class="img-fluid figure-img" style="width:40.0%"></p>
+<p><img src="https://lektorodd.github.io/posts/230127_zotero/felt.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:40.0%"></p>
 </figure>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -5088,7 +5155,7 @@ Tips
 <p><a href="https://www.zotero.org/download/connectors">Zotero Connector</a> er ein plugin til nettlesar som gjer at ein automatisk kan legga kjelder på nett inn i biblioteket sitt. Her kan ein ta med <em>snapshot</em> av nettsida ein besøker, eller lasta ned pdf-dokumentet ein er inne på. Ein kan òg velga kva for samling i biblioteket den aktuelle ressursen skal lagrast til</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lektorodd.github.io/posts/230127_zotero/connector.jpg" class="img-fluid figure-img" style="width:80.0%"></p>
+<p><img src="https://lektorodd.github.io/posts/230127_zotero/connector.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 <div class="callout callout-style-default callout-important callout-titled">
@@ -5112,25 +5179,25 @@ Pass på
 <p>I Microsoft Word og Google Docs er det eigne Zotero-verktøy. Når du har lasta ned og innstallert Zotero vil du sjå dette neste gong du opnar Word.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lektorodd.github.io/posts/230127_zotero/word-verktøy.jpg" class="img-fluid figure-img" style="width:60.0%"></p>
+<p><img src="https://lektorodd.github.io/posts/230127_zotero/word-verktøy.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
 </figure>
 </div>
 <p>Her ligg det verktøy for å legga inn referansar i tekst og kjeldeliste/bibliografi til slutt. For å legge inn referanse i teksten trykker ein på <code>Add/Edit Citation</code> og søker etter kjelda i søkefeltet. Første gang blir du bedt om å velga siteringsstil. Eg nyttar vanlegvis APA7 (<em>American Psychological Association</em>).</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lektorodd.github.io/posts/230127_zotero/inline-cite.jpg" class="img-fluid figure-img" style="width:80.0%"></p>
+<p><img src="https://lektorodd.github.io/posts/230127_zotero/inline-cite.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 <p>Om du vil inkludera sidetal, kan du klikka på den valgte kjelda og legga inn dette manuelt. Då vil Zotero automatisk formatera referansen i teksten på rett måte (og på rett språk).</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lektorodd.github.io/posts/230127_zotero/sidetall.jpg" class="img-fluid figure-img" style="width:80.0%"></p>
+<p><img src="https://lektorodd.github.io/posts/230127_zotero/sidetall.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 <p>Til slutt kan du laga kjeldeliste av dei kjeldene som er nytta i teksten med å trykka på <code>Add/Edit Bibliography</code>. Denne vert automatisk sortert og formatert etter valgt referansestil.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lektorodd.github.io/posts/230127_zotero/kjeldeliste.jpg" class="img-fluid figure-img" style="width:80.0%"></p>
+<p><img src="https://lektorodd.github.io/posts/230127_zotero/kjeldeliste.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 </section>
@@ -5139,7 +5206,7 @@ Pass på
 <p>I presentasjonsverktøy som PowerPoint har ein ikkje innebygde Zotero-verktøy. Likevel er Zotero til god hjelp. Ein måte ein kan halda oversikt over kva kjelder ein har nytta i eit aktuelt prosjekt er gjennom å legga til <code>emneord</code> til dei ulike kjeldene. Til dømes <code>blogg-zotero</code>. Då kan ein søka og filtrera biblioteket sitt etter det spesifikke emneordet. Vidare kan ein då kopiera henvising (<code>shift</code>+<code>cmd/windows</code>+<code>A</code>) av den valgte kjelda. Ein kan til slutt markera alle kjeldene og kopiera bibliografi (<code>shift</code>+<code>cmd/windows</code>+<code>C</code>).</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lektorodd.github.io/posts/230127_zotero/powerpoint.jpg" class="img-fluid figure-img"></p>
+<p><img src="https://lektorodd.github.io/posts/230127_zotero/powerpoint.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
 </section>
@@ -5151,11 +5218,11 @@ Pass på
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Gjenbruk</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Gjenbruk</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></div></div></section></div> ]]></description>
   <category>verktøy</category>
   <category>kjelder</category>
   <category>tips</category>
-  <guid>https://lektorodd.github.io/posts/230127_zotero/index.html</guid>
+  <guid>https://lektorodd.github.io/posts/230127_zotero/</guid>
   <pubDate>Thu, 26 Jan 2023 23:00:00 GMT</pubDate>
   <media:content url="https://lektorodd.github.io/posts/230127_zotero/forside_zot.jpg" medium="image" type="image/jpeg"/>
 </item>

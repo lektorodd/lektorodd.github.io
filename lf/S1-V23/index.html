@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
+<meta name="generator" content="quarto-1.4.550">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -24,7 +24,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -81,7 +81,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "Ingen treff",
     "search-matching-documents-text": "passande dokument",
@@ -90,6 +96,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "treff til i dokumentet",
     "search-more-matches-text": "fleire treff i dokumentet",
     "search-clear-button-title": "Tøm",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Avbryt",
     "search-submit-button-title": "Søk",
     "search-label": "Search"
@@ -108,15 +115,42 @@ gtag('config', 'G-744F7V6HLG', { 'anonymize_ip': true});
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
 </head>
 
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Torodd F. Ottestad</span>
     </a>
@@ -128,38 +162,38 @@ gtag('config', 'G-744F7V6HLG', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html" rel="" target="">
- <span class="menu-text">Om meg</span></a>
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">Om meg</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/lektorodd/lektorodd.github.io" rel="" target=""><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/lektorodd/lektorodd.github.io"> <i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://bsky.app/profile/torodd.bsky.social" rel="" target=""><i class="bi bi-clouds-fill" role="img">
+    <a class="nav-link" href="https://bsky.app/profile/torodd.bsky.social"> <i class="bi bi-clouds-fill" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://www.youtube.com/channel/UCWfDrIj3Mq3Niz77HJ6cTNg" rel="" target=""><i class="bi bi-youtube" role="img">
+    <a class="nav-link" href="https://www.youtube.com/channel/UCWfDrIj3Mq3Niz77HJ6cTNg"> <i class="bi bi-youtube" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://linkedin.com/in/torodd-ottestad-b2583a59" rel="" target=""><i class="bi bi-linkedin" role="img">
+    <a class="nav-link" href="https://linkedin.com/in/torodd-ottestad-b2583a59"> <i class="bi bi-linkedin" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="../../index.xml" rel="" target=""><i class="bi bi-rss-fill" role="img">
+    <a class="nav-link" href="../../index.xml"> <i class="bi bi-rss-fill" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools">
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -266,6 +300,7 @@ gtag('config', 'G-744F7V6HLG', { 'anonymize_ip': true});
 
 
 
+
 <section id="løysingsforslag-eksamen-s1---v23" class="level1">
 <h1>Løysingsforslag eksamen S1 - V23</h1>
 <p>Her er eit forslag til løysing av våreksamen i S1 2023. I del 2 er oppgåvene stort sett Python brukt som hjelpemiddel.</p>
@@ -360,7 +395,7 @@ Binomialkoeffesientane
 <h2 class="anchored" data-anchor-id="oppgåve-5">Oppgåve 5</h2>
 <p>Kostnad <span class="math inline">\(K\)</span> ved produksjon av <span class="math inline">\(x\)</span> einingar per veke gitt ved <span class="math display">\[K(X)=0,2x^2+140x+7000\]</span></p>
 <p>Bedrifta har laga programmet:</p>
-<div class="cell" data-execution_count="1">
+<div id="cell-8" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">def</span> K(x):</span>
 <span id="cb1-2"><a href="#cb1-2"></a>    <span class="cf">return</span> <span class="fl">0.2</span><span class="op">*</span>x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">140</span><span class="op">*</span>x <span class="op">+</span> <span class="dv">7000</span></span>
 <span id="cb1-3"><a href="#cb1-3"></a></span>
@@ -429,7 +464,7 @@ x &amp;= \frac{120}{0,4} = 300
 <h3 class="anchored" data-anchor-id="a-prosentvis-vekst">a) Prosentvis vekst</h3>
 <p>Gjennomsnittleg årleg prosentvis vekst frå 2008 til 2022. Det er snakk om <span class="math inline">\(2022-2008=14\)</span> år. Løyser likninga</p>
 <p><span class="math display">\[272,55 \cdot x^{14} = 340,10\]</span> for å finna vekstfaktoren</p>
-<div class="cell" data-execution_count="2">
+<div id="cell-12" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="im">from</span> sympy <span class="im">import</span> Symbol, diff, Eq, Reals, solveset</span>
 <span id="cb2-2"><a href="#cb2-2"></a></span>
 <span id="cb2-3"><a href="#cb2-3"></a><span class="co"># definerer x</span></span>
@@ -454,7 +489,7 @@ x &amp;= \frac{120}{0,4} = 300
 <section id="b-eksponentialfunksjon" class="level3">
 <h3 class="anchored" data-anchor-id="b-eksponentialfunksjon">b) Eksponentialfunksjon</h3>
 <p>Finn passande eksponentialfunksjon med <code>curve_fit</code> i <code>Scipy</code>/Python.</p>
-<div class="cell" data-execution_count="3">
+<div id="cell-15" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="im">from</span> scipy.optimize <span class="im">import</span> curve_fit</span>
 <span id="cb4-2"><a href="#cb4-2"></a></span>
 <span id="cb4-3"><a href="#cb4-3"></a><span class="co"># generell eksponentialfunksjon</span></span>
@@ -482,7 +517,7 @@ x &amp;= \frac{120}{0,4} = 300
 <section id="c-samla-løn" class="level3">
 <h3 class="anchored" data-anchor-id="c-samla-løn">c) Samla løn</h3>
 <p>Amalie har hatt lønnsauke med 2,3 % kvart år, og starta med timelønn på 272,55 kroner i 2008. Ho har jobba 1700 timar per år. Løyser denne i python med ei <code>for-løkke</code></p>
-<div class="cell" data-execution_count="4">
+<div id="cell-18" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>samla_løn <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb6-2"><a href="#cb6-2"></a>vf <span class="op">=</span> <span class="fl">1.023</span></span>
 <span id="cb6-3"><a href="#cb6-3"></a>timeløn <span class="op">=</span> <span class="fl">272.55</span></span>
@@ -499,7 +534,7 @@ x &amp;= \frac{120}{0,4} = 300
 </div>
 <p>Samla løn Per kan me finna på ulike måtar.</p>
 <p>Dersom me går ut frå at Per føl tabellen nøyaktig, dvs. 272,55 kr pr. time i 2008 og 2009, 285,50 kr pr. time i 2010, 2011, 2012 osv. vert den samla løna hans:</p>
-<div class="cell" data-execution_count="5">
+<div id="cell-20" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a><span class="kw">def</span> periodeløn(tal_år, timeløn):</span>
 <span id="cb8-2"><a href="#cb8-2"></a>    <span class="cf">return</span> tal_år <span class="op">*</span> <span class="dv">1700</span> <span class="op">*</span> timeløn</span>
 <span id="cb8-3"><a href="#cb8-3"></a></span>
@@ -519,7 +554,7 @@ x &amp;= \frac{120}{0,4} = 300
 </div>
 </div>
 <p>Om me på den andre sida bruker modellen for timeløn som me fann i <strong>b)</strong> så kan me bruka den:</p>
-<div class="cell" data-execution_count="6">
+<div id="cell-22" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a>samla_løn <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb10-2"><a href="#cb10-2"></a></span>
 <span id="cb10-3"><a href="#cb10-3"></a><span class="co"># modell for timeløn</span></span>
@@ -543,7 +578,7 @@ x &amp;= \frac{120}{0,4} = 300
 <p>I 2022 har Per timeløn 340,10 kr og Amalie timeløn <span class="math inline">\(272.55 \cdot 1.023^{14} \approx 374,72\)</span> Viss Per skal ha same timeløn som Amalie i 2025 (om 3 år) må</p>
 <p><span class="math display">\[340,10 \cdot x^3 = 374,72 \cdot 1,023^3\]</span></p>
 <p>Løyser likninga i Python:</p>
-<div class="cell" data-execution_count="7">
+<div id="cell-25" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a><span class="im">from</span> sympy <span class="im">import</span> Symbol, diff, Eq, Reals, solveset</span>
 <span id="cb12-2"><a href="#cb12-2"></a></span>
 <span id="cb12-3"><a href="#cb12-3"></a><span class="co"># definerer x</span></span>
@@ -601,7 +636,7 @@ x &amp;= \frac{120}{0,4} = 300
 <section id="oppgåve-3-1" class="level2">
 <h2 class="anchored" data-anchor-id="oppgåve-3-1">Oppgåve 3</h2>
 <p>Eit spel med to terningar. Mona finn sannsyn med programmet</p>
-<div class="cell" data-execution_count="8">
+<div id="cell-29" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a>g <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb14-2"><a href="#cb14-2"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">7</span>):</span>
 <span id="cb14-3"><a href="#cb14-3"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">7</span>):</span>
@@ -620,7 +655,7 @@ x &amp;= \frac{120}{0,4} = 300
 <section id="b-nytt-program---tre-terningar" class="level3">
 <h3 class="anchored" data-anchor-id="b-nytt-program---tre-terningar">b) Nytt program - tre terningar</h3>
 <p>Eit anna spel med tre terningar. Gevinst om summen av auge er 7 eller 11. Kan utvida programmet frå <strong>a)</strong>. Endrar nemnaren til 216 (<span class="math inline">\(6\cdot 6 \cdot 6\)</span>) i siste linja.</p>
-<div class="cell" data-execution_count="9">
+<div id="cell-32" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a>g <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb16-2"><a href="#cb16-2"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">7</span>):</span>
 <span id="cb16-3"><a href="#cb16-3"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">7</span>):</span>
@@ -650,7 +685,7 @@ x &amp;= \frac{120}{0,4} = 300
 <p>Dvs. <span class="math inline">\(e(p) = 4500 - 60p\)</span>.</p>
 <p>Daglege inntekter er tal eiingar gange prisen, <span class="math inline">\(e(p)\cdot p\)</span>.</p>
 <p>Løyser likninga <span class="math inline">\(e(p)\cdot p = 75000\)</span>.</p>
-<div class="cell" data-execution_count="10">
+<div id="cell-35" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1"></a><span class="im">from</span> sympy <span class="im">import</span> Symbol, diff, Eq, Reals, solveset</span>
 <span id="cb18-2"><a href="#cb18-2"></a></span>
 <span id="cb18-3"><a href="#cb18-3"></a><span class="co"># definerer p</span></span>
@@ -685,7 +720,7 @@ x &amp;= \frac{120}{0,4} = 300
 <p>Her kan me gå ut frå at det binomisk sannsyn sidan me har - to utfall i kvart delforsøk, kvar bilett (brukt/ikkje brukt) - likt sannsyn for at billetten vert brukt (0,45) i kvart delforsøk - uavhengige delforsøk (viss me går ut frå at dei som får gratisbillettane ikkje påverkar kvarande med om dei bruker eller ikkje bruker billetten…)</p>
 <p>Lar <span class="math inline">\(X\)</span> vera tal billettar som vert brukt.</p>
 <p>Finn <span class="math inline">\(P(X\geq 600)\)</span> ved simulering</p>
-<div class="cell" data-execution_count="11">
+<div id="cell-39" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb20-2"><a href="#cb20-2"></a>rng <span class="op">=</span> np.random.default_rng()</span>
 <span id="cb20-3"><a href="#cb20-3"></a></span>
@@ -710,7 +745,7 @@ x &amp;= \frac{120}{0,4} = 300
 <h3 class="anchored" data-anchor-id="b-finn-tal-gratisbilettar">b) Finn tal gratisbilettar</h3>
 <p>Vil finna ut kor mange gratisbillettar dei må dela ut dersom sannsynet for at minst 600 blir brukt skal vera over 95 %.</p>
 <p>Gjer simuleringa frå <strong>a)</strong> til ein funksjon og testar med fleire og fleire gratisbillettar til sannsynet for at minst 600 blir brukt passerer 95 %.</p>
-<div class="cell" data-execution_count="12">
+<div id="cell-42" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1"></a><span class="co"># sannsynsfunksjon</span></span>
 <span id="cb22-2"><a href="#cb22-2"></a><span class="kw">def</span> sannsyn(n):</span>
 <span id="cb22-3"><a href="#cb22-3"></a>    N <span class="op">=</span> <span class="dv">1000000</span></span>
@@ -747,7 +782,7 @@ x &amp;= \frac{120}{0,4} = 300
 <section id="a-bestem-lydintensitet" class="level3">
 <h3 class="anchored" data-anchor-id="a-bestem-lydintensitet">a) Bestem lydintensitet</h3>
 <p>Set inn <span class="math inline">\(L=130\)</span> og løyser likninga for <span class="math inline">\(I\)</span>.</p>
-<div class="cell" data-execution_count="13">
+<div id="cell-45" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1"></a><span class="im">from</span> sympy <span class="im">import</span> Symbol, diff, Eq, Reals, solveset, log</span>
 <span id="cb24-2"><a href="#cb24-2"></a></span>
 <span id="cb24-3"><a href="#cb24-3"></a><span class="co"># definerer I</span></span>
@@ -772,7 +807,7 @@ x &amp;= \frac{120}{0,4} = 300
 <section id="b-auke-i-intensitet" class="level3">
 <h3 class="anchored" data-anchor-id="b-auke-i-intensitet">b) Auke i intensitet</h3>
 <p>Finn intensiten ved <span class="math inline">\(132dB\)</span>.</p>
-<div class="cell" data-execution_count="14">
+<div id="cell-48" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1"></a><span class="co"># definerer vs og hs av likninga</span></span>
 <span id="cb26-2"><a href="#cb26-2"></a>vs <span class="op">=</span> <span class="dv">132</span></span>
 <span id="cb26-3"><a href="#cb26-3"></a>hs <span class="op">=</span> <span class="dv">120</span> <span class="op">+</span> <span class="dv">10</span><span class="op">*</span>log(I, <span class="dv">10</span>)</span>
@@ -796,7 +831,7 @@ x &amp;= \frac{120}{0,4} = 300
 <p>Lydstyrke frå eit fly er <span class="math inline">\(140 dB\)</span> når ein er <span class="math inline">\(50 m\)</span> frå flyet.</p>
 <p>Bestem den minste avstanden til flyet der lydstyrken er mindre enn <span class="math inline">\(130dB\)</span>.</p>
 <p>Finn intensiteten ved <span class="math inline">\(140 dB\)</span>:</p>
-<div class="cell" data-execution_count="15">
+<div id="cell-51" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1"></a><span class="co"># definerer vs og hs av likninga</span></span>
 <span id="cb28-2"><a href="#cb28-2"></a>vs <span class="op">=</span> <span class="dv">140</span></span>
 <span id="cb28-3"><a href="#cb28-3"></a>hs <span class="op">=</span> <span class="dv">120</span> <span class="op">+</span> <span class="dv">10</span><span class="op">*</span>log(I, <span class="dv">10</span>)</span>
@@ -824,7 +859,7 @@ L &amp;= 120 + 10\lg(I) \\
 &amp;= 120 + 10\lg\left(\frac{100 \cdot50^2}{r^2}\right)
 \end{align*} \]</span></p>
 <p>Løyser likninga for <span class="math inline">\(r\)</span> når <span class="math inline">\(L=130\)</span>.</p>
-<div class="cell" data-execution_count="16">
+<div id="cell-55" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1"></a><span class="co"># definerer r</span></span>
 <span id="cb30-2"><a href="#cb30-2"></a>r <span class="op">=</span> Symbol(<span class="st">"r"</span>)</span>
 <span id="cb30-3"><a href="#cb30-3"></a></span>
@@ -849,7 +884,7 @@ L &amp;= 120 + 10\lg(I) \\
 </section>
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Gjenbruk</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div></main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Gjenbruk</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -929,10 +964,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -942,8 +976,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -956,6 +999,125 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -999,6 +1161,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1024,6 +1187,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1085,7 +1274,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <script src="https://giscus.app/client.js" data-repo="lektorodd/lektorodd.github.io" data-repo-id="R_kgDOI1N_fg" data-category="General" data-category-id="DIC_kwDOI1N_fs4CT23b" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
 </script>
+<input type="hidden" id="giscus-base-theme" value="light">
+<input type="hidden" id="giscus-alt-theme" value="dark">
 </div> <!-- /content -->
+
 
 
 
