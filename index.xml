@@ -9,7 +9,7 @@
 <link>https://lektorodd.github.io/</link>
 <atom:link href="https://lektorodd.github.io/index.xml" rel="self" type="application/rss+xml"/>
 <description>Blogg med digitale tips og triks i skulen</description>
-<generator>quarto-1.4.550</generator>
+<generator>quarto-1.4.549</generator>
 <lastBuildDate>Thu, 18 Jan 2024 23:00:00 GMT</lastBuildDate>
 <item>
   <title>Perplexity.ai</title>
@@ -869,7 +869,6 @@ font-style: inherit;">"skjelv.csv"</span>)</span></code></pre></div>
 <div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1">skjelv.head()</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <div>
-<div>
 
 
 <table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
@@ -1027,12 +1026,10 @@ font-style: inherit;">"skjelv.csv"</span>)</span></code></pre></div>
 </div>
 </div>
 </div>
-</div>
 <p>Me kan sjå litt nærare på dei statistikk frå dei numeriske kolonnene med å bruka <code>describe()</code></p>
 <div id="cell-13" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1">skjelv.describe()</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
-<div>
 <div>
 
 
@@ -1181,7 +1178,6 @@ font-style: inherit;">"skjelv.csv"</span>)</span></code></pre></div>
 </div>
 </div>
 </div>
-</div>
 <p>I kolonna <code>mag</code> (styrken) ser me at både gjennomsnittet (5,87) og medianen (5,7) er ganske låge. Hugs på at den lågaste verdien her er 5,5. Tala viser oss at 50% av dei 20000 skjelva er mellom 5,5 og 5,7 i styrke. Me ser òg at gjennomsnittsdjupna på skjelva er ca. 70,5 km (<code>depth</code>).</p>
 <p>Som me har sett over har tabellen mange kolonner, ikkje alle er like relevante for oss. Me kan sortera ut dei me treng vidare. Skriv først ut ei liste med kolonnenamn for å få oversikt over alle kolonnene.</p>
 <div id="cell-15" class="cell" data-execution_count="7">
@@ -1231,7 +1227,6 @@ background-color: null;
 font-style: inherit;">"mag"</span>]]</span>
 <span id="cb12-2">skjelv.head()</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
-<div>
 <div>
 
 
@@ -1293,14 +1288,12 @@ font-style: inherit;">"mag"</span>]]</span>
 </div>
 </div>
 </div>
-</div>
 <p>Sjekkar for ordens skuld kva tid det første skjelvet er frå. Ser på dei siste 5 radene i tabellen.</p>
 <div id="cell-21" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1">skjelv.tail(<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">5</span>)</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="17">
-<div>
 <div>
 
 
@@ -1365,7 +1358,6 @@ font-style: inherit;">5</span>)</span></code></pre></div>
 </tbody>
 </table>
 
-</div>
 </div>
 </div>
 </div>
@@ -1489,7 +1481,6 @@ font-style: inherit;">=</span> gpd.points_from_xy(</span>
 <span id="cb16-8">skjelv_gdf.head()</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="16">
 <div>
-<div>
 
 
 <table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
@@ -1553,7 +1544,6 @@ font-style: inherit;">=</span> gpd.points_from_xy(</span>
 </tbody>
 </table>
 
-</div>
 </div>
 </div>
 </div>
@@ -1637,7 +1627,6 @@ font-style: inherit;">4.5</span></span>
 <span id="cb18-2">skjelv_gdf.head()</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="41">
 <div>
-<div>
 
 
 <table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
@@ -1707,7 +1696,6 @@ font-style: inherit;">4.5</span></span>
 </tbody>
 </table>
 
-</div>
 </div>
 </div>
 </div>
@@ -1911,7 +1899,6 @@ background-color: null;
 font-style: inherit;">10</span>)</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="59">
 <div>
-<div>
 
 
 <table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
@@ -2034,7 +2021,6 @@ font-style: inherit;">10</span>)</span></code></pre></div>
 </div>
 </div>
 </div>
-</div>
 <p>Ikkje at det er veldig viktig no, men om me vil så kan me ordna dette lett.</p>
 <div id="cell-42" class="cell" data-execution_count="60">
 <div class="sourceCode cell-code" id="cb24" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1">område_skjelv <span class="op" style="color: #5E5E5E;
@@ -2048,7 +2034,6 @@ font-style: inherit;">True</span>)</span>
 background-color: null;
 font-style: inherit;">10</span>)</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="60">
-<div>
 <div>
 
 
@@ -2169,7 +2154,6 @@ font-style: inherit;">10</span>)</span></code></pre></div>
 </tbody>
 </table>
 
-</div>
 </div>
 </div>
 </div>
@@ -3530,7 +3514,6 @@ font-style: inherit;">"Kontrollert"</span>])</span></code></pre></div>
 <div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1">df.tail()</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="23">
 <div>
-<div>
 
 
 <table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
@@ -3567,7 +3550,6 @@ font-style: inherit;">"Kontrollert"</span>])</span></code></pre></div>
 </div>
 </div>
 </div>
-</div>
 <p>I tillegg kan me prøva å plotta verdiane i dataramma. <br> <em>Har med <code>;</code> for å unngå å visa meldinga <code>&lt;AxesSubplot: &gt;</code></em></p>
 <div id="18381b06" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1">df.plot()<span class="op" style="color: #5E5E5E;
@@ -3600,7 +3582,6 @@ background-color: null;
 font-style: inherit;">max</span>()</span>
 <span id="cb5-2">årleg_vf_maks.head()</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="25">
-<div>
 <div>
 
 
@@ -3638,7 +3619,6 @@ font-style: inherit;">max</span>()</span>
 </div>
 </div>
 </div>
-</div>
 <p>Plottar den nye dataramma <code>årleg_maks</code> som kun har ei måling per år:</p>
 <div id="28c9ea65" class="cell" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1">årleg_vf_maks.plot()<span class="op" style="color: #5E5E5E;
@@ -3663,7 +3643,6 @@ background-color: null;
 font-style: inherit;">2022</span>]</span>
 <span id="cb7-2">årleg_vf_maks.head()</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="27">
-<div>
 <div>
 
 
@@ -3701,7 +3680,6 @@ font-style: inherit;">2022</span>]</span>
 </div>
 </div>
 </div>
-</div>
 <p>Me vil finna gjennomsnittleg største årlege vassføring over fleire år. Vel her å sjå på eit gjennomsnitt på 30 år om gongen. Bruker funksjonen <code>rolling</code> og <code>mean</code> i kombinasjon. <code>rolling</code> gjer at me kan gå gjennom dataramma og sjå på dei 30 tidlegare verdiane til kvar rad i tabellen og finna gjennomsnittet (<code>mean</code>) i dette rullande vinduet.</p>
 <div id="777a1455" class="cell" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1">maksvf_og_middelflom <span class="op" style="color: #5E5E5E;
@@ -3721,7 +3699,6 @@ font-style: inherit;">30</span>).mean()</span></code></pre></div>
 <div id="02efc07e" class="cell" data-execution_count="29">
 <div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1">maksvf_og_middelflom.head()</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="29">
-<div>
 <div>
 
 
@@ -3765,12 +3742,10 @@ font-style: inherit;">30</span>).mean()</span></code></pre></div>
 </div>
 </div>
 </div>
-</div>
 <p>Ser at dei fem første radene i den nye dataramma er <code>NaN</code> (not a number). Dette skjer fordi ein ikkje kan ta gjennomsnitt av dei siste 30 åra før det har gått 30 år… Sjekkar dei nyaste radene i staden:</p>
 <div id="3d0a5e0f" class="cell" data-execution_count="30">
 <div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1">maksvf_og_middelflom.tail()</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="30">
-<div>
 <div>
 
 
@@ -3811,7 +3786,6 @@ font-style: inherit;">30</span>).mean()</span></code></pre></div>
 </tbody>
 </table>
 
-</div>
 </div>
 </div>
 </div>
@@ -4324,7 +4298,6 @@ font-style: inherit;">=</span> df.index.year</span>
 <span id="cb15-3">df.head()</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="35">
 <div>
-<div>
 
 
 <table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
@@ -4373,7 +4346,6 @@ font-style: inherit;">=</span> df.index.year</span>
 </div>
 </div>
 </div>
-</div>
 <p>Lagar ein pivottabell med dag i året som rader og årstal som kolonner</p>
 <div id="7ad1a61d" class="cell" data-execution_count="36">
 <div class="sourceCode cell-code" id="cb16" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1">piv <span class="op" style="color: #5E5E5E;
@@ -4393,7 +4365,6 @@ background-color: null;
 font-style: inherit;">'Vassføring'</span>])</span>
 <span id="cb16-2">piv.head()</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="36">
-<div>
 <div>
 
 
@@ -4580,7 +4551,6 @@ font-style: inherit;">'Vassføring'</span>])</span>
 </div>
 </div>
 </div>
-</div>
 <section id="utrekningar" class="level2">
 <h2 class="anchored" data-anchor-id="utrekningar">Utrekningar</h2>
 <p>Finn ulike verdiar per dag i året over dei 104 åra.</p>
@@ -4645,7 +4615,6 @@ font-style: inherit;">1</span>)</span>
 <span id="cb17-6"></span>
 <span id="cb17-7">piv.head()</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="37">
-<div>
 <div>
 
 
@@ -4834,7 +4803,6 @@ font-style: inherit;">1</span>)</span>
 </table>
 
 <p>5 rows × 109 columns</p>
-</div>
 </div>
 </div>
 </div>

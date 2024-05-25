@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.550">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -340,7 +340,6 @@ Tips til nedlasting
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>df.tail()</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="23">
 <div>
-<div>
 
 
 <table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
@@ -377,7 +376,6 @@ Tips til nedlasting
 </div>
 </div>
 </div>
-</div>
 <p>I tillegg kan me prøva å plotta verdiane i dataramma. <br> <em>Har med <code>;</code> for å unngå å visa meldinga <code>&lt;AxesSubplot: &gt;</code></em></p>
 <div id="18381b06" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>df.plot()<span class="op">;</span></span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -402,7 +400,6 @@ Tips til nedlasting
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>årleg_vf_maks <span class="op">=</span> df.groupby(by<span class="op">=</span>[df.index.year]).<span class="bu">max</span>()</span>
 <span id="cb5-2"><a href="#cb5-2"></a>årleg_vf_maks.head()</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="25">
-<div>
 <div>
 
 
@@ -440,7 +437,6 @@ Tips til nedlasting
 </div>
 </div>
 </div>
-</div>
 <p>Plottar den nye dataramma <code>årleg_maks</code> som kun har ei måling per år:</p>
 <div id="28c9ea65" class="cell" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>årleg_vf_maks.plot()<span class="op">;</span></span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -457,7 +453,6 @@ Tips til nedlasting
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a>årleg_vf_maks <span class="op">=</span> årleg_vf_maks.loc[<span class="dv">1930</span>:<span class="dv">2022</span>]</span>
 <span id="cb7-2"><a href="#cb7-2"></a>årleg_vf_maks.head()</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="27">
-<div>
 <div>
 
 
@@ -495,7 +490,6 @@ Tips til nedlasting
 </div>
 </div>
 </div>
-</div>
 <p>Me vil finna gjennomsnittleg største årlege vassføring over fleire år. Vel her å sjå på eit gjennomsnitt på 30 år om gongen. Bruker funksjonen <code>rolling</code> og <code>mean</code> i kombinasjon. <code>rolling</code> gjer at me kan gå gjennom dataramma og sjå på dei 30 tidlegare verdiane til kvar rad i tabellen og finna gjennomsnittet (<code>mean</code>) i dette rullande vinduet.</p>
 <div id="777a1455" class="cell" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>maksvf_og_middelflom <span class="op">=</span> årleg_vf_maks.copy()</span>
@@ -505,7 +499,6 @@ Tips til nedlasting
 <div id="02efc07e" class="cell" data-execution_count="29">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>maksvf_og_middelflom.head()</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="29">
-<div>
 <div>
 
 
@@ -549,12 +542,10 @@ Tips til nedlasting
 </div>
 </div>
 </div>
-</div>
 <p>Ser at dei fem første radene i den nye dataramma er <code>NaN</code> (not a number). Dette skjer fordi ein ikkje kan ta gjennomsnitt av dei siste 30 åra før det har gått 30 år… Sjekkar dei nyaste radene i staden:</p>
 <div id="3d0a5e0f" class="cell" data-execution_count="30">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a>maksvf_og_middelflom.tail()</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="30">
-<div>
 <div>
 
 
@@ -595,7 +586,6 @@ Tips til nedlasting
 </tbody>
 </table>
 
-</div>
 </div>
 </div>
 </div>
@@ -788,7 +778,6 @@ Tips til oppgåver
 <span id="cb15-3"><a href="#cb15-3"></a>df.head()</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="35">
 <div>
-<div>
 
 
 <table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
@@ -837,13 +826,11 @@ Tips til oppgåver
 </div>
 </div>
 </div>
-</div>
 <p>Lagar ein pivottabell med dag i året som rader og årstal som kolonner</p>
 <div id="7ad1a61d" class="cell" data-execution_count="36">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a>piv <span class="op">=</span> pd.pivot_table(df, index<span class="op">=</span>[<span class="st">'doy'</span>],columns<span class="op">=</span>[<span class="st">'år'</span>], values<span class="op">=</span>[<span class="st">'Vassføring'</span>])</span>
 <span id="cb16-2"><a href="#cb16-2"></a>piv.head()</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="36">
-<div>
 <div>
 
 
@@ -1030,7 +1017,6 @@ Tips til oppgåver
 </div>
 </div>
 </div>
-</div>
 <section id="utrekningar" class="level2">
 <h2 class="anchored" data-anchor-id="utrekningar">Utrekningar</h2>
 <p>Finn ulike verdiar per dag i året over dei 104 åra.</p>
@@ -1043,7 +1029,6 @@ Tips til oppgåver
 <span id="cb17-6"><a href="#cb17-6"></a></span>
 <span id="cb17-7"><a href="#cb17-7"></a>piv.head()</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="37">
-<div>
 <div>
 
 
@@ -1232,7 +1217,6 @@ Tips til oppgåver
 </table>
 
 <p>5 rows × 109 columns</p>
-</div>
 </div>
 </div>
 </div>

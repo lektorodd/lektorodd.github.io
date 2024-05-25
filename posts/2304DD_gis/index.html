@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.550">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -237,7 +237,6 @@ gtag('config', 'G-744F7V6HLG', { 'anonymize_ip': true});
 <div id="cell-4" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display" data-execution_count="2">
 <div>
-<div>
 
 
 <table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
@@ -304,13 +303,11 @@ gtag('config', 'G-744F7V6HLG', { 'anonymize_ip': true});
 </div>
 </div>
 </div>
-</div>
 <p>I tillegg bruker me datasettet som me laga bakgrunnskart frå:</p>
 <div id="cell-6" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>world <span class="op">=</span> gpd.read_file(gpd.datasets.get_path(<span class="st">"naturalearth_lowres"</span>))</span>
 <span id="cb2-2"><a href="#cb2-2"></a>world.head()</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
-<div>
 <div>
 
 
@@ -378,7 +375,6 @@ gtag('config', 'G-744F7V6HLG', { 'anonymize_ip': true});
 </div>
 </div>
 </div>
-</div>
 <p>Me kan prøva å finna ut kor mange gongar kvart land er råka av jordskjelv i tabellen, og sortera dei ti med flest “treff”.</p>
 <div id="cell-8" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># lager ein ny gdf med land som indeks</span></span>
@@ -386,7 +382,6 @@ gtag('config', 'G-744F7V6HLG', { 'anonymize_ip': true});
 <span id="cb3-3"><a href="#cb3-3"></a>land.set_index(<span class="st">'name'</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb3-4"><a href="#cb3-4"></a>land.head()</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="13">
-<div>
 <div>
 
 
@@ -456,14 +451,12 @@ gtag('config', 'G-744F7V6HLG', { 'anonymize_ip': true});
 </div>
 </div>
 </div>
-</div>
 <div id="cell-10" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>land[<span class="st">"n_skjelv"</span>] <span class="op">=</span> land.<span class="bu">apply</span>(<span class="kw">lambda</span> x:</span>
 <span id="cb4-2"><a href="#cb4-2"></a>     skjelv_gdf[<span class="st">'geometry'</span>].within(x[<span class="st">'geometry'</span>]).<span class="bu">sum</span>(), axis<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb4-3"><a href="#cb4-3"></a></span>
 <span id="cb4-4"><a href="#cb4-4"></a>land.head()</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="16">
-<div>
 <div>
 
 
@@ -540,11 +533,9 @@ gtag('config', 'G-744F7V6HLG', { 'anonymize_ip': true});
 </div>
 </div>
 </div>
-</div>
 <div id="cell-11" class="cell" data-execution_count="32">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>land.sort_values(by <span class="op">=</span> [<span class="st">"n_skjelv"</span>], ascending<span class="op">=</span><span class="va">False</span>).head(<span class="dv">10</span>)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="32">
-<div>
 <div>
 
 
@@ -678,12 +669,10 @@ gtag('config', 'G-744F7V6HLG', { 'anonymize_ip': true});
 </div>
 </div>
 </div>
-</div>
 <div id="cell-12" class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>land[<span class="st">"gdp_pc"</span>] <span class="op">=</span> land[<span class="st">"gdp_md_est"</span>] <span class="op">/</span> land[<span class="st">"pop_est"</span>]</span>
 <span id="cb6-2"><a href="#cb6-2"></a>land.head()</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="25">
-<div>
 <div>
 
 
@@ -764,7 +753,6 @@ gtag('config', 'G-744F7V6HLG', { 'anonymize_ip': true});
 </tbody>
 </table>
 
-</div>
 </div>
 </div>
 </div>

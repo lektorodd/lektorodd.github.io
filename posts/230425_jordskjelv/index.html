@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.550">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -329,7 +329,6 @@ Merk
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>skjelv.head()</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <div>
-<div>
 
 
 <table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
@@ -487,12 +486,10 @@ Merk
 </div>
 </div>
 </div>
-</div>
 <p>Me kan sjå litt nærare på dei statistikk frå dei numeriske kolonnene med å bruka <code>describe()</code></p>
 <div id="cell-13" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a>skjelv.describe()</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
-<div>
 <div>
 
 
@@ -641,7 +638,6 @@ Merk
 </div>
 </div>
 </div>
-</div>
 <p>I kolonna <code>mag</code> (styrken) ser me at både gjennomsnittet (5,87) og medianen (5,7) er ganske låge. Hugs på at den lågaste verdien her er 5,5. Tala viser oss at 50% av dei 20000 skjelva er mellom 5,5 og 5,7 i styrke. Me ser òg at gjennomsnittsdjupna på skjelva er ca. 70,5 km (<code>depth</code>).</p>
 <p>Som me har sett over har tabellen mange kolonner, ikkje alle er like relevante for oss. Me kan sortera ut dei me treng vidare. Skriv først ut ei liste med kolonnenamn for å få oversikt over alle kolonnene.</p>
 <div id="cell-15" class="cell" data-execution_count="7">
@@ -671,7 +667,6 @@ Merk
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a>skjelv <span class="op">=</span> skjelv[[<span class="st">"time"</span>, <span class="st">"latitude"</span>, <span class="st">"longitude"</span>, <span class="st">"depth"</span>, <span class="st">"mag"</span>]]</span>
 <span id="cb12-2"><a href="#cb12-2"></a>skjelv.head()</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
-<div>
 <div>
 
 
@@ -733,12 +728,10 @@ Merk
 </div>
 </div>
 </div>
-</div>
 <p>Sjekkar for ordens skuld kva tid det første skjelvet er frå. Ser på dei siste 5 radene i tabellen.</p>
 <div id="cell-21" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a>skjelv.tail(<span class="dv">5</span>)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="17">
-<div>
 <div>
 
 
@@ -806,7 +799,6 @@ Merk
 </div>
 </div>
 </div>
-</div>
 <section id="visuell-oversikt-over-tabellen" class="level3">
 <h3 class="anchored" data-anchor-id="visuell-oversikt-over-tabellen">Visuell oversikt over tabellen</h3>
 <p>For å sjå (og presentera) fordelinga av styrke og djupne kan me t.d. laga heilt enkle boksplot. Startar med eit for styrken <span class="emoji" data-emoji="muscle">💪</span></p>
@@ -866,7 +858,6 @@ Tips til meir visualisering <span class="emoji" data-emoji="eyes">👀</span>
 <span id="cb16-7"><a href="#cb16-7"></a>    )</span>
 <span id="cb16-8"><a href="#cb16-8"></a>skjelv_gdf.head()</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="16">
-<div>
 <div>
 
 
@@ -934,7 +925,6 @@ Tips til meir visualisering <span class="emoji" data-emoji="eyes">👀</span>
 </div>
 </div>
 </div>
-</div>
 </section>
 <section id="plotting" class="level2">
 <h2 class="anchored" data-anchor-id="plotting">Plotting</h2>
@@ -968,7 +958,6 @@ Tips til meir visualisering <span class="emoji" data-emoji="eyes">👀</span>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1"></a>skjelv_gdf[<span class="st">"markør"</span>] <span class="op">=</span> skjelv_gdf[<span class="st">"mag"</span>] <span class="op">-</span> <span class="fl">4.5</span></span>
 <span id="cb18-2"><a href="#cb18-2"></a>skjelv_gdf.head()</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="41">
-<div>
 <div>
 
 
@@ -1042,7 +1031,6 @@ Tips til meir visualisering <span class="emoji" data-emoji="eyes">👀</span>
 </div>
 </div>
 </div>
-</div>
 <p>Plottar på nytt. Merk at me endrar typen til <code>scatter</code> som gjer at markørstorleiken får eit anna argument <code>s</code> i staden for <code>markersize</code>. Prøv deg gjerne fram for å finna ein fin verdi for storleiken. Eg endte opp med <code>3*skjelv_gdf["markør"]**4</code>.</p>
 <div id="cell-34" class="cell" data-execution_count="64">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1"></a><span class="co"># bakgrunnskart</span></span>
@@ -1108,7 +1096,6 @@ Tips til meir visualisering <span class="emoji" data-emoji="eyes">👀</span>
 <div id="cell-40" class="cell" data-execution_count="59">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1"></a>område_skjelv.head(<span class="dv">10</span>)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="59">
-<div>
 <div>
 
 
@@ -1232,13 +1219,11 @@ Tips til meir visualisering <span class="emoji" data-emoji="eyes">👀</span>
 </div>
 </div>
 </div>
-</div>
 <p>Ikkje at det er veldig viktig no, men om me vil så kan me ordna dette lett.</p>
 <div id="cell-42" class="cell" data-execution_count="60">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1"></a>område_skjelv <span class="op">=</span> område_skjelv.reset_index(drop<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb24-2"><a href="#cb24-2"></a>område_skjelv.head(<span class="dv">10</span>)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="60">
-<div>
 <div>
 
 
@@ -1359,7 +1344,6 @@ Tips til meir visualisering <span class="emoji" data-emoji="eyes">👀</span>
 </tbody>
 </table>
 
-</div>
 </div>
 </div>
 </div>
