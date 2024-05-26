@@ -1,5 +1,18 @@
 [
   {
+    "listing": "/lf.html",
+    "items": [
+      "/lf/2P-V24/index.html",
+      "/lf/2PY-V24/index.html",
+      "/lf/S2-V23/index.html",
+      "/lf/S2-H23/index.html",
+      "/lf/S1-H23/index.html",
+      "/lf/S1-V23/index.html",
+      "/lf/S1-V22/index.html",
+      "/lf/S1-H22/index.html"
+    ]
+  },
+  {
     "listing": "/index.html",
     "items": [
       "/posts/240112_perplexity/index.html",
@@ -9,18 +22,6 @@
       "/posts/230209_simulering1/index.html",
       "/posts/230202_hydrologimodellering/index.html",
       "/posts/230127_zotero/index.html"
-    ]
-  },
-  {
-    "listing": "/lf.html",
-    "items": [
-      "/lf/2PY-V24/index.html",
-      "/lf/S2-V23/index.html",
-      "/lf/S2-H23/index.html",
-      "/lf/S1-H23/index.html",
-      "/lf/S1-V23/index.html",
-      "/lf/S1-V22/index.html",
-      "/lf/S1-H22/index.html"
     ]
   }
 ]
