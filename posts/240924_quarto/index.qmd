@@ -16,6 +16,42 @@ Heile [bloggen min](https://lektorodd.github.io/) og dei aller fleste [eksamensl
 
 ## Korleis fungerer det?
 
+::: {.callout-tip}
+## Du treng
+
+- [Quarto CLI](https://quarto.org/docs/getting-started/installation.html)
+- Jupyter Lab (eller VS Code, Neovim, ...)
+- Quarto-plugin til Jupyter Lab (eller VS Code, ...)
+
+:::
+
+Det som skil `.ipynb`-filer som me bruker til Quarto frå "vanlege" `.ipynb`-filer er at me legg til metadata i toppen av (og etterkvart andre stader i) fila. Eit heilt enkelt døme er om ein vil konvertera ei notatbok til eit Word-dokument. Då lagar ein seg ein kodeboks (type `raw`) øvst i fila som ser slik ut:
+
+```yaml
+---
+format: docx
+---
+```
+
+Gitt at denne fila heiter `døme.ipynb`. Om ein opnar ein terminal i mappa der fila ligg og skriv 
+
+```bash	
+quarto render døme.ipynb
+```
+
+vil ein få lagra ein variant av fila som eit Word-dokument. Her kunne me valgt ei rekke andre format, som pdf, html, markdown, latex, epub, og mange fleire. Dette finn ein meir om i [dokumentasjonen](https://quarto.org/docs/reference/).
+
+For min eigen del nyttar eg ofte html-format. Anten som frittståande dokument, eller som ein del av større prosjekt (blogg, bok, nettside osb). For å gjera distribusjon av desse filene enklare inkluderer eg alt av figurar og andre filer som blir brukt i sjølve html-fila. Då slepp ein å tenka på å flytta rundt på filer. Ulempen er at fila blir litt større, men det er sjeldan eit problem.
+
+```yaml
+---
+format: 
+    html:
+        embed-resources: true
+---
+```
+
+
 om yaml. plugins. verktøy. terminal. 
 
 
