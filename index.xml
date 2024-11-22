@@ -9,7 +9,7 @@
 <link>https://lektorodd.github.io/</link>
 <atom:link href="https://lektorodd.github.io/index.xml" rel="self" type="application/rss+xml"/>
 <description>Blogg med digitale tips og triks i skulen</description>
-<generator>quarto-1.4.549</generator>
+<generator>quarto-1.5.57</generator>
 <lastBuildDate>Thu, 18 Jan 2024 23:00:00 GMT</lastBuildDate>
 <item>
   <title>Perplexity.ai</title>
@@ -579,8 +579,10 @@ font-style: inherit;">0</span></span>
 <span id="cb22-5"></span>
 <span id="cb22-6"><span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">for</span> i <span class="kw" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">in</span> <span class="bu" style="color: null;
 background-color: null;
 font-style: inherit;">range</span>(N):</span>
@@ -606,6 +608,7 @@ font-style: inherit;">==</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Banan"</span>) <span class="kw" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">and</span> (trekt_twist[<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">1</span>] <span class="op" style="color: #5E5E5E;
@@ -656,8 +659,10 @@ font-style: inherit;">0</span></span>
 <span id="cb24-5"></span>
 <span id="cb24-6"><span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">for</span> i <span class="kw" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">in</span> <span class="bu" style="color: null;
 background-color: null;
 font-style: inherit;">range</span>(N):</span>
@@ -684,6 +689,7 @@ font-style: inherit;">==</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Banan"</span>) <span class="kw" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">and</span> (trekt_twist[<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">1</span>] <span class="op" style="color: #5E5E5E;
@@ -796,7 +802,7 @@ font-style: inherit;">print</span>(to_twist)</span></code></pre></div>
 <p>I dette opplegget tek me utgangspunkt i store mengdar ekte jordskjelvdata. Desse vil me systematisera og visualisera ved hjelp av biblioteket <code>geopandas</code> i Python <span class="emoji" data-emoji="snake">🐍</span> <br> Døme på ein av figurane me kjem til å laga ser du under.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lektorodd.github.io/posts/230425_jordskjelv/jordskjelv_stillehavet_djupne.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:75.0%"></p>
+<p><img src="https://lektorodd.github.io/posts/230425_jordskjelv/jordskjelv_stillehavet_djupne.png" class="img-fluid figure-img" style="width:75.0%"></p>
 <figcaption><span class="emoji" data-emoji="camera">📷</span> Døme på figur</figcaption>
 </figure>
 </div>
@@ -871,7 +877,7 @@ font-style: inherit;">"skjelv.csv"</span>)</span></code></pre></div>
 <div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -1033,7 +1039,7 @@ font-style: inherit;">"skjelv.csv"</span>)</span></code></pre></div>
 <div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -1230,7 +1236,7 @@ font-style: inherit;">"mag"</span>]]</span>
 <div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -1297,7 +1303,7 @@ font-style: inherit;">5</span>)</span></code></pre></div>
 <div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -1483,7 +1489,7 @@ font-style: inherit;">=</span> gpd.points_from_xy(</span>
 <div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -1629,7 +1635,7 @@ font-style: inherit;">4.5</span></span>
 <div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -1901,7 +1907,7 @@ font-style: inherit;">10</span>)</span></code></pre></div>
 <div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -2037,7 +2043,7 @@ font-style: inherit;">10</span>)</span></code></pre></div>
 <div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -2481,11 +2487,14 @@ background-color: null;
 font-style: inherit;"># Finn høgda til kvar elev</span></span>
 <span id="cb1-14"><span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">for</span> elev <span class="kw" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">in</span> elevar:</span>
 <span id="cb1-15">    <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">if</span> elev<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">&lt;</span><span class="dv" style="color: #AD0000;
@@ -2500,6 +2509,7 @@ background-color: null;
 font-style: inherit;">6</span>))</span>
 <span id="cb1-17">    <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">else</span>: <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># 323 til 323+301 er gutar</span></span>
@@ -2590,6 +2600,7 @@ background-color: null;
 font-style: inherit;"># lagar funksjon som trekk ein elev</span></span>
 <span id="cb3-11"><span class="kw" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">def</span> trekk_elev(p):</span>
 <span id="cb3-12">    høgde <span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -2614,6 +2625,7 @@ background-color: null;
 font-style: inherit;"># trekk høgde (ut frå trekt kjønn)</span></span>
 <span id="cb3-17">    <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">if</span> kjønn <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">==</span> <span class="st" style="color: #20794D;
@@ -2630,6 +2642,7 @@ background-color: null;
 font-style: inherit;">1</span>)</span>
 <span id="cb3-19">    <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">else</span>: </span>
 <span id="cb3-20">        høgde <span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -2643,6 +2656,7 @@ font-style: inherit;">1</span>)</span>
 <span id="cb3-21">    </span>
 <span id="cb3-22">    <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">return</span> høgde[<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">0</span>]</span>
@@ -2658,8 +2672,10 @@ font-style: inherit;">0</span></span>
 <span id="cb3-26"></span>
 <span id="cb3-27"><span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">for</span> i <span class="kw" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">in</span> <span class="bu" style="color: null;
 background-color: null;
 font-style: inherit;">range</span>(N):</span>
@@ -2668,6 +2684,7 @@ background-color: null;
 font-style: inherit;">=</span> trekk_elev(p)</span>
 <span id="cb3-29">    <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">if</span> h<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">&gt;</span><span class="dv" style="color: #AD0000;
@@ -3385,7 +3402,7 @@ font-style: inherit;">"</span>)</span></code></pre></div>
 
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lektorodd.github.io/posts/230202_hydrologimodellering/island.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></p>
+<p><img src="https://lektorodd.github.io/posts/230202_hydrologimodellering/island.jpg" class="img-fluid figure-img" style="width:90.0%"></p>
 <figcaption>📷 Dettifoss, Island</figcaption>
 </figure>
 </div>
@@ -3412,7 +3429,7 @@ Tips til nedlasting
 <p>1️⃣ Finn deg ei elv på <a href="https://sildre.nve.no">sildre.nve.no</a> <br> 2️⃣ Trykk på <code>last ned som csv</code> <br> 3️⃣ Kryss av på aktuelle instillingar <br> 4️⃣ Last ned</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lektorodd.github.io/posts/230202_hydrologimodellering/laste_ned.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<p><img src="https://lektorodd.github.io/posts/230202_hydrologimodellering/laste_ned.jpg" class="img-fluid figure-img"></p>
 <figcaption>⬇️ Laste ned data</figcaption>
 </figure>
 </div>
@@ -3445,7 +3462,7 @@ font-style: inherit;">as</span> np</span></code></pre></div>
 <p>CSV-fila med vassføringsdata les me inn i ei <code>dataramme</code> (<em>dataframe</em>). Viss ein tar ein kikk på fila ser ein at det er brukt semikolon for å skilja verdiane, det er to rader før verdiane kjem. Me lagar litt forenkla namn på kolonnene, og les inn data. I tillegg er det nytta komma (og ikkje punktum) som desimalteikn.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lektorodd.github.io/posts/230202_hydrologimodellering/df.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<p><img src="https://lektorodd.github.io/posts/230202_hydrologimodellering/df.jpg" class="img-fluid figure-img"></p>
 <figcaption>🔍 Dei første linjene</figcaption>
 </figure>
 </div>
@@ -3516,7 +3533,7 @@ font-style: inherit;">"Kontrollert"</span>])</span></code></pre></div>
 <div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -3585,7 +3602,7 @@ font-style: inherit;">max</span>()</span>
 <div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -3646,7 +3663,7 @@ font-style: inherit;">2022</span>]</span>
 <div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -3702,7 +3719,7 @@ font-style: inherit;">30</span>).mean()</span></code></pre></div>
 <div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -3749,7 +3766,7 @@ font-style: inherit;">30</span>).mean()</span></code></pre></div>
 <div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -3841,9 +3858,11 @@ background-color: null;
 font-style: inherit;"># definerer lineær funksjon</span></span>
 <span id="cb12-9"><span class="kw" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">def</span> f(x):</span>
 <span id="cb12-10">    <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">return</span> a<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">*</span>x <span class="op" style="color: #5E5E5E;
@@ -4080,7 +4099,7 @@ font-style: inherit;">#plt.savefig("Reinsnos - modellering av middelflom 2100.pn
 <p>Frå stasjonsssida til Reinsnosvatn kan me finna data om ulike typar flom.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lektorodd.github.io/posts/230202_hydrologimodellering/flomdata_nve.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<p><img src="https://lektorodd.github.io/posts/230202_hydrologimodellering/flomdata_nve.jpg" class="img-fluid figure-img"></p>
 <figcaption>Flomdata frå <a href="https://sildre.nve.no/station/48.5.0?48.5.0_tab=2">NVE</a></figcaption>
 </figure>
 </div>
@@ -4122,9 +4141,11 @@ background-color: null;
 font-style: inherit;"># definerer lineær funksjon</span></span>
 <span id="cb14-9"><span class="kw" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">def</span> f(x):</span>
 <span id="cb14-10">    <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">return</span> a<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">*</span>x <span class="op" style="color: #5E5E5E;
@@ -4300,7 +4321,7 @@ font-style: inherit;">=</span> df.index.year</span>
 <div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -4368,7 +4389,7 @@ font-style: inherit;">'Vassføring'</span>])</span>
 <div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -4618,7 +4639,7 @@ font-style: inherit;">1</span>)</span>
 <div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -5080,7 +5101,7 @@ Tips til undervisinga
 <p>Når du har lasta ned Zotero startar du med eit tomt bibliotek. Dette kan du organisera i <em>samlingar</em> (mapper). Du lager nye samlingar med å trykka på knappen til venstre over <em>Mitt bibliotek</em></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lektorodd.github.io/posts/230127_zotero/bibliotek.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+<p><img src="https://lektorodd.github.io/posts/230127_zotero/bibliotek.jpg" class="img-fluid figure-img" style="width:80.0%"></p>
 <figcaption>Organisere biblioteket</figcaption>
 </figure>
 </div>
