@@ -1,27 +1,61 @@
 ---
-title: "Heim"
+title: ""
 from: markdown+emoji
-listing:
-  type: grid
-  contents: posts
-  sort: "date desc"
-  fields: [image, date, title, reading-time, categories, description]
-  sort-ui: false
-  filter-ui: false
-  categories: true
-  feed: true
-page-layout: full
-title-block-banner: true
 comments: false
 ---
-### Løysingsforslag eksamen
 
-##### [Løysingsforslag](/lf.qmd)
+<div class="velkomst">
+
+<h1>Velkommen til lektorodd.github.io!</h1>
+
+<p>:eyes: Her finn du ei oversikt over nokre av dei tinga eg held på med</p>
+</div>
+
+<div class="framsideboks">
+
+<div class="content-wrapper">
+<div class="icon-container"><i class="bi bi-calculator"></i></div>
+
+<div class="text-container">
+<h1>[LØYSINGSFORSLAG EKSAMEN](/lf.qmd)</h1>
+
+<p>
 Her er nokre løysingsforslag til ulike eksamenar på vgs. <br>
 På del 2 prøver eg å nytta Python i størst mogleg grad :snake:
+</p>
+</div>
+</div>
+</div>
 
-# Innlegg
 
----
+<div class="framsideboks">
 
+<div class="content-wrapper">
+<div class="icon-container"><i class="bi bi-lightbulb"></i></div>
+
+<div class="text-container">
+<h1>[BLOGG](/blogg.qmd)</h1>
+
+<p>
+Her er nokre tankar, tips og ideear eg skriv ned med ujamne mellomrom.
+</p>
+</div>
+</div>
+</div>
+
+
+<div class="framsideboks">
+
+<div class="content-wrapper">
+<div class="icon-container"><i class="bi bi-book"></i></div>
+
+<div class="text-container">
+<h1>[MATTEBOK](https://lektorodd.github.io/mattebok)</h1>
+
+<p>
+Eit forsøk på å samla litt ressursar knytt til programmering i matematikk programfag (S/R) på vgs. 
+</p>
+</div>
+</div>
+</div>
 

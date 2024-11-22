@@ -4,10 +4,23 @@ project:
 website:
   title: "Torodd F. Ottestad"
   site-url: https://lektorodd.github.io
-  description: "Blogg med digitale tips og triks i skulen"
+  description: "Lagring for tankar, utprøvingar og løysingsforslag. Det meste er pythonrelatert i større eller mindre grad."
   navbar:
+    left:
+      - text: "Blogg"
+        href: blogg.qmd
+        icon: lightbulb
+      - text: "Løysingsforslag"
+        href: lf.qmd
+        icon: calculator
+      - text: "Mattebok"
+        href: https://lektorodd.github.io/mattebok
+        icon: book
+      - text: "Om meg"
+        href: about.qmd
+        icon: person
     right:
-      - about.qmd
+   
       - icon: github
         href: https://github.com/lektorodd/lektorodd.github.io
       - icon: clouds-fill
@@ -24,10 +37,11 @@ website:
 
 format:
   html:
-    theme: 
-    - journal
-    - custom.scss
+    theme:
+      light: [journal, custom-light.scss]
+      dark: [journal, custom-dark.scss]
     code-line-numbers: true
+      
 execute:
   freeze: auto  
 comments:
