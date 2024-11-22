@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+
+/*-- scss:default --*/
+// Farger
+$body-bg: #2c2c2c; // Mørk bakgrunn.
+$body-color: #ecf0f1; // Lys tekstfarge for god kontrast.
+$link-color: #3498db; // Klar blå for linker og navbar.
+
+$input-bg: #3b3b3b; // Mørkere input-bokser for å matche temaet.
+$popover-bg: #3b3b3b; // Konsistent med input-bakgrunn.
+
+$tag-bg: lighten($link-color, 35%); // Lysere versjon av linkfargen for bakgrunn.
+$tag-color: $link-color; // Samme farge som linker for tekst.
+
+$navbar-bg-gradient: linear-gradient(90deg, #3498db, #9E52FF);
+
+// Fonter
+$font-family-sans-serif: 'Inter', sans-serif;
+$font-family-monospace: 'JetBrains Mono', monospace;
+
+$font-size-root: 16px; // Standard base fontstørrelse.
+$toc-font-size: 14px; // Litt mindre for å skille fra hovedinnhold.
+$h1-font-size: 2.5rem; // Fremhevede overskrifter.
+$h2-font-size: 2rem;
+$h3-font-size: 1.75rem;
+$h4-font-size: 1.5rem;
+$h5-font-size: 1.25rem;
+
+// Kodeblokk
+$code-block-border-left: #e67e22; // Oransje venstre kant for visuell markering.
+$code-block-border-left-style: solid;
+$code-block-border-left-size: 4px;
+$code-block-bg: #3b3b3b; // Mørk grå for subtil kontrast.
+$code-block-bg-padding: 0.5em;
+$code-block-padding-left: 1em;
+$code-block-bg-alpha: 0.2;
+$code-annotation-higlight-color: #16a085; // Grønn for markerte linjer.
+$code-annotation-higlight-bg: #34495e;
+$btn-code-copy-color: #bdc3c7; // Grå for kopieringsknapp.
+$btn-code-copy-color-active: #ecf0f1; // Lysere ved hover.
+
+// Inlinekode
+$code-bg: #4b4b4b; // Mørk blågrå bakgrunn.
+$code-color: #ecf0f1; // Lys tekstfarge.
+
+// Innhold
+$toc-color: #ecf0f1; // Lys tekstfarge.
+$toc-font-size: 14px;
+$toc-active-border: #2980b9; // Fremheving med blå kant.
+$toc-inactive-border: #7f8c8d; // Mørk grå kant for inaktive elementer.
+
+// Navbar
+$navbar-bg: $link-color; // Bruker linkfargen for å få navbaren til å "poppe".
+$navbar-fg: #ffffff; // Hvit tekst for høy kontrast.
+$navbar-hl: lighten($navbar-bg, 10%); // Lysere for hover-effekt på linker.
+
+$sidebar-bg: #2c2c2c; // Mørk bakgrunn for sidebar.
+$sidebar-fg: #ecf0f1; // Lys tekst.
+$sidebar-hl: $link-color; // Blå highlight.
+
+$footer-bg: #2c2c2c; // Mørk bakgrunn.
+$footer-fg: #ecf0f1; // Lys tekst.
+
+// Callout
+$callout-border-width: 3px;
+$callout-border-scale: 5%;
+$callout-icon-scale: 10%;
+$callout-margin-top: 1.5rem;
+$callout-margin-bottom: 1.5rem;
+
+$callout-color-note: #3498db; // Blå for notater.
+$callout-color-tip: #2ecc71; // Grønn for tips.
+$callout-color-caution: #e67e22; // Oransje for advarsler.
+$callout-color-warning: #f1c40f; // Gul for forsiktighetsmeldinger.
+$callout-color-important: #e74c3c; // Rød for viktige meldinger.
+
+/*-- scss:rules --*/
+// Farger på kategorier
+.quarto-light .quarto-title .quarto-categories .quarto-category,
+.quarto-dark .quarto-title .quarto-categories .quarto-category,
+.quarto-light .page-title .page-categories .page-category,
+.quarto-dark .page-title .page-categories .page-category {
+    opacity: 1;
+    background-color: $tag-bg; // Justert bakgrunnsfarge for bedre kontrast.
+    color: $tag-color; // Samme farge som linker for tekst.
+    padding: 0.25em 0.5em; // Litt padding for bedre lesbarhet.
+    border-radius: 4px; // Avrundede hjørner for et moderne utseende.
+    font-size: 0.85em; // Litt mindre skriftstørrelse for å skille fra hovedtekst.
+    margin-right: 0.5em; // Avstand mellom taggene.
+    display: inline-block; // Sikrer riktig visning ved siden av hverandre.
+    font-weight: 600; // Gjør teksten litt fetere.
+    position: relative; // For å kunne plassere ikonet.
+    font-family: $font-family-monospace; // Bruker monospace-font for tags.
+    border: 1px solid $link-color; // Legger til en kantlinje for bedre synlighet.
+}
+
+// Overstyr standardstiler fra Journal-temaet for linker i kategorier
+.quarto-light .quarto-title .quarto-categories .quarto-category a,
+.quarto-dark .quarto-title .quarto-categories .quarto-category a,
+.quarto-light .page-title .page-categories .page-category a,
+.quarto-dark .page-title .page-categories .page-category a {
+    color: $tag-color;
+    text-decoration: none;
+    font-size: inherit;
+    font-family: inherit;
+    font-weight: inherit;
+}
+
+// Hover-effekter for kategorimerkene
+.quarto-light .quarto-title .quarto-categories .quarto-category:hover,
+.quarto-dark .quarto-title .quarto-categories .quarto-category:hover,
+.quarto-light .page-title .page-categories .page-category:hover,
+.quarto-dark .page-title .page-categories .page-category:hover {
+    background-color: darken($tag-bg, 10%);
+    border-color: darken($link-color, 10%);
+}
+
+// Farger på kategorier i listing-siden
+.quarto-light .listing-categories .listing-category,
+.quarto-dark .listing-categories .listing-category {
+  cursor: pointer;
+  opacity: 1;
+  background-color: $tag-bg; // Bruker samme bakgrunnsfarge som andre kategorimerker
+  color: $tag-color; // Samme tekstfarge som linker
+  padding: 0.25em 0.5em; // Padding for bedre lesbarhet
+  border-radius: 4px; // Avrundede hjørner
+  font-size: 0.60em; // Konsistent skriftstørrelse
+  margin-right: 0.5em; // Avstand mellom kategorier
+  display: inline-block; // Sikrer riktig visning
+  font-weight: 600; // Litt fetere tekst
+  font-family: $font-family-monospace; // Monospace-font for konsistens
+  border: 1px solid $link-color; // Kantlinje for synlighet
+  text-decoration: none; // Fjerner understrykning
+  transition: background-color 0.2s, border-color 0.2s; // Jevn overgang ved hover
+}
+
+// Hover-effekt for kategoriene
+.quarto-light .listing-categories .listing-category:hover,
+.quarto-dark .listing-categories .listing-category:hover {
+  background-color: darken($tag-bg, 10%);
+  border-color: darken($link-color, 10%);
+}
+
+// Aktiv kategori (hvis aktuelt)
+.quarto-light .listing-categories .listing-category.active,
+.quarto-dark .listing-categories .listing-category.active {
+  background-color: $link-color;
+  color: #ffffff;
+  border-color: darken($link-color, 10%);
+}
+
+.quarto-grid-item {
+    background-color: lighten($body-bg, 5%);
+    padding: 0.55em;
+    border-radius: 10px; // Mørk bakgrunn for listing-siden.
+}
+  
+.navbar  {
+    background: $navbar-bg-gradient;
+    color: $navbar-fg;
+}
+
+// Ensure that the text and links are readable over the gradient
+.navbar .navbar-brand,
+.navbar .navbar-nav .nav-link {
+  color: $navbar-fg;
+
+  &:hover {
+    color: $navbar-hl;
+  }
+}
+
+.quarto-title-block .quarto-title-banner  {
+    background: $navbar-bg-gradient;
+    color: $navbar-fg;
+}
+
+.framsideboks {
+    display: flex;
+    align-items: center;
+    background: $navbar-bg-gradient;
+    color: $navbar-fg;
+    padding: 0.55em;
+    border-radius: 1em;
+    padding-inline: 1em;
+}
+.content-wrapper {
+    display: flex;
+    align-items: center; /* Sentraliserer ikonet og teksten */
+    justify-content: center;
+    gap: 1em; /* Avstand mellom ikon og tekst */
+  }
+
+.framsideboks a {
+    opacity: 1;
+    background-color: $tag-bg; // Ny variabel for bakgrunnsfarge.
+    color: $tag-color; // Ny variabel for tekstfarge.
+    padding: 0.25em 0.25em 0.25em 0.25em; // Litt padding for bedre lesbarhet.
+    border-radius: 4px; // Avrundede hjørner for et moderne utseende.
+    font-size: 0.75em; // Litt mindre skriftstørrelse for å skille fra hovedtekst.
+    font-weight: 900; // Gjør teksten litt fetere.
+    position: relative; // For å kunne plassere ikonet.
+}
+
+.framsideboks p {
+    padding-top: 0.5em;
+}
+
+.icon-container {
+    width: 90px;
+    height: 90px;
+    background-color: $tag-bg; // Bruk hovedlinkfargen.
+    border-radius: 50%; // Gjør ikonet rundt.
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); // Enkel skygge.
+    flex-shrink: 0;
+  }
+  
+  .icon-container i {
+    color: $tag-color; 
+    font-size: 60px; // Juster ikonstørrelsen.
+  }
