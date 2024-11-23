@@ -23,12 +23,8 @@ website:
    
       - icon: github
         href: https://github.com/lektorodd/lektorodd.github.io
-      - icon: clouds-fill
-        href: https://bsky.app/profile/torodd.bsky.social
       - icon: youtube
         href: https://www.youtube.com/channel/UCWfDrIj3Mq3Niz77HJ6cTNg
-      - icon: linkedin
-        href: https://linkedin.com/in/torodd-ottestad-b2583a59
       - icon: rss-fill
         href: index.xml
   google-analytics:

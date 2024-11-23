@@ -192,16 +192,26 @@ $callout-color-important: #e74c3c; // Rød for viktige meldinger.
     gap: 1em; /* Avstand mellom ikon og tekst */
   }
 
-.framsideboks a {
+  .framsideboks a {
     opacity: 1;
     background-color: $tag-bg; // Ny variabel for bakgrunnsfarge.
     color: $tag-color; // Ny variabel for tekstfarge.
-    padding: 0.25em 0.25em 0.25em 0.25em; // Litt padding for bedre lesbarhet.
+    padding: 0.25em 0.5em; // Litt padding for bedre lesbarhet.
     border-radius: 4px; // Avrundede hjørner for et moderne utseende.
-    font-size: 0.75em; // Litt mindre skriftstørrelse for å skille fra hovedtekst.
-    font-weight: 900; // Gjør teksten litt fetere.
+    font-size: 32px; // Litt mindre skriftstørrelse for å skille fra hovedtekst.
+    font-weight: 600; // Gjør teksten litt fetere.
     position: relative; // For å kunne plassere ikonet.
-}
+    line-height: 1; // Juster linjehøyden for å redusere bakgrunnshøyden.
+    white-space: nowrap; // Forhindrer linjebryting.
+  
+    @media (max-width: 768px) {
+      font-size: 24px;
+    }
+  
+    @media (max-width: 480px) {
+      font-size: 18px;
+    }
+  }
 
 .framsideboks p {
     padding-top: 0.5em;
