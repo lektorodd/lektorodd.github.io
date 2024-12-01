@@ -1,5 +1,8 @@
 project:
   type: website
+  resources: 
+    - vedlegg/lf/V24-2PY-loysingsforslag.pdf
+    - vedlegg/lf/V24-2P-loysingsforslag.pdf
 
 website:
   title: "Torodd F. Ottestad"
