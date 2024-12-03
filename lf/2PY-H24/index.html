@@ -287,7 +287,7 @@ window.Quarto = {
 <p>Her er eit forslag til løysing av hausteksamen i 2P-Y 2024.</p>
 <p>Eg kan ikkje lova at løysinga er feilfri… 😊</p>
 <p>Gje meg gjerne <a href="../../about.html">ein lyd</a> om du ser feil eller lurer på noko anna.</p>
-<p><strong>Sist oppdatert:</strong> 01.12.2024</p>
+<p><strong>Sist oppdatert:</strong> 03.12.2024</p>
 <hr>
 <p>Eksamenssettet finn du <a href="https://sokeresultat.udir.no/eksamensoppgaver.html">hos UDIR</a></p>
 <hr>
@@ -641,18 +641,18 @@ Statistikk i CAS <span class="emoji" data-emoji="rocket">🚀</span>
 <figcaption>📷 CAS</figcaption>
 </figure>
 </div>
-<p><strong>Det vil ta omlag 92 dagar før ho klarar å springa 45 minutt samanhengande.</strong></p>
+<p><strong>Det vil ta omlag 13 veker før ho klarar å springa 45 minutt samanhengande.</strong></p>
 </section>
 <section id="c-gjennomsnittleg-auke-frå-dag-1-til-60" class="level4">
 <h4 class="anchored" data-anchor-id="c-gjennomsnittleg-auke-frå-dag-1-til-60">c) Gjennomsnittleg auke frå dag 1 til 60</h4>
-<p>Bruker CAS. Finn dei to verdiane og vekstfaktor for heile perioden. For å finna dagleg vekstfaktor finn eg 60-te rota av den totale vekstfaktoren.</p>
+<p>Bruker CAS. Finn gjennomsnittleg auke. Deler endring i tid med endring i dagar.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/6c.png" class="img-fluid figure-img" style="width:45.0%"></p>
 <figcaption>📷 CAS</figcaption>
 </figure>
 </div>
-<p><strong>Gjennomsnittleg auke per dag frå dag 1 til 60 er omlag 2,3 %.</strong></p>
+<p><strong>Gjennomsnittleg auke per dag frå dag 1 til 60 er omlag 0,5 min.</strong></p>
 </section>
 </section>
 <section id="oppgåve-7" class="level3">
@@ -723,39 +723,39 @@ Andre utrekningar
 <h4 class="anchored" data-anchor-id="a">a)</h4>
 <p>Startverdi er 40 km.</p>
 <p>Vekstfaktor til 5% auke er <span class="math inline">\(1,05\)</span>.</p>
-<p>Skriv eit program for å finne ut kor langt han syklar.</p>
-<div id="f603e184" class="cell" data-execution_count="1">
+<p>Skriv eit program for å finne ut kor langt han syklar. I veke 50 vil lengda ha auka 49 gongar:</p>
+<div id="1bb6057f" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>veke <span class="op">=</span> <span class="dv">1</span></span>
 <span id="cb2-2"><a href="#cb2-2"></a>km <span class="op">=</span> <span class="dv">40</span></span>
 <span id="cb2-3"><a href="#cb2-3"></a>vf <span class="op">=</span> <span class="fl">1.05</span></span>
 <span id="cb2-4"><a href="#cb2-4"></a></span>
-<span id="cb2-5"><a href="#cb2-5"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">50</span>):</span>
+<span id="cb2-5"><a href="#cb2-5"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">49</span>):</span>
 <span id="cb2-6"><a href="#cb2-6"></a>    km <span class="op">=</span> km <span class="op">*</span> vf</span>
 <span id="cb2-7"><a href="#cb2-7"></a>    veke <span class="op">=</span> veke <span class="op">+</span> <span class="dv">1</span></span>
 <span id="cb2-8"><a href="#cb2-8"></a></span>
 <span id="cb2-9"><a href="#cb2-9"></a><span class="bu">print</span>(<span class="st">"I veke 50 vil han sykla"</span>, <span class="bu">round</span>(km,<span class="dv">2</span>), <span class="st">"km"</span>)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>I veke 50 vil han sykla 458.7 km</code></pre>
+<pre><code>I veke 50 vil han sykla 436.85 km</code></pre>
 </div>
 </div>
 </section>
 <section id="b" class="level4">
 <h4 class="anchored" data-anchor-id="b">b)</h4>
 <p>Vil finna ut kor mykje han har sykla samanlagt etter 50 veker. Endrar litt på programmet:</p>
-<div id="5ebac3e1" class="cell" data-execution_count="2">
+<div id="007e379a" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>veke <span class="op">=</span> <span class="dv">1</span></span>
 <span id="cb4-2"><a href="#cb4-2"></a>km <span class="op">=</span> <span class="dv">40</span></span>
 <span id="cb4-3"><a href="#cb4-3"></a>vf <span class="op">=</span> <span class="fl">1.05</span></span>
 <span id="cb4-4"><a href="#cb4-4"></a>total_km <span class="op">=</span> <span class="dv">40</span></span>
 <span id="cb4-5"><a href="#cb4-5"></a></span>
-<span id="cb4-6"><a href="#cb4-6"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">50</span>):</span>
+<span id="cb4-6"><a href="#cb4-6"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">49</span>):</span>
 <span id="cb4-7"><a href="#cb4-7"></a>    km <span class="op">=</span> km <span class="op">*</span> vf</span>
 <span id="cb4-8"><a href="#cb4-8"></a>    total_km <span class="op">=</span> total_km <span class="op">+</span> km</span>
 <span id="cb4-9"><a href="#cb4-9"></a>    veke <span class="op">=</span> veke <span class="op">+</span> <span class="dv">1</span></span>
 <span id="cb4-10"><a href="#cb4-10"></a>    </span>
 <span id="cb4-11"><a href="#cb4-11"></a><span class="bu">print</span>(<span class="st">"Etter 50 veker har han sykla"</span>, <span class="bu">round</span>(total_km,<span class="dv">2</span>), <span class="st">"km"</span>)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Etter 50 veker har han sykla 8832.62 km</code></pre>
+<pre><code>Etter 50 veker har han sykla 8373.92 km</code></pre>
 </div>
 </div>
 
