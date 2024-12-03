@@ -14,7 +14,7 @@ Eg kan ikkje lova at løysinga er feilfri... 😊
 
 Gje meg gjerne [ein lyd](/about.qmd) om du ser feil eller lurer på noko anna.  
 
-**Sist oppdatert:** 01.12.2024
+**Sist oppdatert:** 03.12.2024
 
 ---
 
@@ -351,7 +351,7 @@ Bruker CAS
 
 ![📷 CAS](img/6b.png){width="45%"}
 
-**Det vil ta omlag 92 dagar før ho klarar å springa 45 minutt samanhengande.**
+**Det vil ta omlag 13 veker før ho klarar å springa 45 minutt samanhengande.**
 
 #### c) Gjennomsnittleg auke frå dag 1 til 60
 
@@ -411,13 +411,13 @@ Startverdi er 40 km.
 
 Vekstfaktor til 5% auke er $1,05$.
 
-Skriv eit program for å finne ut kor langt han syklar. 
+Skriv eit program for å finne ut kor langt han syklar. I veke 50 vil lengda ha auka 49 gongar: 
 ```{python}
 veke = 1
 km = 40
 vf = 1.05
 
-for i in range(50):
+for i in range(49):
     km = km * vf
     veke = veke + 1
 
@@ -434,7 +434,7 @@ km = 40
 vf = 1.05
 total_km = 40
 
-for i in range(50):
+for i in range(49):
     km = km * vf
     total_km = total_km + km
     veke = veke + 1
